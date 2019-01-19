@@ -1,6 +1,34 @@
-### Dynamic Allocation Exercise
+## Lab04 Dynamic Allocation Exercise
 
-Included in this directory is a class definition for _Duck_, and a class definition for _ArrayPointerTest_ that has a collection of duck arrays of various types.
+### What You Will Learn
+1. How C++ allocates memory for static arrays.
+2. How C++ dynamically allocates memory for arrays and array elements.
+3. How memory is freed after dynamic allocation.
+
+
+**__There is no grading script for this lab. Simultaneously view this lab and the Canvas quiz on dynamic allocation. The quiz will give some options in completing the code, and you can answer the questions on the quiz as you work through the lab.__**
+
+### Retrieve Class Materials
+
+> In case you forgot how, here is how to pull in the shared code ...
+
+Navigate to your repository.
+```
+% cd <path_to_directory_repo-userid>
+% git status
+```
+
+1. If you are on your master branch and you have made changes that are not yet committed and pushed, you should probably do that before proceeding.
+
+2. Move to the support-code branch with `git checkout support-code`.
+
+3. `git pull upstream support-code` to grab the latest changes from the shared class repo.
+
+4. `git checkout master` to move back to the master branch for merging.
+
+5. `git merge support-code`
+
+### Completing the Code
 
 Part of the assignment is to fill in the code that initializes, displays, and destroys the arrays in the ArrayPointerTest class. You will show what you have learned by completing the corresponding Canvas quiz.
 
