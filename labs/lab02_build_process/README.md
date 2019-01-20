@@ -149,7 +149,7 @@ $ make
 
 Nothing happened! It states that the file is up to date, Which is correct because nothing changed. Go ahead and add a space or change a comment in one of the files, run `make` again and see that it executes the compilation command again to create a new object file.
 
-Let's add another target to our Makefile. Place this AFTER the duck.o target.
+Let's add another target to our Makefile. Place this AFTER the mallard_duck.o target.
 
 ```
 rubber_duck.o: duck.h rubber_duck.h rubber_duck.cc
