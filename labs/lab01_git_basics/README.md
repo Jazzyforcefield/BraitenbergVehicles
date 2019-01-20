@@ -48,11 +48,11 @@ to see the various git configuration settings.
 ### csci3081-shared-upstream: The Read-Only 3081 Course Repository
 
 Computer Science courses are setup for github by first establishing a GitHub
-organization (e.g. _umn-csci-3081-F18_), as well as a read-only course repository (e.g. _csci3081-shared-upstream_). Course materials will be distributed via the read-only repository, which will be merged into the master branch of your repository.
+organization (e.g. _umn-csci-3081-S19_), as well as a read-only course repository (e.g. _csci3081-shared-upstream_). Course materials will be distributed via the read-only repository, which will be merged into the master branch of your repository.
 
 Open your browser and enter the following URL:
 
-https://github.umn.edu/umn-csci-3081-F18/csci3081-shared-upstream
+https://github.umn.edu/umn-csci-3081-S19/csci3081-shared-upstream
 
 By default, you will be shown the default branch. In this case, that is the support-code branch. This branch will contain all of the material files which are necessary to complete the labs, exercises, and eventually, the project.
 
@@ -134,11 +134,11 @@ to confirm that you are in the directory repo-&lt;student-umnid&gt;.
 IF you completed the ssh key section above:
 
 ```
-% git remote add upstream git@github.umn.edu:umn-csci-3081-F18/csci3081-shared-upstream.git
+% git remote add upstream git@github.umn.edu:umn-csci-3081-S19/csci3081-shared-upstream.git
 ```
-ELSE you did not complete the ssh key section above and are using username/password:
+ELSE if you did not complete the ssh key section above and are using username/password:
 ```
-% git remote add upstream https://github.umn.edu/umn-csci-3081-F18/csci3081-shared-upstream.git
+% git remote add upstream https://github.umn.edu/umn-csci-3081-S19/csci3081-shared-upstream.git
 ```
 
 > Note: If you get an error saying that the remote already exists, you can remove it and add again with the command `% git remote rm upstream`.
@@ -305,7 +305,7 @@ merge conflicts.
 
 > ALWAYS, ALWAYS, ALWAYS perform a _pull_ before making changes to a repository. Each time you sit down to work on a homework or project iteration, it would be an excellent habit to perform a _pull_ of the support code.
 
-If you are satisfied with the grade reported on the feedback file, then you are done. If not, yoyu are welcome to make corrections and push any changes. Every time you push, a new feedback file will be generated for this lab to let you know how you did.
+If you are satisfied with the grade reported on the feedback file, then you are done. If not, you are welcome to make corrections and push any changes. Every time you push, a new feedback file will be generated for this lab to let you know how you did.
 
 THIS HOMEWORK IS COMPLETE.
 
