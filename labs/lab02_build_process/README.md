@@ -14,11 +14,11 @@ Navigate to your repository.
 
 Now, we want to get the new class materials from the shared-upstream repository. Ensure you are in the _support-code_ branch by executing the _git status_ command.
 ```
-    $ git status
-    On branch <branch name>
-    Your branch is up to date with 'origin/<branch name>'
+$ git status
+On branch <branch name>
+Your branch is up to date with 'origin/<branch name>'
     
-    nothing to commit, working tree clean
+nothing to commit, working tree clean
 ```
 The output should begin with the branch you are currently on. If it says _On branch support-code_, you are all set. (NOTE: If your status output does not look like above and instead this message is displayed "Changes not staged for commit", you will _not_ be able to change branches. Follow the instructions given by git to _add_ and to _commit_ these changes.)
 
