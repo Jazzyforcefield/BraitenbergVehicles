@@ -13,10 +13,20 @@ Navigate to your repository.
     $ cd <path_to_your_repos_root_folder>
 
 Now, we want to get the new class materials from the shared-upstream repository. Ensure you are in the _support-code_ branch by executing the _git status_ command.
-
+```
     $ git status
+    On branch <branch name>
+    Your branch is up to date with 'origin/<branch name>'
+    
+    nothing to commit, working tree clean
+```
+The output should begin with the branch you are currently on. If it says _On branch support-code_, you are all set. (NOTE: If your status output does not look like above and instead this message is displayed "Changes not staged for commit", you will _not_ be able to change branches. Follow the instructions given by git to _add_ and to _commit_ these changes.)
 
-The output should begin with the branch you are currently on. If it says _On branch support-code_, you are all set. If you are still in _master_, checkout the _support-code_ branch.  
+Another way to check which branch you are actively editing is to run the _git branch_ command.
+
+    $ git branch
+
+A list of all local branches associated with your repository will be output. The branch name with a star * next to it is the active branch. If you are still in _master_, checkout the _support-code_ branch.  
 
     $ git checkout support-code
 
