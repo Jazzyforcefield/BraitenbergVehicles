@@ -13,6 +13,46 @@ Watch for these questions:
 - What happened to hal?
 - Why have members of a struct public instead of private?
 
+### Retrieve Class Materials
+
+> These directions are taken from lab02. You will be following this procedure frequently to grab shared code.
+
+Navigate to your repository.
+
+    $ cd <path_to_your_repos_root_folder>
+
+Now, we want to get the new class materials from the shared-upstream repository. Ensure you are in the _support-code_ branch by executing the _git status_ command.
+
+    $ git status
+
+The output should begin with the branch you are currently on. If it says _On branch support-code_, you are all set. If you are still in _master_, checkout the _support-code_ branch.  
+
+    $ git checkout support-code
+
+__What just happened?__ If you run the above command, you "switch" into the support-code branch. This means that git changes the filesystem to represent the state of files under the support-code branch. This could mean deleting files, adding files, or changing files, depending on how different the files in master are from the files in support-code. Since you were working in master on your first lab deliverable, there should be some minor changes when we switch to support-code. The code in your master branch is not changed, and it will be accessible again when you switch (i.e. _checkout_) the master branch.
+
+Pull any updated materials into your _support-code_ branch.
+
+    $ git pull upstream support-code
+
+__What just happened?__ You pulled the files from our csci3081-shared-upstream repository's support-code branch into your local repository's support-code branch. Anything new in the shared-upstream repo is now a part of your local repo in this branch.
+
+__Why didn't we do git pull?__ The default command in the Git workflow would indeed be _git pull_. However, that command uses the default target _origin_. For our work, origin is the target for your remote repository, repo-<your_id> residing on the github.umn.edu server. We set up csci3081-shared-upstream as a secondary remote target repository, with the name of upstream. To complete the pull action for that repo, we need to add the target name to the git pull command.
+
+Now that we have the updates from our shared-upstream, let's add them into our own work in the master branch.
+
+```
+$ git checkout master
+$ git merge support-code
+```
+
+__What just happened?__ You changed back to having the master branch as your working project. You then merged the file contents and commit history from support-code to master. This adds the changes to our shared-upstream repo into your working branch master.
+
+__Why do we have support-code?__ Technically, we could issue a command that takes these changes and merges them directly into master, without having to deal with our own local support-code branch. That's true, and we could do that. But, we wanted to A) make sure that students maintain a clean copy of the provided code on their local machine. If you make a mistake in your master branch, having the clean copy may be beneficial. B) give you practice in handling merges, since that will be a beneficial skill to have when we start making more complex branching structures during the project.
+
+<hr>
+<hr>
+
 ### Demonstration of Class Definition in C++
 
 Look through the provided code. Notice class member variables and methods (i.e. class functions) are declared in the header file _robot.h_. Class methods are defined in the source file _robot.cc_. It is important to understand how member variables are initialized, whether that be through the initialization list, in the body of the constructor, or perhaps not at all. Know that if you do not define a constructor, the compiler will write one for you.
