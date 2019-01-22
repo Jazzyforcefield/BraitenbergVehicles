@@ -102,7 +102,7 @@ _A side note: CAREFUL, do not follow the -o with main.cc because then you will b
 
 Notice that each file is independently compiled, even though there are interdependencies among them. If you look in the .cc file, there will be a #include <filename>.h statement which essentially inserts the text of <filename>.h at the location of the #include statement. Compilation will create symbol tables for all classes, variables, functions declared within those header files, but with no associated address for the definition of those elements. When the files are linked, those dependencies will be resolved and the definitions of the various objects will be included in the complete program.
 
-Just from these few lines of compilation commands, you can see that you really do not want to use the command line for building your executable, especially when there are many files. Before venture on to the Makefile to automate this, let us look at the command for linking and running our executable.
+Just from these few lines of compilation commands, you can see that you really do not want to use the command line for building your executable, especially when there are many files. Before venturing on to the Makefile to automate this, let us look at the command for linking and running our executable.
 
 ```
 $ g++ -o duck *.o
@@ -110,6 +110,8 @@ $ ./duck
 ```
 
 This takes all object files in the directory and links them together to make the executable _duck_. If no file were provided, it would name the executable _a.out_. Executables are run with `./<executable_name>`.
+
+> If you run the first command now, with only the three .o files we manually created earlier, there will be an error about _undefined references_. This makes sense since the .o files for all of the dependencies needed to build the program haven't been generated yet.
 
 ### Getting Started with Makefile
 
