@@ -56,9 +56,9 @@ https://github.umn.edu/umn-csci-3081-S19/csci3081-shared-upstream
 
 By default, you will be shown the default branch. In this case, that is the support-code branch. This branch will contain all of the material files which are necessary to complete the labs, exercises, and eventually, the project.
 
-> It's important to note that _support-code_ is not the typical default branch. New repos are almost always created with a branch called _master_. This is the common name for the default branch in Github. We've changed that because of we intend to make use of the master branch during the project.
+> It's important to note that _support-code_ is not the typical default branch. New repos are almost always created with a branch called _master_. This is the common name for the default branch in Github. We've changed that because we intend to make use of the master branch during the project.
 
-Take some time and poke around in this repository, especially if you have never seen the GitHub interface before. If you have questions about the interface, ask StackOverflow or the almighty Google. If you have questions about the contents, ask a TA or on the forums.
+Take some time and poke around in this repository, especially if you have never seen the GitHub interface before. If you have questions about the interface, ask StackOverflow or the almighty Google. If you have questions about the contents, ask a TA or post on the forums.
 
 ### Creating your Personal 3081 Repository
 
