@@ -80,7 +80,7 @@ Now that your repo exists on the remote server, you will want to clone it into y
 
 We strongly recommend that you do **NOT** follow the instructions listed in this new repo. What we'll be doing is slightly different than how the typical repository would be built.
 
-7. Under 'Clone or Downlaod', ensure that HTTPS is selected and click on the copy icon on the far right. This will copy the repository reference to the clipboard. We will refer to this as the **_&lt;clone-ref&gt;_**. Now, you can clone this repo from the remote Github instance to your local workspace (on the CSELabs machine).
+7. Under 'Clone or download', ensure that HTTPS is selected and click on the copy icon on the far right. This will copy the repository reference to the clipboard. We will refer to this as the **_&lt;clone-ref&gt;_**. Now, you can clone this repo from the remote Github instance to your local workspace (on the CSELabs machine).
 
 ### Cloning Your Personal Repository
 
