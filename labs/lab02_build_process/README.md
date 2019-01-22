@@ -81,9 +81,7 @@ Review these files, especially if you're looking for more examples of how the "h
 
 The build process is the combination of compiling and linking to build your executable. Each source file is individually compiled to create an object file. Then all object files are linked together, whereby all symbols are resolved and the executable is created. We will first look at the commands to complete this process, then begin the real work of this lab which is to build a Makefile to automate it.
 
-Navigate to the lab02_build__process directory.
-
-1. Compile a couple of the source files to create object files.
+Navigate to the lab02_build_process directory. Compile a couple of the source files to create object files.
 
 ```
 $ g++ -c -o decoy_duck.o decoy_duck.cc
@@ -94,13 +92,13 @@ $ g++ -c duck.cc
 __What does all that mean?__
 - `g++` : call the gnu c++ compiler
 - `-c` : a flag to indicate compilation only, as opposed to linking
-- `-o` : output to the filename that this precedes.
+- `-o` : a flag stating to output to the filename that this precedes
 - `main.cc` : the last filename is the one to be compiled
 
 - If `-c` is not provided, both compilation and linking will occur.
 - If `-o` is not provided, the compiler will use the filename from the .cc file. Notice that duck.o was created in that way.
 
-_A side note: CAREFUL, do not follow the -o with main.cc because then you will overwrite your file!_
+_A side note: CAREFUL, do not follow the -o with main.cc because then you will be indicating to output a file named 'main.cc' and you will overwrite your original main.cc!_
 
 Notice that each file is independently compiled, even though there are interdependencies among them. If you look in the .cc file, there will be a #include <filename>.h statement which essentially inserts the text of <filename>.h at the location of the #include statement. Compilation will create symbol tables for all classes, variables, functions declared within those header files, but with no associated address for the definition of those elements. When the files are linked, those dependencies will be resolved and the definitions of the various objects will be included in the complete program.
 
