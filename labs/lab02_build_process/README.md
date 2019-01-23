@@ -134,22 +134,24 @@ target: dependencies
 [tab]command
 ```
 
-For example, building a compiled object for the Duck class would look like this:
+For example, building a compiled object for the MallardDuck class would look like this:
 
 ```
 mallard_duck.o: mallard_duck.h mallard_duck.cc
 	g++ -c mallard_duck.cc
 ```
 
-**__Note__** : Some editors replace tabs by spaces when you copy+paste the code from this readme. Ensure that command is always preceded by a tab and not series of spaces!
+**__Note__** : Some editors replace tabs by spaces when you copy+paste the code from this readme. Ensure that the command is always preceded by a tab and not a series of spaces! For vim users who use spaces instead of tabs, pressing `Ctrl+V` before `Tab` will insert a tab when in insert mode instead of spaces.
 
-Add the above example to your Makefile. Then run `make`
+Add the above example to your Makefile. Then run `make`.
 
 ```
 $ make
 ```
 
-The make command searches for the first target listed in the makefile and executes that command. In this case, it finds the `mallard_duck.o` target, which depends on the files mallard_duck.h and mallard_duck.cc. It will first look to see if mallard_duck.o exists, and if not, then it will execute the command. If it does exist, then it will check if any of the dependency files listed have changed since the last time it created mallard_duck.o. If no changes, then it won't do anything. If there were changes, it will execute the command. It will echo the command in your terminal. Now, list the directory contents with 'ls'. You should now see that mallard_duck.o exists on your system. This is the compiled version of your MallardDuck class. It is ready for linking.
+The `make` command searches for the first target listed in the makefile and executes that command. In this case, it finds the `mallard_duck.o` target, which depends on the files mallard_duck.h and mallard_duck.cc. It will first look to see if mallard_duck.o exists and if not, will execute the command. If the file does exist, then it will check if any of the dependency files listed have changed since the last time it created mallard_duck.o. If there are no changes, then nothing will happen. If there were changes, it will execute the command and echo the command in your terminal.
+
+Now, list the directory contents with 'ls'. You should now see that mallard_duck.o exists on your system. This is the compiled version of your MallardDuck class. It is ready for linking.
 
 Let's try that again to see what happens.
 
