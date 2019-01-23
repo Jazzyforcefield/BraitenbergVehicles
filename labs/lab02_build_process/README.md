@@ -328,17 +328,13 @@ Make sure no additional files are being pushed.
 
     $ git status
 
-This should list all the files that have changed and/or are untracked. If other files are also listed as being ready to stage for commit, you may need to update your .gitignore to make sure we don't push those files (e.g. *.o, ducks).
+This should list all of the files that have changed and/or are untracked. You may notice that there are other files also listed as being ready to stage for commit that you do not want to push (e.g. .o, ducks). If you have not already created a second .gitignore file, you should follow the Lab01 directions and create another .gitignore to make sure we don't push those files.
+
+> For those wanting to play around with terminal commands, a quick way to get the same file you created before is to _copy_ it: `$cp <path to lab01 folder> <path to lab02 folder>`. The general form of a _copy_ command is `$cp <path to src> <path to dest>`.
 
 ### Add Changes to Repo both Locally and On the Server
 
-You need to _stage_ all changes to the repository, which prepares those items to
-be permanently part of the repository. When you _commit_ those changes, they are
-saved to your local repository, which lives in your cselabs account (or your
-personal computer if that is what you are working on). When you _push_ those
-changes, they will be copied to the repo on the server. The difference between
-_commit_ and _push_ is what separates git from centralized version control
-systems.
+You need to _stage_ all changes to the repository, which prepares those items to be permanently part of the repository. When you _commit_ those changes, they are saved to your local repository, which lives in your cselabs account (or your personal computer if that is what you are working on). When you _push_ those changes, they will be copied to the repo on the server. The difference between _commit_ and _push_ is what separates git from centralized version control systems.
 
     $ git status
     $ git add -A
