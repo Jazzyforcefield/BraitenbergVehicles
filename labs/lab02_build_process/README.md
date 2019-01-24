@@ -1,4 +1,4 @@
-# 3081 HW02 C++ The Build Process and Makefiles
+# 3081 Lab02 C++ The Build Process and Makefiles
 
 ## What You Will Learn
 1. How to retrieve new class materials and merge them into your repository.
@@ -347,7 +347,7 @@ __A side note: Notice the format of the commit message. We will discuss this mor
 
 ### Reading the Feedback
 
-Pushing to the server triggers the automated grading system (if all is working!). Soon your repo will contain a feedback file, letting you know if you have passed all tests of the assignment.
+Pushing to the server triggers the automated grading system (if all is working!). Soon your repo will contain a feedback file, letting you know if you have passed a _majority_ of our tests for the assignment. __Take note that from this lab onwards the Assessment will contain _more_ tests than the Feedback. Passing all of the Feedback tests will assure you _most but NOT ALL_ of the points for the Assessment.__
 
     $ git pull
 
