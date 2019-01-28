@@ -17,16 +17,16 @@ https://www-users.cs.umn.edu/~larson/repo-website-resources/website/examples/csr
 ### Configuring GitHub
 
 Below, a number of commands are shown that should be typed into the command
-line. These are preceded by a percent sign "%" which is NOT to be typed in.
+line. These are preceded by a dollar sign "$" which is NOT to be typed in.
 
 Log into your cselabs account and verify that Git is configured.
 
-    % git --version
+    $ git --version
 
 This will establish if it is installed.
 
-    % git config --global user.name "Your Name"
-    % git config --global user.email your_email@umn.edu
+    $ git config --global user.name "Your Name"
+    $ git config --global user.email your_email@umn.edu
 
 In order to use git, it has to know what to call you in its history. These commands set the configuration to know what identification to use. Note that your name appears between double quotes since it has spaces in it. Your email address does not have any spaces, so it doesn't need to be in quotes. [Note: If you use git for accounts other than your UMN account, you can remove the global tag (_--global_) to set the name and email for only this repository, but you must be within a git repo to do so.]
 
@@ -34,14 +34,14 @@ In order to use git, it has to know what to call you in its history. These comma
 
 If you forget to add a message to your commit or have a merge conflict, then Git will open its default editor and require you to enter text. You can configure which editor it opens (e.g. emacs, xemacs, vim, gedit, etc.) with the command below. We do not recommend Atom for this purpose.
 ```
-    % git config --global core.editor "your editor choice here"
+$ git config --global core.editor "your editor choice here"
 ```
 
 If you would like `emacs -nw` as your editor (emacs such that it doesn't open a new window but opens in the terminal) then you'll want double quotes around that 2 word phrase. Also note that if you want to use gedit, you probably need to use `gedit -w -s`. Also also note that you should probably *not* use `atom`, because it has its own git plugin that does not usually play nice with command line git.
 
 Use
 ```
-    % git config --list
+$ git config --list
 ```
 to see the various git configuration settings.
 
@@ -56,9 +56,9 @@ https://github.umn.edu/umn-csci-3081-S19/csci3081-shared-upstream
 
 By default, you will be shown the default branch. In this case, that is the support-code branch. This branch will contain all of the material files which are necessary to complete the labs, exercises, and eventually, the project.
 
-> It's important to note that _support-code_ is not the typical default branch. New repos are almost always created with a branch called _master_. This is the common name for the default branch in Github. We've changed that because of we intend to make use of the master branch during the project.
+> It's important to note that _support-code_ is not the typical default branch. New repos are almost always created with a branch called _master_. This is the common name for the default branch in Github. We've changed that because we intend to make use of the master branch during the project.
 
-Take some time and poke around in this repository, especially if you have never seen the GitHub interface before. If you have questions about the interface, ask StackOverflow or the almighty Google. If you have questions about the contents, ask a TA or on the forums.
+Take some time and poke around in this repository, especially if you have never seen the GitHub interface before. If you have questions about the interface, ask StackOverflow or the almighty Google. If you have questions about the contents, ask a TA or post on the forums.
 
 ### Creating your Personal 3081 Repository
 
@@ -80,18 +80,18 @@ Now that your repo exists on the remote server, you will want to clone it into y
 
 We strongly recommend that you do **NOT** follow the instructions listed in this new repo. What we'll be doing is slightly different than how the typical repository would be built.
 
-7. Under 'Clone or Downlaod', ensure that HTTPS is selected and click on the copy icon on the far right. This will copy the repository reference to the clipboard. We will refer to this as the **_&lt;clone-ref&gt;_**. Now, you can clone this repo from the remote Github instance to your local workspace (on the CSELabs machine).
+7. Under 'Clone or download', ensure that HTTPS is selected and click on the copy icon on the far right. This will copy the repository reference to the clipboard. We will refer to this as the **_&lt;clone-ref&gt;_**. Now, you can clone this repo from the remote Github instance to your local workspace (on the CSELabs machine).
 
 ### Cloning Your Personal Repository
 
 Go back to your terminal. At the top level of your cselabs account or within a subdirectory of your choice, create a 3081 directory with any name you prefer, then move to that directory. Then clone your individual repo into this
 directory. Replace **_&lt;clone-ref&gt;_** below with the repository reference we copied earlier (i.e. paste, typically Shift+Insert in a terminal).
 
-    % (optional) cd <location of your choosing>
-    % mkdir 3081_S19
-    % cd 3081_S19
-    % git clone <clone-ref>
-    % ls
+    $ (optional) cd <location of your choosing>
+    $ mkdir 3081_S19
+    $ cd 3081_S19
+    $ git clone <clone-ref>
+    $ ls
 
 **_What just happened?_** You made a new directory (i.e. folder) in your account
 with `mkdir`. You changed that to your working directory with `cd`. You copied
@@ -109,13 +109,13 @@ https://help.github.com/enterprise/2.12/user/articles/generating-an-ssh-key/
 
 You will then need to add the key to your github profile from the documentation (https://help.github.com/enterprise/2.12/user/articles/adding-a-new-ssh-key-to-your-github-account/).  Unfortunately, xclip is not installed on the lab machines, so you can copy the results from the command line after typing out the public key as follows:
 
-    % cat ~/.ssh/id_rsa.pub
+    $ cat ~/.ssh/id_rsa.pub
 
 Now that you have an SSH key set up, you need to change the repository's remote
 URL from HTTPS to SSH. Again, replace **_&lt;student-umnid&gt;_** with your UMN id and **_&lt;clone-ref&gt;_** with the repository reference we copied earlier.
 
-    % cd repo-<student-umnid>
-    % git remote set-url origin <clone-ref>
+    $ cd repo-<student-umnid>
+    $ git remote set-url origin <clone-ref>
 
 > NOTE: The SSH key you generated is only for your CSE labs account. When working on your personal machine, you will have to generate another SSH key for that machine. Cloning a repository with SSH is possible only when you have an SSH key linked to your account for that machine.
 
@@ -127,18 +127,18 @@ What you will do is add a second remote target to your local repository. This me
 
 You should be in your personal repo directory. Look at the path:
 ```
-% pwd
+$ pwd
 ```
 to confirm that you are in the directory repo-&lt;student-umnid&gt;.
 
 IF you completed the ssh key section above:
 
 ```
-% git remote add upstream git@github.umn.edu:umn-csci-3081-S19/csci3081-shared-upstream.git
+$ git remote add upstream git@github.umn.edu:umn-csci-3081-S19/csci3081-shared-upstream.git
 ```
 ELSE if you did not complete the ssh key section above and are using username/password:
 ```
-% git remote add upstream https://github.umn.edu/umn-csci-3081-S19/csci3081-shared-upstream.git
+$ git remote add upstream https://github.umn.edu/umn-csci-3081-S19/csci3081-shared-upstream.git
 ```
 
 > Note: If you get an error saying that the remote already exists, you can remove it and add again with the command `% git remote rm upstream`.
@@ -146,20 +146,20 @@ ELSE if you did not complete the ssh key section above and are using username/pa
 
 Type the following command to see which remote repositories are associated with this repository:
 ```
-% git remote -v
+$ git remote -v
 ```
 **_What just happened?_** You added a remote target to the local repository, which can now be referred to as _upstream_. This will allow you to pull the branch _support-code_ from the shared-upstream repository. Then, to verify it worked, you listed the remote targets that are currently available. You should see two sets of two: a fetch and push for origin (your repo) and a fetch and push for the shared-upstream repo.
 
 Now, let's add the _support-code_ branch to your local repository before getting what you need from shared-upstream.
 
-    % git checkout -b support-code
+    $ git checkout -b support-code
 
 **_What just happened?_** You did two things at once. First, you created a new local branch, called support-code. Second, you switched the branch you are in to the support-code branch. We'll show the difference in a moment.
 
 Now, get the student support code by _pulling_ from the _support-code_ branch of the shared-upstream repository.
 ```
-% git pull upstream support-code --allow-unrelated-histories
-% ls
+$ git pull upstream support-code --allow-unrelated-histories
+$ ls
 ```
 **_What just happened?_** You downloaded the contents of the shared-upstream branch into your local support-code branch. Listing the contents of the current directory now shows the existence of the Labs/ directory. Within that directory is Lab01_Git_Basics/ and within that subdirectory are the files main.cpp, makefile, and README.md (which is the same file you're reading right now, except now there's a copy on your machine).
 
@@ -167,11 +167,11 @@ You are now in the support-code branch. Branches are useful for keeping _sets_ o
 
 You can see the difference in the branches by switching between them, using the git checkout &gt;branch_name&lt; command.
 ```
-% git checkout master
-% ls
-% git checkout support-code
-% ls
-% git checkout master
+$ git checkout master
+$ ls
+$ git checkout support-code
+$ ls
+$ git checkout master
 ```
 
 Notice that we are not using the `-b` flag. This is used only when you want to create a new branch.
@@ -180,8 +180,8 @@ Notice that we are not using the `-b` flag. This is used only when you want to c
 
 When submitting your work, you'll be using the _master_ branch. We'll get more sophisticated with how and where you store your work later, but for now, _master_ branch is where it's at.
 ```
-% git merge support-code
-% git status
+$ git merge support-code
+$ git status
 ```
 
 **_What just happened?_** You merged the file contents and commit history from _support-code_ to _master_. You can see that you are now ahead of _origin/master_ (i.e., the _master_ branch on your remote repo on Github) by several commits. We'll make some more changes before following git's advice and pushing our local commits.
@@ -193,17 +193,17 @@ When submitting your work, you'll be using the _master_ branch. We'll get more s
 
 The code provided for Lab01_Git_Basics will create an executable by compiling the provided C++ files using a _makefile_. Running the executable will generate 2 files that will be added to your Labs directory. A _makefile_ manages the compilation process, which will be explored further in the next lab, so don't worry about the contents of the file right now.
 
-    % cd labs/lab01_git_basics
-    % make
-    % ls
+    $ cd labs/lab01_git_basics
+    $ make
+    $ ls
 
 **_What just happened?_** You made lab01_git_basics your working directory with `cd`. You
 executed the makefile (named _makefile_) with `make`, which created object files
 with the extension _.o_, and the executable _lab01.out_. These files are
 displayed with `ls`.
 
-    % ./lab01.out
-    % ls
+    $ ./lab01.out
+    $ ls
 
 **_What just happened?_** You ran the executable with `./lab01.out`, which
 generated 2 files _private.pvt_ and _shared.md_.
@@ -212,7 +212,7 @@ In the next part of this homework, you will setup the _.gitignore_ file so that 
 
 Before telling git what not to track, look at what it has been tracking.
 
-    % git status
+    $ git status
 
 You will see the directories and files that have been added to this repository.
 
@@ -258,7 +258,7 @@ contents of the directory.
 
 Look at the results:
 
-    % git status
+    $ git status
 
 Now you will see that the indicated files in _.gitignore_ are no longer
 considered to be untracked, and are simply ignored.
@@ -273,9 +273,9 @@ changes, they will be copied to the repo on the server. The difference between
 _commit_ and _push_ is what separates git from centralized version control
 systems.
 
-    % git add -A
-    % git commit -m "add(lab01): Adding lab01 results."
-    % git push
+    $ git add -A
+    $ git commit -m "add(lab01): Adding lab01 results."
+    $ git push
 
 **_What just happened?_** All of the tracked changes were staged with `git add
 -A`. You could have only staged certain files by replacing _-A_ with the
@@ -300,8 +300,8 @@ ready (hit refresh to check contents). You can look at it through the web, but
 it is important to pull in that file to your local repo, so as not to cause
 merge conflicts.
 
-    % git pull
-    % ls
+    $ git pull
+    $ ls
 
 > ALWAYS, ALWAYS, ALWAYS perform a _pull_ before making changes to a repository. Each time you sit down to work on a homework or project iteration, it would be an excellent habit to perform a _pull_ of the support code.
 

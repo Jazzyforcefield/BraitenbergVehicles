@@ -1,4 +1,4 @@
-# 3081 HW02 C++ The Build Process and Makefiles
+# 3081 Lab02 C++ The Build Process and Makefiles
 
 ## What You Will Learn
 1. How to retrieve new class materials and merge them into your repository.
@@ -13,10 +13,20 @@ Navigate to your repository.
     $ cd <path_to_your_repos_root_folder>
 
 Now, we want to get the new class materials from the shared-upstream repository. Ensure you are in the _support-code_ branch by executing the _git status_ command.
+```
+$ git status
+On branch <branch name>
+Your branch is up to date with 'origin/<branch name>'
+    
+nothing to commit, working tree clean
+```
+The output should begin with the branch you are currently on. If it says _On branch support-code_, you are all set. (NOTE: If your status output does not look like above and instead this message is displayed "Changes not staged for commit", you will _not_ be able to change branches. Follow the instructions given by git to _add_ and to _commit_ these changes.)
 
-    $ git status
+Another way to check which branch you are actively editing is to run the _git branch_ command.
 
-The output should begin with the branch you are currently on. If it says _On branch support-code_, you are all set. If you are still in _master_, checkout the _support-code_ branch.  
+    $ git branch
+
+A list of all local branches associated with your repository will be output. The branch name with a star * next to it is the active branch. If you are still in _master_, checkout the _support-code_ branch.  
 
     $ git checkout support-code
 
@@ -71,9 +81,7 @@ Review these files, especially if you're looking for more examples of how the "h
 
 The build process is the combination of compiling and linking to build your executable. Each source file is individually compiled to create an object file. Then all object files are linked together, whereby all symbols are resolved and the executable is created. We will first look at the commands to complete this process, then begin the real work of this lab which is to build a Makefile to automate it.
 
-Navigate to the lab02_build__process directory.
-
-1. Compile a couple of the source files to create object files.
+Navigate to the lab02_build_process directory. Compile a couple of the source files to create object files.
 
 ```
 $ g++ -c -o decoy_duck.o decoy_duck.cc
@@ -84,17 +92,17 @@ $ g++ -c duck.cc
 __What does all that mean?__
 - `g++` : call the gnu c++ compiler
 - `-c` : a flag to indicate compilation only, as opposed to linking
-- `-o` : output to the filename that this precedes.
+- `-o` : a flag stating to output to the filename that this precedes
 - `main.cc` : the last filename is the one to be compiled
 
 - If `-c` is not provided, both compilation and linking will occur.
 - If `-o` is not provided, the compiler will use the filename from the .cc file. Notice that duck.o was created in that way.
 
-_A side note: CAREFUL, do not follow the -o with main.cc because then you will overwrite your file!_
+_A side note: CAREFUL, do not follow the -o with main.cc because then you will be indicating to output a file named 'main.cc' and you will overwrite your original main.cc!_
 
 Notice that each file is independently compiled, even though there are interdependencies among them. If you look in the .cc file, there will be a #include <filename>.h statement which essentially inserts the text of <filename>.h at the location of the #include statement. Compilation will create symbol tables for all classes, variables, functions declared within those header files, but with no associated address for the definition of those elements. When the files are linked, those dependencies will be resolved and the definitions of the various objects will be included in the complete program.
 
-Just from these few lines of compilation commands, you can see that you really do not want to use the command line for building your executable, especially when there are many files. Before venture on to the Makefile to automate this, let us look at the command for linking and running our executable.
+Just from these few lines of compilation commands, you can see that you really do not want to use the command line for building your executable, especially when there are many files. Before venturing on to the Makefile to automate this, let us look at the command for linking and running our executable.
 
 ```
 $ g++ -o duck *.o
@@ -102,6 +110,8 @@ $ ./duck
 ```
 
 This takes all object files in the directory and links them together to make the executable _duck_. If no file were provided, it would name the executable _a.out_. Executables are run with `./<executable_name>`.
+
+> If you run the first command now, with only the three .o files we manually created earlier, there will be an error about _undefined references_. This makes sense since the .o files for all of the dependencies needed to build the program haven't been generated yet.
 
 ### Getting Started with Makefile
 
@@ -124,22 +134,24 @@ target: dependencies
 [tab]command
 ```
 
-For example, building a compiled object for the Duck class would look like this:
+For example, building a compiled object for the MallardDuck class would look like this:
 
 ```
 mallard_duck.o: mallard_duck.h mallard_duck.cc
 	g++ -c mallard_duck.cc
 ```
 
-**__Note__** : Some editors replace tabs by spaces when you copy+paste the code from this readme. Ensure that command is always preceded by a tab and not series of spaces!
+**__Note__** : Some editors replace tabs by spaces when you copy+paste the code from this readme. Ensure that the command is always preceded by a tab and not a series of spaces! For vim users who use spaces instead of tabs, pressing `Ctrl+V` before `Tab` will insert a tab when in insert mode instead of spaces.
 
-Add the above example to your Makefile. Then run `make`
+Add the above example to your Makefile. Then run `make`.
 
 ```
 $ make
 ```
 
-The make command searches for the first target listed in the makefile and executes that command. In this case, it finds the `mallard_duck.o` target, which depends on the files mallard_duck.h and mallard_duck.cc. It will first look to see if mallard_duck.o exists, and if not, then it will execute the command. If it does exist, then it will check if any of the dependency files listed have changed since the last time it created mallard_duck.o. If no changes, then it won't do anything. If there were changes, it will execute the command. It will echo the command in your terminal. Now, list the directory contents with 'ls'. You should now see that mallard_duck.o exists on your system. This is the compiled version of your MallardDuck class. It is ready for linking.
+The `make` command searches for the first target listed in the makefile and executes that command. In this case, it finds the `mallard_duck.o` target, which depends on the files mallard_duck.h and mallard_duck.cc. It will first look to see if mallard_duck.o exists and if not, will execute the command. If the file does exist, then it will check if any of the dependency files listed have changed since the last time it created mallard_duck.o. If there are no changes, then nothing will happen. If there were changes, it will execute the command and echo the command in your terminal.
+
+Now, list the directory contents with 'ls'. You should now see that mallard_duck.o exists on your system. This is the compiled version of your MallardDuck class. It is ready for linking.
 
 Let's try that again to see what happens.
 
@@ -316,17 +328,13 @@ Make sure no additional files are being pushed.
 
     $ git status
 
-This should list all the files that have changed and/or are untracked. If other files are also listed as being ready to stage for commit, you may need to update your .gitignore to make sure we don't push those files (e.g. *.o, ducks).
+This should list all of the files that have changed and/or are untracked. You may notice that there are other files also listed as being ready to stage for commit that you do not want to push (e.g. .o, ducks). If you have not already created a second .gitignore file, you should follow the Lab01 directions and create another .gitignore to make sure we don't push those files.
+
+> For those wanting to play around with terminal commands, a quick way to get the same file you created before is to _copy_ it: `$cp <path to lab01 folder> <path to lab02 folder>`. The general form of a _copy_ command is `$cp <path to src> <path to dest>`.
 
 ### Add Changes to Repo both Locally and On the Server
 
-You need to _stage_ all changes to the repository, which prepares those items to
-be permanently part of the repository. When you _commit_ those changes, they are
-saved to your local repository, which lives in your cselabs account (or your
-personal computer if that is what you are working on). When you _push_ those
-changes, they will be copied to the repo on the server. The difference between
-_commit_ and _push_ is what separates git from centralized version control
-systems.
+You need to _stage_ all changes to the repository, which prepares those items to be permanently part of the repository. When you _commit_ those changes, they are saved to your local repository, which lives in your cselabs account (or your personal computer if that is what you are working on). When you _push_ those changes, they will be copied to the repo on the server. The difference between _commit_ and _push_ is what separates git from centralized version control systems.
 
     $ git status
     $ git add -A
@@ -339,7 +347,7 @@ __A side note: Notice the format of the commit message. We will discuss this mor
 
 ### Reading the Feedback
 
-Pushing to the server triggers the automated grading system (if all is working!). Soon your repo will contain a feedback file, letting you know if you have passed all tests of the assignment.
+Pushing to the server triggers the automated grading system (if all is working!). Soon your repo will contain a feedback file, letting you know if you have passed a _majority_ of our tests for the assignment. __Take note that from this lab onwards the Assessment will contain _more_ tests than the Feedback. Passing all of the Feedback tests will assure you _most but NOT ALL_ of the points for the Assessment.__
 
     $ git pull
 
