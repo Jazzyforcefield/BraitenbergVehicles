@@ -10,6 +10,6 @@ $(EXEFILE): $(OBJECTS)
 	g++ $(CXXFLAGS) $^ -o $@
 
 clean:
-	rm *.o $(EXEFILE)
+	rm -f *.o $(EXEFILE)
 
 .PHONY: clean
