@@ -1,7 +1,7 @@
 EXEFILE = ducks
 CXXFLAGS = -c -Wall
 SOURCES = $(wildcard *.cc)
-OBJECTS = $(SOURCES: .cc=.o)
+OBJECTS = $(SOURCES:.cc=.o)
 
 $(EXEFILE): $(OBJECTS)
 	g++ $^ -o $@
