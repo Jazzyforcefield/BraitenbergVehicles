@@ -20,17 +20,32 @@ ArrayPointerTest::ArrayPointerTest(int count) {
   //     Duck * ducks3_[kMaxDuckCount];
   //     Duck ** ducks4_;
 
+  cout << "sizeof(Duck): " << sizeof(ducks1_[0]) << endl;
+
   cout << "Initializing ducks1." << endl;
+  cout << sizeof(ducks1_) << endl;
   // Write code here to create count_ ducks for array ducks1 (if required)
+
 
   cout << "Initializing ducks2\n" ;
   // Write code here to create count_ ducks for array ducks2 (if required)
-
+  cout << sizeof(ducks2_) << endl;
+  ducks2_ = new Duck[count_];
+  
   cout << "Initializing ducks3\n";
   // Write code here to create count_ ducks for array ducks3 (if required)
-
+  cout << sizeof(ducks3_) << endl;
+  for (int i=0; i < count_; i++) {
+  	ducks3_[i] = new Duck;
+  }
+  
   cout << "Initializing ducks4\n";
   // Write code here to create count_ ducks for array ducks4 (if required)
+  cout << sizeof(ducks4_) << endl;
+  ducks4_ = new Duck*[count_]; 
+  for (int i=0; i<count; i++) {
+  	ducks4_[i] = new Duck;
+  }
 }
 
 void ArrayPointerTest::NameTheDucks(int array_number) {
@@ -83,12 +98,21 @@ ArrayPointerTest::~ArrayPointerTest() {
 
   cout << "Deleting ducks2\n";
   // Write code here to delete the ducks of ducks2_ (if required)
+  delete[] ducks2_;
 
   cout << "Deleting ducks3\n";
   // Write code here to delete the ducks of ducks2_ (if required)
+  for (int i=0; i<count_; i++) {
+  	delete ducks3_[i];
+  }
 
   cout << "Deleting ducks4\n";
   // Write code here to delete the ducks of ducks2_ (if required)
+  for (int i=0; i<count_; i++) {
+  	delete ducks4_[i];
+  }
+  delete[] ducks4_;
+  
 }
 
 
