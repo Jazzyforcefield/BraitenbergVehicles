@@ -1,6 +1,6 @@
 ### Feedback for Lab 03
 
-Run on January 31, 22:09:46 PM.
+Run on February 03, 23:43:03 PM.
 
 
 #### Necessary Files and Structure
@@ -18,53 +18,42 @@ Run on January 31, 22:09:46 PM.
 
 + Pass: Check that file ".gitignore" exists.
 
-+ Fail: Check that file "point2.cc" exists.
++ Pass: Check that file "point2.cc" exists.
 
-     "point2.cc" not found.
-
-+ Skip: Check that file "point2.h" exists.
-
-  This test was not run because of an earlier failing test.
++ Pass: Check that file "point2.h" exists.
 
 
 #### .gitignore set up properly
 
-+ Skip: Check that file/directory "cluster" does not exist.
++ Pass: Check that file/directory "cluster" does not exist.
 
-  This test was not run because of an earlier failing test.
++ Pass: Check that file/directory "point2_unittest" does not exist.
 
-+ Skip: Check that file/directory "point2_unittest" does not exist.
++ Pass: Check that no files with extension ".o" exist in directory "."
 
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that no files with extension ".o" exist in directory "."
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that no files with extension ".out" exist in directory "."
-
-  This test was not run because of an earlier failing test.
++ Pass: Check that no files with extension ".out" exist in directory "."
 
 
 #### Test that code compiles and creates the exectuable
 
-+ Skip: Check that make compiles.
++ Pass: Check that make compiles.
 
-  This test was not run because of an earlier failing test.
 
-+ Skip: Check that file "cluster" exists.
 
-  This test was not run because of an earlier failing test.
++ Pass: Check that file "cluster" exists.
 
-+ Skip: Check that make compiles for Makefile:Makefile.test.
++ Pass: Check that make compiles for Makefile:Makefile.test.
 
-  This test was not run because of an earlier failing test.
+    make successful.
+    Check point2_unittest exists...OK: result point2_unittest found
 
-+ Skip: Check that a GoogleTest test passes.
++ Pass: Check that a GoogleTest test passes.
+    passes the test: Point2Test.DistBtwnBothPositive.
 
-  This test was not run because of an earlier failing test.
 
-+ Skip: Check that a GoogleTest test passes.
 
-  This test was not run because of an earlier failing test.
++ Pass: Check that a GoogleTest test passes.
+    passes the test: Point2Test.DistBtwnInverses.
+
+
 
