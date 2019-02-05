@@ -26,5 +26,4 @@ void Ground::Transport() {
   std::cout << "This is being transported via truck." << std::endl;
   std::cout << "It will take exactly ";
   //std::cout << days_to_deliver_ << " days." << std::endl;
-  std::cout << get_days() << " days." << std::endl;
 }
