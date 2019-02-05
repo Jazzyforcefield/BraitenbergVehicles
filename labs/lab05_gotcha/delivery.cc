@@ -14,7 +14,7 @@
 Delivery::Delivery(std::string package) :
   package_(package), days_to_deliver_(7) {
     std::cout << "Creating a delivery." << std::endl;
-    IncrementCount();
+    //IncrementCount();
     protected_variable_ = 100;
 }
 
