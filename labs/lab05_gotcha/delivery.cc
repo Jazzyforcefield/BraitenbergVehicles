@@ -18,14 +18,9 @@ Delivery::Delivery(std::string package) :
     protected_variable_ = 100;
 }
 
-Delivery::Delivery(const Delivery &package) {
-  std::cout << "Creating a delivery copy." << std::endl;
-  IncrementCount();
-}
-
 Delivery::~Delivery() {
   std::cout << "Deleting a delivery." << std::endl;
-  DecrementCount();
+  //DecrementCount();
 }
 
 void Delivery::Transport() {
