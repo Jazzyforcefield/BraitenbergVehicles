@@ -181,7 +181,7 @@ Now comment out all deletes within the ReadyForTransport and try each of the fol
 
 **The next 2 quiz questions** aska about the dyn_object pointer that gets reassigned a value at each iteration of the loop in _RunMemoryDemo()_ (which is problematic), and how to solve it.
 
-If we want to try to address the problem, what code might you add after "ReadyForTransport(&dyn_object, &local_object)" in run_memory_demo()?
+If we want to try to address the problem, what code might you add to "ReadyForTransport(&dyn_object, &local_object)" that is called from RunMemoryDemo()?
 
 - `if (*dynamic != NULL) { delete *dynamic; }`
 - `delete *dynamic;`
