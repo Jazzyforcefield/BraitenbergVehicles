@@ -74,9 +74,9 @@ Go to main.cc and look at the helper function `RunStaticDemo()`. Notice how the 
 
 Run the static demo code with `./deliver static` at the command prompt. First look at the printouts under "CREATING ..." and "ASSIGNING ARRAY" and notice that it prints out every time an object is created or deleted. After everything is created and assigned, it prints out that there are 0 deliveries -- that's because we haven't filled that part in, but that's what we will do next.
 
-A _static_ class variable is a single instance of a variable for all class objects. A common use of a static variable is to track how many objects of that class type have been created. Static variables are declared in the class header, but defined in the GLOBAL scope! Additionally, any class method that makes use of the static variable, must also be static (which you indicate by adding the keyword _static_ in front of its declaration). See IncrementCount as an example.
+A _static_ class variable is a single instance of a variable for all class objects. A common use of a static variable is to track how many objects of that class type have been created. Static variables are declared in the class header, but defined in the GLOBAL scope! Additionally, any class method that is called from outside the class and uses the static variable, must also be static (which you indicate by adding the keyword _static_ in front of its declaration). See IncrementCount as an example. (CORRECTION: As a student pointed out, this was previously incorrectly stated as ANY class method that uses the static variable needs the keyword static, but it is only if you are calling it from outside the class.)
 
-  Take a moment to look through delivery.h and main.h to see how the static variable `Delivery::delivery_count_` is declared (in delivery.h), defined (in main.cc at the top), and used (in Delivery::IncrementCount and DecrementCount).
+    Take a moment to look through delivery.h and main.h to see how the static variable `Delivery::delivery_count_` is declared (in delivery.h), defined (in main.cc at the top), and used (in Delivery::IncrementCount and DecrementCount).
 
 ```
 Uncomment the call IncrementCount() in the Delivery constructor in delivery.cc
