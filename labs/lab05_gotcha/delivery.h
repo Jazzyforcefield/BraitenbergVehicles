@@ -33,4 +33,4 @@ private:
   int days_to_deliver_;
 };
 
-#endif  // DELIVERY_H_
+#endif // DELIVERY_H_

@@ -28,13 +28,13 @@ public:
   }
   ~Object() {
     std::cout << "In ~Object deleting " << address_ << std::endl;
-    /*
+   
     for (int i=0; i<2; i++) {
       delete packages_[i];
     }
-    delete packages_;
-    delete[] packages_;
-    */
+    //delete packages_;
+    //delete[] packages_;
+    
   }
   int64_t get_address() {return address_;}
   static int get_count() {return object_count_;}
