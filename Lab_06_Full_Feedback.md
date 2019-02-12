@@ -1,6 +1,6 @@
 ### Feedback for Lab 06
 
-Run on February 11, 10:52:20 AM.
+Run on February 11, 20:33:30 PM.
 
 
 #### System Files and Lab Directory Structure
@@ -9,98 +9,60 @@ Run on February 11, 10:52:20 AM.
 
 + Pass: Check that directory "labs" exists.
 
-+ Fail: Check that directory "labs/lab06_google_tests" exists.
++ Pass: Check that directory "labs/lab06_google_tests" exists.
 
-     "labs/lab06_google_tests" not found.
++ Pass: Make directory "Lab06_Testing".
 
-+ Skip: Make directory "Lab06_Testing".
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Change into directory "Lab06_Testing".
-
-  This test was not run because of an earlier failing test.
++ Pass: Change into directory "Lab06_Testing".
 
 
 #### Essential Files Exist
 
-+ Skip: Check that file "../labs/lab06_google_tests/date_unittest.cc" exists.
-
-  This test was not run because of an earlier failing test.
++ Pass: Check that file "../labs/lab06_google_tests/date_unittest.cc" exists.
 
 
 ### Testing correct implementation
 
-+ Skip: Copy directory "Lab06 files.".
++ Pass: Copy directory "Lab06 files.".
 
-  This test was not run because of an earlier failing test.
 
-+ Skip: Copy directory "Files for correct version".
 
-  This test was not run because of an earlier failing test.
++ Pass: Copy directory "Files for correct version".
 
-+ Skip: Change into directory "correct".
 
-  This test was not run because of an earlier failing test.
 
-+ Skip: Check that make compiles.
++ Pass: Change into directory "correct".
 
-  This test was not run because of an earlier failing test.
++ Pass: Check that make compiles.
 
-+ Skip: Check that file "date_unittest" exists.
 
-  This test was not run because of an earlier failing test.
 
-+ Skip: Get all google tests.
++ Pass: Check that file "date_unittest" exists.
 
-  This test was not run because of an earlier failing test.
++ Pass: Get all google tests.
+    3 tests found.
+
+
 
 
 #### Results
 
-+ Skip: Check that a GoogleTest test passes.
++ Pass: Check that a GoogleTest test passes.
+    passes the test: DateTest.PrintDateTests.
 
-  This test was not run because of an earlier failing test.
 
-+ Skip: Check that a GoogleTest test passes.
 
-  This test was not run because of an earlier failing test.
++ Pass: Check that a GoogleTest test passes.
+    passes the test: DateTest.PrintDateTestsWithoutNewline.
 
-+ Skip: Check that a GoogleTest test passes.
 
-  This test was not run because of an earlier failing test.
 
-+ Skip: Check that a GoogleTest test passes.
++ Pass: Check that a GoogleTest test passes.
+    passes the test: DateTest.DaysBetweenTests.
 
-  This test was not run because of an earlier failing test.
 
-+ Skip: Check that a GoogleTest test passes.
 
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that a GoogleTest test passes.
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that a GoogleTest test passes.
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that a GoogleTest test passes.
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that a GoogleTest test passes.
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that a GoogleTest test passes.
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that a GoogleTest test passes.
-
-  This test was not run because of an earlier failing test.
++ Pass: 100% of the tests passed.
 
 
 ### Testing Mutants
@@ -108,63 +70,50 @@ Run on February 11, 10:52:20 AM.
 
 #### Testing Mutant 1 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Fail: There is no test case for this mutant (since all tests pass).
+   - Reason - Dates constructed with epoch are about 70 years in the future
 
 
 #### Testing Mutant 2 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Pass: At least one test failed for Mutant 2
 
 
 #### Testing Mutant 3 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Fail: There is no test case for this mutant (since all tests pass).
+   - Reason - Dates from GetDate are missing a character
 
 
 #### Testing Mutant 4 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Fail: There is no test case for this mutant (since all tests pass).
+   - Reason - Today's date month off by one
 
 
 #### Testing Mutant 5 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Fail: There is no test case for this mutant (since all tests pass).
+   - Reason - 1/1/2016 to 3/1/2016 is 60 days, but this version returns 59
 
 
 #### Testing Mutant 6 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Pass: At least one test failed for Mutant 6
 
 
 #### Testing Mutant 7 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Fail: There is no test case for this mutant (since all tests pass).
+   - Reason - operator-: Probably a copy paste error
 
 
 #### Testing Mutant 8 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Pass: At least one test failed for Mutant 8
 
 
 #### Testing Mutant 9 for failure
 
-+ Skip: Abstract test class.
-
-  This test was not run because of an earlier failing test.
++ Pass: At least one test failed for Mutant 9
 
