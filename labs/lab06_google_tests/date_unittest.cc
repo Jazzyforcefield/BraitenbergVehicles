@@ -70,6 +70,12 @@ TEST_F(DateTest, ConstructorDateTests) {
 
 }
 
+TEST_F(DateTest, DateLengthTest) {
+	std::string expected_out_1 = new_years.GetDate();
+	EXPECT_EQ(expected_out_1.length(), 10);
+	
+}
+
 TEST_F(DateTest, OverloadedAdditionDateTests) {
 	Date feb_test = valentines + 15;
 	Date new_years_test = christmas + 7;
