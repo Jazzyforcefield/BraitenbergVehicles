@@ -1,6 +1,6 @@
 ### Feedback for Lab 06
 
-Run on February 12, 23:03:57 PM.
+Run on February 13, 05:11:27 AM.
 
 
 #### System Files and Lab Directory Structure
@@ -47,8 +47,20 @@ Run on February 12, 23:03:57 PM.
 
 #### Results
 
-+ Pass: Check that a GoogleTest test passes.
-    passes the test: DateTest.ConstructorDateTests.
++ Fail: Check that a GoogleTest test passes.
+    fails the test: DateTest.ConstructorDateTests.
+<pre>
+[ RUN      ] DateTest.ConstructorDateTests
+./date_unittest.cc:56: Failure
+      Expected: default_date.GetDate()
+      Which is: "2019-02-13"
+To be equal to: expected_out_1
+      Which is: "2019-02-12"
+./date_unittest.cc:57: Failure
+      Expected: default_date.GetUsDate()
+      Which is: "02-13-2019"
+To be equal to: expected_out_2
+      Which is: "02-12-2019"</pre>
 
 
 
@@ -82,7 +94,7 @@ Run on February 12, 23:03:57 PM.
 
 
 
-+ Pass: 100% of the tests passed.
++ Fail: 85.71% of the tests passed, but the target is 100%.
 
 
 ### Testing Mutants
@@ -90,7 +102,8 @@ Run on February 12, 23:03:57 PM.
 
 #### Testing Mutant 1 for failure
 
-+ Pass: At least one test failed for Mutant 1
++ Fail: There is no test case for this mutant (since all tests pass).
+   - Reason - Dates constructed with epoch are about 70 years in the future
 
 
 #### Testing Mutant 2 for failure
@@ -105,7 +118,8 @@ Run on February 12, 23:03:57 PM.
 
 #### Testing Mutant 4 for failure
 
-+ Pass: At least one test failed for Mutant 4
++ Fail: There is no test case for this mutant (since all tests pass).
+   - Reason - Today's date month off by one
 
 
 #### Testing Mutant 5 for failure
