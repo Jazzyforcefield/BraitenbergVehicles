@@ -80,6 +80,15 @@ issue that is slowing down cpplint.py in other labs (i.e. KH 1-250)
 you have trouble installing cpplint.py, we included it in the support-code here:
 https://github.umn.edu/umn-csci-3081-F18/csci3081-shared-upstream/tree/support-code/cpplint.
 
+You may need to install cpplint as follows:
+
+   ```bash
+   pip install cpplint
+   cpplint --root=.. main.cc
+   ```
+   
+Otherwise you could try the following
+
     ```bash
     # Example usage
     cd src
