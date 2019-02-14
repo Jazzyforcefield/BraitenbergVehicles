@@ -66,7 +66,7 @@ is recommended that you install with the python installation tool _pip3_, which
 might need to be installed (but probably not if you have python3 -- type `pip3
 --version` to verify), then install cpplint with `pip3 install cpplint`.
 
-As part of assessment, all files LISTED ABOVE will be run through cpplint. Make 
+As part of assessment, all files in the **src** directory will be run through cpplint. Make 
 sure your code has 0 errors when you submit.
 
 ### Alternative Options for Running cpplint.py
