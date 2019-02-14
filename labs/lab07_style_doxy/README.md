@@ -97,7 +97,7 @@ of the local system storage to speed up cpplint.py.  This is available by pullin
      ```bash
      # Example usage
      cd src
-     ../../../cpplint/cpplint.py-cse.sh --root=.. main.cc
+     ../../../cpplint/cpplint-cse.sh --root=.. main.cc
 
      #Another example
      ../../../cpplint/cpplint-cse.sh --root=.. *.cc
