@@ -66,7 +66,7 @@ is recommended that you install with the python installation tool _pip3_, which
 might need to be installed (but probably not if you have python3 -- type `pip3
 --version` to verify), then install cpplint with `pip3 install cpplint`.
 
-As part of assessment, all files LISTED ABOVE will be run through cpplint. Make 
+As part of assessment, all files in the **src** directory will be run through cpplint. Make 
 sure your code has 0 errors when you submit.
 
 ### Alternative Options for Running cpplint.py
@@ -79,6 +79,15 @@ issue that is slowing down cpplint.py in other labs (i.e. KH 1-250)
 2. **Run on your local machine** - You could install from instructions above, but just in case
 you have trouble installing cpplint.py, we included it in the support-code here:
 https://github.umn.edu/umn-csci-3081-F18/csci3081-shared-upstream/tree/support-code/cpplint.
+
+You may need to install cpplint as follows:
+
+   ```bash
+   pip install cpplint
+   cpplint --root=.. main.cc
+   ```
+   
+Otherwise you could try the following
 
     ```bash
     # Example usage
@@ -97,7 +106,7 @@ of the local system storage to speed up cpplint.py.  This is available by pullin
      ```bash
      # Example usage
      cd src
-     ../../../cpplint/cpplint.py-cse.sh --root=.. main.cc
+     ../../../cpplint/cpplint-cse.sh --root=.. main.cc
 
      #Another example
      ../../../cpplint/cpplint-cse.sh --root=.. *.cc
