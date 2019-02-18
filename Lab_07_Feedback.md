@@ -1,6 +1,6 @@
 ### Feedback for Lab 07
 
-Run on February 18, 12:04:47 PM.
+Run on February 18, 12:10:03 PM.
 
 
 #### Necessary Files and Structure
@@ -13,52 +13,32 @@ Run on February 18, 12:04:47 PM.
 
 + Pass: Change into directory "labs/lab07_style_doxy".
 
-+ Fail: Check that directory "docs" exists.
++ Pass: Check that directory "docs" exists.
 
-     "docs" not found.
-
-+ Skip: Check that file "docs/Doxyfile" exists.
-
-  This test was not run because of an earlier failing test.
++ Pass: Check that file "docs/Doxyfile" exists.
 
 
 #### .gitignore configured properly
 
-+ Skip: Check that file/directory "html" does not exist.
++ Pass: Check that file/directory "html" does not exist.
 
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that file/directory "latex" does not exist.
-
-  This test was not run because of an earlier failing test.
++ Pass: Check that file/directory "latex" does not exist.
 
 
 #### Google Style Compliance I
 
-+ Skip: Cpplint checking for for Google C++ compliance
-
-  This test was not run because of an earlier failing test.
++ Pass: Cpplint checking for for Google C++ compliance
 
 
 #### Doxygen
 
-+ Skip: Change into directory "docs".
++ Pass: Change into directory "docs".
 
-  This test was not run because of an earlier failing test.
++ Pass: Generating documentation by running doxygen
 
-+ Skip: Generating documentation by running doxygen
++ Pass: Check that file "../src/mainpage.h" exists.
 
-  This test was not run because of an earlier failing test.
++ Pass: Check that file "html/classrobot__land.html" exists.
 
-+ Skip: Check that file "../src/mainpage.h" exists.
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that file "html/classrobot__land.html" exists.
-
-  This test was not run because of an earlier failing test.
-
-+ Skip: Check that file "html/classObstacle.html" exists.
-
-  This test was not run because of an earlier failing test.
++ Pass: Check that file "html/classObstacle.html" exists.
 
