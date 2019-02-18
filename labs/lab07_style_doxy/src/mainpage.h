@@ -7,8 +7,7 @@
  *
  * \section intro_sec Introduction
  *
- * So this is how Doxygen works... and the INPUT should be .. not ../src since in docs, 
- * .. = src and ../src DNE.
+ * So this is how Doxygen works...
  *
  */
 
