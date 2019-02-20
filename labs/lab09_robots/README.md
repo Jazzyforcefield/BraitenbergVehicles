@@ -24,7 +24,7 @@ You will probably want to refer to these as you work on the lab.
 The robot viewer is derived from `GraphicsApp` in MinGfx. When building the
 simulator, the local object files are linked with libMinGfx, which are being created locally the first time you run _make_.
 
-> **Do  not submit to your repo any of the code from libMinGfx.**
+> **Do not submit to your repo any of the code from libMinGfx.**
 
 ### Directory Structure
 
@@ -50,6 +50,7 @@ The directory structure for this lab is identical to that of the project.
 - `build`: Created by the Makefiles. Should be added to your `.gitignore`.
   - `build/bin`: All executables generated for the project will appear in here.
   - `build/obj`: all .o's and .d's (from make depend) go in here.
+  - **Do not push the build folder to your repo**
 
 <hr>
 
@@ -59,7 +60,7 @@ The directory structure for this lab is identical to that of the project.
 
 2. _merge_ the new lab code into your master branch.
 
-3. At the top level from the OS command prompt: `make`. The first time you make, a local version of the MinGfx library will be build. This might take awhile (and it is likely you will only be able to do this on a cselabs machine unless you have the appropriate software installed on your personal machine, such as cmake). After the first build, compilation should go faster.
+3. At the top level from the OS command prompt: `make`. The first time you make, a local version of the MinGfx library will be built. This might take awhile (and it is likely you will only be able to do this on a cselabs machine unless you have the appropriate software installed on your personal machine, such as cmake and OpenGL). After the first build, compilation should go faster.
 
 4. At the command prompt: `./build/bin/robotviewer`. You will not be able to run the executable from any remote connection other than Vole3d. It will compile, but you will not be able to run it.
 
@@ -125,7 +126,7 @@ constantly moving, even though they move in the graphics window in discrete step
 Currently, RobotLand consists of one stationary "obstacle" and two robots going
 around in circles. (Obstacle is in quotes because currently the robots are passing right through it.) No robot class **_currently_** exists, but you will be implementing one as part of this lab. The position and direction of each robot is determined by the circular pattern they are following. A call to circle_x() and circle_y() with a time value will generate the current position of the robot.
 
-Notice that the RobotLand::advance_time() sets the current time of the simulation. When the robot viewer needs to draw the objects, circle_x and circle_y are called to calculate and return the current position of the robot.
+Notice that the RobotLand::AdvanceTime() sets the current time of the simulation. When the robot viewer needs to draw the objects, circle_x and circle_y are called to calculate and return the current position of the robot.
 
 ### Keyboard and Mouse Event Handling
 
@@ -144,7 +145,7 @@ menu made for this application. If you downloaded the nanogui examples, you saw
 how complex these menus can be. It is quite easy to add buttons with various
 functionality to the menu. Let's trace that process through the code ...
 
-It starts in the RobotViewer constructor:
+It starts in RobotViewer::InitNanoGUI (this overrides GraphicsApp::InitNanoGUI):
 
 ```C++
 nanogui::FormHelper *gui = new nanogui::FormHelper(screen());
@@ -184,7 +185,7 @@ graphics application. If you are really not understanding it, read through again
 or talk to a peer.
 
 Seriously, do it. The project works in the same way, and is MUCH larger, so you
-should try to have a good handle on the basic flow before continuing with this
+should try to have a good handle on the basic flow of control before continuing with this
 lab, and eventually the project.
 
 <hr>
@@ -194,8 +195,8 @@ lab, and eventually the project.
 ### Create a Robot Class
 
 1. Add a robot class to the application. Define the robot class in the 2 files
-   _robot.h_ and _robot.cc_. Use the robot class to save the size, color,
-   position, and direction. A file "point.h" has been included to store the {x,y} position of the robot. The Robot class must have (at least) the following interface. You are welcome to add methods and variables as seems appropriate.
+   _robot.h_ and _robot.cc_. Use the robot class to save the radius, color,
+   position, speed, and direction. A file "point.h" has been included to store the {x,y} position of the robot. The Robot class must have (at least) the following interface. You are welcome to add methods and variables as seems appropriate.
 
 ```C++
 /**
@@ -292,7 +293,7 @@ Within DrawRobot, use the setters and getters of the Robot class to extract the 
    - Create OnColorChangeBtnPressed0() method to change the color of robot 0.
    - Create OnColorChangeBtnPressed1() method to change the color of robot 1.
    - Create 2 new nanogui buttons in the RobotViewer constructor, binding its
-     click action to the functions you just created (look at the other buttons in the constructor for examples of how to do this).
+     click action to the functions you just created (look at the other buttons in RobotViewer::InitNanoGUI for examples of how to do this).
 
 2. In `RobotViewer::DrawRobots`, incorporate Robot::color_. If it is true, then fill the robot circle with maroon (or whatever color you want):
 ```
