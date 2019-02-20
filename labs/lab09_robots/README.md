@@ -59,15 +59,9 @@ The directory structure for this lab is identical to that of the project.
 
 2. _merge_ the new lab code into your master branch.
 
-3. At the top level from the OS command prompt: `make`.
+3. At the top level from the OS command prompt: `make`. The first time you make, a local version of the MinGfx library will be build. This might take awhile (and it is likely you will only be able to do this on a cselabs machine unless you have the appropriate software installed on your personal machine, such as cmake). After the first build, compilation should go faster.
 
-4. At command prompt: `./build/bin/robotviewer`
-
-5. Verify that you can run the Google C++ linter, `cpplint.py`.
-
-        /path/to/cpplint-cse.py --help
-
-   If you see output, then it is working.
+4. At the command prompt: `./build/bin/robotviewer`. You will not be able to run the executable from any remote connection other than Vole3d. It will compile, but you will not be able to run it.
 
 <hr>
 
@@ -194,7 +188,9 @@ should try to have a good handle on the basic flow before continuing with this
 lab, and eventually the project.
 
 <hr>
+
 ## The Lab Assignment
+
 ### Create a Robot Class
 
 1. Add a robot class to the application. Define the robot class in the 2 files
@@ -257,7 +253,7 @@ private:
 
 > Notice that the robots move at a different rate around the circle, which is accomplished in the base code by modifying the simulation time. For your robot, use the speed_ variable to control this. Also, notice how the direction is calculated in the RobotViewer in DrawUsingNanoVG based on velocity and then taking atan2(delta_y, delta_x). For your robot, the direction corresponds to the atan2 results.
 
-The setters and getters for Robot are straightforward, but ask if you have questions. Test your Robot using the unit tests provided. You do not need it functional or working in the context of the graphics viewer to test the Robot class.
+The setters and getters for Robot are straightforward, but ask if you have questions. You do not need your robot class functional or working in the context of the graphics viewer to receive feedback about the Robot class.
 
 ### Incorporate Robot Class into RobotLand
 
@@ -306,6 +302,8 @@ else, make it white (or whatever color you want):
 ```
 nvgFillColor(ctx, nvgRGBA(255, 255, 255, 255));
 ```
+
+Push your code up to your repo for feedback.
 
 <hr>
 
