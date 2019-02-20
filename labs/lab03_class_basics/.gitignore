@@ -1,0 +1,4 @@
+*.o
+*.*~
+cluster
+point2_unittest
