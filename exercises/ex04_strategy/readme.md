@@ -33,9 +33,9 @@ The ducks in the array in main are generically flying and quacking, but they sho
 - Create an ugly duckling (i.e. swan) that flies and honks.
 - Instantiate one of each and place in your arrays in main().
 
-#### 5. Add Parameter Name to Ducks
+#### 5. Add Parameter "name" to Ducks
 
-- Add the parameter name to the Duck class, making it **__private__**.
+- Add the parameter "name" to the Duck class, making it **__private__**.
 - Add a setter for the name in the Duck class.
 - For each constructor of a duck, add a name parameter and use the setter to define the name.
 - Add the name to the display function.

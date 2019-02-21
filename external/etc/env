@@ -1,0 +1,6 @@
+ifneq (,$(wildcard /soft/gcc/7.1.0/Linux_x86_64/bin/g++))
+CC=/soft/gcc/7.1.0/Linux_x86_64/bin/gcc
+CXX=/soft/gcc/7.1.0/Linux_x86_64/bin/g++
+endif
+
+-include $(ROOTDIR)/external/etc/env.local
