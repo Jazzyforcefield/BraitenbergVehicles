@@ -250,11 +250,11 @@ private:
 };
 ```
 
-2. The constructor initializes all class members. The origin should be set to {512,350}. The Update function calculates the new robot position based on the circle_x and circle_y equations of the original base code. It updates direction, based on the calculated velocity (i.e. change in x and y).
+2. The constructor initializes all class members. The origin should be set to {512,350}. Initialize the position of the robot based on the origin and a sim_time_ of 0. The Update function calculates the new robot position based on the circle_x and circle_y equations of the original base code. It updates direction, based on the calculated velocity (i.e. change in x and y).
 
-> Notice that the robots move at a different rate around the circle, which is accomplished in the base code by modifying the simulation time. For your robot, use the speed_ variable to control this. Also, notice how the direction is calculated in the RobotViewer in DrawUsingNanoVG based on velocity and then taking atan2(delta_y, delta_x). For your robot, the direction corresponds to the atan2 results.
+> Notice that the robots move at a different rate around the circle, which is accomplished in the base code by scaling the simulation time. For your robot, use the speed_ variable to control this. Also, notice how the direction is calculated in the RobotViewer in DrawUsingNanoVG based on velocity and then taking atan2(delta_y, delta_x). For your robot class, the direction corresponds to the atan2 results, and this should be calculated in the Robot then the RobotViewer uses a getter to get that information.
 
-The setters and getters for Robot are straightforward, but ask if you have questions. You do not need your robot class functional or working in the context of the graphics viewer to receive feedback about the Robot class.
+The setters and getters for Robot are straightforward, but ask if you have questions. You do not need your robot class functional or working in the context of the graphics viewer to receive feedback about the Robot class from the automated grading script.
 
 ### Incorporate Robot Class into RobotLand
 
