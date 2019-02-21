@@ -250,7 +250,7 @@ private:
 };
 ```
 
-2. The constructor initializes all class members. The origin should be set to {512,350}. Initialize the position of the robot based on the origin and a sim_time_ of 0. The Update function calculates the new robot position based on the circle_x and circle_y equations of the original base code. It updates direction, based on the calculated velocity (i.e. change in x and y).
+2. The constructor initializes all class members based on the user-defined parameters AND for other member variables, use the values given in the provided code. The origin should be set to {512,350} **when you instantiate in RobotLand**. Initialize the position of the robot based on the user-defined origin and a sim_time_ of 0. The Update function calculates the new robot position based on the circle_x and circle_y equations of the original base code. It updates direction, based on the calculated velocity (i.e. change in x and y), as shown in DrawUsingNanoVG.
 
 > Notice that the robots move at a different rate around the circle, which is accomplished in the base code by scaling the simulation time. For your robot, use the speed_ variable to control this. Also, notice how the direction is calculated in the RobotViewer in DrawUsingNanoVG based on velocity and then taking atan2(delta_y, delta_x). For your robot class, the direction corresponds to the atan2 results, and this should be calculated in the Robot then the RobotViewer uses a getter to get that information.
 
@@ -258,7 +258,7 @@ The setters and getters for Robot are straightforward, but ask if you have quest
 
 ### Incorporate Robot Class into RobotLand
 
-1. Define Robot **pointers** as members of RobotLand. These can be 2 separate pointers or combined into an array. Instantiate the robots in the RobotLand constructor. Destroy the robots in the RobotLand destructor.
+1. Define Robot **pointers** as members of RobotLand. These can be 2 separate pointers or combined into an array. Instantiate the robots in the RobotLand constructor, setting the user-defined parameters for the Robot **such that they will look and behave exactly like they do in the provided code**. Destroy the robots in the RobotLand destructor.
 
 2. In `RobotLand::AdvanceTime()`, call Robot::Update(time) for each robot. The Update() function will update the position and direction of the robot.
 
