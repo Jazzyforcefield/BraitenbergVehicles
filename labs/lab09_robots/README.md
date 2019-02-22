@@ -39,8 +39,6 @@ The directory structure for this lab is identical to that of the project.
     robot_viewer.h/cc and robot_land.h/cc.
 
 - `src/Makefile`:
-  - You should *NOT* have to modify this makefile _EXCEPT_ for the `CS3081DIR`
-    variable described above (both for this lab and the project).
   - Builds the project source, assumes it should build all .cc files in the
     current directory.
   - Creates the `build/bin/robotviewer` executable.
