@@ -23,15 +23,14 @@ RobotViewer::RobotViewer()
     : GraphicsApp(1024, 768, "Robot Simulation"),
       robot_land_(new RobotLand()),
       pause_btn_(nullptr) {
-  // Create a menu with 2 buttons for pausing and restarting the simulation.
-  // ADD BUTTONS here in the constructor to change the color of each robot.
-  // ADD the callback functions below.
-
   // Instantiate RobotLand, which holds 2 robots and an obstacle.
   robot_land_ = new RobotLand();
 }
 
 void RobotViewer::InitNanoGUI() {
+  // Create a menu with 2 buttons for pausing and restarting the simulation.
+  // ADD BUTTONS here to change the color of each robot.
+  // ADD the callback functions below.
   nanogui::FormHelper *gui = new nanogui::FormHelper(screen());
   nanogui::ref<nanogui::Window> window =
       gui->addWindow(Eigen::Vector2i(10, 10), "Simulation Controls");
