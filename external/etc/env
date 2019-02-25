@@ -3,10 +3,6 @@ CC=/soft/gcc/7.1.0/Linux_x86_64/bin/gcc
 CXX=/soft/gcc/7.1.0/Linux_x86_64/bin/g++
 endif
 
-<<<<<<<	HEAD
--include $(ROOTDIR)/external/etc/env.local
-=======
 #CS3081DIR = /classes/csel-s19c3081
 
 -include $(ROOTDIR)/external/etc/env.local
->>>>>>>	support-code

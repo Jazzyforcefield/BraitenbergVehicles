@@ -1,6 +1,6 @@
 #include "robot.h"
 
-Robot::Robot {
+class Robot {
 
 public:
 	Robot::Robot(int id, double radius, Point origin, double speed) : 

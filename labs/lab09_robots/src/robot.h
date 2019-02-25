@@ -1,8 +1,6 @@
 #ifndef SRC_ROBOT_H_
 #define SRC_ROBOT_H_
 
-#include "point.h"
-
 /**
  * @brief An entity in RobotLand that moves around the window.
  *

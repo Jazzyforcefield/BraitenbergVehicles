@@ -14,10 +14,6 @@
  ******************************************************************************/
 
 // Hard coded for now...
-<<<<<<< HEAD
-// Once the robot class is added, this getter should call the robot getters
-=======
->>>>>>> support-code
 bool RobotLand::get_robot_pos(int id, double *x_pos, double *y_pos) {
   if (id == 0) {
     *x_pos = circle_x(sim_time_);
@@ -35,11 +31,6 @@ bool RobotLand::get_robot_pos(int id, double *x_pos, double *y_pos) {
 }
 
 // Hard coded for now...
-<<<<<<< HEAD
-// Once the robot class is added, this getter should call the robot getters
-// Notice the use of "id" -- how will you handle this in your robot class??
-=======
->>>>>>> support-code
 bool RobotLand::get_robot_vel(int id, double *x_vel, double *y_vel) {
   double xnow, ynow, xprev, yprev;
   double delta = 0.1;
