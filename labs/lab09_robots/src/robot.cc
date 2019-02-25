@@ -2,6 +2,8 @@
 
 #include "robot.h"
 
+	//Robot::Robot();	
+
 	Robot::Robot(int id, double radius, Point origin, double speed) : 
 		id_(id), radius_(radius), origin_(origin), speed_(speed) {
 		
@@ -14,8 +16,8 @@
 	}
 	
 	void Robot::Update(double time) {
-		double new_x = origin_.x_ + 200.0 * cos(time);
-		double new_y = origin_.y_ + 200.0 * sin(time);
+		double new_x = origin_.x_ + speed_ * cos(time);
+		double new_y = origin_.y_ + speed_ * sin(time);
 		double delta_x =  new_x - position_.x_;
 		double delta_y =  new_y - position_.y_;
 		direction_ = atan2(delta_y, delta_x);
