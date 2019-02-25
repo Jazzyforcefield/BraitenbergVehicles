@@ -1,6 +1,6 @@
 ### Feedback for Lab 09
 
-Run on February 25, 16:38:24 PM.
+Run on February 25, 16:42:20 PM.
 
 
 #### System Files and Lab Directory Structure
@@ -45,21 +45,9 @@ Run on February 25, 16:38:24 PM.
     fails the test: RobotTest.UpdateRobot0.
 <pre>
 [ RUN      ] RobotTest.UpdateRobot0
-robot_unittest.cc:46: Failure
-The difference between robot0->get_position().x_ and new_x is 107.52015886775982, which exceeds .005, where
-robot0->get_position().x_ evaluates to 0.54030230586813977,
-new_x evaluates to 108.06046117362796, and
-.005 evaluates to 0.0050000000000000001.
-FAIL: x_ update
-robot_unittest.cc:47: Failure
-The difference between robot0->get_position().y_ and new_y is 167.4527259767714, which exceeds .005, where
-robot0->get_position().y_ evaluates to 0.8414709848078965,
-new_y evaluates to 168.2941969615793, and
-.005 evaluates to 0.0050000000000000001.
-FAIL: y_ update
 robot_unittest.cc:48: Failure
-The difference between robot0->get_direction() and dir is 1.5, which exceeds .005, where
-robot0->get_direction() evaluates to 0.57079632679489667,
+The difference between robot0->get_direction() and dir is 2.5707963267948966, which exceeds .005, where
+robot0->get_direction() evaluates to -0.49999999999999994,
 dir evaluates to 2.0707963267948966, and
 .005 evaluates to 0.0050000000000000001.
 FAIL: dir update</pre>
