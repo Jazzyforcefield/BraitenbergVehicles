@@ -51,9 +51,15 @@ LIBS = -lMinGfxd -lnanogui -Wl,-rpath,$(CS3081DIR)/lib
 
 UNAME = $(shell uname)
 ifeq ($(UNAME), Darwin) # Mac OSX
+<<<<<<< HEAD
 	LIBS += -framework glut -framework opengl
 else # LINUX
 	LIBS += -lglut -lGL -lGLU
+=======
+	LIBS += -framework opengl
+else # LINUX
+	LIBS += -lGL 
+>>>>>>> support-code
 endif
 
 # Arguments to pass to the C++ compiler.  -c is required, it tells the
