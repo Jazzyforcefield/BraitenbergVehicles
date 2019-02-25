@@ -5,7 +5,7 @@
 	Robot::Robot(int id, double radius, Point origin, double speed) : 
 		id_(id), radius_(radius), origin_(origin), speed_(speed) {
 		
-		Point position(origin_.x_ + speed_ * cos(0), origin_.y_ + speed_ * sin(0));
+		Point position(origin_.x_ + 200 * cos(0), origin_.y_ + speed_ * sin(0));
 		position_ = position;
 		sensor_range_ = 3.0 * radius_;
 		sensor_angle_ = 2.0;
