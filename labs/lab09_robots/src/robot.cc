@@ -14,10 +14,12 @@
 	}
 	
 	void Robot::Update(double time) {
-		double delta_x = origin_.x_ + speed_ * cos(time);
-		double delta_y = origin_.y_ + speed_ * sin(time);
+		double new_x = origin_.x_ + 200.0 * cos(time);
+		double new_y = origin_.y_ + 200.0 * sin(time);
+		double delta_x = new_x - position_.x_;
+		double delta_y = new_y - position_.y_;
 		direction_ = atan2(delta_x, delta_y);
-		Point new_pos = Point(delta_x, delta_y);
+		Point new_pos = Point(new_x, new_y);
 		position_ = new_pos;
 	}
 	
