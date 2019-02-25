@@ -5,7 +5,7 @@
 	Robot::Robot(int id, double radius, Point origin, double speed) : 
 		id_(id), radius_(radius), origin_(origin), speed_(speed) {
 		
-		Point position(origin_.x_ + 200 * cos(0), origin_.y_ + speed_ * sin(0));
+		Point position(origin_.x_ + 200.0 * cos(0), origin_.y_ + 200.0 * sin(0));
 		position_ = position;
 		sensor_range_ = 3.0 * radius_;
 		sensor_angle_ = 2.0;
@@ -17,6 +17,8 @@
 		double delta_x = origin_.x_ + speed_ * cos(time);
 		double delta_y = origin_.y_ + speed_ * sin(time);
 		direction_ = atan2(delta_x, delta_y);
+		Point new_pos = Point(delta_x, delta_y);
+		position_ = new_pos;
 	}
 	
 	bool Robot::get_color() {
