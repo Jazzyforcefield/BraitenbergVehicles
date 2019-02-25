@@ -1,6 +1,6 @@
 ### Feedback for Lab 09
 
-Run on February 25, 17:40:27 PM.
+Run on February 25, 17:42:50 PM.
 
 
 #### System Files and Lab Directory Structure
@@ -41,32 +41,33 @@ Run on February 25, 17:40:27 PM.
 
 
 
++ Pass: Check that a GoogleTest test passes.
+    passes the test: RobotTest.UpdateRobot0.
+
+
+
 + Fail: Check that a GoogleTest test passes.
-    fails the test: RobotTest.UpdateRobot0.
+    fails the test: RobotTest.UpdateRobot1.
 <pre>
-[ RUN      ] RobotTest.UpdateRobot0
-robot_unittest.cc:46: Failure
-The difference between robot0->get_position().x_ and new_x is 107.52015886775982, which exceeds .005, where
-robot0->get_position().x_ evaluates to 0.54030230586813977,
-new_x evaluates to 108.06046117362796, and
+[ RUN      ] RobotTest.UpdateRobot1
+robot_unittest.cc:58: Failure
+The difference between robot1->get_position().x_ and new_x is 121.48628179126055, which exceeds .005, where
+robot1->get_position().x_ evaluates to 54.030230586813978,
+new_x evaluates to 175.51651237807454, and
 .005 evaluates to 0.0050000000000000001.
 FAIL: x_ update
-robot_unittest.cc:47: Failure
-The difference between robot0->get_position().y_ and new_y is 167.4527259767714, which exceeds .005, where
-robot0->get_position().y_ evaluates to 0.8414709848078965,
-new_y evaluates to 168.2941969615793, and
+robot_unittest.cc:59: Failure
+The difference between robot1->get_position().y_ and new_y is 11.738009240050957, which exceeds .005, where
+robot1->get_position().y_ evaluates to 84.147098480789651,
+new_y evaluates to 95.885107720840608, and
 .005 evaluates to 0.0050000000000000001.
 FAIL: y_ update
-robot_unittest.cc:48: Failure
-The difference between robot0->get_direction() and dir is 1.0665775998918718, which exceeds .005, where
-robot0->get_direction() evaluates to 3.1373739266867684,
-dir evaluates to 2.0707963267948966, and
+robot_unittest.cc:60: Failure
+The difference between robot1->get_direction() and dir is 0.79785849061556435, which exceeds .005, where
+robot1->get_direction() evaluates to 2.6186548174104609,
+dir evaluates to 1.8207963267948966, and
 .005 evaluates to 0.0050000000000000001.
 FAIL: dir update</pre>
 
 
-
-+ Skip: Check that a GoogleTest test passes.
-
-  This test was not run because of an earlier failing test.
 
