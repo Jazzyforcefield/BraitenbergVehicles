@@ -18,7 +18,7 @@
 		double new_y = origin_.y_ + 200.0 * sin(time);
 		double delta_x = position_.x_ - new_x;
 		double delta_y = position_.y_ - new_y;
-		direction_ = atan2(delta_x, delta_y);
+		direction_ = atan2(delta_y, delta_x);
 		Point new_pos = Point(new_x, new_y);
 		position_ = new_pos;
 	}
