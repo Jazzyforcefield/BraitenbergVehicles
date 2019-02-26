@@ -1,4 +1,5 @@
-# Braitenberg Vehicles Simulator: Iteration 1
+# Braitenberg Vehicles Simulator: Iteration 1 
+## Version 2 - Last Updated Tuesday 2/26 at 7:40am
 
 >Your software is a reflection of your understanding of the requirements as specified in this document. If you do not understand any portion of the requirements or you think that the requirements are underspecified, it is your responsibility to get clarification from the instructor or a TA. Please read this document carefully and review it often WELL IN ADVANCE of turning in your iteration for assessment.
 
@@ -39,7 +40,7 @@ The code is organized such that robot behavior in the arena (i.e. the model) is 
 The robot arena has entities that are specified in a configuration file. The intent is for the robots specified in the configuration file to carry out their behavior in the Arena with the other entities specified in the configuration file (lights and food). For example:
 <ol>
 <li>Besides the explore behavior, robots can be configured to exhibit love, fear, and or aggression toward food and/or light entities in the Arena </li>
-<li> If a robot bumps into another robot or the wall it should  reverse and then turn LEFT 90 degrees (from its current heading) to avoid another collision with the object it collided with. </li>
+<li> If a robot bumps into another robot or the wall it should  reverse and then turn LEFT 45 degrees (from its current heading) to avoid another collision with the object it collided with. </li>
 <li>A robot will change color to illustrate the sensor that is driving its behavior (food or light) </li>
 </ol>
 
@@ -257,7 +258,7 @@ Finally, a sample test has been provided for you in the project/test directory.
 
 Note, that the code we have provided for you contains the behavior for the explore behavior.  You should read the literature on Braitenberg Vehicles (Robots) provided above and then design and implement the Aggression, Love, and Cower behaviors.
 
-You should also review the code that implements the behavior that a robot displays in response to a collision with an Arena boundary or another robot. In the version we have provided you, when a collision occurs, the robot(s) involved in the collision adjust their heading 180 degrees and resume movement according to their behaviors toward light and food.    You should refactor - that is update  ( design, implement, and test ) the current behavior so that robot(s) involved in a collision adjust their heading 180 degrees, move a short distance and then adjust their heading 90 degrees (that is, they turn left 90 degrees from their current heading).  The refactored collision behavior will ensure that the robots do not become trapped in a corner of the Arena.
+You should also review the code that implements the behavior that a robot displays in response to a collision with an Arena boundary or another robot. In the version we have provided you, when a collision occurs, the robot(s) involved in the collision adjust their heading 180 degrees and resume movement according to their behaviors toward light and food.    You should refactor - that is update  ( design, implement, and test ) the current behavior so that robot(s) involved in a collision adjust their heading 180 degrees, move a short distance (specifically 20 time steps) and then adjust their heading 45 degrees (that is, they turn left 45 degrees from their current heading).  The refactored collision behavior will ensure that the robots do not become trapped in a corner of the Arena.
 
 Finally, robot behavior (i.e. wheel velocities) is driven by the light and food sensor readings. The drive signal for each wheel from the different types of sensors can be combined in a variety of ways. In this implementation, the drive signals are added together, provided they each contribute. But sometimes, because the particular sensor is not active or because there are no detected stimuli, only one of the sensor signals is driving the wheel speed. To help understand the robot behavior, dynamically set the color of the robot based on which sensor signals are impacting behavior. Use the following colors under the following conditions:
 1.  Lights should be white
@@ -299,7 +300,7 @@ As specified in your design document, implement the Factory Pattern.  Note, you 
 
 ## <a name="deliver">Deliverables and Submission Process</a>
 
-Everything will be submitted via Github in the master branch of the project directory in your class repo. We will pull your repository at the specified due dates and grade according to the contents at that time. You should be developing in your_ devel_ branch, but at the time of submission, merge _devel_ with master.
+Everything will be submitted via Github in the master branch of the project directory in your class repo. We will pull your repository at the specified due dates and grade according to the contents at that time. You should be developing in your_ devel_ branch, but at the time of final submission, merge _devel_ with master.
 
 **Late assignments will not be accepted**, but you will receive partial credit for partial completion of the requirements.
 
