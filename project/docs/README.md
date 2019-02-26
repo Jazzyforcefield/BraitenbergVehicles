@@ -61,7 +61,7 @@ A basic GUI with user buttons and input via mouse and keyboard has been provided
 
 For example, when the default configuration file (default.json) is used to run the simulation:
 <ul>
-<li> there is one (stationary) Light entity, one (stationary) food entity, and one Braitenberg robot with default behavior toward light (meaning the robot ignores input from its light sensor) and aggressive behavior toward food. </li>
+<li> there is one (stationary) Light entity, one (stationary) food entity, and one Braitenberg robot with default behavior toward light (meaning the robot ignores input from its light sensor) and explore behavior toward food. </li>
 <li> The Entity button GUI enables the user to select a robot in the Arena and then change the robot's behavior toward food (to love, cower, explore, or default) and/or light (to aggressive, love, cower, or explore) - or to leave the current behavior in place.  </li>
 <li>The GUI also enables the user to turn the robot's mobility off. </li>
 <li>If the user selects a light via the Entity button, the user can turn the light's mobility on or off as well.</li>
