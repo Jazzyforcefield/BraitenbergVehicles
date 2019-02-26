@@ -103,7 +103,7 @@ Make a new branch with the name as specified below (if the bug issue is \#1, oth
 
 ```
 git checkout -b fix/01-compilation-errors
-git push --all origin
+git push
 ```
 
 Go to github and click on the pulldown menu in the upper left to see your branch. If you select it, it will switch the visible content to the content of that branch.
