@@ -35,20 +35,19 @@ enum Behavior {
 };
 
 inline Behavior get_behavior_type(const std::string& type) {
-	if (type == "Aggressive") {
-		return kAggressive;
-	}
-	if (type == "Love") {
-		return kLove;
-	}
-	if (type == "Coward") {
-		return kCoward;
-	}
-	if (type == "Explore") {
-		return kExplore;
-	}
-
-	return kNone;
+  if (type == "Aggressive") {
+    return kAggressive;
+  }
+  if (type == "Love") {
+    return kLove;
+  }
+  if (type == "Coward") {
+    return kCoward;
+  }
+  if (type == "Explore") {
+    return kExplore;
+  }
+  return kNone;
 }
 
 NAMESPACE_END(csci3081);

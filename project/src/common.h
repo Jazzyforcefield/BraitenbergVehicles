@@ -22,7 +22,7 @@ typedef picojson::array json_array;
 std::string parse_json(json_value& v, const std::string& json);
 inline std::string parse_json(json_value& v, const std::string& json) {
 	return picojson::parse(v, json);
-} 
+}
 
 /*******************************************************************************
  * Macros

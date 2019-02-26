@@ -25,17 +25,16 @@ enum EntityType {
 };
 
 inline EntityType get_entity_type(const std::string& type) {
-	if (type == "Light") {
-		return kLight;
-	}
-	if (type == "Food") {
-		return kFood;
-	}
-	if (type == "Braitenberg") {
-		return kBraitenberg;
-	}
-
-	return kUndefined;
+  if (type == "Light") {
+    return kLight;
+  }
+  if (type == "Food") {
+    return kFood;
+  }
+  if (type == "Braitenberg") {
+    return kBraitenberg;
+  }
+  return kUndefined;
 }
 
 NAMESPACE_END(csci3081);

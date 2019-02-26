@@ -12,7 +12,7 @@
 NAMESPACE_BEGIN(csci3081);
 
 class ArenaViewer {
-public:
+ public:
   virtual ~ArenaViewer() {}
   virtual bool RunViewer() = 0;
   virtual void SetArena(Arena* arena) = 0;

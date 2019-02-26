@@ -38,15 +38,13 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
       entities_(),
       mobile_entities_(),
       light_sensors_() {
-
   x_dim_ = arena_object["width"].get<double>();
   y_dim_ = arena_object["height"].get<double>();
   json_array& entities = arena_object["entities"].get<json_array>();
   for (unsigned int f = 0; f < entities.size(); f++) {
-
-
     json_object& entity_config = entities[f].get<json_object>();
-    unsigned int type = get_entity_type(entity_config["type"].get<std::string>());
+    unsigned int type = get_entity_type(
+      entity_config["type"].get<std::string>());
     EntityType etype = static_cast<EntityType>(type);
 
     ArenaEntity* entity = NULL;
@@ -75,7 +73,6 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
       AddEntity(entity);
     }
   }
-
 }
 
 Arena::~Arena() {
@@ -99,7 +96,6 @@ void Arena::AddEntity(ArenaEntity* ent) {
     BraitenbergVehicle* bv = static_cast<BraitenbergVehicle*>(ent);
     bv->UpdateLightSensors();
   }
-
 }
 
 void Arena::Reset() {
@@ -149,10 +145,10 @@ void Arena::UpdateEntitiesTimestep() {
         // this is pretty ugly, I should move it into HandleCollision
         if (ent1->get_type() == kBraitenberg &&
             ent2->get_type() == kFood) {
-          //static_cast<BraitenbergVehicle*>(ent1)->ConsumeFood();
+          // static_cast<BraitenbergVehicle*>(ent1)->ConsumeFood();
         } else if (ent1->get_type() == kFood &&
                    ent2->get_type() == kBraitenberg) {
-          //static_cast<BraitenbergVehicle*>(ent2)->ConsumeFood();
+          // static_cast<BraitenbergVehicle*>(ent2)->ConsumeFood();
         }
         // lights and braitenberg vehicles do not collide
         // nothing collides with food, but bv's call consume() if they do
@@ -175,9 +171,7 @@ void Arena::UpdateEntitiesTimestep() {
       bv->Update();
     }
   }
-
 }  // UpdateEntitiesTimestep()
-
 
 // Determine if the entity is colliding with a wall.
 // Always returns an entity type. If not collision, returns kUndefined.
@@ -196,7 +190,7 @@ EntityType Arena::GetCollisionWall(ArenaMobileEntity *const ent) {
 } /* GetCollisionWall() */
 
 /* The entity type indicates which wall the entity is colliding with.
-* This determines which way to move the entity to set it slightly off the wall. */
+* This determines which way to move entity to set it slightly off the wall. */
 void Arena::AdjustWallOverlap(ArenaMobileEntity *const ent, EntityType object) {
   Pose entity_pos = ent->get_pose();
   switch (object) {
@@ -232,7 +226,7 @@ bool Arena::IsColliding(
 * We determine by how much they overlap then move the mobile entity to
 * the edge of the other
 */
-/* @TODO: Add functionality to Pose to determine the distance distance_between two instances (e.g. overload operator -)
+/* @TODO: Add to Pose distance distance_between (e.g. overload operator -)
 */
 /* @BUG: The robot will pass through the home food on occasion. The problem
  * is likely due to the adjustment being in the wrong direction. This could

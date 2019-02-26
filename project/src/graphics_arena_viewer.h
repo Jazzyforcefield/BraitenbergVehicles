@@ -21,7 +21,7 @@
  ******************************************************************************/
 NAMESPACE_BEGIN(csci3081);
 
-//class Controller;
+class Controller;
 
 /*******************************************************************************
  * Class Definitions
@@ -168,7 +168,8 @@ class GraphicsArenaViewer : public mingfx::GraphicsApp, public ArenaViewer {
    * @param[in] c Character representing a key that was released.
    * @param[in] modifiers Any modifier keys that were held with the key.
    */
-  virtual void OnKeyUp(__unused const char *c, __unused int modifiers) override { };
+  virtual void OnKeyUp(
+    __unused const char *c, __unused int modifiers) override { };
 
   /**
    * @brief Called each time a special (non-alphabetic) key is pressed.

@@ -49,7 +49,8 @@ void GraphicsArenaViewer::InitNanoGUI() {
 
     window =
           gui->addWindow(
-              //Eigen::Vector2i(window_width() - GUI_MENU_WIDTH - GUI_MENU_GAP * 2, 0),
+              // Eigen::Vector2i(window_width()
+              // - GUI_MENU_WIDTH - GUI_MENU_GAP * 2, 0),
               Eigen::Vector2i(0, 0),
               "Menu");
     window->setFixedWidth(GUI_MENU_WIDTH);
@@ -59,16 +60,18 @@ void GraphicsArenaViewer::InitNanoGUI() {
     // assigned to either the window or the panel.
 
     nanogui::Widget *panel = new nanogui::Widget(window);
-    panel->setLayout(new nanogui::BoxLayout(nanogui::Orientation::Vertical, nanogui::Alignment::Middle, 0, 0));
+    panel->setLayout(new nanogui::BoxLayout(
+      nanogui::Orientation::Vertical, nanogui::Alignment::Middle, 0, 0));
     // *************** Add GUI ************************//
 
     AddEntityPanel(window);
 
     panel = new nanogui::Widget(window);
-    panel->setLayout(new nanogui::BoxLayout(nanogui::Orientation::Vertical, nanogui::Alignment::Middle, 0, 0));
+    panel->setLayout(new nanogui::BoxLayout(
+      nanogui::Orientation::Vertical, nanogui::Alignment::Middle, 0, 0));
     // Lays out all the components with "15" units of inbetween spacing
-    //panel->setLayout(new nanogui::BoxLayout(nanogui::Orientation::Vertical,
-                                           // nanogui::Alignment::Middle, 0, 15));
+    // panel->setLayout(new nanogui::BoxLayout(
+    //  nanogui::Orientation::Vertical,nanogui::Alignment::Middle, 0, 15));
 
     new nanogui::Label(window, "Game Control", "sans-bold");
     playing_button_ =
@@ -248,33 +251,44 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
 
   std::vector<nanogui::Widget*> robotWidgets;
 
-  robotWidgets.push_back(new nanogui::Label(panel, "Light Behavior", "sans-bold"));
+  robotWidgets.push_back(new nanogui::Label(
+    panel, "Light Behavior", "sans-bold"));
   nanogui::Widget * robotPanel = new nanogui::Widget(panel);
   robotWidgets.push_back(robotPanel);
-  robotPanel->setLayout(new nanogui::BoxLayout(nanogui::Orientation::Vertical, nanogui::Alignment::Minimum, 0, 0));
-  nanogui::ComboBox* lightBehaviorSelect = new nanogui::ComboBox(robotPanel, behaviorNames);
+  robotPanel->setLayout(new nanogui::BoxLayout(
+    nanogui::Orientation::Vertical, nanogui::Alignment::Minimum, 0, 0));
+  nanogui::ComboBox* lightBehaviorSelect =
+    new nanogui::ComboBox(robotPanel, behaviorNames);
   lightBehaviorSelect->setFixedWidth(COMBO_BOX_WIDTH -10);
   nanogui::Widget *space = new nanogui::Widget(robotPanel);
   nanogui::Widget * sliderPanel = new nanogui::Widget(robotPanel);
   space->setFixedHeight(10);
-  sliderPanel->setLayout(new nanogui::BoxLayout(nanogui::Orientation::Horizontal, nanogui::Alignment::Middle, 0, 0));
-  nanogui::Widget *lbl = new nanogui::Label(sliderPanel, "Intensity", "sans-bold");
+  sliderPanel->setLayout(
+    new nanogui::BoxLayout(
+      nanogui::Orientation::Horizontal, nanogui::Alignment::Middle, 0, 0));
+  nanogui::Widget *lbl = new nanogui::Label(
+    sliderPanel, "Intensity", "sans-bold");
   lbl->setFixedWidth(50);
   nanogui::Slider *slider = new nanogui::Slider(sliderPanel);
   slider->setFixedWidth(90);
   space->setVisible(false);
   sliderPanel->setVisible(false);
 
-  robotWidgets.push_back(new nanogui::Label(panel, "Food Behavior", "sans-bold"));
+  robotWidgets.push_back(new nanogui::Label(
+    panel, "Food Behavior", "sans-bold"));
   robotPanel = new nanogui::Widget(panel);
   robotWidgets.push_back(robotPanel);
-  robotPanel->setLayout(new nanogui::BoxLayout(nanogui::Orientation::Vertical, nanogui::Alignment::Minimum, 0, 0));
-  nanogui::ComboBox* foodBehaviorSelect = new nanogui::ComboBox(robotPanel, behaviorNames);
+  robotPanel->setLayout(new nanogui::BoxLayout(
+    nanogui::Orientation::Vertical, nanogui::Alignment::Minimum, 0, 0));
+  nanogui::ComboBox* foodBehaviorSelect = new nanogui::ComboBox(
+    robotPanel, behaviorNames);
   foodBehaviorSelect->setFixedWidth(COMBO_BOX_WIDTH -10);
   space = new nanogui::Widget(robotPanel);
   sliderPanel = new nanogui::Widget(robotPanel);
   space->setFixedHeight(10);
-  sliderPanel->setLayout(new nanogui::BoxLayout(nanogui::Orientation::Horizontal, nanogui::Alignment::Middle, 0, 0));
+  sliderPanel->setLayout(
+    new nanogui::BoxLayout(
+      nanogui::Orientation::Horizontal, nanogui::Alignment::Middle, 0, 0));
   lbl = new nanogui::Label(sliderPanel, "Intensity", "sans-bold");
   lbl->setFixedWidth(50);
   slider = new nanogui::Slider(sliderPanel);
@@ -287,15 +301,19 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
   }
 
   if (defaultEntity->get_type() == kBraitenberg) {
-    lightBehaviorSelect->setSelectedIndex(static_cast<BraitenbergVehicle*>(defaultEntity)->get_light_behavior());
-    foodBehaviorSelect->setSelectedIndex(static_cast<BraitenbergVehicle*>(defaultEntity)->get_food_behavior());
+    lightBehaviorSelect->setSelectedIndex(
+      static_cast<BraitenbergVehicle*>(defaultEntity)->get_light_behavior());
+    foodBehaviorSelect->setSelectedIndex(
+      static_cast<BraitenbergVehicle*>(defaultEntity)->get_food_behavior());
   }
 
   entitySelect->setCallback(
-    [this, isMobile, robotWidgets, lightBehaviorSelect, foodBehaviorSelect](int index) {
+    [this, isMobile, robotWidgets, lightBehaviorSelect,
+    foodBehaviorSelect](int index) {
       ArenaEntity* entity = this->arena_->get_entities()[index];
       if (entity->is_mobile()) {
-        ArenaMobileEntity* mobileEntity = static_cast<ArenaMobileEntity*>(entity);
+        ArenaMobileEntity* mobileEntity =
+        static_cast<ArenaMobileEntity*>(entity);
         isMobile->setChecked(mobileEntity->is_moving());
       }
 
@@ -306,8 +324,10 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
       }
 
       if (entity->get_type() == kBraitenberg) {
-        lightBehaviorSelect->setSelectedIndex(static_cast<BraitenbergVehicle*>(entity)->get_light_behavior());
-        foodBehaviorSelect->setSelectedIndex(static_cast<BraitenbergVehicle*>(entity)->get_food_behavior());
+        lightBehaviorSelect->setSelectedIndex(
+          static_cast<BraitenbergVehicle*>(entity)->get_light_behavior());
+        foodBehaviorSelect->setSelectedIndex(
+          static_cast<BraitenbergVehicle*>(entity)->get_food_behavior());
       }
 
       screen()->performLayout();
@@ -315,23 +335,28 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
 
   lightBehaviorSelect->setCallback(
     [this, entitySelect](int index) {
-      ArenaEntity* entity = this->arena_->get_entities()[entitySelect->selectedIndex()];
+      ArenaEntity* entity =
+      this->arena_->get_entities()[entitySelect->selectedIndex()];
       if (entity->get_type() == kBraitenberg) {
-        static_cast<BraitenbergVehicle*>(entity)->set_light_behavior(static_cast<Behavior>(index));
+        static_cast<BraitenbergVehicle*>(entity)->set_light_behavior(
+          static_cast<Behavior>(index));
       }
     });
 
   foodBehaviorSelect->setCallback(
     [this, entitySelect](int index) {
-      ArenaEntity* entity = this->arena_->get_entities()[entitySelect->selectedIndex()];
+      ArenaEntity* entity =
+      this->arena_->get_entities()[entitySelect->selectedIndex()];
       if (entity->get_type() == kBraitenberg) {
-        static_cast<BraitenbergVehicle*>(entity)->set_food_behavior(static_cast<Behavior>(index));
+        static_cast<BraitenbergVehicle*>(entity)->set_food_behavior(
+          static_cast<Behavior>(index));
       }
     });
 
   isMobile->setCallback(
     [this, entitySelect](bool moving) {
-      ArenaEntity* entity = this->arena_->get_entities()[entitySelect->selectedIndex()];
+      ArenaEntity* entity =
+      this->arena_->get_entities()[entitySelect->selectedIndex()];
       ArenaMobileEntity* mobileEntity = static_cast<ArenaMobileEntity*>(entity);
       mobileEntity->set_is_moving(moving);
     });

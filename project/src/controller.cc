@@ -24,7 +24,8 @@
  ******************************************************************************/
 NAMESPACE_BEGIN(csci3081);
 
-Controller::Controller(int argc, char **argv) : last_dt(0), viewers_(), config_(NULL) {
+Controller::Controller(int argc, char **argv) :
+  last_dt(0), viewers_(), config_(NULL) {
   if (argc > 1) {
     std::ifstream t(std::string(argv[1]).c_str());
     std::string str((std::istreambuf_iterator<char>(t)),
@@ -41,7 +42,6 @@ Controller::Controller(int argc, char **argv) : last_dt(0), viewers_(), config_(
       arena_ = new Arena(config_->get<json_object>());
     }
   }
-  
   if (!config_) {
     arena_ = new Arena();
   }
@@ -51,7 +51,6 @@ Controller::~Controller() {
   if (config_) {
     delete config_;
   }
-
   for (unsigned int f = 0; f < viewers_.size(); f++) {
     delete viewers_[f];
   }
@@ -61,8 +60,8 @@ ArenaViewer* Controller::CreateViewer(int width, int height) {
   return new GraphicsArenaViewer(width, height, this);
 }
 
-void Controller::Run() { 
-  viewers_.push_back(CreateViewer(arena_->get_x_dim(),arena_->get_y_dim()));
+void Controller::Run() {
+  viewers_.push_back(CreateViewer(arena_->get_x_dim(), arena_->get_y_dim()));
   for (unsigned int f = 0; f < viewers_.size(); f++) {
     viewers_[f]->SetArena(arena_);
   }
@@ -93,14 +92,11 @@ void Controller::Reset() {
   if (arena_) {
     delete (arena_);
   }
-
   if (config_) {
     arena_ = new Arena(config_->get<json_object>());
-  }
-  else {
+  } else {
     arena_ = new Arena();
   }
-
   viewer_->SetArena(arena_);
 }
 

@@ -25,7 +25,9 @@ int BraitenbergVehicle::count = 0;
  ******************************************************************************/
 
 BraitenbergVehicle::BraitenbergVehicle() :
-  light_sensors_(), wheel_velocity_(), light_behavior_(kNone), food_behavior_(kNone), closest_light_entity_(NULL), closest_food_entity_(NULL), defaultSpeed_(5.0) {
+  light_sensors_(), wheel_velocity_(), light_behavior_(kNone),
+  food_behavior_(kNone), closest_light_entity_(NULL),
+  closest_food_entity_(NULL), defaultSpeed_(5.0) {
   set_type(kBraitenberg);
   motion_behavior_ = new MotionBehaviorDifferential(this);
   light_sensors_.push_back(Pose());
@@ -44,7 +46,6 @@ void BraitenbergVehicle::TimestepUpdate(__unused unsigned int dt) {
   if (is_moving()) {
     motion_behavior_->UpdatePose(dt, wheel_velocity_);
   }
-
   UpdateLightSensors();
 }
 
@@ -57,8 +58,7 @@ void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
   const ArenaEntity** closest_entity_ = NULL;
   if (entity.get_type() == kLight) {
     closest_entity_ = &closest_light_entity_;
-  }
-  else if (entity.get_type() == kFood) {
+  } else if (entity.get_type() == kFood) {
     closest_entity_ = &closest_food_entity_;
   }
 
@@ -71,25 +71,27 @@ void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
   }
 
   double distance = (this->get_pose()-entity.get_pose()).Length();
-  double closest_distance = (this->get_pose()-(*closest_entity_)->get_pose()).Length();
+  double closest_distance =
+  (this->get_pose()-(*closest_entity_)->get_pose()).Length();
   if (distance < closest_distance) {
     *closest_entity_ = &entity;
     closest_distance = distance;
   }
-
   if (closest_distance > 100.0) {
     *closest_entity_ = NULL;
   }
 }
 
 void BraitenbergVehicle::Update() {
-  WheelVelocity light_wheel_velocity = WheelVelocity(0,0);
+  WheelVelocity light_wheel_velocity = WheelVelocity(0, 0);
 
   int numBehaviors = 2;
 
-  switch(light_behavior_) {
+  switch (light_behavior_) {
     case kExplore:
-      light_wheel_velocity = WheelVelocity(1.0/get_sensor_reading_right(closest_light_entity_), 1.0/get_sensor_reading_left(closest_light_entity_), defaultSpeed_);
+      light_wheel_velocity = WheelVelocity(
+        1.0/get_sensor_reading_right(closest_light_entity_),
+         1.0/get_sensor_reading_left(closest_light_entity_), defaultSpeed_);
       break;
     case kNone:
     default:
@@ -97,11 +99,13 @@ void BraitenbergVehicle::Update() {
       break;
   }
 
-  WheelVelocity food_wheel_velocity = WheelVelocity(0,0);
+  WheelVelocity food_wheel_velocity = WheelVelocity(0, 0);
 
-  switch(food_behavior_) {
+  switch (food_behavior_) {
     case kExplore:
-      food_wheel_velocity = WheelVelocity(1.0/get_sensor_reading_right(closest_food_entity_), 1.0/get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
+      food_wheel_velocity = WheelVelocity(
+        1.0/get_sensor_reading_right(closest_food_entity_),
+        1.0/get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
       break;
     case kNone:
     default:
@@ -110,10 +114,12 @@ void BraitenbergVehicle::Update() {
   }
 
   if (numBehaviors) {
-    wheel_velocity_ = WheelVelocity((light_wheel_velocity.left + food_wheel_velocity.left)/numBehaviors, (light_wheel_velocity.right + food_wheel_velocity.right)/numBehaviors, defaultSpeed_);
-  }
-  else {
-    wheel_velocity_ = WheelVelocity(0,0);
+    wheel_velocity_ = WheelVelocity(
+      (light_wheel_velocity.left + food_wheel_velocity.left)/numBehaviors,
+      (light_wheel_velocity.right + food_wheel_velocity.right)/numBehaviors,
+      defaultSpeed_);
+  } else {
+    wheel_velocity_ = WheelVelocity(0, 0);
   }
 }
 
@@ -131,15 +137,17 @@ std::vector<Pose> BraitenbergVehicle::get_light_sensors() {
 
 double BraitenbergVehicle::get_sensor_reading_left(const ArenaEntity* entity) {
   if (entity) {
-    return 1800.0/std::pow(1.08, (entity->get_pose()-light_sensors_[0]).Length());
+    return 1800.0/std::pow(
+      1.08, (entity->get_pose()-light_sensors_[0]).Length());
   }
 
   return 0.0001;
 }
-  
+
 double BraitenbergVehicle::get_sensor_reading_right(const ArenaEntity* entity) {
   if (entity) {
-    return 1800.0/std::pow(1.08, (entity->get_pose()-light_sensors_[1]).Length());
+    return 1800.0/std::pow(
+      1.08, (entity->get_pose()-light_sensors_[1]).Length());
   }
 
   return 0.0001;
@@ -156,21 +164,21 @@ void BraitenbergVehicle::UpdateLightSensors() {
       pos.y = get_pose().y + get_radius() * sin(deg2rad(get_pose().theta + 40));
     }
   }
-
 }
 
 void BraitenbergVehicle::LoadFromObject(json_object& entity_config) {
   ArenaEntity::LoadFromObject(entity_config);
 
   if (entity_config.find("light_behavior") != entity_config.end()) {
-      light_behavior_ = get_behavior_type(entity_config["light_behavior"].get<std::string>());
+      light_behavior_ = get_behavior_type(
+        entity_config["light_behavior"].get<std::string>());
   }
   if (entity_config.find("food_behavior") != entity_config.end()) {
-      food_behavior_ = get_behavior_type(entity_config["food_behavior"].get<std::string>());
+      food_behavior_ = get_behavior_type(
+        entity_config["food_behavior"].get<std::string>());
   }
 
   UpdateLightSensors();
 }
-
 
 NAMESPACE_END(csci3081);

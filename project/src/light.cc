@@ -36,7 +36,7 @@ Light::Light() :
 
 void Light::HandleCollision(__unused EntityType ent_type,
                                __unused ArenaEntity * object) {
-  //set_heading(random_num<float>(0, 360));
+  // set_heading(random_num<float>(0, 360));
   set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
 }
 
