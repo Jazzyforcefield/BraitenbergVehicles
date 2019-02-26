@@ -243,7 +243,7 @@ The iterative method identifies and prioritizes feature enhancements and code re
 <ul>
 <li> Note that unit tests require a functional interface (i.e. class and method declarations) but not implementation. For example, you can define a class named MyClass in your myclass.h file, and in the myclass.cc file, all methods are empty, such as the following method to get an integer value from the class MyClass:  `int MyClass::get_integer_value() {}`.  </li>
 <li>
-For each class, create a file (e.g. factory_unittest.cc) and put it in the project/tests directory (in the _devel_ branch). The Makefile we have provided will compile it for you.  Run the tests by typing <strong>./build/bin/factory_unittest</strong>.  </li>
+For each class, create a file (e.g. factory_unittest.cc) and put it in the project/tests directory (in the _devel_ branch). The Makefile we have provided will compile it for you.  Run the tests by typing <strong>./build/bin/unittest</strong>.  </li>
 <li>
 Finally, a sample test has been provided for you in the project/test directory.
 </li>
