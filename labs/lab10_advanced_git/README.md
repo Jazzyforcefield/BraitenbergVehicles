@@ -66,12 +66,12 @@ git pull upstream support-code
 git checkout master
 git merge support-code
 git checkout -b devel
-git push
+git push --set-upstream origin devel
 ```
 
 `git checkout` is the command to change your local directory/repo to reflect the code in the branch you are checking out. By adding the flag `-b`, you are creating a new branch with the name that follows. This will be an exact copy of whatever is currently in your local repo. Now any modifications that you make in this new branch will stay in the branch until you merge it with another one.
 
-Branches have to be pushed to the repo to be available to others (and to you on another machine). For the first push, you have to specify where the branch needs to go. (If you do `push` without the added flag, git will tell you exactly what you need to type to push to the server.) Once you have done this initial command, only `git push` will be needed.
+Branches have to be pushed to the repo to be available to others (and to you on another machine). For the first push, you have to specify where the branch needs to go. (If you do `push` without the added flag "--set-upstream", git will tell you exactly what you need to type to push to the server.) Once you have done this initial command, only `git push` will be needed.
 
 After you have pushed the branch, you can move between branches using checkout without the -b flag. You can seamlessly move between branches in your local repo.
 
@@ -103,7 +103,7 @@ Make a new branch with the name as specified below (if the bug issue is \#1, oth
 
 ```
 git checkout -b fix/01-compilation-errors
-git push
+git push --set-upstream origin fix/01-compilation-errors
 ```
 
 Go to github and click on the pulldown menu in the upper left to see your branch. If you select it, it will switch the visible content to the content of that branch.
