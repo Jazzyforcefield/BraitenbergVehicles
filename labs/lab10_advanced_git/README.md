@@ -1,6 +1,6 @@
 ## Lab 10 : Merging, Branching, and GitHub Issues
 
-In this lab, you will prepare the iteration1 code and learn about how to develop code using best practices. The project base code will be added to your repo and you will establish a system for using Github _issues_ and creating branches to track and address those issues.
+In this lab, you will prepare the iteration1 code (in the _project_ folder) and learn about how to develop code using best practices. The project base code will be added to your repo and you will establish a system for using Github _issues_ and creating branches to track and address those issues.
 
 There is an informative guide on the use of git and branching that was developed by John Harwell, a former teaching assistant for this course. Please review this because, as part of project assessment, we will be looking at your use of _issues_, branching, and commit messages. This guide can be found in **_git-usage.pdf_** in the lab10_advanced_git folder.
 
@@ -81,7 +81,7 @@ To confirm which branch you are currently working and to see a list of all branc
 
 ### Creating an Issue
 
-There are 2 known issues in the code that need fixing! The first is preventing compilation and the other is related to robots passing through objects or getting stuck in walls. Go to your project repo on Github and create two issues, naming and labeling them appropriately. When you create an issue, label it with "bug" (from the pull down menu) and let's pretend that you added this issue when you first encountered it, therefore you provided additional information. Put the following into the comment of the issue related to compilation:
+There are 2 known issues in the code that need fixing! The first is preventing compilation and the other is related to robots passing through objects or getting stuck in walls. Go to your project (the _project_ directory) repo on Github and create two issues, naming and labeling them appropriately. When you create an issue, label it with "bug" (from the pull down menu) and let's pretend that you added this issue when you first encountered it, therefore you provided additional information. Put the following into the comment of the issue related to compilation:
 
   "Simulator is not compiling. Compilation errors indicate the issue and where to locate the problem."
 
