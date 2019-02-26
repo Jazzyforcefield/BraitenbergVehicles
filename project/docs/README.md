@@ -7,7 +7,7 @@
 |-----|-----|
 | FRI,  March 1, 11:55pm |Initial UML Design for Factory Pattern and Strategy Pattern and their relationship(s) to Robot and Arena:  <strong> Submit _uml_design.pdf_ file in project/docs directory in _devel_ branch </strong>|
 | TUE, March 5 , 11:55pm | Unit Tests, Draft of Design Document: <strong>Submit test files in project/tests directory in _devel_ branch  </strong> <strong>Submit _design.pdf_ file in project/docs directory in _devel_ branch </strong>|
-| FRI,  March 8, 11:55pm | Preliminary Code Submission: all robot behaviors implemented, color functionality implemented, and 9 simple scenarios running <sup>*</sup>:  <strong>Submit all C++ (.cc and header) files in project/src directory in _devel_ branch </strong>  |
+| FRI,  March 8, 11:55pm | Preliminary Code Submission: all robot behaviors implemented, color functionality implemented, collision avoidance implemented, and 9 simple scenarios running <sup>*</sup>:  <strong>Submit all C++ (.cc and header) files in project/src directory in _devel_ branch </strong>  |
 | FRI,  March 15, 11:55pm | Documentation and Code Implementation for Iteration 1:  <strong>Submit all deliverables in proper directories in project folder in _master_ branch </strong> |
 
 <sup>*</sup>For your preliminary submission, please have all four robot behaviors implemented, the color functionality implemented, and the first 9  simple scenarios (specified in priority 2 requirements below) operational.
@@ -122,7 +122,7 @@ The initial position and radius of each entity in the Arena (Robots, Lights, and
   <li><a href="#reqs_imp">Implementation Requirements</a>
     <ol type="i">
     <li><a href="#reqs1">Priority Level 1: Design and Testing</a>
-    <li><a href="#reqs2">Priority Level 2: Robot Behaviors: Love, Cower, Aggression, Collision, and Changing Colors</a>
+    <li><a href="#reqs2">Priority Level 2: Robot Behaviors: Love, Cower, Aggression, Collision; Changing Colors, and Collision Avoidance</a>
     <li><a href="#reqs3">Priority Level 3: Implementing the Factory Pattern</a>
        </ol>
   </ol>
