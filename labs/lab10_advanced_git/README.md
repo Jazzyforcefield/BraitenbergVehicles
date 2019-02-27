@@ -81,7 +81,7 @@ To confirm which branch you are currently working and to see a list of all branc
 
 ### Creating an Issue
 
-There are 2 known issues in the code that need fixing! The first is preventing compilation and the other is related to robots passing through objects or getting stuck in walls. Go to your project (the _project_ directory) repo on Github and create two issues, naming and labeling them appropriately. When you create an issue, label it with "bug" (from the pull down menu) and let's pretend that you added this issue when you first encountered it, therefore you provided additional information. Put the following into the comment of the issue related to compilation:
+There are 2 known issues in the project code that need fixing! The first is preventing compilation and the other is related to robots passing through objects or getting stuck in walls. Go to your repo on Github and create two issues, naming and labeling them appropriately. When you create an issue, label it with "bug" (from the pull down menu) and let's pretend that you added this issue when you first encountered it, therefore you provided additional information. Put the following into the comment of the issue related to compilation:
 
   "Simulator is not compiling. Compilation errors indicate the issue and where to locate the problem."
 
@@ -110,7 +110,7 @@ Go to github and click on the pulldown menu in the upper left to see your branch
 
 ### Fix the Bugs
 
-1. Look at the error messages during compilation and fix them.
+1. Look at the error messages during compilation of the source code in the project directory and fix them.
 
 Now compile! You don't want to merge your changes back into devel until it compiles.
 
@@ -151,7 +151,11 @@ Save and close your editor. Now push ...
 git push --set-upstream origin fix/01-compilation-errors
 ```
 
-> The template provided in the git usage document can be added to git so that when the editor opens, you will see that content. To add the template, save it as a file (_~/.gitmessage_ is the convention) and add to your git configuration:
+> **Assessment/Feedback of the lab and of the project is conducted on the devel branch, so any feedback that you get is based on the code in devel. HOWEVER, the feedback files are posted to the master branch.**
+
+> **COMPILATION failure when pushing to server: Some students might have the experience that compilation works on their personal machine but fails on the server. If you see a message in the lab10 feedback file that refers to pointer data members in the Controller class, that is an error related to the copy constructor (look in arena.h for how to explicitely delete the copy constructor Controller(const Controller&)).**
+
+The template provided in the git usage document can be added to git so that when the editor opens, you will see that content. To add the template, save the text preceded by '#' in the pdf as a file (_~/.gitmessage_ is the convention) and add to your git configuration:
 ```
 git config --global commit.template ~/.gitmessage
 ```
