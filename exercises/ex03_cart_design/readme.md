@@ -17,7 +17,7 @@ This example demonstrates bad design. There are many things wrong with respect t
 
 5. You just broke the code in a significant way -- look at the calculation of the order total. Think about how the code is broken and how you would fix it without changing the design.
 
-6. Thinking about those good OOP characteristics, what does the use of _private_ enforce in the interaction between classes? Comment on how this would benefit future changes to class names (as in what was done in 3 above) and a change to a class data structure (e.g. array to vector).
+6. Thinking about those good OOP characteristics, what does the use of _private_ enforce in the interaction between classes? Comment on how this would benefit future changes to member variable names (as in what was done in 2 above) and a change to a class data structure (i.e. array to vector).
 
 <hr>
 
