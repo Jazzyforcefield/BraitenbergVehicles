@@ -45,7 +45,7 @@ The robot arena has entities that are specified in a configuration file. The int
 <li>A robot will change color to illustrate the sensor that is driving its behavior (food or light) </li>
 </ol>
 
-####None of the functionality specified in the numbered items above is implemented in the base code. You will design it and implement it in this iteration.
+##### None of the functionality specified in the numbered items above is implemented in the base code. You will design it and implement it in this iteration.
 
 #### Graphics Environment
 
