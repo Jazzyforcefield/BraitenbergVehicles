@@ -65,10 +65,6 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
 
     if (entity) {
       entity->LoadFromObject(entity_config);
-      if (etype == kBraitenberg) {
-        BraitenbergVehicle* bv = static_cast<BraitenbergVehicle*>(entity);
-        bv->UpdateLightSensors();
-      }
       AddEntity(entity);
     }
   }
