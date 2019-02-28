@@ -43,9 +43,8 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
   json_array& entities = arena_object["entities"].get<json_array>();
   for (unsigned int f = 0; f < entities.size(); f++) {
     json_object& entity_config = entities[f].get<json_object>();
-    unsigned int type = get_entity_type(
+    EntityType etype = get_entity_type(
       entity_config["type"].get<std::string>());
-    EntityType etype = static_cast<EntityType>(type);
 
     ArenaEntity* entity = NULL;
 
