@@ -1,20 +1,21 @@
 # Braitenberg Vehicles Simulator: Iteration 1 
-## Version 2 - Last Updated Tuesday 2/26 at 7:40am
+## Version 3 - Last Updated Thursday 2/28 at 3:00pm
+### Note - in the discussion below we use the terms BraitenBerg Vehicles and Robot interchangably (i.e., they are the same thing: Braitenberg Vehicle = Robot)
 
 >Your software is a reflection of your understanding of the requirements as specified in this document. If you do not understand any portion of the requirements or you think that the requirements are underspecified, it is your responsibility to get clarification from the instructor or a TA. Please read this document carefully and review it often WELL IN ADVANCE of turning in your iteration for assessment.
 
 |*Due Date* | **Item(s) Due** |
-|-----|-----|
-| FRI,  March 1, 11:55pm |Initial UML Design for Factory Pattern and Strategy Pattern and their relationship(s) to Robot and Arena:  <strong> Submit _uml_design.pdf_ file in project/docs directory in _devel_ branch </strong>|
+|------|-----|
+| FRI,  March 1, 11:55pm |Initial UML Class Design for Factory Pattern and Strategy Pattern and their relationship(s) to Robot and Arena:  <strong> Submit _uml_design.pdf_ file in project/docs directory in _devel_ branch </strong>|
 | TUE, March 5 , 11:55pm | Unit Tests, Draft of Design Document: <strong>Submit test files in project/tests directory in _devel_ branch  </strong> <strong>Submit _design.pdf_ file in project/docs directory in _devel_ branch </strong>|
 | FRI,  March 8, 11:55pm | Preliminary Code Submission: all robot behaviors implemented, color functionality implemented, collision avoidance implemented, and 9 simple scenarios running <sup>*</sup>:  <strong>Submit all C++ (.cc and header) files in project/src directory in _devel_ branch </strong>  |
 | FRI,  March 15, 11:55pm | Documentation and Code Implementation for Iteration 1:  <strong>Submit all deliverables in proper directories in project folder in _master_ branch </strong> |
 
-<sup>*</sup>For your preliminary submission, please have all four robot behaviors implemented, the color functionality implemented, and the first 9  simple scenarios (specified in priority 2 requirements below) operational.
+<sup>*</sup>For your preliminary submission, please have all four robot behaviors implemented; the updated collision behavior implemented; the color functionality implemented, and the first 9  simple scenarios (specified in priority 2 requirements below) operational.
 
 ### Project Overview
 
-In this iteration, you will begin understanding the design of an existing simulation and then, update and augment the design, tests, and code to simulate the behavior of Braitenberg Vehicles. Braitenberg Vehicles are the thought experiments of Valentino Braitenberg, who imagined complex behavior emerging from simple design. His vehicles exhibit aggression, fear, exploration, and love through simple sensor-motor connections. You should review the following links to thoroughly  familiarize yourself with Braitenberg Vehicles.
+In this iteration, you will begin understanding the design of an existing simulation and then, update and augment the design, tests, and code to simulate the behavior of Braitenberg Vehicles. Braitenberg Vehicles (which we also refer to as Robots) are the thought experiments of Valentino Braitenberg, who imagined complex behavior emerging from simple design. His vehicles exhibit aggression, fear, exploration, and love through simple sensor-motor connections. You should review the following links to thoroughly  familiarize yourself with Braitenberg Vehicles.
 
 - <a href="https://en.wikipedia.org/wiki/Braitenberg_vehicle" target="_blank">https://en.wikipedia.org/wiki/Braitenberg_vehicle</a>
 - <a href="https://en.wikipedia.org/wiki/Valentino_Braitenberg" target="_blank">https://en.wikipedia.org/wiki/Valentino_Braitenberg</a>
@@ -40,11 +41,11 @@ The code is organized such that robot behavior in the arena (i.e. the model) is 
 The robot arena has entities that are specified in a configuration file. The intent is for the robots specified in the configuration file to carry out their behavior in the Arena with the other entities specified in the configuration file (lights and food). For example:
 <ol>
 <li>Besides the explore behavior, robots can be configured to exhibit love, fear, and or aggression toward food and/or light entities in the Arena </li>
-<li> If a robot bumps into another robot or the wall it should  reverse and then turn LEFT 45 degrees (from its current heading) to avoid another collision with the object it collided with. </li>
+<li> If a robot bumps into another robot or the wall it should reverse (turn around 180 degrees); advance for 20 simulation time steps, and then turn LEFT 45 degrees (from its current heading) to avoid another collision with the object it collided with. </li>
 <li>A robot will change color to illustrate the sensor that is driving its behavior (food or light) </li>
 </ol>
 
-None of the functionality specified in the numbered items above is implemented in the base code. You will design it and implement it in this iteration.
+####None of the functionality specified in the numbered items above is implemented in the base code. You will design it and implement it in this iteration.
 
 #### Graphics Environment
 
@@ -62,7 +63,7 @@ A basic GUI with user buttons and input via mouse and keyboard has been provided
 
 For example, when the default configuration file (default.json) is used to run the simulation:
 <ul>
-<li> there is one (mobile) Light entity, one (stationary) food entity, and one Braitenberg robot with default behavior toward light (meaning the robot ignores input from its light sensor) and explore behavior toward food. </li>
+<li> there is one (mobile) Light entity, one (stationary) food entity, and one Braitenberg vehicle with default behavior toward light (meaning the robot ignores input from its light sensor) and explore behavior toward food. </li>
 <li> The Entity button GUI enables the user to select a robot in the Arena and then change the robot's behavior toward food (to love, cower, explore, or default) and/or light (to aggressive, love, cower, or explore) - or to leave the current behavior in place.  </li>
 <li>The GUI also enables the user to turn the robot's mobility off. </li>
 <li>If the user selects a light via the Entity button, the user can turn the light's mobility on or off as well.</li>
@@ -86,15 +87,16 @@ Note, we have provided simulation configuration files to help you test your chan
 
 - <a href="https://en.wikipedia.org/wiki/JSON" target="_blank">https://en.wikipedia.org/wiki/JSON</a>
 - <a href="https://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/" target="_blank">https://www.copterlabs.com/json-what-it-is-how-it-works-how-to-use-it/</a>
-
+<p>
 The JSON files are used to configure:
-<ol><ol>
+<ol> <ol>
 <li> the size of the Arena, </li>
 <li> the number of Food entities in the Arena, </li>
 <li> the number of Light entities in the Arena, </li>
-<li> and the number of Robot entities in the Arena when the simulation is initialized. </li>
+<li> and the number of Robot entities in the Arena</li>
 </ol></ol>
-
+when the simulation is initialized.
+</p>
 The initial position and radius of each entity in the Arena (Robots, Lights, and Food) must also be specified.
 <ul>
 <li>For food, heading (which should be 0.0 degrees) should also be specified </li>
@@ -135,11 +137,11 @@ The initial position and radius of each entity in the Arena (Robots, Lights, and
 
 #### <a name="reqs_design">Design Requirements</a>
 
-One design requirement is the appropriate use of the **__Factory design pattern__** to implement some aspect of the functional requirements. The interaction between Arena and the configuration files (specified in JavaScript Object Notation (JSON)), and the entities that are enclosed by the Arena provide a good opportunity to employ the Factory Pattern. Another design requirement is to create an initial UML design of how you plan to refactor the simulation code to employ the **__Strategy Pattern__**.
+One design requirement is the appropriate use of the **__Factory design pattern__** to implement some aspect of the functional requirements. The interaction between Arena and the configuration files (specified in JavaScript Object Notation (JSON)), and the entities that are enclosed by the Arena provide a good opportunity to employ the Factory Pattern. Another design requirement is to create an initial UML design of how you plan to refactor the simulation code to employ the **__Strategy design pattern__**.
 
-The Factory Pattern should be designed as a pure abstract class (an interface class) from which the Robot, Light, and Food Factory classes will derive their common interface. The Robot, Light, and Food factory classes will be employed by the Arena to create the various entities (i.e., robots, lights, and food)  that will be present and operate in the Arena based on the configuration file.
+One way to implement the Factory Pattern is a as a pure abstract class (an interface class) from which the Robot, Light, and Food Factory classes will derive their common interface. The Robot, Light, and Food factory classes will be employed by the Arena to create the various entities (i.e., robots, lights, and food)  that will be present and operate in the Arena based on the configuration file. There are other ways as well, and you may wish to explore them.
 
-How and where to employ the Strategy Pattern is up to you - but remember, the Strategy Pattern is an overarching pattern that is deployed in a way that makes your implementation cohesive and loosely coupled.
+How and where to employ the Strategy desing pattern is up to you - but remember, the Strategy Pattern is an overarching pattern that is deployed in a way that makes your implementation cohesive and loosely coupled.  One way to think about how to incorporate the Strategy pattern is to think about how each Robot will effect (carry out) different behaviors based on the input from different sensors (which, for this iteration, sense light and food).  Remember, a robot's behavior in response to sensing light and food can change (so their behaviors in response to each of the sensors is dynamically configurable). 
 
 #### Design Decision
 
@@ -174,7 +176,7 @@ See the information at the URL:   https://google.github.io/styleguide/cppguide.h
 
 - ##### <a name="doxy">Doxygen</a>
 
-For this iteration, you need a general description for all classes and methods that you create or update, and completely document the Arena, Robot, and Factory classes. It is not necessary to document setters and getters (unless they are used in some exceptional manner), and it is not necessary to document obvious parameters of functions.
+For this iteration, you need a general description for all classes and methods that you create or update, and completely document the Arena, Robot, and Factory classes (You **do not** have to implement the Strategy design pattern in this iteration, but you do have to include it in your initial and final UML design). It is not necessary to document setters and getters (unless they are used in some exceptional manner), and it is not necessary to document obvious parameters of functions.
 
  As part of your fresh clone prior to submission, please also compile the Doxygen and look at the generated webpages (and UML).
 
@@ -238,7 +240,7 @@ The iterative method identifies and prioritizes feature enhancements and code re
 
 ##### <a name="reqs1">Priority Level 1 : Design and Testing </a>
 
-- A UML diagram augmented with the additions you will make to the design (which will include the Factory Pattern and Strategy Pattern) <strong> Due March 1st at 11:55pm </strong>
+- A UML diagram augmented with the additions you will make to the design (that is, the UML Class Diagram) of the Arena and Braitenberg Vehicle class diagram (your will create and incorporate the UML class design for the Factory Design Pattern and Strategy Design Pattern and specify the relationship of those classes to the Arena and Braitenberg Vehicle classes) <strong> Due March 1st at 11:55pm </strong>
 - A draft of the design document as discussed under that section (whose specific requirements are still forthcoming). <strong>Due March 5th at 11:55pm </strong>
 - The functional interface to the Unit Tests for the Classes and Methods you plan to add  for the Factory Design Pattern.  <strong>Due March 5th at 11:55pm</strong>
 <ul>
@@ -294,7 +296,7 @@ When you have implemented the aggressive, love, and coward behaviors, refactored
 
 ##### <a name="reqs3">Priority Level 3 : Implement the Factory Pattern and re-test 9 basic scenarios:**Due March 15th at 11:55pm**</a>
 
-As specified in your design document, implement the Factory Pattern.  Note, you may have to update your design and/or Unit tests to get your implementation of the Factory Design Pattern working correctly.  Once your implementation passes your unit tests, re-run the 9 scenarios specified in the Priority Level 2 requirements to ensure the behavior is similar to the behavior you observed with the Priority Level 2 requirements working correctly.
+As specified in your UML class design document, implement the Factory Design Pattern.  Note, you may have to update your design and/or Unit tests to get your implementation of the Factory Design Pattern working correctly.  Once your implementation passes your unit tests, re-run the 9 scenarios specified in the Priority Level 2 requirements to ensure the behavior is similar to the behavior you observed with the Priority Level 2 requirements working correctly.
 
 <hr>
 
@@ -304,7 +306,7 @@ Everything will be submitted via Github in the master branch of the project dire
 
 **Late assignments will not be accepted**, but you will receive partial credit for partial completion of the requirements.
 
-Your software will be assessed through automatic testing and by the TA. The process for testing will be to start by typing  `make clean` then `make`. We **highly encourage** you to make a new clone of  your repo on a **cselabs machine** and also `make clean` and `make` to confirm all is working well be fore submitting your iteration 1 code.
+Your software will be assessed through automatic testing and by the TAs. The process for testing will be to start by typing  `make clean` then `make`. We **highly encourage** you to make a new clone of  your repo on a **cselabs machine** and also `make clean` and `make` to confirm all is working well be fore submitting your iteration 1 code.
 
 <hr>
 
@@ -313,7 +315,7 @@ Your software will be assessed through automatic testing and by the TA. The proc
 This is the breakdown for point distribution:
 
 25% : Iteration \#1
-- 10% : UML Design Initial Submission **March 1st**  and  Design Document Draft Submission **March 5th**
+- 10% : UML Class Design Initial Submission **March 1st**  and  Design Document Draft Submission **March 5th**
 - 10% : Unit Test Submission **March 5th**
 - 05% : Preliminary Code Submission **March 8th**
 - 40% : Final Documentation - UML, Design Document, Doxygen **March 15th**
