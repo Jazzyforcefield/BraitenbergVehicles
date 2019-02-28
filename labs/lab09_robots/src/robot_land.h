@@ -13,6 +13,8 @@
 #include <cmath>
 #include <iostream>
 
+#include "robot.h"
+
 /*******************************************************************************
  * Class Definitions
  ******************************************************************************/
@@ -31,8 +33,15 @@
  */
 class RobotLand {
  public:
-  RobotLand(void) {}
+  RobotLand(void) {
+    robot0_ = new Robot(0, 50, Point(512, 350), 1);
+    robot1_ = new Robot(1, 50, Point(512, 350), 1);
+  }
 
+  ~RobotLand(void) {
+    delete robot0_;
+    delete robot1_;
+  }
   /**
    * @brief Set the simulation time for \ref RobotLand.
    *
@@ -57,6 +66,8 @@ class RobotLand {
   void AdvanceTime(double dt) {
     sim_time_ += dt;
     std::cout << "Advancing simulation time to " << sim_time_ << std::endl;
+    robot0_->Update(sim_time_);
+    robot1_->Update(sim_time_);
   }
 
   /**
@@ -68,48 +79,16 @@ class RobotLand {
    * @brief Get the current # of robots in the arena. Hardcoded for now.
    */
   int get_num_robots(void) { return 2; }
-
+  
+  
   /**
-   * @brief Get the current position of the specified robot.
+   * @brief Gets the robot with the id of the parameter.
+   * 
+   * @param[in] id The id of the robot sought
    *
-   * @param[in] id The ID of the robot.
-   * @param[out] x_pos The X position of the robot.
-   * @param[out] y_pos The Y position of the robot.
-   *
-   * @return, true if id was valid, otherwise false.
+   * @return The robot pointer with id id.
    */
-  bool get_robot_pos(int id, double *x_pos, double *y_pos);
-
-  /**
-   * @brief Get the current velocity of the specified robot. Currently a stub.
-   *
-   * @param[in] id The ID of the robot.
-   * @param[out] x_vel The X component of velocity.
-   * @param[out] y_vel The Y component of velocity.
-   */
-  bool get_robot_vel(int id, double *x_vel, double *y_vel);
-
-  /**
-   * @brief Get the radius of the specified robot. Hardcoded for now.
-   *
-   * @return The robot's radius.
-   */
-  double get_robot_radius() { return 50; }
-
-  /**
-   * @brief Get the angle of the robots sensor, in radians. Hardcoded for now.
-   *
-   * @return The sensor angle in radians,
-   */
-  double get_robot_sensor_angle() { return 2.0; }
-
-  /**
-   * @brief Get the distance of a specified robot's sensor.
-   *
-   * @return The sensor distance.
-   */
-  double get_robot_sensor_range() {
-    return 3.0 * get_robot_radius(); }
+  Robot * get_robot(int id);
 
 
   /**
@@ -130,10 +109,11 @@ class RobotLand {
 
  private:
   // Hard coding these robots to move in a circle
-  double circle_x(double t) { return 512 + 200.0 * cos(t); }
-  double circle_y(double t) { return 350 + 200.0 * sin(t); }
 
   double sim_time_{0.0};
+
+  Robot * robot0_;
+  Robot * robot1_;
 };
 
 #endif  // SRC_ROBOT_LAND_H_

@@ -32,7 +32,6 @@ RobotViewer::RobotViewer()
 
   // Instantiate robot_land, which holds 2 robots and an obstacle.
   robot_land_ = new robot_land();
-
 }
 
 RobotViewer::~RobotViewer() { delete robot_land_; }
@@ -169,8 +168,7 @@ void RobotViewer::DrawObstacle(NVGcontext *ctx, int id, double xpos,
   nvgText(ctx, xpos, ypos, text.c_str(), NULL);
 }
 
-void RobotViewer::DrawUsingNanoVG(NVGcontext *ctx)
-{
+void RobotViewer::DrawUsingNanoVG(NVGcontext *ctx) {
   // initialize text rendering settings
   nvgFontSize(ctx, 18.0f);
   nvgFontFace(ctx, "sans-bold");

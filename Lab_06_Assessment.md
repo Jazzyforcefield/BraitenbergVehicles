@@ -1,6 +1,8 @@
-### Feedback for Lab 06
+### Assessment for Lab 06
 
-Run on February 13, 05:11:27 AM.
+#### Total score: _100_ / _100_
+
+Run on February 13, 19:44:57 PM.
 
 
 #### System Files and Lab Directory Structure
@@ -47,20 +49,8 @@ Run on February 13, 05:11:27 AM.
 
 #### Results
 
-+ Fail: Check that a GoogleTest test passes.
-    fails the test: DateTest.ConstructorDateTests.
-<pre>
-[ RUN      ] DateTest.ConstructorDateTests
-./date_unittest.cc:56: Failure
-      Expected: default_date.GetDate()
-      Which is: "2019-02-13"
-To be equal to: expected_out_1
-      Which is: "2019-02-12"
-./date_unittest.cc:57: Failure
-      Expected: default_date.GetUsDate()
-      Which is: "02-13-2019"
-To be equal to: expected_out_2
-      Which is: "02-12-2019"</pre>
++ Pass: Check that a GoogleTest test passes.
+    passes the test: DateTest.ConstructorDateTests.
 
 
 
@@ -94,7 +84,7 @@ To be equal to: expected_out_2
 
 
 
-+ Fail: 85.71% of the tests passed, but the target is 100%.
++  _50_ / _50_ : Pass: 100% of the tests passed.
 
 
 ### Testing Mutants
@@ -102,8 +92,7 @@ To be equal to: expected_out_2
 
 #### Testing Mutant 1 for failure
 
-+ Fail: There is no test case for this mutant (since all tests pass).
-   - Reason - Dates constructed with epoch are about 70 years in the future
++ Pass: At least one test failed for Mutant 1
 
 
 #### Testing Mutant 2 for failure
@@ -118,8 +107,7 @@ To be equal to: expected_out_2
 
 #### Testing Mutant 4 for failure
 
-+ Fail: There is no test case for this mutant (since all tests pass).
-   - Reason - Today's date month off by one
++ Pass: At least one test failed for Mutant 4
 
 
 #### Testing Mutant 5 for failure
@@ -145,4 +133,52 @@ To be equal to: expected_out_2
 #### Testing Mutant 9 for failure
 
 + Pass: At least one test failed for Mutant 9
+
+
+#### Testing Mutant 10 for failure
+
++ Pass: At least one test failed for Mutant 10
+
+
+#### Testing Mutant 11 for failure
+
++ Pass: At least one test failed for Mutant 11
+
+
+#### Testing Mutant 12 for failure
+
++ Pass: At least one test failed for Mutant 12
+
+
+#### Testing Mutant 13 for failure
+
++ Fail: There is no test case for this mutant (since all tests pass).
+   - Reason - Some dates don't have leading zeroes
+
+
+#### Testing Mutant 14 for failure
+
++ Pass: At least one test failed for Mutant 14
+
+
+#### Testing Mutant 15 for failure
+
++ Pass: At least one test failed for Mutant 15
+
+
+#### Testing Mutant 16 for failure
+
++ Pass: At least one test failed for Mutant 16
+
+
+#### Testing Mutant 17 for failure
+
++ Pass: At least one test failed for Mutant 17
+
+
+#### Results
+
++  _50_ / _50_ : Pass: 90.0% of the tests passed.
+
+#### Total score: _100_ / _100_
 

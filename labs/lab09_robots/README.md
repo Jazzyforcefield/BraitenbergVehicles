@@ -39,6 +39,11 @@ The directory structure for this lab is identical to that of the project.
     robot_viewer.h/cc and robot_land.h/cc.
 
 - `src/Makefile`:
+<<<<<<< HEAD
+  - You should *NOT* have to modify this makefile _EXCEPT_ for the `CS3081DIR`
+    variable described above (both for this lab and the project).
+=======
+>>>>>>> support-code
   - Builds the project source, assumes it should build all .cc files in the
     current directory.
   - Creates the `build/bin/robotviewer` executable.
@@ -248,6 +253,17 @@ private:
 };
 ```
 
+<<<<<<< HEAD
+2. The constructor initializes all class members. The origin should be set to {512,350}. The Update function calculates the new robot position based on the circle_x and circle_y equations of the original base code. It updates direction, based on the calculated velocity (i.e. change in x and y).
+
+> Notice that the robots move at a different rate around the circle, which is accomplished in the base code by modifying the simulation time. For your robot, use the speed_ variable to control this. Also, notice how the direction is calculated in the RobotViewer in DrawUsingNanoVG based on velocity and then taking atan2(delta_y, delta_x). For your robot, the direction corresponds to the atan2 results.
+
+The setters and getters for Robot are straightforward, but ask if you have questions. You do not need your robot class functional or working in the context of the graphics viewer to receive feedback about the Robot class.
+
+### Incorporate Robot Class into RobotLand
+
+1. Define Robot **pointers** as members of RobotLand. These can be 2 separate pointers or combined into an array. Instantiate the robots in the RobotLand constructor. Destroy the robots in the RobotLand destructor.
+=======
 2. The constructor initializes all class members based on the user-defined parameters AND for other member variables, use the values given in the provided code. The origin should be set to {512,350} **when you instantiate in RobotLand**. Initialize the position of the robot based on the user-defined origin and a sim_time_ of 0. The Update function calculates the new robot position based on the circle_x and circle_y equations of the original base code. It updates direction, based on the calculated velocity (i.e. change in x and y), as shown in DrawUsingNanoVG.
 
 > Notice that the robots move at a different rate around the circle, which is accomplished in the base code by scaling the simulation time. For your robot, use the speed_ variable to control this. Also, notice how the direction is calculated in the RobotViewer in DrawUsingNanoVG based on velocity and then taking atan2(delta_y, delta_x). For your robot class, the direction corresponds to the atan2 results, and this should be calculated in the Robot then the RobotViewer uses a getter to get that information.
@@ -257,6 +273,7 @@ The setters and getters for Robot are straightforward, but ask if you have quest
 ### Incorporate Robot Class into RobotLand
 
 1. Define Robot **pointers** as members of RobotLand. These can be 2 separate pointers or combined into an array. Instantiate the robots in the RobotLand constructor, setting the user-defined parameters for the Robot **such that they will look and behave exactly like they do in the provided code**. Destroy the robots in the RobotLand destructor.
+>>>>>>> support-code
 
 2. In `RobotLand::AdvanceTime()`, call Robot::Update(time) for each robot. The Update() function will update the position and direction of the robot.
 
@@ -290,7 +307,11 @@ Within DrawRobot, use the setters and getters of the Robot class to extract the 
 1. Add 2 buttons to the GUI to change the color of each robot.
    - Create OnColorChangeBtnPressed0() method to change the color of robot 0.
    - Create OnColorChangeBtnPressed1() method to change the color of robot 1.
+<<<<<<< HEAD
+   - Create 2 new nanogui buttons in the RobotViewer constructor, binding its
+=======
    - Create 2 new nanogui buttons in the RobotViewer InitNanoGUI, binding its
+>>>>>>> support-code
      click action to the functions you just created (look at the other buttons in RobotViewer::InitNanoGUI for examples of how to do this).
 
 2. In `RobotViewer::DrawRobots`, incorporate Robot::color_. If it is true, then fill the robot circle with maroon (or whatever color you want):

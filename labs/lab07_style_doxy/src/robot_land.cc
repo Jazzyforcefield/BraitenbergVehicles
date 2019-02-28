@@ -22,15 +22,13 @@ bool robot_land::get_robot_pos(int id, double *x_pos, double *y_pos) {
     *x_pos = circle_x(sim_time);
     *y_pos = circle_y(sim_time);
     return true;
-  }
-  else if (id == 1) {
+  } else if (id == 1) {
     // make this robot slower
     double t = 0.75 * sim_time;
     *x_pos = circle_x(t);
     *y_pos = circle_y(t);
     return true;
-  }
-  else {
+  } else {
     return false;
   }
 }
@@ -66,13 +64,13 @@ bool robot_land::get_robot_vel(int id, double *x_vel, double *y_vel) {
   }
 }
 
-//Hard coded for now...
+// Hard coded for now...
 double robot_land::get_robot_radius() { return 50; }
 
-//Hard coded for now...  in radians
+// Hard coded for now...  in radians
 double robot_land::get_robot_sensor_angle() { return 2.0; }
 
-//Hard coded for now...
+// Hard coded for now...
 double robot_land::get_robot_sensor_distance() {
   return 3.0 * get_robot_radius();
 }
