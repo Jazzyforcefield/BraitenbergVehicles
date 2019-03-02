@@ -5,14 +5,17 @@ DEBUG = -g
 CFLAGS = -Wall -c -std=c++11 $(DEBUG)
 LFLAGS = -Wall $(DEBUG)
 
-all: main.o legged_robot.o
-	$(CC) $(LFLAGS) main.o legged_robot.o -o robot
+all: main.o legged_robot.o FactoryPointer.o
+	$(CC) $(LFLAGS) main.o legged_robot.o -o robot FactoryPointer.o
 
 main.o : main.cc
 	$(CC) $(CFLAGS) main.cc -o main.o
 
 legged_robot.o : legged_robot.cc
 	$(CC) $(CFLAGS) legged_robot.cc -o legged_robot.o
+
+FactoryPointer.o : FactoryPointer.cc
+	$(CC) $(CFLAGS) FactoryPointer.cc -o FactoryPointer.o
 
 clean:
 	\rm -f *.o *.*~ robot
