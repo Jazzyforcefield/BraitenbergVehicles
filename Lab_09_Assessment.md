@@ -1,23 +1,23 @@
 ### Assessment for Lab 09
 
-#### Total score: _60_ / _60_
+#### Total score: _100_ / _100_
 
-Run on March 01, 17:38:42 PM.
+Run on March 04, 14:24:08 PM.
 
 
 #### System Files and Lab Directory Structure
 
-+ Pass: Copy directory "Files for Dependencies".
++  _10_ / _10_ : Pass: Copy directory "Files for Dependencies".
 
 
 
-+ Pass: Check that directory "labs" exists.
++  _5_ / _5_ : Pass: Check that directory "labs" exists.
 
-+ Pass: Check that directory "labs/lab09_robots" exists.
++  _5_ / _5_ : Pass: Check that directory "labs/lab09_robots" exists.
 
 + Pass: Change into directory "labs/lab09_robots".
 
-+ Pass: Check that make compiles.
++  _5_ / _5_ : Pass: Check that make compiles.
 
 
 
@@ -27,11 +27,11 @@ Run on March 01, 17:38:42 PM.
 
 + Pass: Change into directory "Lab09".
 
-+ Pass: Check that make compiles.
++  _10_ / _10_ : Pass: Check that make compiles.
 
 
 
-+ Pass: Check that directory "../build/bin" exists.
++  _5_ / _5_ : Pass: Check that directory "../build/bin" exists.
 
 +  _15_ / _15_ : Pass: Check that a GoogleTest test passes.
     passes the test: RobotTest.ConstructorUserDefined.
@@ -53,5 +53,5 @@ Run on March 01, 17:38:42 PM.
 
 
 
-#### Total score: _60_ / _60_
+#### Total score: _100_ / _100_
 
