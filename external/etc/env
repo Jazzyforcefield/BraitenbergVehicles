@@ -6,3 +6,4 @@ endif
 #CS3081DIR = /classes/csel-s19c3081
 
 -include $(ROOTDIR)/external/etc/env.local
+-include $(ROOTDIR)/../env.local
