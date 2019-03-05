@@ -1,5 +1,5 @@
 # Braitenberg Vehicles Simulator: Iteration 1 
-## Version 3 - Last Updated Thursday 2/28 at 3:00pm
+## Version 3 - Last Updated Monday 3/4 at 7:50pm
 ### Note - in the discussion below we use the terms Braitenberg Vehicles and Robot interchangably (i.e., they are the same thing: Braitenberg Vehicle = Robot)
 
 >Your software is a reflection of your understanding of the requirements as specified in this document. If you do not understand any portion of the requirements or you think that the requirements are underspecified, it is your responsibility to get clarification from the instructor or a TA. Please read this document carefully and review it often WELL IN ADVANCE of turning in your iteration for assessment.
@@ -7,8 +7,8 @@
 |*Due Date* | **Item(s) Due** |
 |------|-----|
 | FRI,  March 1, 11:55pm |Initial UML Class Design for Factory Pattern and Strategy Pattern and their relationship(s) to Robot and Arena:  <strong> Submit _uml_design.pdf_ file in project/docs directory in _devel_ branch </strong>|
-| TUE, March 5, 11:55pm | Unit Tests, Draft of Design Document: <strong>Submit test files in project/tests directory in _devel_ branch  </strong> <strong>Submit _design.pdf_ file in project/docs directory in _devel_ branch </strong>|
-| FRI,  March 8, 11:55pm | Preliminary Code Submission: all robot behaviors implemented, color functionality implemented, collision avoidance implemented, and 9 simple scenarios running <sup>*</sup>:  <strong>Submit all C++ (.cc and header) files in project/src directory in _devel_ branch </strong>  |
+| TUE, March 5, 11:55pm | Unit Tests for Factory Pattern: <strong>Submit test files in project/tests directory in _devel_ branch  </strong> |
+| FRI,  March 8, 11:55pm | Draft of Design Document, Preliminary Code Submission: all robot behaviors implemented, color functionality implemented, collision avoidance implemented, and 9 simple scenarios running <sup>*</sup>:  <strong>Submit all C++ (.cc and header) files in project/src directory in _devel_ branch </strong> <strong>Submit _design.pdf_ file in project/docs directory in _devel_ branch </strong>  |
 | FRI,  March 15, 11:55pm | Documentation and Code Implementation for Iteration 1:  <strong>Submit all deliverables in proper directories in project folder in _master_ branch </strong> |
 
 <sup>*</sup>For your preliminary submission, please have all four robot behaviors implemented; the updated collision behavior implemented; the color functionality implemented, and the first 9  simple scenarios (specified in priority 2 requirements below) operational.
