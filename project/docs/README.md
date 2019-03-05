@@ -1,5 +1,5 @@
 # Braitenberg Vehicles Simulator: Iteration 1 
-## Version 3 - Last Updated Monday 3/4 at 7:50pm
+## Version 3 - Last Updated Monday 3/4 at 9:40pm
 ### Note - in the discussion below we use the terms Braitenberg Vehicles and Robot interchangably (i.e., they are the same thing: Braitenberg Vehicle = Robot)
 
 >Your software is a reflection of your understanding of the requirements as specified in this document. If you do not understand any portion of the requirements or you think that the requirements are underspecified, it is your responsibility to get clarification from the instructor or a TA. Please read this document carefully and review it often WELL IN ADVANCE of turning in your iteration for assessment.
