@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 05, 20:51:25 PM.
+Run on March 06, 00:45:54 AM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -40,9 +40,7 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 
      "src/mainpage.h" not found.
 
-+ Fail: Check that file "docs/uml_design.pdf" exists.
-
-     "docs/uml_design.pdf" not found.
++ Pass: Check that file "docs/uml_design.pdf" exists.
 
 + Fail: Check that file "docs/design.pdf" exists.
 
@@ -56,39 +54,81 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 
 + Fail: Ensuring code follows style guide.
 
-<pre>make: Warning: File 'Makefile' has modification time 0.3 s in the future
+<pre>make: Warning: File 'Makefile' has modification time 0.23 s in the future
 cd src; make check-style
 make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
-make[1]: Warning: File '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/external/etc/env.local' has modification time 0.28 s in the future
+make[1]: Warning: File '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/external/etc/env.local' has modification time 0.18 s in the future
 ==== Checking style is correct ====
 /class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
 arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
 arena.cc:239:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 arena.cc:239:  Extra space after ( in function call  [whitespace/parens] [4]
 arena.cc:46:  Add #include <string> for string  [build/include_what_you_use] [4]
+BraitenbergVehicleFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+BraitenbergVehicleFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
+BraitenbergVehicleFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
+BraitenbergVehicleFactory.cc:11:  Tab found; better to use spaces  [whitespace/tab] [1]
+BraitenbergVehicleFactory.cc:14:  You don't need a ; after a }  [readability/braces] [4]
 controller.cc:36:  Extra space for operator !   [whitespace/operators] [4]
 controller.cc:41:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
 controller.cc:41:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+Factory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+Factory.cc:8:  Tab found; better to use spaces  [whitespace/tab] [1]
+Factory.cc:11:  You don't need a ; after a }  [readability/braces] [4]
+Factory.cc:1:  project/src/Factory.cc should include its header file project/src/Factory.h  [build/include] [5]
+FoodFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+FoodFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
+FoodFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
+FoodFactory.cc:11:  Tab found; better to use spaces  [whitespace/tab] [1]
+FoodFactory.cc:14:  You don't need a ; after a }  [readability/braces] [4]
 graphics_arena_viewer.cc:39:  Missing spaces around =  [whitespace/operators] [4]
 graphics_arena_viewer.cc:46:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
 graphics_arena_viewer.cc:46:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+LightFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+LightFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
+LightFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
+LightFactory.cc:11:  Tab found; better to use spaces  [whitespace/tab] [1]
+LightFactory.cc:14:  You don't need a ; after a }  [readability/braces] [4]
 arena_entity.h:141:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
 arena.h:52:  Zero-parameter constructors should not be marked explicit.  [runtime/explicit] [5]
 arena.h:55:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
 behavior_enum.h:37:  Add #include <string> for string  [build/include_what_you_use] [4]
+BraitenbergVehicleFactory.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+BraitenbergVehicleFactory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
+BraitenbergVehicleFactory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
+BraitenbergVehicleFactory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
+BraitenbergVehicleFactory.h:15:  Tab found; better to use spaces  [whitespace/tab] [1]
 common.h:19:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
 common.h:20:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
 common.h:21:  Tab found; better to use spaces  [whitespace/tab] [1]
 common.h:20:  Add #include <string> for string  [build/include_what_you_use] [4]
 controller.h:72:  Tab found; better to use spaces  [whitespace/tab] [1]
 entity_type.h:14:  Found C++ system header after other header. Should be: entity_type.h, c system, c++ system, other.  [build/include_order] [4]
+Factory.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+Factory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
+Factory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
+Factory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
+FoodFactory.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+FoodFactory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
+FoodFactory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
+FoodFactory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
+FoodFactory.h:15:  Tab found; better to use spaces  [whitespace/tab] [1]
 graphics_arena_viewer.h:171:  "virtual" is redundant since function is already declared as "override"  [readability/inheritance] [4]
+LightFactory.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+LightFactory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
+LightFactory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
+LightFactory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
+LightFactory.h:15:  Tab found; better to use spaces  [whitespace/tab] [1]
 Done processing arena.cc
 Done processing braitenberg_vehicle.cc
+Done processing BraitenbergVehicleFactory.cc
 Done processing controller.cc
+Done processing Factory.cc
 Done processing food.cc
+Done processing FoodFactory.cc
 Done processing graphics_arena_viewer.cc
 Done processing light.cc
+Done processing LightFactory.cc
 Done processing main.cc
 Done processing motion_behavior.cc
 Done processing motion_behavior_differential.cc
@@ -99,12 +139,16 @@ Done processing arena_immobile_entity.h
 Done processing arena_mobile_entity.h
 Done processing arena_viewer.h
 Done processing behavior_enum.h
+Done processing BraitenbergVehicleFactory.h
 Done processing braitenberg_vehicle.h
 Done processing common.h
 Done processing controller.h
 Done processing entity_type.h
+Done processing Factory.h
+Done processing FoodFactory.h
 Done processing food.h
 Done processing graphics_arena_viewer.h
+Done processing LightFactory.h
 Done processing light.h
 Done processing motion_behavior_differential.h
 Done processing motion_behavior.h
@@ -112,7 +156,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 21
+Total errors found: 59
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
