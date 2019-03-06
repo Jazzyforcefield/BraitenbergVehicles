@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 06, 00:45:54 AM.
+Run on March 06, 00:50:50 AM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -36,9 +36,7 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 
 #### Documentation Tests
 
-+ Fail: Check that file "src/mainpage.h" exists.
-
-     "src/mainpage.h" not found.
++ Pass: Check that file "src/mainpage.h" exists.
 
 + Pass: Check that file "docs/uml_design.pdf" exists.
 
@@ -54,10 +52,10 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 
 + Fail: Ensuring code follows style guide.
 
-<pre>make: Warning: File 'Makefile' has modification time 0.23 s in the future
+<pre>make: Warning: File 'Makefile' has modification time 0.25 s in the future
 cd src; make check-style
 make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
-make[1]: Warning: File '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/external/etc/env.local' has modification time 0.18 s in the future
+make[1]: Warning: File '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/external/etc/env.local' has modification time 0.23 s in the future
 ==== Checking style is correct ====
 /class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
 arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
@@ -119,6 +117,8 @@ LightFactory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
 LightFactory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
 LightFactory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
 LightFactory.h:15:  Tab found; better to use spaces  [whitespace/tab] [1]
+mainpage.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+mainpage.h:0:  No #ifndef header guard found, suggested CPP variable is: SRC_MAINPAGE_H_  [build/header_guard] [5]
 Done processing arena.cc
 Done processing braitenberg_vehicle.cc
 Done processing BraitenbergVehicleFactory.cc
@@ -150,13 +150,14 @@ Done processing food.h
 Done processing graphics_arena_viewer.h
 Done processing LightFactory.h
 Done processing light.h
+Done processing mainpage.h
 Done processing motion_behavior_differential.h
 Done processing motion_behavior.h
 Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 59
+Total errors found: 61
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
