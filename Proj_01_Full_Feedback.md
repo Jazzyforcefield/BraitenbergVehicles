@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 05, 18:06:19 PM.
+Run on March 05, 20:52:15 PM.
 
 + Pass: Checkout devel branch.
 
@@ -84,11 +84,10 @@ arena_entity.h:141:  Is this a non-const reference? If so, make const or use a p
 arena.h:52:  Zero-parameter constructors should not be marked explicit.  [runtime/explicit] [5]
 arena.h:55:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
 behavior_enum.h:37:  Add #include <string> for string  [build/include_what_you_use] [4]
-common.h:15:  <chrono> is an unapproved C++11 header.  [build/c++11] [5]
-common.h:22:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
-common.h:23:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
-common.h:24:  Tab found; better to use spaces  [whitespace/tab] [1]
-common.h:23:  Add #include <string> for string  [build/include_what_you_use] [4]
+common.h:19:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
+common.h:20:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
+common.h:21:  Tab found; better to use spaces  [whitespace/tab] [1]
+common.h:20:  Add #include <string> for string  [build/include_what_you_use] [4]
 controller.h:72:  Tab found; better to use spaces  [whitespace/tab] [1]
 entity_type.h:14:  Found C++ system header after other header. Should be: entity_type.h, c system, c++ system, other.  [build/include_order] [4]
 graphics_arena_viewer.h:171:  "virtual" is redundant since function is already declared as "override"  [readability/inheritance] [4]
@@ -121,7 +120,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 22
+Total errors found: 21
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src'
