@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 05, 20:52:15 PM.
+Run on March 05, 23:35:29 PM.
 
 + Pass: Checkout devel branch.
 
@@ -47,9 +47,7 @@ Run on March 05, 20:52:15 PM.
 
      "src/mainpage.h" not found.
 
-+ Fail: Check that file "docs/uml_design.pdf" exists.
-
-     "docs/uml_design.pdf" not found.
++ Pass: Check that file "docs/uml_design.pdf" exists.
 
 + Fail: Check that file "docs/design.pdf" exists.
 
