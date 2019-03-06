@@ -12,9 +12,6 @@
  ******************************************************************************/
 #include <random>
 
-#include <chrono>
-typedef std::chrono::high_resolution_clock Clock;
-
 #include "src/lib/picojson.h"
 typedef picojson::value json_value;
 typedef picojson::object json_object;
