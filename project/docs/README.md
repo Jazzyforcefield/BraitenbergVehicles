@@ -149,7 +149,7 @@ For your first preliminary deliverable submission for this iteration, due Friday
 
 ## Design Document Requirements
 
-In addition to the UML design document, a preliminary version of a design document will be due (in pdf form) on <del>Tuesday, March 5th</del> Friday, March 8 at 11:55pm. This is a _draft_ of the final version. Submit a .pdf named <user-name>_designdoc.pdf (e.g. lars1050_designdoc.pdf) in the devel branch.
+In addition to the UML design document, a preliminary version of a design document will be due (in pdf form) on <del>Tuesday, March 5th</del> Friday, March 8 at 11:55pm. This is a _draft_ of the final version. Submit a .pdf named design.pdf (e.g. lars1050_designdoc.pdf) in the devel branch.
 
 In the design document, compare and contrast 3 versions of the Factory Pattern applied to the Braitenberg Vehicle simulation, including:
 - The instantiation of entities in the provided code.
