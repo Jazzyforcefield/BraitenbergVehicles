@@ -268,16 +268,16 @@ The iterative method identifies and prioritizes feature enhancements and code re
 
 Note, that the code we have provided for you contains the behavior for the explore behavior. You should read the literature on Braitenberg Vehicles (Robots) provided above and then design and implement the Aggression, Love, and Cower behaviors.
 
-You should also review the code that implements the behavior that a robot displays in response to a collision with an Arena boundary or another robot. In the version we have provided you, when a collision occurs, the robot(s) involved in the collision adjust their heading 180 degrees and resume movement according to their behaviors toward light and food.    You should refactor - that is update  ( design, implement, and test ) the current behavior so that robot(s) involved in a collision adjust their heading 180 degrees, move a short distance (specifically 20 time steps) and then adjust their heading 45 degrees (that is, they turn left 45 degrees from their current heading).  The refactored collision behavior will ensure that the robots do not become trapped in a corner of the Arena.
+You should also review the code that implements the behavior that a robot displays in response to a collision with an Arena boundary or another robot. In the version we have provided you, when a collision occurs, the robot(s) involved in the collision adjust their heading 180 degrees and resume movement according to their behaviors toward light and food.    You should refactor - that is update  ( design, implement, and test ) the current behavior so that robot(s) involved in a collision adjust their heading 180 degrees, move a short distance (specifically 20 time steps) and then adjust their heading 45 degrees (that is, they turn left 45 degrees from the angle at which they were headed when they collided -- if you want it to match the video +45, but -45 is okay too -- it depends on your perspective).  he refactored collision behavior will ensure that the robots do not become trapped in a corner of the Arena.
 
-Finally, robot behavior (i.e. wheel velocities) is driven by the light and food sensor readings. The drive signal for each wheel from the different types of sensors can be combined in a variety of ways. In this implementation, the drive signals are added together, provided they each contribute. But sometimes, because the particular sensor is not active or because there are no detected stimuli, only one of the sensor signals is driving the wheel speed. To help understand the robot behavior, dynamically set the color of the robot based on which sensor signals are impacting behavior. Use the following colors under the following conditions:
+Finally, robot behavior (i.e. wheel velocities) is driven by the light and food sensor readings. The drive signal for each wheel from the different types of sensors can be combined in a variety of ways. In this implementation, the drive signals are added together, provided they each contribute. But sometimes, because the particular sensor is not active or because there are no detected stimuli, only one of the sensor signals is driving the wheel speed. To help understand the robot behavior, <del>dynamically set the color of the robot based on which sensor signals are impacting behavior</del> set the color based on how the robot is configured, regardless of the presence or absence of a stimuli (this will match the video). Use the following colors under the following conditions:
 1.  Lights should be white
 2.  Food should be green
-3.  Robot Color should change depending on which sensor(s) are ACTIVELY driving the robot. Specifically:
-- - If neither sensor is actively affecting the robot's behavior, the robot should be Maroon in color (122,0,25).
---  If both sensors are actively affecting the robot's behavior, the robot should be Maroon in color (122,0,25).
-- - If ONLY the light sensor is actively affecting the robot's behavior, the robot should be Gold in color (255,204,51).
-- - If ONLY the food sensor is actively affecting the robot's behavior, the robot should be Blue in color (0,0,255).
+3.  Robot Color should change depending on which sensor(s) are driving the robot. Specifically:
+- - If the robot is not using any sensors, the robot should be Maroon in color (122,0,25).
+--  If the robot is using both sensors, the robot should be Maroon in color (122,0,25).
+- - If the robot is using ONLY the light sensor, the robot should be Gold in color (255,204,51).
+- - If the robot is using ONLY the food sensor, the robot should be Blue in color (0,0,255).
 
 
 We have provided the following configuration files in the directory/folder named  scenes to help you test your behaviors and color functionality:
