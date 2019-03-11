@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 11, 17:20:07 PM.
+Run on March 11, 17:25:03 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -37,7 +37,7 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 #### Git Usage
 
 + Pass: Check git commit history
-Sufficient commits (found=41,required=25)
+Sufficient commits (found=45,required=25)
 
 + Pass: Run git ls-remote to check for # of branches in repo
 Sufficient branches (found=6,required=4)
@@ -46,13 +46,13 @@ Sufficient branches (found=6,required=4)
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-eefaadb24a707b2e67dd63fe9300ada3d587cb4b	refs/heads/devel
+b354a8b938d0012028515fbf8849ca7afa8dadcb	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-8842dea9bbb837b4f00b3ae1ad0c7ae4d1ddadd6	refs/heads/master
+66927d1ca4b65ba3eb38c6ef1f647df44653b0bf	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -81,6 +81,12 @@ arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
 arena.cc:239:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 arena.cc:239:  Extra space after ( in function call  [whitespace/parens] [4]
 arena.cc:46:  Add #include <string> for string  [build/include_what_you_use] [4]
+braitenberg_vehicle.cc:100:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:105:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:110:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:129:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:134:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:139:  Tab found; better to use spaces  [whitespace/tab] [1]
 BraitenbergVehicleFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
 BraitenbergVehicleFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
 BraitenbergVehicleFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
@@ -176,7 +182,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 61
+Total errors found: 67
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
