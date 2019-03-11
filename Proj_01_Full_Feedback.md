@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 11, 16:11:46 PM.
+Run on March 11, 18:43:18 PM.
 
 + Pass: Checkout devel branch.
 
@@ -57,20 +57,22 @@ Run on March 11, 16:11:46 PM.
 #### Git Usage
 
 + Pass: Check git commit history
-Sufficient commits (found=41,required=25)
+Sufficient commits (found=45,required=25)
 
 + Pass: Run git ls-remote to check for # of branches in repo
-Sufficient branches (found=5,required=4)
+Sufficient branches (found=6,required=4)
 
 + Pass: Run git ls-remote gather all branches in repo
 
-eefaadb24a707b2e67dd63fe9300ada3d587cb4b	refs/heads/devel
+3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
+
+b354a8b938d0012028515fbf8849ca7afa8dadcb	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-df994f7087db4abd5329009b05418619b3410f2e	refs/heads/master
+c27e5e285888df7a8322a42d5e6b6b9351006185	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -89,6 +91,12 @@ arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
 arena.cc:239:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 arena.cc:239:  Extra space after ( in function call  [whitespace/parens] [4]
 arena.cc:46:  Add #include <string> for string  [build/include_what_you_use] [4]
+braitenberg_vehicle.cc:100:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:105:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:110:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:129:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:134:  Tab found; better to use spaces  [whitespace/tab] [1]
+braitenberg_vehicle.cc:139:  Tab found; better to use spaces  [whitespace/tab] [1]
 BraitenbergVehicleFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
 BraitenbergVehicleFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
 BraitenbergVehicleFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
@@ -184,7 +192,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 61
+Total errors found: 67
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src'
@@ -220,13 +228,8 @@ The robot's color should be Gold when there is only a light behavior.</pre>
 
 
 
-+ Fail: Check that a GoogleTest test passes.
-    fails the test: InstBraitenbergVehicle.RobotMovesInEmptyScene.
-<pre>
-[ RUN      ] InstBraitenbergVehicle.RobotMovesInEmptyScene
-inst_braitenberg_vehicle.cc:70: Failure
-Expected: ((bv->get_pose()-prevPose).Length()) > (0.005f), actual: 0 vs 0.005
-The robot should move with Love even if there are not lights or food.</pre>
++ Pass: Check that a GoogleTest test passes.
+    passes the test: InstBraitenbergVehicle.RobotMovesInEmptyScene.
 
 
 
