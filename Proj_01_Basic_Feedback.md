@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 06, 00:50:50 AM.
+Run on March 11, 16:46:09 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -34,15 +34,36 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 + Pass: Change into directory "project".
 
 
-#### Documentation Tests
+#### Git Usage
 
-+ Pass: Check that file "src/mainpage.h" exists.
++ Pass: Check git commit history
+Sufficient commits (found=41,required=25)
+
++ Pass: Run git ls-remote to check for # of branches in repo
+Sufficient branches (found=6,required=4)
+
++ Pass: Run git ls-remote gather all branches in repo
+
+741514320073ae2e6c6ff7ee9aeffaccc6396c9d	refs/heads/dev/vehicle-behaviors
+
+eefaadb24a707b2e67dd63fe9300ada3d587cb4b	refs/heads/devel
+
+ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
+
+647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
+
+48225755bd16ed6e70e9aa4f8f257bc9ac613e40	refs/heads/master
+
+726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
+
+
+
+
+#### Documentation Tests
 
 + Pass: Check that file "docs/uml_design.pdf" exists.
 
-+ Fail: Check that file "docs/design.pdf" exists.
-
-     "docs/design.pdf" not found.
++ Pass: Check that file "docs/design.pdf" exists.
 
 
 Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
@@ -52,10 +73,8 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 
 + Fail: Ensuring code follows style guide.
 
-<pre>make: Warning: File 'Makefile' has modification time 0.25 s in the future
-cd src; make check-style
+<pre>cd src; make check-style
 make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
-make[1]: Warning: File '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/external/etc/env.local' has modification time 0.23 s in the future
 ==== Checking style is correct ====
 /class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
 arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
