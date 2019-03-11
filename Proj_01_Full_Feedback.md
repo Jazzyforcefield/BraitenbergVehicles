@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 07, 13:08:43 PM.
+Run on March 11, 10:33:01 AM.
 
 + Pass: Checkout devel branch.
 
@@ -47,9 +47,7 @@ Run on March 07, 13:08:43 PM.
 
 + Pass: Check that file "docs/uml_design.pdf" exists.
 
-+ Fail: Check that file "docs/design.pdf" exists.
-
-     "docs/design.pdf" not found.
++ Pass: Check that file "docs/design.pdf" exists.
 
 + Pass: Documentation builds.
 
