@@ -93,6 +93,21 @@ void BraitenbergVehicle::Update() {
         1.0/get_sensor_reading_right(closest_light_entity_),
          1.0/get_sensor_reading_left(closest_light_entity_), defaultSpeed_);
       break;
+    case kLove:
+      light_wheel_velocity = WheelVelocity(
+        1.0/get_sensor_reading_left(closest_light_entity_),
+        1.0/get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
+			break;
+    case kAggressive:
+     light_wheel_velocity = WheelVelocity(
+        get_sensor_reading_right(closest_light_entity_),
+        get_sensor_reading_left(closest_light_entity_), defaultSpeed_);
+	    break;
+    case kCoward:
+     light_wheel_velocity = WheelVelocity(
+        get_sensor_reading_left(closest_light_entity_),
+        get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
+	    break;
     case kNone:
     default:
       numBehaviors--;
