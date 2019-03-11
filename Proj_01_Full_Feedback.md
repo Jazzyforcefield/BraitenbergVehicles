@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 11, 10:33:01 AM.
+Run on March 11, 13:27:30 PM.
 
 + Pass: Checkout devel branch.
 
@@ -43,8 +43,6 @@ Run on March 11, 10:33:01 AM.
 
 #### Documentation Tests
 
-+ Pass: Check that file "src/mainpage.h" exists.
-
 + Pass: Check that file "docs/uml_design.pdf" exists.
 
 + Pass: Check that file "docs/design.pdf" exists.
@@ -54,6 +52,29 @@ Run on March 11, 10:33:01 AM.
 
 
 + Pass: Check that file "docs/html/index.html" exists.
+
+
+#### Git Usage
+
++ Pass: Check git commit history
+Sufficient commits (found=41,required=25)
+
++ Pass: Run git ls-remote to check for # of branches in repo
+Sufficient branches (found=5,required=4)
+
++ Pass: Run git ls-remote gather all branches in repo
+
+eefaadb24a707b2e67dd63fe9300ada3d587cb4b	refs/heads/devel
+
+ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
+
+647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
+
+08a639e153c956a9ea3b978ebeb1048002cba7ee	refs/heads/master
+
+726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
+
+
 
 
 #### Style Tests
