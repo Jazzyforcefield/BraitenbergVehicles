@@ -107,6 +107,21 @@ void BraitenbergVehicle::Update() {
         1.0/get_sensor_reading_right(closest_food_entity_),
         1.0/get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
       break;
+    case kLove:
+     food_wheel_velocity = WheelVelocity(
+        1.0/get_sensor_reading_right(closest_food_entity_),
+        1.0/get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
+			break;
+		case kAggressive:
+		 food_wheel_velocity = WheelVelocity(
+        1.0/get_sensor_reading_right(closest_food_entity_),
+        1.0/get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
+			break;
+		case kCoward:
+		 food_wheel_velocity = WheelVelocity(
+        1.0/get_sensor_reading_right(closest_food_entity_),
+        1.0/get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
+			break;
     case kNone:
     default:
       numBehaviors--;
