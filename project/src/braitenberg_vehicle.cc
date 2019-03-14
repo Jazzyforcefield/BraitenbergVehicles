@@ -97,17 +97,17 @@ void BraitenbergVehicle::Update() {
       light_wheel_velocity = WheelVelocity(
         1.0/get_sensor_reading_left(closest_light_entity_),
         1.0/get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
-			break;
+      break;
     case kAggressive:
      light_wheel_velocity = WheelVelocity(
         get_sensor_reading_right(closest_light_entity_),
         get_sensor_reading_left(closest_light_entity_), defaultSpeed_);
-	    break;
+      break;
     case kCoward:
      light_wheel_velocity = WheelVelocity(
         get_sensor_reading_left(closest_light_entity_),
         get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
-	    break;
+      break;
     case kNone:
     default:
       numBehaviors--;
@@ -126,17 +126,17 @@ void BraitenbergVehicle::Update() {
       food_wheel_velocity = WheelVelocity(
         1.0/get_sensor_reading_left(closest_food_entity_),
         1.0/get_sensor_reading_right(closest_food_entity_), defaultSpeed_);
-			break;
+      break;
     case kAggressive:
      food_wheel_velocity = WheelVelocity(
         get_sensor_reading_right(closest_food_entity_),
         get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
-	    break;
+      break;
     case kCoward:
      food_wheel_velocity = WheelVelocity(
         get_sensor_reading_left(closest_food_entity_),
         get_sensor_reading_right(closest_food_entity_), defaultSpeed_);
-	    break;
+      break;
     case kNone:
     default:
       numBehaviors--;
