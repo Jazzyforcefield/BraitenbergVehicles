@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 11, 17:25:03 PM.
+Run on March 14, 14:45:32 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -37,24 +37,54 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 #### Git Usage
 
 + Pass: Check git commit history
-Sufficient commits (found=45,required=25)
-
-+ Pass: Run git ls-remote to check for # of branches in repo
-Sufficient branches (found=6,required=4)
+Sufficient commits (found=48,required=25)
 
 + Pass: Run git ls-remote gather all branches in repo
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-b354a8b938d0012028515fbf8849ca7afa8dadcb	refs/heads/devel
+1532345f7ed2e84b1cbafe2bb08c123a60d85189	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-66927d1ca4b65ba3eb38c6ef1f647df44653b0bf	refs/heads/master
+e3099a12f5e03694bab8564beb28a6cd8e2dd3b7	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
+
+
+
+
+#### Git Issue Usage
+
++ Pass: Configuring GHI
+
++ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
+
+[OPEN issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
+
+[OPEN issue #6] :  Refactor BraitenbergVehicle class 
+
+[OPEN issue #4] :  Implement FactoryPointer and subclasses
+
+
+
+
+
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 5)
+
+[CLOSED issue #8] :  Implement BV behaviors 1
+
+[CLOSED issue #5] :  Rename UML.pdf to uml_design.pdf 1
+
+[CLOSED issue #3] :  fix(arena_mobile_entity.h) ↑
+
+[CLOSED issue #2] :  Robots getting stuck in walls [bug] 1
+
+[CLOSED issue #1] :  Compilation error [bug] 1
+
+
 
 
 
@@ -62,8 +92,6 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 #### Documentation Tests
 
 + Pass: Check that file "docs/uml_design.pdf" exists.
-
-+ Pass: Check that file "docs/design.pdf" exists.
 
 
 Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
@@ -81,12 +109,6 @@ arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
 arena.cc:239:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 arena.cc:239:  Extra space after ( in function call  [whitespace/parens] [4]
 arena.cc:46:  Add #include <string> for string  [build/include_what_you_use] [4]
-braitenberg_vehicle.cc:100:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:105:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:110:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:129:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:134:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:139:  Tab found; better to use spaces  [whitespace/tab] [1]
 BraitenbergVehicleFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
 BraitenbergVehicleFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
 BraitenbergVehicleFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
@@ -182,7 +204,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 67
+Total errors found: 61
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
