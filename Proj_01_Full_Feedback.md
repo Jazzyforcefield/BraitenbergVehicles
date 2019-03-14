@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 13, 20:22:02 PM.
+Run on March 13, 22:27:58 PM.
 
 + Pass: Checkout devel branch.
 
@@ -45,8 +45,6 @@ Run on March 13, 20:22:02 PM.
 
 + Pass: Check that file "docs/uml_design.pdf" exists.
 
-+ Pass: Check that file "docs/design.pdf" exists.
-
 + Pass: Documentation builds.
 
 
@@ -59,9 +57,6 @@ Run on March 13, 20:22:02 PM.
 + Pass: Check git commit history
 Sufficient commits (found=45,required=25)
 
-+ Pass: Run git ls-remote to check for # of branches in repo
-Sufficient branches (found=6,required=4)
-
 + Pass: Run git ls-remote gather all branches in repo
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
@@ -72,9 +67,42 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-8525f361b8b951d6fba4f4ae3755919c2c00882c	refs/heads/master
+b6a44aa383dc65c163092b976e80f63fd2395094	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
+
+
+
+
+#### Git Issue Usage
+
++ Pass: Configuring GHI
+
++ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
+
+[OPEN issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
+
+[OPEN issue #6] :  Refactor BraitenbergVehicle class 
+
+[OPEN issue #4] :  Implement FactoryPointer and subclasses
+
+
+
+
+
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 5)
+
+[CLOSED issue #8] :  Implement BV behaviors 1
+
+[CLOSED issue #5] :  Rename UML.pdf to uml_design.pdf 1
+
+[CLOSED issue #3] :  fix(arena_mobile_entity.h) ↑
+
+[CLOSED issue #2] :  Robots getting stuck in walls [bug] 1
+
+[CLOSED issue #1] :  Compilation error [bug] 1
+
+
 
 
 
@@ -206,27 +234,6 @@ make: *** [check-style] Error 2
 #### Unit Tests
 
 + Pass: Check that file "build/bin/unittest" exists.
-
-+ Fail: Check that a GoogleTest test passes.
-    fails the test: InstBraitenbergVehicle.ColorMatchesBehavior.
-<pre>
-[ RUN      ] InstBraitenbergVehicle.ColorMatchesBehavior
-inst_braitenberg_vehicle.cc:48: Failure
-Expected equality of these values:
-  bv->get_color()
-    Which is: 12-byte object <7A-00 00-00 00-00 00-00 19-00 00-00>
-  csci3081::RgbColor(csci3081::kBlue)
-    Which is: 12-byte object <00-00 00-00 00-00 00-00 FF-00 00-00>
-The robot's color should be Blue when there is only a food behavior.
-inst_braitenberg_vehicle.cc:57: Failure
-Expected equality of these values:
-  bv->get_color()
-    Which is: 12-byte object <7A-00 00-00 00-00 00-00 19-00 00-00>
-  csci3081::RgbColor(csci3081::kGold)
-    Which is: 12-byte object <FF-00 00-00 CC-00 00-00 33-00 00-00>
-The robot's color should be Gold when there is only a light behavior.</pre>
-
-
 
 + Pass: Check that a GoogleTest test passes.
     passes the test: InstBraitenbergVehicle.RobotMovesInEmptyScene.
