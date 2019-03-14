@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 14, 14:45:32 PM.
+Run on March 14, 15:45:42 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -37,19 +37,19 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 #### Git Usage
 
 + Pass: Check git commit history
-Sufficient commits (found=48,required=25)
+Sufficient commits (found=49,required=25)
 
 + Pass: Run git ls-remote gather all branches in repo
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-1532345f7ed2e84b1cbafe2bb08c123a60d85189	refs/heads/devel
+5eaf039e96955d29acfa3431a7c67bd20bf46780	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-e3099a12f5e03694bab8564beb28a6cd8e2dd3b7	refs/heads/master
+9e709b06e4c391027dbb450f000b2f4bd0400804	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -109,6 +109,12 @@ arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
 arena.cc:239:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 arena.cc:239:  Extra space after ( in function call  [whitespace/parens] [4]
 arena.cc:46:  Add #include <string> for string  [build/include_what_you_use] [4]
+braitenberg_vehicle.cc:87:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:91:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+braitenberg_vehicle.cc:91:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+braitenberg_vehicle.cc:94:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+braitenberg_vehicle.cc:94:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+braitenberg_vehicle.cc:128:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 BraitenbergVehicleFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
 BraitenbergVehicleFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
 BraitenbergVehicleFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
@@ -204,7 +210,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 61
+Total errors found: 67
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
