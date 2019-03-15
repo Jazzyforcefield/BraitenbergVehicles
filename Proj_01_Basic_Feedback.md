@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 15, 11:19:20 AM.
+Run on March 15, 15:37:35 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -37,7 +37,7 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 #### Git Usage
 
 + Pass: Check git commit history
-Commits found=57
+Commits found=60
 
 + Pass: Run git ls-remote gather all branches in repo
 
@@ -45,15 +45,17 @@ Commits found=57
 
 76e45f201d1dcecab99e4cd5a7e9b53cf9d3484c	refs/heads/dev/factory-implementation
 
+595fdf43e2ce4fb1c2d263f5f7000d3a31cf0615	refs/heads/dev/json-factories
+
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-f531b21dc2e6e3495ff93329316e4966f41a064b	refs/heads/devel
+3259dce31713701fe9a662d4a16513381b83a448	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-af26f7a26166ed0e17707479059776b6f4424e75	refs/heads/master
+ebfc30e138524208eadc9ffc6866673d8034be7a	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -115,10 +117,13 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
 ==== Checking style is correct ====
 /class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
+BraitenbergVehicleFactory.cc:12:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+Factory.cc:9:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 arena_entity.h:141:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
 arena.h:59:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
 common.h:20:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
 common.h:21:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
+Factory.h:15:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
 Done processing arena.cc
 Done processing braitenberg_vehicle.cc
 Done processing BraitenbergVehicleFactory.cc
@@ -157,7 +162,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 4
+Total errors found: 7
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
