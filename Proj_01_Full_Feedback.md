@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 14, 14:10:36 PM.
+Run on March 15, 10:37:05 AM.
 
 + Pass: Checkout devel branch.
 
@@ -55,19 +55,23 @@ Run on March 14, 14:10:36 PM.
 #### Git Usage
 
 + Pass: Check git commit history
-Sufficient commits (found=45,required=25)
+Sufficient commits (found=56,required=25)
 
 + Pass: Run git ls-remote gather all branches in repo
 
+5eaf039e96955d29acfa3431a7c67bd20bf46780	refs/heads/dev/collision-avoidance
+
+76e45f201d1dcecab99e4cd5a7e9b53cf9d3484c	refs/heads/dev/factory-implementation
+
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-b354a8b938d0012028515fbf8849ca7afa8dadcb	refs/heads/devel
+bf7b61ced8e7b632dff74506d85224d8e7bca4a1	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-4ef5d8c82ac3fca6a5938fa1ffc8da28b405370b	refs/heads/master
+deafbd86a7a780f4252a2199a1fcf5a50cc42c59	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -80,21 +84,27 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 + Pass: Run ghi for total number of open issues in Github repo (Found: 3)
 
+[OPEN issue #11] :  Implement json configuration for factory classes
+
 [OPEN issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
 
 [OPEN issue #6] :  Refactor BraitenbergVehicle class 
 
-[OPEN issue #4] :  Implement FactoryPointer and subclasses
 
 
 
 
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 8)
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 5)
+[CLOSED issue #10] :  Implement colors to BV 1 @ungxx028
+
+[CLOSED issue #9] :  Add collision avoidance behavior to BV 1 @ungxx028
 
 [CLOSED issue #8] :  Implement BV behaviors 1
 
 [CLOSED issue #5] :  Rename UML.pdf to uml_design.pdf 1
+
+[CLOSED issue #4] :  Implement FactoryPointer and subclasses
 
 [CLOSED issue #3] :  fix(arena_mobile_entity.h) ↑
 
@@ -115,71 +125,44 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 make[1]: Entering directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src'
 ==== Checking style is correct ====
 /classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
-arena.cc:239:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-arena.cc:239:  Extra space after ( in function call  [whitespace/parens] [4]
-arena.cc:46:  Add #include <string> for string  [build/include_what_you_use] [4]
-braitenberg_vehicle.cc:100:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:105:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:110:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:129:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:134:  Tab found; better to use spaces  [whitespace/tab] [1]
-braitenberg_vehicle.cc:139:  Tab found; better to use spaces  [whitespace/tab] [1]
-BraitenbergVehicleFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-BraitenbergVehicleFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
-BraitenbergVehicleFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
-BraitenbergVehicleFactory.cc:11:  Tab found; better to use spaces  [whitespace/tab] [1]
-BraitenbergVehicleFactory.cc:14:  You don't need a ; after a }  [readability/braces] [4]
+arena.cc:243:  Tab found; better to use spaces  [whitespace/tab] [1]
+arena.cc:243:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+arena.cc:243:  Extra space after ( in function call  [whitespace/parens] [4]
+arena.cc:50:  Add #include <string> for string  [build/include_what_you_use] [4]
+braitenberg_vehicle.cc:88:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:92:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+braitenberg_vehicle.cc:92:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+braitenberg_vehicle.cc:95:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+braitenberg_vehicle.cc:95:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+braitenberg_vehicle.cc:126:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:126:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+braitenberg_vehicle.cc:138:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 controller.cc:36:  Extra space for operator !   [whitespace/operators] [4]
 controller.cc:41:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
 controller.cc:41:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
-Factory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-Factory.cc:8:  Tab found; better to use spaces  [whitespace/tab] [1]
-Factory.cc:11:  You don't need a ; after a }  [readability/braces] [4]
-Factory.cc:1:  grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src/Factory.cc should include its header file grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src/Factory.h  [build/include] [5]
-FoodFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-FoodFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
-FoodFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
-FoodFactory.cc:11:  Tab found; better to use spaces  [whitespace/tab] [1]
-FoodFactory.cc:14:  You don't need a ; after a }  [readability/braces] [4]
+Factory.cc:3:  grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src/Factory.cc should include its header file grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src/Factory.h  [build/include] [5]
 graphics_arena_viewer.cc:39:  Missing spaces around =  [whitespace/operators] [4]
 graphics_arena_viewer.cc:46:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
 graphics_arena_viewer.cc:46:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
-LightFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-LightFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
-LightFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
-LightFactory.cc:11:  Tab found; better to use spaces  [whitespace/tab] [1]
-LightFactory.cc:14:  You don't need a ; after a }  [readability/braces] [4]
 arena_entity.h:141:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
-arena.h:52:  Zero-parameter constructors should not be marked explicit.  [runtime/explicit] [5]
-arena.h:55:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
+arena.h:56:  Zero-parameter constructors should not be marked explicit.  [runtime/explicit] [5]
+arena.h:59:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
 behavior_enum.h:37:  Add #include <string> for string  [build/include_what_you_use] [4]
-BraitenbergVehicleFactory.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-BraitenbergVehicleFactory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
-BraitenbergVehicleFactory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
-BraitenbergVehicleFactory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
-BraitenbergVehicleFactory.h:15:  Tab found; better to use spaces  [whitespace/tab] [1]
+BraitenbergVehicleFactory.h:3:  #ifndef header guard has wrong style, please use: SRC_BRAITENBERGVEHICLEFACTORY_H_  [build/header_guard] [5]
+BraitenbergVehicleFactory.h:22:  #endif line should be "#endif  // SRC_BRAITENBERGVEHICLEFACTORY_H_"  [build/header_guard] [5]
 common.h:19:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
 common.h:20:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
 common.h:21:  Tab found; better to use spaces  [whitespace/tab] [1]
 common.h:20:  Add #include <string> for string  [build/include_what_you_use] [4]
 controller.h:72:  Tab found; better to use spaces  [whitespace/tab] [1]
 entity_type.h:14:  Found C++ system header after other header. Should be: entity_type.h, c system, c++ system, other.  [build/include_order] [4]
-Factory.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-Factory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
-Factory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
-Factory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
-FoodFactory.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-FoodFactory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
-FoodFactory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
-FoodFactory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
-FoodFactory.h:15:  Tab found; better to use spaces  [whitespace/tab] [1]
+Factory.h:3:  #ifndef header guard has wrong style, please use: SRC_FACTORY_H_  [build/header_guard] [5]
+Factory.h:21:  #endif line should be "#endif  // SRC_FACTORY_H_"  [build/header_guard] [5]
+FoodFactory.h:3:  #ifndef header guard has wrong style, please use: SRC_FOODFACTORY_H_  [build/header_guard] [5]
+FoodFactory.h:23:  #endif line should be "#endif  // SRC_FOODFACTORY_H_"  [build/header_guard] [5]
 graphics_arena_viewer.h:171:  "virtual" is redundant since function is already declared as "override"  [readability/inheritance] [4]
-LightFactory.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-LightFactory.h:12:  Tab found; better to use spaces  [whitespace/tab] [1]
-LightFactory.h:13:  Tab found; better to use spaces  [whitespace/tab] [1]
-LightFactory.h:14:  Tab found; better to use spaces  [whitespace/tab] [1]
-LightFactory.h:15:  Tab found; better to use spaces  [whitespace/tab] [1]
+LightFactory.h:3:  #ifndef header guard has wrong style, please use: SRC_LIGHTFACTORY_H_  [build/header_guard] [5]
+LightFactory.h:22:  #endif line should be "#endif  // SRC_LIGHTFACTORY_H_"  [build/header_guard] [5]
 mainpage.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
 mainpage.h:0:  No #ifndef header guard found, suggested CPP variable is: SRC_MAINPAGE_H_  [build/header_guard] [5]
 Done processing arena.cc
@@ -220,7 +203,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 67
+Total errors found: 40
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src'
