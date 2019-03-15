@@ -70,7 +70,7 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 | All Light entities in Arena created with a factory |  |  |  |  |
 | All Food entities in Arena created with a factory |  |  |  |  |
 | _Scenario 1_  visually inspected - Vehicle does not sense food (default) or light (default). |X|  |  |  |
-| _Scenario 2_  visually inspected - Vehicle aggressive toward food, default toward light. | X|  |  |  |
+| _Scenario 2_  visually inspected - Vehicle aggressive toward food, default toward light. |X|  |  |  |
 | _Scenario 3_  visually inspected - Vehicle explore toward food, default toward light. |X|  |  |  |
 | _Scenario 4_  visually inspected - Vehicle love toward food, default toward light. |X|  |  |  |
 | _Scenario 5_  visually inspected - Vehicle coward toward food, default toward light. |X|  |  |  |
