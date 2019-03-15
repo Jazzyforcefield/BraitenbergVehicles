@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 15, 15:37:35 PM.
+Run on March 15, 16:54:29 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -37,7 +37,7 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 #### Git Usage
 
 + Pass: Check git commit history
-Commits found=60
+Commits found=61
 
 + Pass: Run git ls-remote gather all branches in repo
 
@@ -49,13 +49,13 @@ Commits found=60
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-3259dce31713701fe9a662d4a16513381b83a448	refs/heads/devel
+93d2aee6f82c00fee88c11325f05a292c39183ca	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-ebfc30e138524208eadc9ffc6866673d8034be7a	refs/heads/master
+e32c126723c6a5229377caa69c189232dfa1eee0	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -66,9 +66,7 @@ ebfc30e138524208eadc9ffc6866673d8034be7a	refs/heads/master
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
-
-[OPEN issue #11] :  Implement json configuration for factory classes
++ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
 
 [OPEN issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
 
@@ -78,7 +76,9 @@ ebfc30e138524208eadc9ffc6866673d8034be7a	refs/heads/master
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 8)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 9)
+
+[CLOSED issue #11] :  Implement json configuration for factory classes
 
 [CLOSED issue #10] :  Implement colors to BV 1 @ungxx028
 
@@ -117,13 +117,11 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
 ==== Checking style is correct ====
 /class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-BraitenbergVehicleFactory.cc:12:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-Factory.cc:9:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 arena_entity.h:141:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
-arena.h:59:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
+arena.h:63:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
 common.h:20:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
 common.h:21:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
-Factory.h:15:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
+Factory.h:29:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
 Done processing arena.cc
 Done processing braitenberg_vehicle.cc
 Done processing BraitenbergVehicleFactory.cc
@@ -162,7 +160,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 7
+Total errors found: 5
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
