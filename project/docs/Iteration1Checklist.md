@@ -14,8 +14,8 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 - [ ]  cloned **fresh** from github onto a cselabs machine to test compilation, style compliance, and execution
 - [ ] Submission is on the **master** branch in the project folder of your repo
 - [X] _/project_ folder exists
-- [ ] _/build_ is not in the repo
-- [ ] _/html_  and _/latex_ is not in _docs_
+- [X] _/build_ is not in the repo
+- [X] _/html_  and _/latex_ is not in _docs_
 - [X] **__`make` from within _project_ completes without error.__**
 - [X] `./../build/bin/arenaviewer` executes without assert or a seg fault
 - [ ] `./../build/bin/unittest` executes without a seg fault
@@ -41,20 +41,20 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 | Functionality | Good | Okay | Help | Time |
 | ------------- | ---- |----- | ---- | ---- |
 | **__Priority Level 2__** |
-| _Aggression_ Behavior implemented and operational for Braitenberg Vehicle behavior toward Lights. |  |  |  |  |
-| _Aggression_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Food. |  |  |  |  |
-| _Love_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Lights. |  |  |  |  |
-| _Love_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Food. |  |  |  |  |
-| _Coward_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Lights. |  |  |  |  |
-| _Coward_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Food. | | | | |
+| _Aggression_ Behavior implemented and operational for Braitenberg Vehicle behavior toward Lights. |X|  |  |  |
+| _Aggression_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Food. |X|  |  |  |
+| _Love_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Lights. |X|  |  |  |
+| _Love_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Food. |X|  |  |  |
+| _Coward_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Lights. |X|  |  |  |
+| _Coward_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Food. |X| | | |
 |_Explore_  Behavior still operational for Braitenberg Vehicle behavior toward Lights. |X| | | |
 | _Explore_  Behavior still operational for Braitenberg Vehicle behavior toward Food. |X| |  | |
 | Braitenberg Vehicle _new collision avoidance behavior_ (turn 180, advance 20 time steps, turn 180 + or - 45 degrees and continue) implemented and operational. |  |  |  |  |
 | _Lights_ are colored white. |X|  |  |  |
 | _Food_ is colored green. |X|  |  |  |
-| _Vehicle_ is colored Maroon if both sensors are affecting vehicle behavior, or neither sensor is affecting vehicle behavior. |  |  |  |  |
-| _Vehicle_ is colored Gold if only the Light sensor is affecting vehicle behavior.  |  |  |  |  |
-| _Vehicle is colored Blue if only the Food sensor is affecting vehicle behavior. |  |  |  |  |
+| _Vehicle_ is colored Maroon if both sensors are affecting vehicle behavior, or neither sensor is affecting vehicle behavior. |X|  |  |  |
+| _Vehicle_ is colored Gold if only the Light sensor is affecting vehicle behavior.  |X|  |  |  |
+| _Vehicle is colored Blue if only the Food sensor is affecting vehicle behavior. |X|  |  |  |
 
 
 
@@ -69,15 +69,15 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 | All BraitenbergVehicle entities in Arena created with a factory |  |  |  |  |
 | All Light entities in Arena created with a factory |  |  |  |  |
 | All Food entities in Arena created with a factory |  |  |  |  |
-| _Scenario 1_  visually inspected - Vehicle does not sense food (default) or light (default). |  |  |  |  |
-| _Scenario 2_  visually inspected - Vehicle aggressive toward food, default toward light. |  |  |  |  |
-| _Scenario 3_  visually inspected - Vehicle explore toward food, default toward light. |  |  |  |  |
-| _Scenario 4_  visually inspected - Vehicle love toward food, default toward light. |  |  |  |  |
-| _Scenario 5_  visually inspected - Vehicle coward toward food, default toward light. |  |  |  |  |
-| _Scenario 6_  visually inspected - Vehicle aggressive toward light, default toward food. |  |  |  |  |
-| _Scenario 7_  visually inspected - Vehicle explore toward light, default toward food. |  |  |  |  |
-| _Scenario 8_  visually inspected - Vehicle love toward light, default toward food. |  |  |  |  |
-| _Scenario 9_  visually inspected - Vehicle coward toward light, default toward food. |  |  |  |  | |
+| _Scenario 1_  visually inspected - Vehicle does not sense food (default) or light (default). |X|  |  |  |
+| _Scenario 2_  visually inspected - Vehicle aggressive toward food, default toward light. | X|  |  |  |
+| _Scenario 3_  visually inspected - Vehicle explore toward food, default toward light. |X|  |  |  |
+| _Scenario 4_  visually inspected - Vehicle love toward food, default toward light. |X|  |  |  |
+| _Scenario 5_  visually inspected - Vehicle coward toward food, default toward light. |X|  |  |  |
+| _Scenario 6_  visually inspected - Vehicle aggressive toward light, default toward food. |X|  |  |  |
+| _Scenario 7_  visually inspected - Vehicle explore toward light, default toward food. |X|  |  |  |
+| _Scenario 8_  visually inspected - Vehicle love toward light, default toward food. |X|  |  |  |
+| _Scenario 9_  visually inspected - Vehicle coward toward light, default toward food. |X|  |  |  | |
 
 
 ### Documentation
@@ -116,8 +116,8 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 ### Testing
 
-- [ ] Unit tests are in the /project/tests folder.
-- [ ] Unit tests for different classes are in separate files.
+- [X] Unit tests are in the /project/tests folder.
+- [X] Unit tests for different classes are in separate files.
 
 - [ ] Unit tests exist to test the creation of a BraitenbergVehicle.
 - [ ] Unit tests exist to test the creation of a Light.
