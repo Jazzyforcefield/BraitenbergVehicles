@@ -37,6 +37,10 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
       y_dim_(Y_DIM),
       entities_(),
       mobile_entities_() {
+  factories[0] = new LightFactory();
+  factories[1] = new FoodFactory();
+  factories[2] = new BraitenbergVehicleFactory();
+
   x_dim_ = arena_object["width"].get<double>();
   y_dim_ = arena_object["height"].get<double>();
   json_array& entities = arena_object["entities"].get<json_array>();
@@ -49,13 +53,13 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
 
     switch (etype) {
       case (kLight):
-        entity = new Light();
+        factories[0]->Create(&entity);
         break;
       case (kFood):
-        entity = new Food();
+        factories[1]->Create(&entity);
         break;
       case (kBraitenberg):
-        entity = new BraitenbergVehicle();
+        factories[2]->Create(&entity);
         break;
       default:
         std::cout << "FATAL: Bad entity type on creation" << std::endl;

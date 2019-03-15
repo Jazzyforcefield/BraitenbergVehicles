@@ -18,7 +18,7 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 - [X] _/html_  and _/latex_ is not in _docs_
 - [X] **__`make` from within _project_ completes without error.__**
 - [X] `./../build/bin/arenaviewer` executes without assert or a seg fault
-- [ ] `./../build/bin/unittest` executes without a seg fault
+- [X] `./../build/bin/unittest` executes without a seg fault
 - [ ] **_"make check-style" reports no errors when run in the master branch._**
 - [X] `doxygen docs/Doxyfile` compiles
 

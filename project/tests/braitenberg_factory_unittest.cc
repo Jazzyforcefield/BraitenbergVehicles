@@ -18,5 +18,5 @@ TEST_F(BraitenbergVehicleFactoryTest, ConstructorTests) {
 	//ArenaEntity * test = new BraitenbergVehicle();
 	csci3081::ArenaEntity * test2;
 	one->Create(&test2);
-	ASSERT_EQ(test2->get_name(), "Braitenberg 0");  // Will segfault since it isn't created yet
+	ASSERT_EQ(test2->get_name(), "Braitenberg 1");  
 }

@@ -19,6 +19,10 @@
 #include "src/food.h"
 #include "src/arena_mobile_entity.h"
 
+#include "src/LightFactory.h"
+#include "src/FoodFactory.h"
+#include "src/BraitenbergVehicleFactory.h"
+
 /*******************************************************************************
  * Namespaces
  ******************************************************************************/
@@ -151,6 +155,8 @@ class Arena {
   // Dimensions of graphics window inside which entities must operate
   double x_dim_;
   double y_dim_;
+
+  Factory * factories[3];
 
   // All entities mobile and immobile.
   std::vector<class ArenaEntity *> entities_;

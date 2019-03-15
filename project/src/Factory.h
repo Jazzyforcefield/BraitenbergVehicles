@@ -1,5 +1,7 @@
-#ifndef SRC_FACTORY_H_
-#define SRC_FACTORY_H_
+// Copyright 2019, Michael Ung
+
+#ifndef PROJECT_SRC_FACTORY_H_
+#define PROJECT_SRC_FACTORY_H_
 
 #include <iostream>
 #include <cstdlib>
@@ -9,11 +11,11 @@
 NAMESPACE_BEGIN(csci3081);
 
 class Factory {
-	public:
-		virtual void Create(ArenaEntity ** ent) = 0;
-		virtual ~Factory();
+ public:
+    virtual void Create(ArenaEntity ** ent) = 0;
+    virtual ~Factory();
 };
 
 NAMESPACE_END(csci3081);
 
-#endif /* SRC_FACTORY_H_ */
+#endif  // PROJECT_SRC_FACTORY_H_

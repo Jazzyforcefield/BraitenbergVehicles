@@ -20,5 +20,5 @@ TEST_F(LightFactoryTest, ConstructorTests) {
 	//ArenaEntity * test = new Light();
 	csci3081::ArenaEntity * test2;
 	one->Create(&test2);
-	ASSERT_EQ(test2->get_name(), "Light 0");
+	ASSERT_EQ(test2->get_name(), "Light 1");
 }
