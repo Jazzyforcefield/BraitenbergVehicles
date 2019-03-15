@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 14, 15:45:42 PM.
+Run on March 14, 19:56:34 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -37,19 +37,21 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 #### Git Usage
 
 + Pass: Check git commit history
-Sufficient commits (found=49,required=25)
+Commits found=51
 
 + Pass: Run git ls-remote gather all branches in repo
 
+5eaf039e96955d29acfa3431a7c67bd20bf46780	refs/heads/dev/collision-avoidance
+
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-5eaf039e96955d29acfa3431a7c67bd20bf46780	refs/heads/devel
+ac452f3d663942a3e03a0db199bbb2125abb5dc9	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-9e709b06e4c391027dbb450f000b2f4bd0400804	refs/heads/master
+942eed64e59c8e6c67013916211d70d0e0d68a0c	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -60,7 +62,9 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
++ Pass: Run ghi for total number of open issues in Github repo (Found: 4)
+
+[OPEN issue #9] :  Add collision avoidance behavior to BV @ungxx028
 
 [OPEN issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
 
@@ -72,7 +76,9 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 5)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 6)
+
+[CLOSED issue #10] :  Implement colors to BV 1 @ungxx028
 
 [CLOSED issue #8] :  Implement BV behaviors 1
 
@@ -109,12 +115,14 @@ arena.cc:239:  Tab found; better to use spaces  [whitespace/tab] [1]
 arena.cc:239:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 arena.cc:239:  Extra space after ( in function call  [whitespace/parens] [4]
 arena.cc:46:  Add #include <string> for string  [build/include_what_you_use] [4]
-braitenberg_vehicle.cc:87:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:91:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
-braitenberg_vehicle.cc:91:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
-braitenberg_vehicle.cc:94:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
-braitenberg_vehicle.cc:94:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
-braitenberg_vehicle.cc:128:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:88:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:92:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+braitenberg_vehicle.cc:92:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+braitenberg_vehicle.cc:95:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
+braitenberg_vehicle.cc:95:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
+braitenberg_vehicle.cc:126:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:126:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+braitenberg_vehicle.cc:138:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 BraitenbergVehicleFactory.cc:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
 BraitenbergVehicleFactory.cc:7:  You don't need a ; after a }  [readability/braces] [4]
 BraitenbergVehicleFactory.cc:10:  Tab found; better to use spaces  [whitespace/tab] [1]
@@ -210,7 +218,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 67
+Total errors found: 69
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
