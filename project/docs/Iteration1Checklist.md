@@ -49,7 +49,7 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 | _Coward_  Behavior implemented and operational for Braitenberg Vehicle behavior toward Food. |X| | | |
 |_Explore_  Behavior still operational for Braitenberg Vehicle behavior toward Lights. |X| | | |
 | _Explore_  Behavior still operational for Braitenberg Vehicle behavior toward Food. |X| |  | |
-| Braitenberg Vehicle _new collision avoidance behavior_ (turn 180, advance 20 time steps, turn 180 + or - 45 degrees and continue) implemented and operational. |  |  |  |  |
+| Braitenberg Vehicle _new collision avoidance behavior_ (turn 180, advance 20 time steps, turn 180 + or - 45 degrees and continue) implemented and operational. |X|  |  |  |
 | _Lights_ are colored white. |X|  |  |  |
 | _Food_ is colored green. |X|  |  |  |
 | _Vehicle_ is colored Maroon if both sensors are affecting vehicle behavior, or neither sensor is affecting vehicle behavior. |X|  |  |  |
