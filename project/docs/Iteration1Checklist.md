@@ -66,9 +66,9 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 | -------- | -------- | -------- | -------- | --------- |
 | **__Priority Level 3__** |
 | Factories instantiate entities using JSON |  |  |  |   |
-| All BraitenbergVehicle entities in Arena created with a factory |  |  |  |  |
-| All Light entities in Arena created with a factory |  |  |  |  |
-| All Food entities in Arena created with a factory |  |  |  |  |
+| All BraitenbergVehicle entities in Arena created with a factory |X|  |  |  |
+| All Light entities in Arena created with a factory |X|  |  |  |
+| All Food entities in Arena created with a factory |X|  |  |  |
 | _Scenario 1_  visually inspected - Vehicle does not sense food (default) or light (default). |X|  |  |  |
 | _Scenario 2_  visually inspected - Vehicle aggressive toward food, default toward light. |X|  |  |  |
 | _Scenario 3_  visually inspected - Vehicle explore toward food, default toward light. |X|  |  |  |
@@ -106,9 +106,9 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 ### Linter and Git
 
 - [ ] All *.h and *.c files pass cpplint.
-- [ ] The code complies with naming conventions for Classes, ClassMethods, and class\_members\_.
-- [ ] There exists a history of git commit messages to show effort.
-- [ ] There exists a history of issues and branches to show effort.
+- [X] The code complies with naming conventions for Classes, ClassMethods, and class\_members\_.
+- [X] There exists a history of git commit messages to show effort.
+- [X] There exists a history of issues and branches to show effort.
 - [ ] Github issues include current unresolved bugs.
 - [ ] Github issues include unresolved feature enhancements and refactoring that is due for this iteration.
 
