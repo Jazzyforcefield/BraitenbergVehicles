@@ -1,7 +1,7 @@
 // Copyright 2019, Michael Ung
 
-#ifndef PROJECT_SRC_FACTORY_H_
-#define PROJECT_SRC_FACTORY_H_
+#ifndef SRC_FACTORY_H_
+#define SRC_FACTORY_H_
 
 #include <iostream>
 #include <cstdlib>
@@ -18,4 +18,4 @@ class Factory {
 
 NAMESPACE_END(csci3081);
 
-#endif  // PROJECT_SRC_FACTORY_H_
+#endif  // SRC_FACTORY_H_

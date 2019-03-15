@@ -1,7 +1,7 @@
 // Copyright 2019, Michael Ung
 
-#ifndef PROJECT_SRC_FOODFACTORY_H_
-#define PROJECT_SRC_FOODFACTORY_H_
+#ifndef SRC_FOODFACTORY_H_
+#define SRC_FOODFACTORY_H_
 
 #include <iostream>
 #include <cstdlib>
@@ -20,4 +20,4 @@ class FoodFactory : public Factory {
 
 NAMESPACE_END(csci3081);
 
-#endif  // PROJECT_SRC_FOODFACTORY_H_
+#endif  // SRC_FOODFACTORY_H_

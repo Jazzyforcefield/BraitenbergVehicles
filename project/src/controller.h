@@ -69,7 +69,7 @@ class Controller {
 
   Controller &operator=(const Controller &other) = delete;
 
-	Controller(const Controller &other) = delete;
+  Controller(const Controller &other) = delete;
 
  private:
   double last_dt{0};

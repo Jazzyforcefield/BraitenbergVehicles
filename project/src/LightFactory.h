@@ -1,7 +1,7 @@
 // Copyright 2019, Michael Ung
 
-#ifndef PROJECT_SRC_LIGHTFACTORY_H_
-#define PROJECT_SRC_LIGHTFACTORY_H_
+#ifndef SRC_LIGHTFACTORY_H_
+#define SRC_LIGHTFACTORY_H_
 
 #include <iostream>
 #include <cstdlib>
@@ -19,4 +19,4 @@ class LightFactory : public Factory {
 
 NAMESPACE_END(csci3081);
 
-#endif  // PROJECT_SRC_LIGHTFACTORY_H_
+#endif  // SRC_LIGHTFACTORY_H_

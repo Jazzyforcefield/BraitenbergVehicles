@@ -85,14 +85,12 @@ void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
 
 void BraitenbergVehicle::Update() {
   WheelVelocity light_wheel_velocity = WheelVelocity(0, 0);
-  
+
   if (light_behavior_ != kNone && food_behavior_ == kNone) {
     set_color({255, 204, 51});
-  }
-  else if (light_behavior_ == kNone && food_behavior_ != kNone) {
+  } else if (light_behavior_ == kNone && food_behavior_ != kNone) {
     set_color({0, 0, 255});
-  }
-  else {
+  } else {
     set_color({122, 0, 25});
   }
 
@@ -123,11 +121,12 @@ void BraitenbergVehicle::Update() {
     default:
       numBehaviors--;
       break;
-      
   }
+
   if (collided_) {
     time_++;
   }
+
   if (time_ == 20) {
     set_heading(static_cast<int>((get_pose().theta + 225)) % 360);
     time_ = 0;
@@ -135,7 +134,6 @@ void BraitenbergVehicle::Update() {
   }
 
   WheelVelocity food_wheel_velocity = WheelVelocity(0, 0);
-  
 
   switch (food_behavior_) {
     case kExplore:

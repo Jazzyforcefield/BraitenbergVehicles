@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <iostream>
 #include <cmath>
+#include <string>
 
 #include "src/arena.h"
 #include "src/light.h"
@@ -240,7 +241,7 @@ void Arena::AdjustEntityOverlap(ArenaMobileEntity * const mobile_e,
     double distance_to_move =
       mobile_e->get_radius() + other_e->get_radius() - distance_between;
     double angle = atan2(delta_y, delta_x);
-    mobile_e->set_position(	
+    mobile_e->set_position(
       mobile_e->get_pose().x+cos(angle)*distance_to_move,
       mobile_e->get_pose().y+sin(angle)*distance_to_move);
 }

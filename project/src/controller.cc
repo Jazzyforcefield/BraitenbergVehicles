@@ -33,12 +33,11 @@ Controller::Controller(int argc, char **argv) :
     std::string json = str;
     config_ = new json_value();
     std::string err = parse_json(*config_, json);
-    if (! err.empty()) {
+    if (!err.empty()) {
       std::cerr << "Parse error: " << err << std::endl;
       delete config_;
       config_ = NULL;
-    }
-    else {
+    } else {
       arena_ = new Arena(config_->get<json_object>());
     }
   }

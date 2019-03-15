@@ -36,14 +36,13 @@ GraphicsArenaViewer::GraphicsArenaViewer(
     nanogui_intialized_(false),
     gui(nullptr),
     window() {
-      xOffset_=GUI_MENU_WIDTH + GUI_MENU_GAP;
+      xOffset_ = GUI_MENU_WIDTH + GUI_MENU_GAP;
 }
 
 void GraphicsArenaViewer::InitNanoGUI() {
     if (!nanogui_intialized_) {
       gui = new nanogui::FormHelper(screen());
-    }
-    else {
+    } else {
       window->dispose();
     }
 

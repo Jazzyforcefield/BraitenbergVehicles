@@ -2,7 +2,7 @@
 
 #include <iostream>
 
-#include "Factory.h"
+#include "src/Factory.h"
 
 NAMESPACE_BEGIN(csci3081);
 

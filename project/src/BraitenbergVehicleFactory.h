@@ -1,7 +1,7 @@
 // Copyright 2019
 
-#ifndef PROJECT_SRC_BRAITENBERGVEHICLEFACTORY_H_
-#define PROJECT_SRC_BRAITENBERGVEHICLEFACTORY_H_
+#ifndef SRC_BRAITENBERGVEHICLEFACTORY_H_
+#define SRC_BRAITENBERGVEHICLEFACTORY_H_
 
 #include <iostream>
 #include <cstdlib>
@@ -19,4 +19,4 @@ class BraitenbergVehicleFactory : public Factory {
 
 NAMESPACE_END(csci3081);
 
-#endif  // PROJECT_SRC_BRAITENBERGVEHICLEFACTORY_H_
+#endif  // SRC_BRAITENBERGVEHICLEFACTORY_H_
