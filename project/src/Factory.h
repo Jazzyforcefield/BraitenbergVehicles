@@ -12,7 +12,7 @@ NAMESPACE_BEGIN(csci3081);
 
 class Factory {
  public:
-    virtual void Create(ArenaEntity ** ent) = 0;
+    virtual void Create(ArenaEntity ** ent, json_object& entity_config) = 0;
     virtual ~Factory();
 };
 

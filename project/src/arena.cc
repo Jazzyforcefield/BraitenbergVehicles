@@ -54,13 +54,13 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
 
     switch (etype) {
       case (kLight):
-        factories[0]->Create(&entity);
+        factories[0]->Create(&entity, entity_config);
         break;
       case (kFood):
-        factories[1]->Create(&entity);
+        factories[1]->Create(&entity, entity_config);
         break;
       case (kBraitenberg):
-        factories[2]->Create(&entity);
+        factories[2]->Create(&entity, entity_config);
         break;
       default:
         std::cout << "FATAL: Bad entity type on creation" << std::endl;
@@ -68,7 +68,6 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
     }
 
     if (entity) {
-      entity->LoadFromObject(entity_config);
       AddEntity(entity);
     }
   }
