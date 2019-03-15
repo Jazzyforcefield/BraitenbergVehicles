@@ -27,7 +27,7 @@ int BraitenbergVehicle::count = 0;
 BraitenbergVehicle::BraitenbergVehicle() :
   light_sensors_(), wheel_velocity_(), light_behavior_(kNone),
   food_behavior_(kNone), closest_light_entity_(NULL),
-  closest_food_entity_(NULL), defaultSpeed_(5.0) {
+  closest_food_entity_(NULL), defaultSpeed_(5.0), time_(0), collided_(false) {
   set_type(kBraitenberg);
   motion_behavior_ = new MotionBehaviorDifferential(this);
   light_sensors_.push_back(Pose());
@@ -52,6 +52,7 @@ void BraitenbergVehicle::TimestepUpdate(__unused unsigned int dt) {
 void BraitenbergVehicle::HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) {
   set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
+  collided_ = true;
 }
 
 void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
@@ -122,6 +123,15 @@ void BraitenbergVehicle::Update() {
     default:
       numBehaviors--;
       break;
+      
+  }
+  if (collided_) {
+    time_++;
+  }
+  if (time_ == 20) {
+    set_heading(static_cast<int>((get_pose().theta + 225)) % 360);
+    time_ = 0;
+    collided_ = false;
   }
 
   WheelVelocity food_wheel_velocity = WheelVelocity(0, 0);
