@@ -9,9 +9,10 @@ NAMESPACE_BEGIN(csci3081);
 
 BraitenbergVehicleFactory::BraitenbergVehicleFactory() {}
 
-void BraitenbergVehicleFactory::Create(ArenaEntity ** ent) {
+void BraitenbergVehicleFactory::Create(ArenaEntity ** ent, json_object& entity_config) {
   // std::cout << "Inside BraitenbergVehicle's create\n" << std::endl;
-  *ent =  new BraitenbergVehicle();
+  *ent = new BraitenbergVehicle();
+  (*ent)->LoadFromObject(entity_config);
 }
 
 BraitenbergVehicleFactory::~BraitenbergVehicleFactory() {}

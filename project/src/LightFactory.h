@@ -14,7 +14,7 @@ class LightFactory : public Factory {
  public:
     LightFactory();
     ~LightFactory();
-    void Create(ArenaEntity ** ent) override;
+    void Create(ArenaEntity ** ent, json_object& entity_config) override;
 };
 
 NAMESPACE_END(csci3081);
