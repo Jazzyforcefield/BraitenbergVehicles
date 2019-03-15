@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 15, 00:27:19 AM.
+Run on March 15, 11:19:20 AM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -37,7 +37,7 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 #### Git Usage
 
 + Pass: Check git commit history
-Commits found=56
+Commits found=57
 
 + Pass: Run git ls-remote gather all branches in repo
 
@@ -47,13 +47,13 @@ Commits found=56
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-bf7b61ced8e7b632dff74506d85224d8e7bca4a1	refs/heads/devel
+f531b21dc2e6e3495ff93329316e4966f41a064b	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-5457d4e08d5632c03647c3bd38d33e6f9828cfc1	refs/heads/master
+af26f7a26166ed0e17707479059776b6f4424e75	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -66,17 +66,17 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 + Pass: Run ghi for total number of open issues in Github repo (Found: 3)
 
+[OPEN issue #11] :  Implement json configuration for factory classes
+
 [OPEN issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
 
 [OPEN issue #6] :  Refactor BraitenbergVehicle class 
 
-[OPEN issue #4] :  Implement FactoryPointer and subclasses
 
 
 
 
-
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 7)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 8)
 
 [CLOSED issue #10] :  Implement colors to BV 1 @ungxx028
 
@@ -85,6 +85,8 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 [CLOSED issue #8] :  Implement BV behaviors 1
 
 [CLOSED issue #5] :  Rename UML.pdf to uml_design.pdf 1
+
+[CLOSED issue #4] :  Implement FactoryPointer and subclasses
 
 [CLOSED issue #3] :  fix(arena_mobile_entity.h) ↑
 
@@ -113,46 +115,10 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
 ==== Checking style is correct ====
 /class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-arena.cc:243:  Tab found; better to use spaces  [whitespace/tab] [1]
-arena.cc:243:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-arena.cc:243:  Extra space after ( in function call  [whitespace/parens] [4]
-arena.cc:50:  Add #include <string> for string  [build/include_what_you_use] [4]
-braitenberg_vehicle.cc:88:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:92:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
-braitenberg_vehicle.cc:92:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
-braitenberg_vehicle.cc:95:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
-braitenberg_vehicle.cc:95:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
-braitenberg_vehicle.cc:126:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:126:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
-braitenberg_vehicle.cc:138:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-controller.cc:36:  Extra space for operator !   [whitespace/operators] [4]
-controller.cc:41:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
-controller.cc:41:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
-Factory.cc:3:  project/src/Factory.cc should include its header file project/src/Factory.h  [build/include] [5]
-graphics_arena_viewer.cc:39:  Missing spaces around =  [whitespace/operators] [4]
-graphics_arena_viewer.cc:46:  An else should appear on the same line as the preceding }  [whitespace/newline] [4]
-graphics_arena_viewer.cc:46:  If an else has a brace on one side, it should have it on both  [readability/braces] [5]
 arena_entity.h:141:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
-arena.h:56:  Zero-parameter constructors should not be marked explicit.  [runtime/explicit] [5]
 arena.h:59:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
-behavior_enum.h:37:  Add #include <string> for string  [build/include_what_you_use] [4]
-BraitenbergVehicleFactory.h:3:  #ifndef header guard has wrong style, please use: SRC_BRAITENBERGVEHICLEFACTORY_H_  [build/header_guard] [5]
-BraitenbergVehicleFactory.h:22:  #endif line should be "#endif  // SRC_BRAITENBERGVEHICLEFACTORY_H_"  [build/header_guard] [5]
-common.h:19:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
 common.h:20:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
-common.h:21:  Tab found; better to use spaces  [whitespace/tab] [1]
-common.h:20:  Add #include <string> for string  [build/include_what_you_use] [4]
-controller.h:72:  Tab found; better to use spaces  [whitespace/tab] [1]
-entity_type.h:14:  Found C++ system header after other header. Should be: entity_type.h, c system, c++ system, other.  [build/include_order] [4]
-Factory.h:3:  #ifndef header guard has wrong style, please use: SRC_FACTORY_H_  [build/header_guard] [5]
-Factory.h:21:  #endif line should be "#endif  // SRC_FACTORY_H_"  [build/header_guard] [5]
-FoodFactory.h:3:  #ifndef header guard has wrong style, please use: SRC_FOODFACTORY_H_  [build/header_guard] [5]
-FoodFactory.h:23:  #endif line should be "#endif  // SRC_FOODFACTORY_H_"  [build/header_guard] [5]
-graphics_arena_viewer.h:171:  "virtual" is redundant since function is already declared as "override"  [readability/inheritance] [4]
-LightFactory.h:3:  #ifndef header guard has wrong style, please use: SRC_LIGHTFACTORY_H_  [build/header_guard] [5]
-LightFactory.h:22:  #endif line should be "#endif  // SRC_LIGHTFACTORY_H_"  [build/header_guard] [5]
-mainpage.h:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
-mainpage.h:0:  No #ifndef header guard found, suggested CPP variable is: SRC_MAINPAGE_H_  [build/header_guard] [5]
+common.h:21:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
 Done processing arena.cc
 Done processing braitenberg_vehicle.cc
 Done processing BraitenbergVehicleFactory.cc
@@ -191,7 +157,7 @@ Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
 Done processing wheel_velocity.h
-Total errors found: 40
+Total errors found: 4
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_01_Basic_Feedback/repo-ungxx028/project/src'
