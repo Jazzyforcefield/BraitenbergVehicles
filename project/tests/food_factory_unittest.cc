@@ -20,5 +20,5 @@ TEST_F(FoodFactoryTest, ConstructorTests) {
 	//ArenaEntity * test = new Food();
 	csci3081::ArenaEntity * test2;
 	one->Create(&test2);
-	ASSERT_EQ(test2->get_name(), "Food 0");
+	ASSERT_EQ(test2->get_name(), "Food");
 }

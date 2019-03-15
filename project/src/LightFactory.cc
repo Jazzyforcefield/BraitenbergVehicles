@@ -1,16 +1,19 @@
+// Copyright 2019, Michael Ung
+
 #include <iostream>
 
 #include "src/LightFactory.h"
+#include "src/light.h"
 
 NAMESPACE_BEGIN(csci3081);
 
-LightFactory::LightFactory() {};
+LightFactory::LightFactory() {}
 
-void LightFactory::Create(__unused ArenaEntity ** ent) {
-	std::cout << "Inside LightFactory's create\n" << std::endl;
-	// *ent = new Light();
+void LightFactory::Create(ArenaEntity ** ent) {
+  // std::cout << "Inside LightFactory's create\n" << std::endl;
+  *ent =  new Light();
 }
 
-LightFactory::~LightFactory() {};
+LightFactory::~LightFactory() {}
 
 NAMESPACE_END(csci3081);
