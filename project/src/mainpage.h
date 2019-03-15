@@ -3,6 +3,10 @@
 #ifndef SRC_MAINPAGE_H_
 #define SRC_MAINPAGE_H_
 
-Welcome to the mainpage.
+/**
+ * \mainpage Project Current Iteration: 1
+ *
+ * Here is the project as of now.
+ */
 
 #endif  // SRC_MAINPAGE_H_

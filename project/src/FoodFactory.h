@@ -11,10 +11,28 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+/**
+ * @brief The derived factory class that creates Food
+ */
+
 class FoodFactory : public Factory {
  public:
+/**
+ * @brief FoodFactory constructor
+ */
     FoodFactory();
+/**
+ * @brief FoodFactory destructor
+ */
     ~FoodFactory();
+/**
+ * @brief Overrides factory create class
+ *
+ * @param ent ArenaEntity ** to create a new object
+ * @param entity_config json_object with configuration
+ *
+ * Factories should assign a new type to *ent
+ */
     void Create(ArenaEntity ** ent, json_object& entity_config) override;
 };
 

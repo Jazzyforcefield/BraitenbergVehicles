@@ -55,7 +55,11 @@ class Arena {
    */
   Arena();
 
-
+  /**
+   * @brief Creates an arena with json_object as its configuration
+   *
+   * Splits json config into entity configurations inside
+   */
   explicit Arena(json_object& arena_object);
 
   /**
@@ -75,6 +79,11 @@ class Arena {
    */
   void AdvanceTime(double dt);
 
+  /**
+   * @brief Adds entity to arena's entity vector.
+   *
+   * Used whenver a new entity is created.
+   */
   void AddEntity(ArenaEntity* entity);
 
   /**
@@ -102,7 +111,7 @@ class Arena {
    *
    * @param mobile_e This entity is definitely moving.
    * @param other_e This entity might be mobile or immobile.
-   * @param[out] True if entities overlapping.
+   * @return True if entities overlapping.
    *
    **/
   bool IsColliding(
@@ -132,6 +141,9 @@ class Arena {
   /**
   * @brief Move the entity to the edge of the wall without overlap.
   * Without this, entities tend to get stuck in walls.
+  *
+  * Called when it is know that two entities will overlap. It adjusts the position
+  * so that they do not overlap.
   **/
   void AdjustWallOverlap(ArenaMobileEntity * const ent, EntityType wall);
 
@@ -145,10 +157,22 @@ class Arena {
    */
   void UpdateEntitiesTimestep();
 
-
+  /**
+   * @brief Returns a vector of all entities in the arena.
+   * @return entity vector
+   */
   std::vector<class ArenaEntity *> get_entities() const { return entities_; }
 
+  /**
+   * @brief Returns x dimension of graphics window inside which entities must operate
+   * @return x_dim_
+   */
   double get_x_dim() { return x_dim_; }
+
+  /**
+   * @brief Returns y dimension of graphics window inside which entities must operate
+   * @return y_dim_
+   */
   double get_y_dim() { return y_dim_; }
 
  private:

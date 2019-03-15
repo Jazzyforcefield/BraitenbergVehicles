@@ -11,6 +11,11 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+/**
+ * @brief Class that allows for viewing of the arena
+ *
+ */
+
 class ArenaViewer {
  public:
   virtual ~ArenaViewer() {}
