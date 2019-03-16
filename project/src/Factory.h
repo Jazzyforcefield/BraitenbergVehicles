@@ -26,7 +26,7 @@ class Factory {
  *
  * Factories should assign a new type to *ent
  */
-    virtual void Create(ArenaEntity ** ent, json_object& entity_config) = 0;
+    virtual void Create(ArenaEntity ** ent, json_object* entity_config) = 0;
 
   /**
  * @brief Virtual destructor

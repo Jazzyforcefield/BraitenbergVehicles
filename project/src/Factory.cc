@@ -7,7 +7,7 @@
 NAMESPACE_BEGIN(csci3081);
 
 void Factory::Create(__unused ArenaEntity ** ent,
-                    __unused json_object& entity_config) {
+                    __unused json_object* entity_config) {
   std::cout << "Inside Create(Robot ** ent)" << std::endl;
 }
 

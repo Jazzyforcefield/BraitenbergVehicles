@@ -101,7 +101,7 @@ class BraitenbergVehicle : public ArenaMobileEntity {
    * @param entity_config Takes in entity configuration json
    * Calls UpdateLightSensors() afterward
    */
-  void LoadFromObject(json_object& entity_config) override;
+  void LoadFromObject(json_object* entity_config) override;
   /**
    * @brief Gets the behavior toward lights
    * @return Returns the behavior toward light

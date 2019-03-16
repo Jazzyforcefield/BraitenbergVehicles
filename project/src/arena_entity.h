@@ -138,14 +138,14 @@ class ArenaEntity {
    */
   void set_mobility(bool value) { is_mobile_ = value; }
 
-  virtual void LoadFromObject(json_object& entity_config) {
+  virtual void LoadFromObject(json_object* entity_config) {
     set_position(
-      entity_config["x"].get<double>(), entity_config["y"].get<double>());
-    if (entity_config.find("theta") != entity_config.end()) {
-      pose_.theta = entity_config["theta"].get<double>();
+      (*entity_config)["x"].get<double>(), (*entity_config)["y"].get<double>());
+    if ((*entity_config).find("theta") != (*entity_config).end()) {
+      pose_.theta = (*entity_config)["theta"].get<double>();
     }
-    if (entity_config.find("r") != entity_config.end()) {
-      set_radius(entity_config["r"].get<double>());
+    if ((*entity_config).find("r") != (*entity_config).end()) {
+      set_radius((*entity_config)["r"].get<double>());
     }
   }
 

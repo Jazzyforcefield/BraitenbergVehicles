@@ -32,13 +32,13 @@ Controller::Controller(int argc, char **argv) :
                    std::istreambuf_iterator<char>());
     std::string json = str;
     config_ = new json_value();
-    std::string err = parse_json(*config_, json);
+    std::string err = parse_json(config_, json);
     if (!err.empty()) {
       std::cerr << "Parse error: " << err << std::endl;
       delete config_;
       config_ = NULL;
     } else {
-      arena_ = new Arena(config_->get<json_object>());
+      arena_ = new Arena(&config_->get<json_object>());
     }
   }
   if (!config_) {
@@ -92,7 +92,7 @@ void Controller::Reset() {
     delete (arena_);
   }
   if (config_) {
-    arena_ = new Arena(config_->get<json_object>());
+    arena_ = new Arena(&config_->get<json_object>());
   } else {
     arena_ = new Arena();
   }

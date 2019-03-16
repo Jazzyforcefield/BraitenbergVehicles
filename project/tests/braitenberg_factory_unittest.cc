@@ -27,14 +27,14 @@ TEST_F(BraitenbergVehicleFactoryTest, ConstructorTests) {
                  std::istreambuf_iterator<char>());
   std::string json = str;
   config_ = new json_value();
-  std::string err = parse_json(*config_, json);
+  std::string err = parse_json(config_, json);
   
   json_object& arena_config = config_->get<json_object>();
   json_array& entities = arena_config["entities"].get<json_array>();
   json_object& entity_config = entities[0].get<json_object>();
 
 	csci3081::ArenaEntity * test2;
-	one->Create(&test2, entity_config);
+	one->Create(&test2, &entity_config);
 	ASSERT_EQ(test2->get_name(), "Braitenberg 1");  
   ASSERT_EQ(test2->get_pose().x, 270);
   ASSERT_EQ(test2->get_pose().y, 270);
