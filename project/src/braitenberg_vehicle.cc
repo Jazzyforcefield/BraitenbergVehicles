@@ -27,7 +27,7 @@ int BraitenbergVehicle::count = 0;
 BraitenbergVehicle::BraitenbergVehicle() :
   light_sensors_(), wheel_velocity_(), light_behavior_(kNone),
   food_behavior_(kNone), closest_light_entity_(NULL),
-  closest_food_entity_(NULL), defaultSpeed_(5.0) {
+  closest_food_entity_(NULL), defaultSpeed_(5.0), time_(0), collided_(false) {
   set_type(kBraitenberg);
   motion_behavior_ = new MotionBehaviorDifferential(this);
   light_sensors_.push_back(Pose());
@@ -52,6 +52,7 @@ void BraitenbergVehicle::TimestepUpdate(__unused unsigned int dt) {
 void BraitenbergVehicle::HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) {
   set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
+  collided_ = true;
 }
 
 void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
@@ -85,6 +86,14 @@ void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
 void BraitenbergVehicle::Update() {
   WheelVelocity light_wheel_velocity = WheelVelocity(0, 0);
 
+  if (light_behavior_ != kNone && food_behavior_ == kNone) {
+    set_color({255, 204, 51});
+  } else if (light_behavior_ == kNone && food_behavior_ != kNone) {
+    set_color({0, 0, 255});
+  } else {
+    set_color({122, 0, 25});
+  }
+
   int numBehaviors = 2;
 
   switch (light_behavior_) {
@@ -93,10 +102,35 @@ void BraitenbergVehicle::Update() {
         1.0/get_sensor_reading_right(closest_light_entity_),
          1.0/get_sensor_reading_left(closest_light_entity_), defaultSpeed_);
       break;
+    case kLove:
+      light_wheel_velocity = WheelVelocity(
+        1.0/get_sensor_reading_left(closest_light_entity_),
+        1.0/get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
+      break;
+    case kAggressive:
+     light_wheel_velocity = WheelVelocity(
+        get_sensor_reading_right(closest_light_entity_),
+        get_sensor_reading_left(closest_light_entity_), defaultSpeed_);
+      break;
+    case kCoward:
+     light_wheel_velocity = WheelVelocity(
+        get_sensor_reading_left(closest_light_entity_),
+        get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
+      break;
     case kNone:
     default:
       numBehaviors--;
       break;
+  }
+
+  if (collided_) {
+    time_++;
+  }
+
+  if (time_ == 20) {
+    set_heading(static_cast<int>((get_pose().theta + 225)) % 360);
+    time_ = 0;
+    collided_ = false;
   }
 
   WheelVelocity food_wheel_velocity = WheelVelocity(0, 0);
@@ -106,6 +140,21 @@ void BraitenbergVehicle::Update() {
       food_wheel_velocity = WheelVelocity(
         1.0/get_sensor_reading_right(closest_food_entity_),
         1.0/get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
+      break;
+    case kLove:
+      food_wheel_velocity = WheelVelocity(
+        1.0/get_sensor_reading_left(closest_food_entity_),
+        1.0/get_sensor_reading_right(closest_food_entity_), defaultSpeed_);
+      break;
+    case kAggressive:
+     food_wheel_velocity = WheelVelocity(
+        get_sensor_reading_right(closest_food_entity_),
+        get_sensor_reading_left(closest_food_entity_), defaultSpeed_);
+      break;
+    case kCoward:
+     food_wheel_velocity = WheelVelocity(
+        get_sensor_reading_left(closest_food_entity_),
+        get_sensor_reading_right(closest_food_entity_), defaultSpeed_);
       break;
     case kNone:
     default:
@@ -166,16 +215,16 @@ void BraitenbergVehicle::UpdateLightSensors() {
   }
 }
 
-void BraitenbergVehicle::LoadFromObject(json_object& entity_config) {
+void BraitenbergVehicle::LoadFromObject(json_object* entity_config) {
   ArenaEntity::LoadFromObject(entity_config);
 
-  if (entity_config.find("light_behavior") != entity_config.end()) {
+  if ((*entity_config).find("light_behavior") != (*entity_config).end()) {
       light_behavior_ = get_behavior_type(
-        entity_config["light_behavior"].get<std::string>());
+        (*entity_config)["light_behavior"].get<std::string>());
   }
-  if (entity_config.find("food_behavior") != entity_config.end()) {
+  if ((*entity_config).find("food_behavior") != (*entity_config).end()) {
       food_behavior_ = get_behavior_type(
-        entity_config["food_behavior"].get<std::string>());
+        (*entity_config)["food_behavior"].get<std::string>());
   }
 
   UpdateLightSensors();

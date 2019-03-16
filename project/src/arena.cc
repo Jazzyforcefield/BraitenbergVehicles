@@ -10,9 +10,11 @@
 #include <algorithm>
 #include <iostream>
 #include <cmath>
+#include <string>
 
 #include "src/arena.h"
 #include "src/light.h"
+#include "src/braitenberg_vehicle.h"
 
 /*******************************************************************************
  * Namespaces
@@ -32,13 +34,17 @@ Arena::Arena(): x_dim_(X_DIM),
     AddEntity(new BraitenbergVehicle());
 }
 
-Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
+Arena::Arena(json_object* arena_object): x_dim_(X_DIM),
       y_dim_(Y_DIM),
       entities_(),
       mobile_entities_() {
-  x_dim_ = arena_object["width"].get<double>();
-  y_dim_ = arena_object["height"].get<double>();
-  json_array& entities = arena_object["entities"].get<json_array>();
+  factories[0] = new LightFactory();
+  factories[1] = new FoodFactory();
+  factories[2] = new BraitenbergVehicleFactory();
+
+  x_dim_ = (*arena_object)["width"].get<double>();
+  y_dim_ = (*arena_object)["height"].get<double>();
+  json_array& entities = (*arena_object)["entities"].get<json_array>();
   for (unsigned int f = 0; f < entities.size(); f++) {
     json_object& entity_config = entities[f].get<json_object>();
     EntityType etype = get_entity_type(
@@ -48,13 +54,13 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
 
     switch (etype) {
       case (kLight):
-        entity = new Light();
+        factories[0]->Create(&entity, &entity_config);
         break;
       case (kFood):
-        entity = new Food();
+        factories[1]->Create(&entity, &entity_config);
         break;
       case (kBraitenberg):
-        entity = new BraitenbergVehicle();
+        factories[2]->Create(&entity, &entity_config);
         break;
       default:
         std::cout << "FATAL: Bad entity type on creation" << std::endl;
@@ -62,7 +68,6 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
     }
 
     if (entity) {
-      entity->LoadFromObject(entity_config);
       AddEntity(entity);
     }
   }
@@ -216,7 +221,7 @@ bool Arena::IsColliding(
 }
 
 /* This is called when it is known that the two entities overlap.
-* We determine by how much they overlap then move the mobile entity to
+* We determine by how much they overlap then move the mobsile entity to
 * the edge of the other
 */
 /* @TODO: Add to Pose distance distance_between (e.g. overload operator -)
@@ -234,7 +239,7 @@ void Arena::AdjustEntityOverlap(ArenaMobileEntity * const mobile_e,
     double distance_between = sqrt(delta_x*delta_x + delta_y*delta_y);
     double distance_to_move =
       mobile_e->get_radius() + other_e->get_radius() - distance_between;
-    double angle = atan(delta_y/delta_x);
+    double angle = atan2(delta_y, delta_x);
     mobile_e->set_position(
       mobile_e->get_pose().x+cos(angle)*distance_to_move,
       mobile_e->get_pose().y+sin(angle)*distance_to_move);

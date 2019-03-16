@@ -168,7 +168,7 @@ class GraphicsArenaViewer : public mingfx::GraphicsApp, public ArenaViewer {
    * @param[in] c Character representing a key that was released.
    * @param[in] modifiers Any modifier keys that were held with the key.
    */
-  virtual void OnKeyUp(
+  void OnKeyUp(
     __unused const char *c, __unused int modifiers) override { };
 
   /**
