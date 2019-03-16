@@ -65,7 +65,7 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 | Functionality | Good | Okay | Help | Time |
 | -------- | -------- | -------- | -------- | --------- |
 | **__Priority Level 3__** |
-| Factories instantiate entities using JSON |  |X|  |   |
+| Factories instantiate entities using JSON |X| |  |   |
 | All BraitenbergVehicle entities in Arena created with a factory |X|  |  |  |
 | All Light entities in Arena created with a factory |X|  |  |  |
 | All Food entities in Arena created with a factory |X|  |  |  |
@@ -89,10 +89,10 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 #### UML
 
-- [ ] Final version of UML in a pdf file in the project/docs directory (named **__iteration1_UML.pdf__**).
-- [ ] The Factory classes in the UML reflect what was implemented.
+- [X] Final version of UML in a pdf file in the project/docs directory (named **__iteration1_UML.pdf__**).
+- [X] The Factory classes in the UML reflect what was implemented.
 - [X] The UML contains the BraitenbergVehicle, Light, and Food class.
-- [ ] The UML contains the Arena class.
+- [X] The UML contains the Arena class.
 - [X] The UML contains the _design_ of the Strategy Pattern.
 
 #### Doxygen
@@ -119,11 +119,11 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 - [X] Unit tests are in the /project/tests folder.
 - [X] Unit tests for different classes are in separate files.
 
-- [ ] Unit tests exist to test the creation of a BraitenbergVehicle.
-- [ ] Unit tests exist to test the creation of a Light.
-- [ ] Unit tests exist to test the creation of a Food.
-- [ ] Unit tests for the factories use JSON.
-- [ ] Unit tests for the factories test initialization of the entity.
+- [X] Unit tests exist to test the creation of a BraitenbergVehicle.
+- [X] Unit tests exist to test the creation of a Light.
+- [X] Unit tests exist to test the creation of a Food.
+- [X] Unit tests for the factories use JSON.
+- [X] Unit tests for the factories test initialization of the entity.
 
 
 
