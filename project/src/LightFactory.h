@@ -32,7 +32,7 @@ class LightFactory : public Factory {
  *
  * Factories should assign a new type to *ent
  */
-    void Create(ArenaEntity ** ent, json_object& entity_config) override;
+    void Create(ArenaEntity ** ent, json_object* entity_config) override;
 };
 
 NAMESPACE_END(csci3081);

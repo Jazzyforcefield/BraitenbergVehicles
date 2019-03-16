@@ -215,16 +215,16 @@ void BraitenbergVehicle::UpdateLightSensors() {
   }
 }
 
-void BraitenbergVehicle::LoadFromObject(json_object& entity_config) {
+void BraitenbergVehicle::LoadFromObject(json_object* entity_config) {
   ArenaEntity::LoadFromObject(entity_config);
 
-  if (entity_config.find("light_behavior") != entity_config.end()) {
+  if ((*entity_config).find("light_behavior") != (*entity_config).end()) {
       light_behavior_ = get_behavior_type(
-        entity_config["light_behavior"].get<std::string>());
+        (*entity_config)["light_behavior"].get<std::string>());
   }
-  if (entity_config.find("food_behavior") != entity_config.end()) {
+  if ((*entity_config).find("food_behavior") != (*entity_config).end()) {
       food_behavior_ = get_behavior_type(
-        entity_config["food_behavior"].get<std::string>());
+        (*entity_config)["food_behavior"].get<std::string>());
   }
 
   UpdateLightSensors();

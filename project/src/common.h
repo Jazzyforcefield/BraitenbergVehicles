@@ -17,9 +17,9 @@
 typedef picojson::value json_value;
 typedef picojson::object json_object;
 typedef picojson::array json_array;
-std::string parse_json(json_value& v, const std::string& json);
-inline std::string parse_json(json_value& v, const std::string& json) {
-  return picojson::parse(v, json);
+std::string parse_json(json_value* v, const std::string& json);
+inline std::string parse_json(json_value* v, const std::string& json) {
+  return picojson::parse(*v, json);
 }
 
 /*******************************************************************************

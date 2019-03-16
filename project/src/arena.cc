@@ -34,7 +34,7 @@ Arena::Arena(): x_dim_(X_DIM),
     AddEntity(new BraitenbergVehicle());
 }
 
-Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
+Arena::Arena(json_object* arena_object): x_dim_(X_DIM),
       y_dim_(Y_DIM),
       entities_(),
       mobile_entities_() {
@@ -42,9 +42,9 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
   factories[1] = new FoodFactory();
   factories[2] = new BraitenbergVehicleFactory();
 
-  x_dim_ = arena_object["width"].get<double>();
-  y_dim_ = arena_object["height"].get<double>();
-  json_array& entities = arena_object["entities"].get<json_array>();
+  x_dim_ = (*arena_object)["width"].get<double>();
+  y_dim_ = (*arena_object)["height"].get<double>();
+  json_array& entities = (*arena_object)["entities"].get<json_array>();
   for (unsigned int f = 0; f < entities.size(); f++) {
     json_object& entity_config = entities[f].get<json_object>();
     EntityType etype = get_entity_type(
@@ -54,13 +54,13 @@ Arena::Arena(json_object& arena_object): x_dim_(X_DIM),
 
     switch (etype) {
       case (kLight):
-        factories[0]->Create(&entity, entity_config);
+        factories[0]->Create(&entity, &entity_config);
         break;
       case (kFood):
-        factories[1]->Create(&entity, entity_config);
+        factories[1]->Create(&entity, &entity_config);
         break;
       case (kBraitenberg):
-        factories[2]->Create(&entity, entity_config);
+        factories[2]->Create(&entity, &entity_config);
         break;
       default:
         std::cout << "FATAL: Bad entity type on creation" << std::endl;
