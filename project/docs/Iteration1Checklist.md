@@ -109,8 +109,8 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 - [X] The code complies with naming conventions for Classes, ClassMethods, and class\_members\_.
 - [X] There exists a history of git commit messages to show effort.
 - [X] There exists a history of issues and branches to show effort.
-- [ ] Github issues include current unresolved bugs.
-- [ ] Github issues include unresolved feature enhancements and refactoring that is due for this iteration.
+- [X] Github issues include current unresolved bugs.
+- [X] Github issues include unresolved feature enhancements and refactoring that is due for this iteration.
 
 
 
