@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 15, 20:17:46 PM.
+Run on March 15, 23:13:01 PM.
 
 + Pass: Checkout devel branch.
 
@@ -55,7 +55,7 @@ Run on March 15, 20:17:46 PM.
 #### Git Usage
 
 + Pass: Check git commit history
-Sufficient commits (found=63,required=25)
+Commits found=70
 
 + Pass: Run git ls-remote gather all branches in repo
 
@@ -67,13 +67,15 @@ Sufficient commits (found=63,required=25)
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-27878f1269c68f7ffb46a3f19f5c1ab814347a35	refs/heads/devel
+b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 647a5ebd468b601715d67b91b4dacfbff7634172	refs/heads/fix/02-robot-walls
 
-980ff960dfd0f944b40a71f7d6dd2c67e85c537c	refs/heads/master
+182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
+
+ecccca43d4a47f0da76546ccad4743ba3955be2d	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -84,9 +86,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
-
-[OPEN issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
++ Pass: Run ghi for total number of open issues in Github repo (Found: 1)
 
 [OPEN issue #6] :  Refactor BraitenbergVehicle class 
 
@@ -94,7 +94,9 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 9)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 11)
+
+[CLOSED issue #12] :  Change json references to pointers
 
 [CLOSED issue #11] :  Implement json configuration for factory classes
 
@@ -103,6 +105,8 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 [CLOSED issue #9] :  Add collision avoidance behavior to BV 1 @ungxx028
 
 [CLOSED issue #8] :  Implement BV behaviors 1
+
+[CLOSED issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
 
 [CLOSED issue #5] :  Rename UML.pdf to uml_design.pdf 1
 
@@ -121,62 +125,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 #### Style Tests
 
-+ Fail: Ensuring code follows style guide.
-
-<pre>cd src; make check-style
-make[1]: Entering directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src'
-==== Checking style is correct ====
-/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-arena_entity.h:141:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
-arena.h:63:  Is this a non-const reference? If so, make const or use a pointer: json_object& arena_object  [runtime/references] [2]
-common.h:20:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
-common.h:21:  Is this a non-const reference? If so, make const or use a pointer: json_value& v  [runtime/references] [2]
-Factory.h:29:  Is this a non-const reference? If so, make const or use a pointer: json_object& entity_config  [runtime/references] [2]
-Done processing arena.cc
-Done processing braitenberg_vehicle.cc
-Done processing BraitenbergVehicleFactory.cc
-Done processing controller.cc
-Done processing Factory.cc
-Done processing food.cc
-Done processing FoodFactory.cc
-Done processing graphics_arena_viewer.cc
-Done processing light.cc
-Done processing LightFactory.cc
-Done processing main.cc
-Done processing motion_behavior.cc
-Done processing motion_behavior_differential.cc
-Done processing rgb_color.cc
-Done processing arena_entity.h
-Done processing arena.h
-Done processing arena_immobile_entity.h
-Done processing arena_mobile_entity.h
-Done processing arena_viewer.h
-Done processing behavior_enum.h
-Done processing BraitenbergVehicleFactory.h
-Done processing braitenberg_vehicle.h
-Done processing common.h
-Done processing controller.h
-Done processing entity_type.h
-Done processing Factory.h
-Done processing FoodFactory.h
-Done processing food.h
-Done processing graphics_arena_viewer.h
-Done processing LightFactory.h
-Done processing light.h
-Done processing mainpage.h
-Done processing motion_behavior_differential.h
-Done processing motion_behavior.h
-Done processing params.h
-Done processing pose.h
-Done processing rgb_color.h
-Done processing wheel_velocity.h
-Total errors found: 5
-Makefile:162: recipe for target 'check-style' failed
-make[1]: *** [check-style] Error 1
-make[1]: Leaving directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_01_Full_Feedback/repo-ungxx028/project/src'
-Makefile:8: recipe for target 'check-style' failed
-make: *** [check-style] Error 2
-</pre>
++ Pass: Ensuring code follows style guide.
 
 
 
