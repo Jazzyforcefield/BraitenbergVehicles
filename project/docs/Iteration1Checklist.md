@@ -11,15 +11,15 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 
 
-- [ ]  cloned **fresh** from github onto a cselabs machine to test compilation, style compliance, and execution
-- [ ] Submission is on the **master** branch in the project folder of your repo
+- [X]  cloned **fresh** from github onto a cselabs machine to test compilation, style compliance, and execution
+- [X] Submission is on the **master** branch in the project folder of your repo
 - [X] _/project_ folder exists
 - [X] _/build_ is not in the repo
 - [X] _/html_  and _/latex_ is not in _docs_
 - [X] **__`make` from within _project_ completes without error.__**
 - [X] `./../build/bin/arenaviewer` executes without assert or a seg fault
 - [X] `./../build/bin/unittest` executes without a seg fault
-- [ ] **_"make check-style" reports no errors when run in the master branch._**
+- [X] **_"make check-style" reports no errors when run in the master branch._**
 - [X] `doxygen docs/Doxyfile` compiles
 
 
@@ -84,8 +84,8 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 #### Design Document
 
-- [ ] The final version of your design document for iteration 1 exists in _docs_ (named **__iteration1\_design.pdf__**).
-- [ ] The final version of your design document discusses the tradeoffs of different implementations of the Factory Pattern and discusses which version you implemented, which might be some variation/hybrid of the factory pattern you discussed in the document.
+- [X] The final version of your design document for iteration 1 exists in _docs_ (named **__iteration1\_design.pdf__**).
+- [X] The final version of your design document discusses the tradeoffs of different implementations of the Factory Pattern and discusses which version you implemented, which might be some variation/hybrid of the factory pattern you discussed in the document.
 
 #### UML
 
@@ -105,7 +105,7 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 ### Linter and Git
 
-- [ ] All *.h and *.c files pass cpplint.
+- [X] All *.h and *.c files pass cpplint.
 - [X] The code complies with naming conventions for Classes, ClassMethods, and class\_members\_.
 - [X] There exists a history of git commit messages to show effort.
 - [X] There exists a history of issues and branches to show effort.
@@ -133,8 +133,8 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 When everything above is as you want it or the deadline is upon you, it is time to submit!
 
-- [ ] I pushed this file and any changes resulting from this checklist.
-- [ ] Everything is in the **__master__** branch.
+- [X] I pushed this file and any changes resulting from this checklist.
+- [X] Everything is in the **__master__** branch.
 
 _One more thing_ -- check that what you think you pushed was really pushed to github. If you can see it, we can see it. If you can't, we can't.
 
