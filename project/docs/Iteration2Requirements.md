@@ -1,12 +1,32 @@
 # Braitenberg Vehicles Simulator: Iteration 2
 
->Your software is a reflection of your understanding of the requirements as specified in this document. If you do not understand any portion of the requirements or you think that the requirements are underspecified, it is your responsibility to get clarification from the instructor or a TA. Please read this document carefully and review it often WELL IN ADVANCE of turning in your iteration for assessment.
+### UPDATES
+- March 26, 2019 at 9:15 am. Instructions for Preliminary submissions via Canvas
+
+<hr>
+
+
+_Your software is a reflection of your understanding of the requirements as specified in this document. If you do not understand any portion of the requirements or you think that the requirements are underspecified, it is your responsibility to get clarification from the instructor or a TA. Please read this document carefully and review it often WELL IN ADVANCE of turning in your iteration for assessment._
 
 |*Due Date* | **Item(s) Due** |
 |-----|-----|
-| MON,  April 1, 11:55pm | Unit Tests for Strategy Pattern and completed implementation of the Strategy Pattern (the only time they will be assessed). DRAFT BraitenbergVehicle Sensors with behavior implemented. On _devel_ branch. |
-| MON, April 8, 11:55pm | Observer Pattern fully implemented. DRAFT Predator class that consumes BVs implemented. On _devel_ branch. |
+| MON,  April 1, 11:55pm | Unit Tests for Strategy Pattern and completed implementation of the Strategy Pattern (the only time they will be assessed). DRAFT BraitenbergVehicle Sensors with behavior implemented. On _devel_ branch. **Additional submission on Canvas -- see instructions below this table.**|
+| MON, April 8, 11:55pm | Observer Pattern fully implemented. DRAFT Predator class that consumes BVs implemented. On _devel_ branch. **Additional submission on Canvas -- see instructions below this table.** |
 | MON,  April 15, 11:55pm | FINAL Submission of Iteration 2. On _master_ branch. |
+
+> To simplify our grading process, we will compile and run the code from the _devel_ branch, and we will inspect the code and diagrams submitted on Canvas.
+
+**Canvas Submission for Preliminary 1 (due April 1)**: In a **SINGLE** .pdf document (do not zip!), please include 
+- doxy generated UML diagrams for the Strategy Pattern classes
+- code snippet of the BraitenbergVehicle method that calls the Strategy/Behavior method
+- code snippet of the BraitenbergVehicle method that uses the BraitenbergVehicle "sensor" (this might be the same method as above)
+- all code for the unit tests for the Strategy Pattern
+
+**Canvas Submission for Preliminary 2 (due April 8)**: In a **SINGLE** .pdf document (do not zip!), please include
+- doxy generated UML diagrams for those classes implementing the Observer Pattern
+- code snippet from the viewer that manage the viewing of the wheel velocities (be sure to use good naming conventions and add comments within your code where appropriate so that it is easy for others to understand)
+- code snippet of the implementation of the Notify method of the "Subject" of the Observer Pattern
+- doxy generated UML diagram of the Predator class
 
 ### Project Overview
 
@@ -177,7 +197,9 @@ The second feature enhancement in this grouping is your opportunity to experimen
 
 ## <a name="deliver">Deliverables and Submission Process</a>
 
-Everything will be submitted via Github in the master branch of the project directory in your class repo. We will pull your repository at the specified due dates and grade according to the contents at that time. You should be developing in your_ devel_ branch, but at the time of final submission, merge _devel_ with master.
+For the final iteration submission, everything will be submitted via Github in the master branch of the project directory in your class repo. We will pull your repository at the specified due dates and grade according to the contents at that time. You should be developing in your_ devel_ branch, but at the time of final submission, merge _devel_ with master.
+
+For the preliminary submissions, submit via Github on the _devel_ branch AND follow the directions at the top regarding a Canvas submission. We will look at both.
 
 **Late assignments will not be accepted**, but you will receive partial credit for partial completion of the requirements.
 
