@@ -1,10 +1,14 @@
 # Braitenberg Vehicles Simulator: Iteration 2
 
 ### UPDATES
+
+- March 27, 2019 at 2:15 pm. 1) You may use behavior base class as kNone behavior, 2) you may use a single variable as the Observer "list", and 3) add an option in the GUI to set the Braitenberg Vehicle Sensor behavior.
+
 - March 26, 2019 at 9:15 am. Instructions for Preliminary submissions via Canvas
 
 <hr>
 
+This is YOUR project, and it is your decision in how you want to implement the various requirements (provided it meets the requirements). You may change the interface (and probably have to change the interface) of classes. You can add features that are not specified as long as they don't interfere with what is required.
 
 _Your software is a reflection of your understanding of the requirements as specified in this document. If you do not understand any portion of the requirements or you think that the requirements are underspecified, it is your responsibility to get clarification from the instructor or a TA. Please read this document carefully and review it often WELL IN ADVANCE of turning in your iteration for assessment._
 
@@ -67,7 +71,7 @@ In this iteration, you will continue to develop your Braitenberg Vehicle simulat
 
 #### Strategy Design Pattern
 
-Employ the Strategy Pattern to implement the Braitenberg Vehicle (BV) behaviors of Explore, Aggression, Coward, and Love. This pattern makes use of an abstract base class of a behavior from which other behaviors are derived. The BV entities contain (i.e. are composed of) a behavior for each of its sensors. In this iteration, the BV entities will have food, light, and BV sensors.
+Employ the Strategy Pattern to implement the Braitenberg Vehicle (BV) behaviors of Explore, Aggression, Coward, and Love. This pattern makes use of an abstract base class of a behavior from which other behaviors are derived OR, as a student suggested, the base class may be used as the kNone default behavior. The BV entities contain (i.e. are composed of) a behavior for each of its sensors. In this iteration, the BV entities will have food, light, and BV sensors.
 
 The Predator class is essentially a BV with a few exceptions. It always ignores Food entities, Cowers from the Light, and is Aggressive towards BVs.
 
@@ -77,11 +81,13 @@ Employ the Observer pattern to view the left and right wheel velocities calculat
 
 Refer to _Head First Design Patterns_ to see the typical UML diagram for the Observer Pattern. You will note that as an Observer, the class contains an Update function that the Subject calls to convey its _state_ information. As a Subject, the class contains a Register/Subscribe function and a Remove/Unsubscribe function that an Observer calls to get added or removed from the observer list. A Subject also has a NotifyObservers function that, at the appropriate time(s), updates all its Observers on its list.
 
-There are many ways to implement the required functionality of displaying the wheel velocities attributed to each sensor. However, for this assignment, you must implement it with this pattern in that there is an observer list to which subjects subscribe and unsubscribe. It is up to you in how you implement the pattern. In other words, your assignment is to think about the design and figure out what is the best solution to implement that design.
+There are many ways to implement the required functionality of displaying the wheel velocities attributed to each sensor. However, for this assignment, you must implement it with this pattern in that there is an observer "list" to which subjects subscribe and unsubscribe (since there can only be 1 observer in this version, you may use a single variable that is set to the observer or to nothing). It is up to you in how you implement the pattern. In other words, your assignment is to think about the design and figure out what is the best solution to implement that design.
 
 #### Factory Design Pattern
 
 Continue your use of the Factory pattern to instantiate and initialize Arena Entities. When complete, you should have 2 versions of factories -- one that uses a JSON for configuration and one that uses a text file. We will provide the format and some parsing functionality for this configuration file.
+
+> We are in the process of refining this requirement and we will repost soon.
 
 <hr>
 
@@ -100,6 +106,8 @@ Code documentation comes in many forms for many audiences. For this project, **y
 Put the design document through another draft to refine your Factory Pattern design description. Extend the document by describing two alternative implementations of the viewing of the wheel velocities. One alternative is that the viewer uses getters instead of the Observer Pattern. The other is your implementation of the Observer Pattern.
 
 In your comparisons, provide an overall description highlighting key points of the implementation and using UML and/or code snippets to clarify your ideas. Also provide one advantage and one disadvantage of each implementation.
+
+Name the design document *iteration2_design.pdf*.
 
 
 ### <a name="style">Google Style Guide Compliance</a>
@@ -165,6 +173,8 @@ Implement the Braitenberg behaviors of Love, Explore, Coward, and Aggression usi
 
 Add a new sensor to all Braitenberg Vehicles -- the _Braitenberg Vehicle Sensor_. This behaves exactly like the Food and Light sensor, except it senses other BVs. Any of the 4 behaviors can be associated with this sensor.
 
+Add the option in the GUI to set the behavior of the Braitenberg Vehicle Sensor.
+
 <hr>
 
 ### <a name="reqs2">Priority Level 2 : Predators and Observing Wheel Velocities
@@ -197,7 +207,7 @@ The second feature enhancement in this grouping is your opportunity to experimen
 
 ## <a name="deliver">Deliverables and Submission Process</a>
 
-For the final iteration submission, everything will be submitted via Github in the master branch of the project directory in your class repo. We will pull your repository at the specified due dates and grade according to the contents at that time. You should be developing in your_ devel_ branch, but at the time of final submission, merge _devel_ with master.
+For the final iteration submission, everything will be submitted via Github in the master branch of the project directory in your class repo. We will pull your repository at the specified due dates and grade according to the contents at that time. You should be developing in your_ devel_ branch, but at the time of final submission, merge _devel_ with _master_.
 
 For the preliminary submissions, submit via Github on the _devel_ branch AND follow the directions at the top regarding a Canvas submission. We will look at both.
 
