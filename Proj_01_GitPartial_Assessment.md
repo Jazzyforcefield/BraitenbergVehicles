@@ -2,7 +2,7 @@
 
 #### Total score: _17.0_ / _17_
 
-Run on April 01, 11:50:58 AM.
+Run on April 01, 12:51:42 PM.
 
 
 #### Git Tests
@@ -17,9 +17,11 @@ Sufficient commits (found=72,required=25)
 
 + Pass: Configuring GHI
 
-+  _5.0_ / _5_ : Pass: Run ghi for total number of issues in Github repo (Found: 13, Expected: 11) 
++  _5.0_ / _5_ : Pass: Run ghi for total number of issues in Github repo (Found: 14, Expected: 11) 
 
- [OPEN issue #13] :  Create Unit Tests for Strategy Pattern
+ [OPEN issue #14] :  Implement Strategy Pattern for BV
+
+[OPEN issue #13] :  Create Unit Tests for Strategy Pattern
 
 [OPEN issue #6] :  Refactor BraitenbergVehicle class 
 
@@ -77,7 +79,9 @@ Sufficient commits (found=72,required=25)
 
 
 
-+  _2_ / _2_ : Pass: Run ghi for total number of open issues in Github repo (Found: 2)
++  _2_ / _2_ : Pass: Run ghi for total number of open issues in Github repo (Found: 3)
+
+[OPEN issue #14] :  Implement Strategy Pattern for BV
 
 [OPEN issue #13] :  Create Unit Tests for Strategy Pattern
 
