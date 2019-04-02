@@ -19,6 +19,11 @@
 #include "src/motion_behavior_differential.h"
 #include "src/wheel_velocity.h"
 #include "src/behavior_enum.h"
+#include "src/WheelBehavior.h"
+#include "src/AggressiveBehavior.h"
+#include "src/LoveBehavior.h"
+#include "src/ExploreBehavior.h"
+#include "src/CowardBehavior.h"
 
 
 /*******************************************************************************
@@ -111,10 +116,30 @@ class BraitenbergVehicle : public ArenaMobileEntity {
    * @brief Sets the behavior towards light
    * @param behavior Sets the behavior toward food to behavior
    */
-  void set_light_behavior(Behavior behavior) { light_behavior_ = behavior; }
+  void set_light_behavior(Behavior behavior) {
+    light_behavior_ = behavior;
+    switch (behavior) {
+      case kLove:
+        wheel_light_ = new LoveBehavior();
+        break;
+      case kAggressive:
+        wheel_light_ = new AggressiveBehavior();
+        break;
+      case kCoward:
+        wheel_light_ = new CowardBehavior();
+        break;
+      case kExplore:
+        wheel_light_ = new ExploreBehavior();
+        break;
+      case kNone:
+      default:
+        wheel_light_ = NULL;
+        break;
+   }   
+  }
   /**
    * @brief Gets the behavior towards food
-   * @return Returns the behavior towards light
+   * @return Returns the behavior towards food
 
    */
   Behavior get_food_behavior() { return food_behavior_; }
@@ -122,7 +147,61 @@ class BraitenbergVehicle : public ArenaMobileEntity {
    * @brief Sets the behavior towards food
    * @param behavior Food behavior
    */
-  void set_food_behavior(Behavior behavior) { food_behavior_ = behavior; }
+  void set_food_behavior(Behavior behavior) { 
+   food_behavior_ = behavior; 
+   switch (behavior) {
+    case kLove:
+      wheel_food_ = new LoveBehavior();
+      break;
+    case kAggressive:
+      wheel_food_ = new AggressiveBehavior();
+      break;
+    case kCoward:
+      wheel_food_ = new CowardBehavior();
+      break;
+    case kExplore:
+      wheel_food_ = new ExploreBehavior();
+      break;
+    case kNone:
+    default:
+      wheel_food_ = NULL;
+      break;
+   }
+  }
+
+  /**
+   * @brief Gets the behavior towards bv
+   * @return Returns the behavior towards bv
+
+   */
+  Behavior get_bv_behavior() { return bv_behavior_; }
+
+  /**
+   * @brief Sets the behavior towards bv
+   * @param behavior bv behavior
+   */
+  void set_bv_behavior(Behavior behavior) { 
+   bv_behavior_ = behavior; 
+   switch (behavior) {
+    case kLove:
+      wheel_bv_ = new LoveBehavior();
+      break;
+    case kAggressive:
+      wheel_bv_ = new AggressiveBehavior();
+      break;
+    case kCoward:
+      wheel_bv_ = new CowardBehavior();
+      break;
+    case kExplore:
+      wheel_bv_ = new ExploreBehavior();
+      break;
+    case kNone:
+    default:
+      wheel_bv_ = NULL;
+      break;
+   }
+  }
+
   /**
    * @brief Gets the reading from the left sensor
    * @param behavior The behavior to set
@@ -146,8 +225,13 @@ class BraitenbergVehicle : public ArenaMobileEntity {
   WheelVelocity wheel_velocity_;
   Behavior light_behavior_;
   Behavior food_behavior_;
+  Behavior bv_behavior_;
+  WheelBehavior * wheel_light_;
+  WheelBehavior * wheel_food_;
+  WheelBehavior * wheel_bv_;
   const ArenaEntity* closest_light_entity_;
   const ArenaEntity* closest_food_entity_;
+  const ArenaEntity* closest_bv_entity_;
   double defaultSpeed_;
   int time_;
   bool collided_;
