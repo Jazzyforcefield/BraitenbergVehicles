@@ -1,8 +1,8 @@
 ### Partial Assessment for Project Iteration 01 - DesignDoc (Graded By: Dan Orban)
 
-#### Total score: _16_ / _16_
+#### Total score: _0_ / _0_
 
-Run on April 02, 04:53:23 AM.
+Run on April 02, 05:22:15 AM.
 
 
 #### Release Branch
@@ -33,10 +33,6 @@ Run on April 02, 04:53:23 AM.
 
 + Pass: Check that file "docs/iteration1_design.pdf" exists.
 
-+ Pass: Graded on Canvas.
-
-
-
 
 #### UML
 
@@ -49,75 +45,5 @@ Run on April 02, 04:53:23 AM.
 
 #### Doxygen
 
-+ Pass: Documentation builds.
-
-
-
-+ Pass: Check that file "docs/html/index.html" exists.
-
-+ Pass: Check that file "docs/html/index.html" exists.
-
-+ Pass: Graded on Canvas.
-
-
-
-
-#### Compile Tests
-
-+ Pass: Clean project.
-
-
-
-+ Pass: Check that make compiles.
-
-
-
-+ Pass: Check that file "build/bin/arenaviewer" exists.
-
-+ Pass: Change into directory "tests-i".
-
-+ Pass: Check that make compiles.
-
-
-
-+ Pass: Change into directory "..".
-
-+ Pass: Check that file "./build/bin/tests-i" exists.
-
-
-#### Behavior Tests
-
-+  _2_ / _2_ : Pass: Aggressive Food Behavior?
-
-
-
-+  _2_ / _2_ : Pass: Coward Food Behavior?
-
-
-
-+  _2_ / _2_ : Pass: Love Food Behavior?
-
-
-
-+  _2_ / _2_ : Pass: Explore Food Behavior?
-
-
-
-+  _2_ / _2_ : Pass: Aggressive Light Behavior?
-
-
-
-+  _2_ / _2_ : Pass: Coward Light Behavior?
-
-
-
-+  _2_ / _2_ : Pass: Love Light Behavior?
-
-
-
-+  _2_ / _2_ : Pass: Explore Light Behavior?
-
-
-
-#### Total score: _16_ / _16_
+#### Total score: _0_ / _0_
 
