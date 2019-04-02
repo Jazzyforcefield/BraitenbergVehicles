@@ -108,8 +108,7 @@ void BraitenbergVehicle::Update() {
     case kCoward:
     case kExplore:
     default:
-      light_wheel_velocity = wheel_light_->WheelUpdate(get_sensor_reading_left(closest_light_entity_),
-      get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
+      light_wheel_velocity = wheel_light_->WheelUpdate(get_sensor_reading_left(closest_light_entity_), get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
       break;
   }
 
@@ -134,8 +133,7 @@ void BraitenbergVehicle::Update() {
     case kCoward:
     case kExplore:
     default:
-      food_wheel_velocity = wheel_food_->WheelUpdate(get_sensor_reading_left(closest_food_entity_),
-        get_sensor_reading_right(closest_food_entity_), defaultSpeed_);
+      food_wheel_velocity = wheel_food_->WheelUpdate(get_sensor_reading_left(closest_food_entity_), get_sensor_reading_right(closest_food_entity_), defaultSpeed_);
       break;
   }
   WheelVelocity bv_wheel_velocity = WheelVelocity(0, 0);
@@ -148,8 +146,7 @@ void BraitenbergVehicle::Update() {
     case kCoward:
     case kExplore:
     default:
-      bv_wheel_velocity = wheel_bv_->WheelUpdate(get_sensor_reading_left(closest_bv_entity_),
-        get_sensor_reading_right(closest_bv_entity_), defaultSpeed_);
+      bv_wheel_velocity = wheel_bv_->WheelUpdate(get_sensor_reading_left(closest_bv_entity_), get_sensor_reading_right(closest_bv_entity_), defaultSpeed_);
       break;
   }
 
@@ -212,10 +209,17 @@ void BraitenbergVehicle::LoadFromObject(json_object* entity_config) {
   if ((*entity_config).find("light_behavior") != (*entity_config).end()) {
       light_behavior_ = get_behavior_type(
         (*entity_config)["light_behavior"].get<std::string>());
+      set_light_behavior(light_behavior_);
   }
   if ((*entity_config).find("food_behavior") != (*entity_config).end()) {
       food_behavior_ = get_behavior_type(
         (*entity_config)["food_behavior"].get<std::string>());
+      set_food_behavior(food_behavior_);
+  }
+  if ((*entity_config).find("braitenberg_behavior") != (*entity_config).end()) {
+      bv_behavior_ = get_behavior_type(
+        (*entity_config)["braitenberg_behavior"].get<std::string>());
+      set_bv_behavior(bv_behavior_);
   }
 
   UpdateLightSensors();
