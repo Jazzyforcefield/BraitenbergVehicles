@@ -2,6 +2,8 @@
 
 ### UPDATES
 
+- April 6, 2019 at 5:30 pm. Added assessment weights at bottom of document
+
 - March 27, 2019 at 2:15 pm. 1) You may use behavior base class as kNone behavior, 2) you may use a single variable as the Observer "list", and 3) add an option in the GUI to set the Braitenberg Vehicle Sensor behavior.
 
 - March 26, 2019 at 9:15 am. Instructions for Preliminary submissions via Canvas
@@ -216,6 +218,30 @@ For the preliminary submissions, submit via Github on the _devel_ branch AND fol
 Your software will be assessed through automatic testing and by the TA. The process for testing will be to start by typing  `make clean` then `make`. We **highly encourage** you to make a new clone of  your repo on a **cselabs machine** and also `make clean` and `make` to confirm all is working well be fore submitting your iteration 1 code.
 
 <hr>
+
+## <a name="assessment">Assessment Weighting</a>
+
+Preliminary 1 (18.5%)
+- 5% Strategy Pattern for implementing behaviors for wheel velocity calculations. Final Submission.
+- 10% Unit tests for strategy pattern. Final Submission.
+- 2.5% Draft of BraitenbergVehicle sensor implementation
+- 1% Style Compliance
+
+Preliminary 2 (15%)
+- 10% Observer Pattern for implementing the display of wheel velocities. Final Submission.
+- 4% Draft of Predator implementation. 
+- 1% Style Compliance
+
+Final Iteration 2 Submission (67.5%)
+- 13% Design Document (more heavily weighted on Observer Pattern description)
+- 10% Doxygen landing page
+- 5% Doxy documentation of classes
+- 5% Google Style Compliance
+- 2.5% BraitenbergVehicle sensor implementation
+- 11% Predator implementation with "ghosting" BVs
+- 5% Starving BVs
+- 5% Dynamic Wheel Velocity calculation
+- 10% Git usage including issues, branching, and commit messages
 
 ## <a name="resources">Resources</a>
 
