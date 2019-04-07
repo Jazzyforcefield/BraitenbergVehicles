@@ -2,6 +2,8 @@
 
 ### UPDATES
 
+- April 7, 2019 at 3:45 pm. Factory Requirement pushed back to Iteration 3
+
 - April 6, 2019 at 5:30 pm. Added assessment weights at bottom of document
 
 - March 27, 2019 at 2:15 pm. 1) You may use behavior base class as kNone behavior, 2) you may use a single variable as the Observer "list", and 3) add an option in the GUI to set the Braitenberg Vehicle Sensor behavior.
@@ -60,7 +62,7 @@ In this iteration, you will continue to develop your Braitenberg Vehicle simulat
     <ol type="i">
     <li><a href="#reqs1">Priority Level 1: Strategy Pattern, Unit Tests, and BV sensors</a>
     <li><a href="#reqs2">Priority Level 2: Observer Pattern, Predator class, and BV consumption</a>
-    <li><a href="#reqs3">Priority Level 3: Starving BVs, Weighted wheel velocity equation, non-JSON factory.</a>
+    <li><a href="#reqs3">Priority Level 3: Starving BVs, Weighted wheel velocity equation, <del>non-JSON factory</del>.</a>
        </ol>
   </ol>
 <li> <a href="#deliver">Deliverables and Submission</a>
@@ -87,9 +89,9 @@ There are many ways to implement the required functionality of displaying the wh
 
 #### Factory Design Pattern
 
-Continue your use of the Factory pattern to instantiate and initialize Arena Entities. When complete, you should have 2 versions of factories -- one that uses a JSON for configuration and one that uses a text file. We will provide the format and some parsing functionality for this configuration file.
+> **This requirement has been pushed to Iteration 3**
 
-> We are in the process of refining this requirement and we will repost soon.
+<del>Continue your use of the Factory pattern to instantiate and initialize Arena Entities. When complete, you should have 2 versions of factories -- one that uses a JSON for configuration and one that uses a text file. We will provide the format and some parsing functionality for this configuration file.</del>
 
 <hr>
 
@@ -194,12 +196,12 @@ Add to the simulation the ability for Predators to consume BVs. This means that 
 
 <hr>
 
-##### <a name="reqs3">Priority Level 3 : Starving BVs, Weighted Behaviors, and non-JSON Factory
+##### <a name="reqs3">Priority Level 3 : Starving BVs, Weighted Behaviors, and <del>non-JSON Factory</del>
 ### Due: April 15th at 11:55pm
 
 - Add the functionality for BVs to starve if they do not consume after 600 iterations.
 - Calculate the wheel velocity of a BV based on a dynamically weighted combination of all wheel velocity behaviors. Vary the weight depending on the current situation and sensor readings. For example, if both light and food sensors are active, rather than the equation (light\_wheel\_velocity + food\_wheel\_velocity)/2, if the robot is starving then use the food\_wheel\_velocity exclusively.
-- Another factory that instead of JSON for configuration, uses a text file.
+- <del>Another factory that instead of JSON for configuration, uses a text file.</del>
 
 Add to the simulation the feature that BVs will starve after not eating for 600 iterations. Once the BV eats something, its "timer" is reset for another 600 iterations. If the BV dies of starvation, as with it being consumed by a Predator, it should become a ghost.
 
