@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 14:22:17 PM.
+Run on April 08, 17:42:18 PM.
 
 + Pass: Checkout devel branch.
 
@@ -65,9 +65,11 @@ Commits found=70
 
 595fdf43e2ce4fb1c2d263f5f7000d3a31cf0615	refs/heads/dev/json-factories
 
+35e357056b06b04b2b97994c66fa98012425f924	refs/heads/dev/observer-pattern
+
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-1f9932c3ece69498e9d41eea8698de185f0c1266	refs/heads/devel
+35e357056b06b04b2b97994c66fa98012425f924	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -75,7 +77,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-3ab4289d3a2130c7e14330d517f6fc8184afc9e4	refs/heads/master
+35aac7887813b451a5cce6fe3f3bacb911fa9a43	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -92,19 +94,23 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
++ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
 
-[OPEN issue #13] :  Create Unit Tests for Strategy Pattern
+[OPEN issue #17] :  BV Behavior is reversed [bug]
 
-[OPEN issue #6] :  Refactor BraitenbergVehicle class 
+[OPEN issue #16] :  Implement Predator Class
+
+[OPEN issue #15] :  Implement Observer Pattern
 
 
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 12)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 14)
 
 [CLOSED issue #14] :  Implement Strategy Pattern for BV [bug] 2
+
+[CLOSED issue #13] :  Create Unit Tests for Strategy Pattern
 
 [CLOSED issue #12] :  Change json references to pointers
 
@@ -117,6 +123,8 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 [CLOSED issue #8] :  Implement BV behaviors 1
 
 [CLOSED issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
+
+[CLOSED issue #6] :  Refactor BraitenbergVehicle class 
 
 [CLOSED issue #5] :  Rename UML.pdf to uml_design.pdf 1
 
