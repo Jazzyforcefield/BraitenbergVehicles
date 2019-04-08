@@ -215,6 +215,13 @@ class BraitenbergVehicle : public ArenaMobileEntity {
    */
   double get_sensor_reading_right(const ArenaEntity* entity);
   /**
+   * @brief Returns wheel velocity
+   * @return Returns wheel_velocity
+   */
+  WheelVelocity get_wheel_velocity() { return wheel_velocity_; }
+
+  void CalculateWheelVelocity();
+  /**
    * @brief Number of BraitenbergVehicle objects exist
    */
   static int count;

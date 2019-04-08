@@ -87,29 +87,12 @@ void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
 }
 
 void BraitenbergVehicle::Update() {
-  WheelVelocity light_wheel_velocity = WheelVelocity(0, 0);
-
   if (light_behavior_ != kNone && food_behavior_ == kNone) {
     set_color({255, 204, 51});
   } else if (light_behavior_ == kNone && food_behavior_ != kNone) {
     set_color({0, 0, 255});
   } else {
     set_color({122, 0, 25});
-  }
-
-  int numBehaviors = 3;
-
-  switch (light_behavior_) {
-    case kNone:
-      numBehaviors--;
-      break;
-    case kLove:
-    case kAggressive:
-    case kCoward:
-    case kExplore:
-    default:
-      light_wheel_velocity = wheel_light_->WheelUpdate(get_sensor_reading_left(closest_light_entity_), get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
-      break;
   }
 
   if (collided_) {
@@ -122,8 +105,30 @@ void BraitenbergVehicle::Update() {
     collided_ = false;
   }
 
-  WheelVelocity food_wheel_velocity = WheelVelocity(0, 0);
+  CalculateWheelVelocity();
+}
 
+void BraitenbergVehicle::CalculateWheelVelocity() {
+  
+  int numBehaviors = 3;
+
+  WheelVelocity light_wheel_velocity = WheelVelocity(0, 0);
+  switch (light_behavior_) {
+    case kNone:
+      numBehaviors--;
+      break;
+    case kLove:
+    case kAggressive:
+    case kCoward:
+    case kExplore:
+    default:
+      light_wheel_velocity = wheel_light_->WheelUpdate(
+        get_sensor_reading_left(closest_light_entity_),
+        get_sensor_reading_right(closest_light_entity_), defaultSpeed_);
+      break;
+  }
+
+  WheelVelocity food_wheel_velocity = WheelVelocity(0, 0);
   switch (food_behavior_) {
     case kNone:
       numBehaviors--;
@@ -133,9 +138,12 @@ void BraitenbergVehicle::Update() {
     case kCoward:
     case kExplore:
     default:
-      food_wheel_velocity = wheel_food_->WheelUpdate(get_sensor_reading_left(closest_food_entity_), get_sensor_reading_right(closest_food_entity_), defaultSpeed_);
+      food_wheel_velocity = wheel_food_->WheelUpdate(
+        get_sensor_reading_left(closest_food_entity_),
+        get_sensor_reading_right(closest_food_entity_), defaultSpeed_);
       break;
   }
+
   WheelVelocity bv_wheel_velocity = WheelVelocity(0, 0);
   switch (bv_behavior_) {
     case kNone:
@@ -146,7 +154,9 @@ void BraitenbergVehicle::Update() {
     case kCoward:
     case kExplore:
     default:
-      bv_wheel_velocity = wheel_bv_->WheelUpdate(get_sensor_reading_left(closest_bv_entity_), get_sensor_reading_right(closest_bv_entity_), defaultSpeed_);
+      bv_wheel_velocity = wheel_bv_->WheelUpdate(
+        get_sensor_reading_left(closest_bv_entity_),
+        get_sensor_reading_right(closest_bv_entity_), defaultSpeed_);
       break;
   }
 
