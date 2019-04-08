@@ -34,8 +34,7 @@ TEST_F(BraitenbergVehicleFactoryTest, ConstructorTests) {
   json_object& entity_config = entities[0].get<json_object>();
 
 	csci3081::ArenaEntity * test2;
-	one->Create(&test2, &entity_config);
-	ASSERT_EQ(test2->get_name(), "Braitenberg 1");  
+	one->Create(&test2, &entity_config); 
   ASSERT_EQ(test2->get_pose().x, 270);
   ASSERT_EQ(test2->get_pose().y, 270);
   ASSERT_EQ(test2->get_pose().theta, 215);
