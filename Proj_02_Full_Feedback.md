@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 11:01:05 AM.
+Run on April 08, 14:22:17 PM.
 
 + Pass: Checkout devel branch.
 
@@ -67,7 +67,7 @@ Commits found=70
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/devel
+1f9932c3ece69498e9d41eea8698de185f0c1266	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -75,7 +75,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-9038ef363ee6496e3c12ed18b35f51c0dc6ee55a	refs/heads/master
+3ab4289d3a2130c7e14330d517f6fc8184afc9e4	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -145,11 +145,10 @@ AggressiveBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/lin
 AggressiveBehavior.cc:0:  grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/AggressiveBehavior.cc should include its header file grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/AggressiveBehavior.h  [build/include] [5]
 braitenberg_vehicle.cc:29:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 braitenberg_vehicle.cc:31:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:111:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:136:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:149:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:155:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:156:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+braitenberg_vehicle.cc:112:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:112:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
+braitenberg_vehicle.cc:165:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+braitenberg_vehicle.cc:166:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 CowardBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 CowardBehavior.cc:0:  grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/CowardBehavior.cc should include its header file grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/CowardBehavior.h  [build/include] [5]
 ExploreBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
@@ -223,7 +222,7 @@ Done processing pose.h
 Done processing rgb_color.h
 Done processing WheelBehavior.h
 Done processing wheel_velocity.h
-Total errors found: 35
+Total errors found: 34
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src'
