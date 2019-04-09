@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 22:15:54 PM.
+Run on April 08, 22:32:48 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -53,7 +53,7 @@ Commits found=70
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-0ff4d1b1c12bb6ab1882f73b057fc8aa8d8bfa66	refs/heads/devel
+2ee31626ba625f39d10b30886499289c82658a35	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -61,7 +61,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-0c60526b4c434f41911937444c7a8f59a2abef79	refs/heads/master
+5f0ea30668438cc8109dd0be547900d46db11d41	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -133,135 +133,7 @@ Link to full feedback: [Proj_02_Full_Feedback.md](Proj_02_Full_Feedback.md)
 
 #### Style Tests
 
-+ Fail: Ensuring code follows style guide.
-
-<pre>cd src; make check-style
-make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
-==== Checking style is correct ====
-/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-AggressiveBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-AggressiveBehavior.cc:0:  project/src/AggressiveBehavior.cc should include its header file project/src/AggressiveBehavior.h  [build/include] [5]
-braitenberg_vehicle.cc:29:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:31:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:118:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:118:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
-braitenberg_vehicle.cc:174:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:175:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:235:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-CowardBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-CowardBehavior.cc:0:  project/src/CowardBehavior.cc should include its header file project/src/CowardBehavior.h  [build/include] [5]
-ExploreBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-ExploreBehavior.cc:0:  project/src/ExploreBehavior.cc should include its header file project/src/ExploreBehavior.h  [build/include] [5]
-graphics_arena_viewer.cc:327:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:327:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-graphics_arena_viewer.cc:329:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:329:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-graphics_arena_viewer.cc:333:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:335:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:339:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:341:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:425:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-graphics_arena_viewer.cc:425:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
-graphics_arena_viewer.cc:435:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-graphics_arena_viewer.cc:435:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
-graphics_arena_viewer.cc:442:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:443:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:444:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:445:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:446:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:447:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:448:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
-LoveBehavior.cc:0:  project/src/LoveBehavior.cc should include its header file project/src/LoveBehavior.h  [build/include] [5]
-AggressiveBehavior.h:13:  You don't need a ; after a }  [readability/braces] [4]
-AggressiveBehavior.h:19:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-braitenberg_vehicle.h:140:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:140:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:152:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:153:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:153:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:154:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:171:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:185:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:186:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:186:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:187:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:204:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:226:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-CowardBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
-ExploreBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
-ExploreBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-graphics_arena_viewer.h:56:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.h:225:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-graphics_arena_viewer.h:224:  Add #include <vector> for vector<>  [build/include_what_you_use] [4]
-LoveBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
-LoveBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-Observer.h:12:  You don't need a ; after a }  [readability/braces] [4]
-Observer.h:16:  You don't need a ; after a }  [readability/braces] [4]
-Observer.h:21:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-Observer.h:16:  Add #include <vector> for vector<>  [build/include_what_you_use] [4]
-Subject.h:12:  You don't need a ; after a }  [readability/braces] [4]
-Subject.h:16:  You don't need a ; after a }  [readability/braces] [4]
-Subject.h:21:  You don't need a ; after a }  [readability/braces] [4]
-Subject.h:26:  You don't need a ; after a }  [readability/braces] [4]
-Subject.h:31:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-WheelBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
-WheelBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-Done processing AggressiveBehavior.cc
-Done processing arena.cc
-Done processing braitenberg_vehicle.cc
-Done processing BraitenbergVehicleFactory.cc
-Done processing controller.cc
-Done processing CowardBehavior.cc
-Done processing ExploreBehavior.cc
-Done processing Factory.cc
-Done processing food.cc
-Done processing FoodFactory.cc
-Done processing graphics_arena_viewer.cc
-Done processing light.cc
-Done processing LightFactory.cc
-Done processing LoveBehavior.cc
-Done processing main.cc
-Done processing motion_behavior.cc
-Done processing motion_behavior_differential.cc
-Done processing rgb_color.cc
-Done processing AggressiveBehavior.h
-Done processing arena_entity.h
-Done processing arena.h
-Done processing arena_immobile_entity.h
-Done processing arena_mobile_entity.h
-Done processing arena_viewer.h
-Done processing behavior_enum.h
-Done processing BraitenbergVehicleFactory.h
-Done processing braitenberg_vehicle.h
-Done processing common.h
-Done processing controller.h
-Done processing CowardBehavior.h
-Done processing entity_type.h
-Done processing ExploreBehavior.h
-Done processing Factory.h
-Done processing FoodFactory.h
-Done processing food.h
-Done processing graphics_arena_viewer.h
-Done processing LightFactory.h
-Done processing light.h
-Done processing LoveBehavior.h
-Done processing mainpage.h
-Done processing motion_behavior_differential.h
-Done processing motion_behavior.h
-Done processing Observer.h
-Done processing params.h
-Done processing pose.h
-Done processing rgb_color.h
-Done processing Subject.h
-Done processing WheelBehavior.h
-Done processing wheel_velocity.h
-Total errors found: 67
-Makefile:162: recipe for target 'check-style' failed
-make[1]: *** [check-style] Error 1
-make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
-Makefile:8: recipe for target 'check-style' failed
-make: *** [check-style] Error 2
-</pre>
++ Pass: Ensuring code follows style guide.
 
 
 
