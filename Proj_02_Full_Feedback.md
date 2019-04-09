@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 17:42:18 PM.
+Run on April 08, 21:03:29 PM.
 
 + Pass: Checkout devel branch.
 
@@ -77,7 +77,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-35aac7887813b451a5cce6fe3f3bacb911fa9a43	refs/heads/master
+16ea61a8a8e46e6039b4c83b088d98ec4651e884	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -96,7 +96,7 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Run ghi for total number of open issues in Github repo (Found: 3)
 
-[OPEN issue #17] :  BV Behavior is reversed [bug]
+[OPEN issue #17] :  BV Behavior is reversed [bug] 2
 
 [OPEN issue #16] :  Implement Predator Class
 
