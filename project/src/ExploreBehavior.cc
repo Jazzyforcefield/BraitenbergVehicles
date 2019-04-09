@@ -1,10 +1,11 @@
 // Copyright 2019, Michael Ung
 
-#include "ExploreBehavior.h"
+#include "src/ExploreBehavior.h"
 
 NAMESPACE_BEGIN(csci3081);
 
-WheelVelocity ExploreBehavior::WheelUpdate(double lSens, double rSens, double sp) {
+WheelVelocity ExploreBehavior::WheelUpdate(double lSens,
+    double rSens, double sp) {
   return WheelVelocity(1/rSens, 1/lSens, sp);
 }
 

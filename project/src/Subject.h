@@ -9,23 +9,23 @@ NAMESPACE_BEGIN(csci3081);
 
 class Subject {
  public:
-  virtual ~Subject() {};
+  virtual ~Subject() {}
   /**
    *  @brief Updates the current information in the observer class
    */
-  virtual void Subscribe(__unused Observer * observer) {};
+  virtual void Subscribe(__unused Observer * observer) {}
 
   /**
    *  @brief Updates the current information in the observer class
    */
-  virtual void Unsubscribe() {};
+  virtual void Unsubscribe() {}
 
   /**
    *  @brief Updates the current information in the observer class
    */
-  virtual void Notify() {};
+  virtual void Notify() {}
 };
 
 NAMESPACE_END(csci3081);
 
-#endif // SRC_SUBJECT_H_
+#endif  // SRC_SUBJECT_H_

@@ -324,21 +324,27 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
   robotPanel = new nanogui::Widget(panel);
   robotWidgets.push_back(robotPanel);
   robotPanel->setLayout(new nanogui::GridLayout());
-  nanogui::FloatBox<float>* vel = new nanogui::FloatBox<float>(robotPanel, 1.337); // 8
+  nanogui::FloatBox<float>* vel =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
   vel->setFixedWidth(65);
-  nanogui::FloatBox<float>* vel2 = new nanogui::FloatBox<float>(robotPanel, 1.337); // 9
+  nanogui::FloatBox<float>* vel2 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
   vel2->setFixedWidth(65);
   robotWidgets.push_back(vel);
   robotWidgets.push_back(vel2);
-  nanogui::FloatBox<float>* vel3 = new nanogui::FloatBox<float>(robotPanel, 1.337);
+  nanogui::FloatBox<float>* vel3 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
   vel3->setFixedWidth(65);
-  nanogui::FloatBox<float>* vel4 = new nanogui::FloatBox<float>(robotPanel, 1.337);
+  nanogui::FloatBox<float>* vel4 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
   vel4->setFixedWidth(65);
   robotWidgets.push_back(vel3);
   robotWidgets.push_back(vel4);
-  nanogui::FloatBox<float>* vel5 = new nanogui::FloatBox<float>(robotPanel, 1.337);
+  nanogui::FloatBox<float>* vel5 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
   vel5->setFixedWidth(65);
-  nanogui::FloatBox<float>* vel6 = new nanogui::FloatBox<float>(robotPanel, 1.337);
+  nanogui::FloatBox<float>* vel6 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
   vel6->setFixedWidth(65);
   robotWidgets.push_back(vel5);
   robotWidgets.push_back(vel6);
@@ -422,7 +428,6 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
         static_cast<BraitenbergVehicle*>(entity)->set_bv_behavior(
           static_cast<Behavior>(index));
       }
-      
     });
 
   isMobile->setCallback(
@@ -432,20 +437,24 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
       ArenaMobileEntity* mobileEntity = static_cast<ArenaMobileEntity*>(entity);
       mobileEntity->set_is_moving(moving);
     });
-  
 }
 
 void GraphicsArenaViewer::Update(std::vector<WheelVelocity> state) {
   std::vector<nanogui::Widget *> children = (*window).children();
   std::vector<nanogui::Widget *> grandchildren = children[11]->children();
 
-  dynamic_cast<nanogui::FloatBox<float>*>(grandchildren[0])->setValue(state[0].left);
-  dynamic_cast<nanogui::FloatBox<float>*>(grandchildren[1])->setValue(state[0].right);
-  dynamic_cast<nanogui::FloatBox<float>*>(grandchildren[2])->setValue(state[1].left);
-  dynamic_cast<nanogui::FloatBox<float>*>(grandchildren[3])->setValue(state[1].right);
-  dynamic_cast<nanogui::FloatBox<float>*>(grandchildren[4])->setValue(state[2].left);
-  dynamic_cast<nanogui::FloatBox<float>*>(grandchildren[5])->setValue(state[2].right);
-
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[0])->setValue(state[0].left);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[1])->setValue(state[0].right);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[2])->setValue(state[1].left);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[3])->setValue(state[1].right);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[4])->setValue(state[2].left);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[5])->setValue(state[2].right);
 }
 
 bool GraphicsArenaViewer::RunViewer() {

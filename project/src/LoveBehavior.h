@@ -9,10 +9,10 @@ NAMESPACE_BEGIN(csci3081);
 
 class LoveBehavior : public WheelBehavior {
  public:
-  ~LoveBehavior() {};
+  ~LoveBehavior() {}
   WheelVelocity WheelUpdate(double lSens, double rSens, double sp) override;
 };
 
 NAMESPACE_END(csci3081);
 
-#endif // SRC_LOVEBEHAVIOR_H_
+#endif  // SRC_LOVEBEHAVIOR_H_

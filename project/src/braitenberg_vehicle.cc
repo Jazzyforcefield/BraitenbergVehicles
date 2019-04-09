@@ -26,9 +26,10 @@ int BraitenbergVehicle::count = 0;
 
 BraitenbergVehicle::BraitenbergVehicle() :
   light_sensors_(), wheel_velocity_(), wv_(), light_behavior_(kNone),
-  food_behavior_(kNone), bv_behavior_(kNone), wheel_light_(NULL), 
+  food_behavior_(kNone), bv_behavior_(kNone), wheel_light_(NULL),
   wheel_food_(NULL), wheel_bv_(NULL), closest_light_entity_(NULL),
-  closest_food_entity_(NULL), closest_bv_entity_(NULL), defaultSpeed_(5.0), time_(0), collided_(false), obs_() {
+  closest_food_entity_(NULL), closest_bv_entity_(NULL),
+  defaultSpeed_(5.0), time_(0), collided_(false), obs_() {
   set_type(kBraitenberg);
   motion_behavior_ = new MotionBehaviorDifferential(this);
   light_sensors_.push_back(Pose());
@@ -115,7 +116,6 @@ void BraitenbergVehicle::Update() {
 }
 
 void BraitenbergVehicle::CalculateWheelVelocity() {
-  
   int numBehaviors = 3;
 
   WheelVelocity light_wheel_velocity = WheelVelocity(0, 0);
@@ -171,8 +171,10 @@ void BraitenbergVehicle::CalculateWheelVelocity() {
 
   if (numBehaviors) {
     wheel_velocity_ = WheelVelocity(
-      (light_wheel_velocity.left + food_wheel_velocity.left + bv_wheel_velocity.left)/numBehaviors,
-      (light_wheel_velocity.right + food_wheel_velocity.right + bv_wheel_velocity.right)/numBehaviors,
+      (light_wheel_velocity.left +
+    food_wheel_velocity.left + bv_wheel_velocity.left)/numBehaviors,
+      (light_wheel_velocity.right +
+    food_wheel_velocity.right + bv_wheel_velocity.right)/numBehaviors,
       defaultSpeed_);
   } else {
     wheel_velocity_ = WheelVelocity(0, 0);
@@ -232,7 +234,7 @@ void BraitenbergVehicle::Unsubscribe() {
 
 void BraitenbergVehicle::Notify() {
   if (obs_) {
-   obs_->Update(wv_);
+    obs_->Update(wv_);
   }
 }
 

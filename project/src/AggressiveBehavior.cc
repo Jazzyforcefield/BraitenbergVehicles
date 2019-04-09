@@ -1,10 +1,11 @@
 // Copyright 2019, Michael Ung
 
-#include "AggressiveBehavior.h"
+#include "src/AggressiveBehavior.h"
 
 NAMESPACE_BEGIN(csci3081);
 
-WheelVelocity AggressiveBehavior::WheelUpdate(double lSens, double rSens, double sp) {
+WheelVelocity AggressiveBehavior::WheelUpdate(double lSens,
+    double rSens, double sp) {
   return WheelVelocity(rSens, lSens, sp);
 }
 

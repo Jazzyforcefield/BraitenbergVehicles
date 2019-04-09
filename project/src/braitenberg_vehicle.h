@@ -137,7 +137,7 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
       default:
         wheel_light_ = NULL;
         break;
-   }   
+    }
   }
   /**
    * @brief Gets the behavior towards food
@@ -149,26 +149,26 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
    * @brief Sets the behavior towards food
    * @param behavior Food behavior
    */
-  void set_food_behavior(Behavior behavior) { 
-   food_behavior_ = behavior; 
-   switch (behavior) {
-    case kLove:
-      wheel_food_ = new LoveBehavior();
-      break;
-    case kAggressive:
-      wheel_food_ = new AggressiveBehavior();
-      break;
-    case kCoward:
-      wheel_food_ = new CowardBehavior();
-      break;
-    case kExplore:
-      wheel_food_ = new ExploreBehavior();
-      break;
-    case kNone:
-    default:
-      wheel_food_ = NULL;
-      break;
-   }
+  void set_food_behavior(Behavior behavior) {
+    food_behavior_ = behavior;
+    switch (behavior) {
+      case kLove:
+        wheel_food_ = new LoveBehavior();
+       break;
+      case kAggressive:
+        wheel_food_ = new AggressiveBehavior();
+       break;
+     case kCoward:
+       wheel_food_ = new CowardBehavior();
+       break;
+      case kExplore:
+       wheel_food_ = new ExploreBehavior();
+       break;
+      case kNone:
+      default:
+        wheel_food_ = NULL;
+        break;
+    }
   }
 
   /**
@@ -182,26 +182,26 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
    * @brief Sets the behavior towards bv
    * @param behavior bv behavior
    */
-  void set_bv_behavior(Behavior behavior) { 
-   bv_behavior_ = behavior; 
-   switch (behavior) {
-    case kLove:
-      wheel_bv_ = new LoveBehavior();
-      break;
-    case kAggressive:
-      wheel_bv_ = new AggressiveBehavior();
-      break;
-    case kCoward:
-      wheel_bv_ = new CowardBehavior();
-      break;
-    case kExplore:
-      wheel_bv_ = new ExploreBehavior();
-      break;
-    case kNone:
-    default:
-      wheel_bv_ = NULL;
-      break;
-   }
+  void set_bv_behavior(Behavior behavior) {
+    bv_behavior_ = behavior;
+    switch (behavior) {
+      case kLove:
+        wheel_bv_ = new LoveBehavior();
+        break;
+      case kAggressive:
+        wheel_bv_ = new AggressiveBehavior();
+        break;
+      case kCoward:
+        wheel_bv_ = new CowardBehavior();
+        break;
+      case kExplore:
+        wheel_bv_ = new ExploreBehavior();
+        break;
+      case kNone:
+      default:
+        wheel_bv_ = NULL;
+        break;
+    }
   }
 
   /**
@@ -223,13 +223,12 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
   WheelVelocity get_wheel_velocity() { return wheel_velocity_; }
 
   void CalculateWheelVelocity();
-  
+
   void Subscribe(Observer * observer) override;
 
   void Unsubscribe() override;
 
   void Notify() override;
-
 
   /**
    * @brief Number of BraitenbergVehicle objects exist

@@ -11,6 +11,7 @@
  * Includes
  ******************************************************************************/
 #include <MinGfx-1.0/mingfx.h>
+#include <vector>
 
 #include "src/arena.h"
 #include "src/controller.h"
@@ -53,7 +54,8 @@ class Controller;
  *  Fill in the `Draw*()` methods to draw graphics on the screen using
  *  either the `nanovg` library or raw `OpenGL`.
  */
-class GraphicsArenaViewer : public mingfx::GraphicsApp, public ArenaViewer, public Observer {
+class GraphicsArenaViewer : public mingfx::GraphicsApp,
+    public ArenaViewer, public Observer {
  public:
   /**
    * @brief Constructor.
@@ -222,7 +224,7 @@ class GraphicsArenaViewer : public mingfx::GraphicsApp, public ArenaViewer, publ
   GraphicsArenaViewer(const GraphicsArenaViewer &other) = delete;
 
   void Update(std::vector<WheelVelocity> state) override;
-  
+
  private:
   void DrawArena(NVGcontext *ctx);
 

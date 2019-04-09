@@ -9,7 +9,7 @@ NAMESPACE_BEGIN(csci3081);
 
 class CowardBehavior : public WheelBehavior {
  public:
-  ~CowardBehavior() {};
+  ~CowardBehavior() {}
   WheelVelocity WheelUpdate(double lSens, double rSens, double sp) override;
 };
 

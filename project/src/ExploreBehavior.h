@@ -9,10 +9,10 @@ NAMESPACE_BEGIN(csci3081);
 
 class ExploreBehavior : public WheelBehavior {
  public:
-  ~ExploreBehavior() {};
+  ~ExploreBehavior() {}
   WheelVelocity WheelUpdate(double lSens, double rSens, double sp) override;
 };
 
 NAMESPACE_END(csci3081);
 
-#endif // SRC_EXPLOREBEHAVIOR_H_
+#endif  // SRC_EXPLOREBEHAVIOR_H_

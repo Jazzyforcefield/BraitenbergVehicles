@@ -1,6 +1,6 @@
 // Copyright 2019, Michael Ung
 
-#include "LoveBehavior.h"
+#include "src/LoveBehavior.h"
 
 NAMESPACE_BEGIN(csci3081);
 
