@@ -24,6 +24,8 @@
 #include "src/LoveBehavior.h"
 #include "src/ExploreBehavior.h"
 #include "src/CowardBehavior.h"
+#include "src/Subject.h"
+#include "src/Observer.h"
 
 
 /*******************************************************************************
@@ -43,7 +45,7 @@ NAMESPACE_BEGIN(csci3081);
  * up in four different ways, and thus they can exhibit four different behaviors
  */
 
-class BraitenbergVehicle : public ArenaMobileEntity {
+class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
  public:
   /**
    * @brief Default constructor.
@@ -221,6 +223,14 @@ class BraitenbergVehicle : public ArenaMobileEntity {
   WheelVelocity get_wheel_velocity() { return wheel_velocity_; }
 
   void CalculateWheelVelocity();
+  
+  void Subscribe(Observer * observer) override;
+
+  void Unsubscribe() override;
+
+  void Notify() override;
+
+
   /**
    * @brief Number of BraitenbergVehicle objects exist
    */
@@ -230,6 +240,7 @@ class BraitenbergVehicle : public ArenaMobileEntity {
   std::vector<Pose> light_sensors_;
   MotionBehaviorDifferential * motion_behavior_{nullptr};
   WheelVelocity wheel_velocity_;
+  std::vector<WheelVelocity> wv_;   // l - 0, f - 1, bv - 2
   Behavior light_behavior_;
   Behavior food_behavior_;
   Behavior bv_behavior_;
@@ -242,6 +253,7 @@ class BraitenbergVehicle : public ArenaMobileEntity {
   double defaultSpeed_;
   int time_;
   bool collided_;
+  Observer * obs_;
 };
 
 NAMESPACE_END(csci3081);
