@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 14:17:05 PM.
+Run on April 08, 21:52:07 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -49,9 +49,11 @@ Commits found=70
 
 595fdf43e2ce4fb1c2d263f5f7000d3a31cf0615	refs/heads/dev/json-factories
 
+35e357056b06b04b2b97994c66fa98012425f924	refs/heads/dev/observer-pattern
+
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-1f9932c3ece69498e9d41eea8698de185f0c1266	refs/heads/devel
+8cf47cdb74eaed87049f4554af21d48b4289734e	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -59,7 +61,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-dd87e6bf33672e2578c412fe1310009f1e74ed8d	refs/heads/master
+8fbd32abf212d9cb4ba38f399bbf0614829ee003	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -76,19 +78,23 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
++ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
 
-[OPEN issue #13] :  Create Unit Tests for Strategy Pattern
+[OPEN issue #17] :  BV Behavior is reversed [bug] 2
 
-[OPEN issue #6] :  Refactor BraitenbergVehicle class 
+[OPEN issue #16] :  Implement Predator Class
+
+[OPEN issue #15] :  Implement Observer Pattern
 
 
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 12)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 14)
 
 [CLOSED issue #14] :  Implement Strategy Pattern for BV [bug] 2
+
+[CLOSED issue #13] :  Create Unit Tests for Strategy Pattern
 
 [CLOSED issue #12] :  Change json references to pointers
 
@@ -101,6 +107,8 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 [CLOSED issue #8] :  Implement BV behaviors 1
 
 [CLOSED issue #7] :  Update uml_design.pdf to include relationships between Arena and BraitenbergVehicle
+
+[CLOSED issue #6] :  Refactor BraitenbergVehicle class 
 
 [CLOSED issue #5] :  Rename UML.pdf to uml_design.pdf 1
 
@@ -135,34 +143,67 @@ AggressiveBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/lin
 AggressiveBehavior.cc:0:  project/src/AggressiveBehavior.cc should include its header file project/src/AggressiveBehavior.h  [build/include] [5]
 braitenberg_vehicle.cc:29:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 braitenberg_vehicle.cc:31:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:112:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:112:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
-braitenberg_vehicle.cc:165:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:166:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+braitenberg_vehicle.cc:116:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:116:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
+braitenberg_vehicle.cc:172:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+braitenberg_vehicle.cc:173:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+braitenberg_vehicle.cc:233:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
 CowardBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 CowardBehavior.cc:0:  project/src/CowardBehavior.cc should include its header file project/src/CowardBehavior.h  [build/include] [5]
 ExploreBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 ExploreBehavior.cc:0:  project/src/ExploreBehavior.cc should include its header file project/src/ExploreBehavior.h  [build/include] [5]
+graphics_arena_viewer.cc:327:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:327:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+graphics_arena_viewer.cc:329:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:329:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+graphics_arena_viewer.cc:333:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:335:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:339:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:341:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:418:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+graphics_arena_viewer.cc:418:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+graphics_arena_viewer.cc:428:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+graphics_arena_viewer.cc:428:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+graphics_arena_viewer.cc:440:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:441:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:442:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:443:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:444:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:445:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:446:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
 LoveBehavior.cc:0:  project/src/LoveBehavior.cc should include its header file project/src/LoveBehavior.h  [build/include] [5]
 AggressiveBehavior.h:13:  You don't need a ; after a }  [readability/braces] [4]
 AggressiveBehavior.h:19:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-braitenberg_vehicle.h:138:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:138:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:150:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:151:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:151:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:152:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:169:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:183:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:184:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:184:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:185:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:202:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.h:140:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.h:140:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.h:152:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.h:153:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.h:153:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.h:154:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.h:171:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.h:185:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.h:186:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.h:186:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.h:187:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.h:204:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.h:226:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 CowardBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
 ExploreBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
 ExploreBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+graphics_arena_viewer.h:56:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.h:225:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+graphics_arena_viewer.h:224:  Add #include <vector> for vector<>  [build/include_what_you_use] [4]
 LoveBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
 LoveBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+Observer.h:12:  You don't need a ; after a }  [readability/braces] [4]
+Observer.h:16:  You don't need a ; after a }  [readability/braces] [4]
+Observer.h:21:  At least two spaces is best between code and comments  [whitespace/comments] [2]
+Observer.h:16:  Add #include <vector> for vector<>  [build/include_what_you_use] [4]
+Subject.h:12:  You don't need a ; after a }  [readability/braces] [4]
+Subject.h:16:  You don't need a ; after a }  [readability/braces] [4]
+Subject.h:21:  You don't need a ; after a }  [readability/braces] [4]
+Subject.h:26:  You don't need a ; after a }  [readability/braces] [4]
+Subject.h:31:  At least two spaces is best between code and comments  [whitespace/comments] [2]
 WheelBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
 WheelBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
 Done processing AggressiveBehavior.cc
@@ -207,12 +248,14 @@ Done processing LoveBehavior.h
 Done processing mainpage.h
 Done processing motion_behavior_differential.h
 Done processing motion_behavior.h
+Done processing Observer.h
 Done processing params.h
 Done processing pose.h
 Done processing rgb_color.h
+Done processing Subject.h
 Done processing WheelBehavior.h
 Done processing wheel_velocity.h
-Total errors found: 34
+Total errors found: 67
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
