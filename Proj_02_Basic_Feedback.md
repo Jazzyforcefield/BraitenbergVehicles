@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 21:57:16 PM.
+Run on April 08, 22:15:54 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -53,7 +53,7 @@ Commits found=70
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-9b56528be1de71a6db46f4e51a7d35a5994d21b2	refs/heads/devel
+0ff4d1b1c12bb6ab1882f73b057fc8aa8d8bfa66	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -61,7 +61,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-ff0c19be5446b45cc63c262880b783d37449d775	refs/heads/master
+0c60526b4c434f41911937444c7a8f59a2abef79	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -143,11 +143,11 @@ AggressiveBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/lin
 AggressiveBehavior.cc:0:  project/src/AggressiveBehavior.cc should include its header file project/src/AggressiveBehavior.h  [build/include] [5]
 braitenberg_vehicle.cc:29:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 braitenberg_vehicle.cc:31:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:116:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:116:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
-braitenberg_vehicle.cc:172:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:173:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:233:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+braitenberg_vehicle.cc:118:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+braitenberg_vehicle.cc:118:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
+braitenberg_vehicle.cc:174:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+braitenberg_vehicle.cc:175:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+braitenberg_vehicle.cc:235:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
 CowardBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 CowardBehavior.cc:0:  project/src/CowardBehavior.cc should include its header file project/src/CowardBehavior.h  [build/include] [5]
 ExploreBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
@@ -160,17 +160,17 @@ graphics_arena_viewer.cc:333:  Lines should be <= 80 characters long  [whitespac
 graphics_arena_viewer.cc:335:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 graphics_arena_viewer.cc:339:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 graphics_arena_viewer.cc:341:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:418:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-graphics_arena_viewer.cc:418:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
-graphics_arena_viewer.cc:428:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-graphics_arena_viewer.cc:428:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
-graphics_arena_viewer.cc:435:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:436:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:437:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:438:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:439:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:440:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:441:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+graphics_arena_viewer.cc:425:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+graphics_arena_viewer.cc:425:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+graphics_arena_viewer.cc:435:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+graphics_arena_viewer.cc:435:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+graphics_arena_viewer.cc:442:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:443:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:444:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:445:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:446:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:447:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:448:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
 LoveBehavior.cc:0:  project/src/LoveBehavior.cc should include its header file project/src/LoveBehavior.h  [build/include] [5]
 AggressiveBehavior.h:13:  You don't need a ; after a }  [readability/braces] [4]
 AggressiveBehavior.h:19:  At least two spaces is best between code and comments  [whitespace/comments] [2]
