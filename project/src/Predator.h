@@ -4,8 +4,8 @@
  * @copyright 2017 3081 Staff, All rights reserved.
  */
 
-#ifndef SRC_BRAITENBERG_VEHICLE_H_
-#define SRC_BRAITENBERG_VEHICLE_H_
+#ifndef SRC_PREDATOR_H_
+#define SRC_PREDATOR_H_
 
 /*******************************************************************************
  * Includes
@@ -45,25 +45,25 @@ NAMESPACE_BEGIN(csci3081);
  * up in four different ways, and thus they can exhibit four different behaviors
  */
 
-class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
+class Predator : public ArenaMobileEntity, public Subject {
  public:
   /**
    * @brief Default constructor.
    */
-  BraitenbergVehicle();
+  Predator();
 
   /**
    * @brief Deleting the copy assignment and copy constructor. required now with
    *  inclusion of references to sensors and motion_handler/behavior
    */
-  BraitenbergVehicle(const BraitenbergVehicle & rhs) = delete;
+  Predator(const Predator & rhs) = delete;
   /**
    * @brief Copy constructor of BV
    */
-  BraitenbergVehicle operator=(const BraitenbergVehicle & rhs) = delete;
+  Predator operator=(const Predator & rhs) = delete;
 
   /**
-   * @brief Update the BraitenbergVehicle's position and velocity after the
+   * @brief Update the Predator's position and velocity after the
    * specified duration has passed.
    *
    * @param dt The # of timesteps that have elapsed since the last update.
@@ -73,7 +73,7 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
   void Update() override;
 
   /**
-   * @brief Change the movement state of the BraitenbergVehicle.
+   * @brief Change the movement state of the Predator.
    * @param ent_type EntityType of collision entity
    * @param object ArenaEntity * is the collision object
    */
@@ -230,10 +230,8 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
 
   void Notify() override;
 
-  void Die();
-
   /**
-   * @brief Number of BraitenbergVehicle objects exist
+   * @brief Number of Predator objects exist
    */
   static int count;
 
@@ -255,9 +253,8 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
   int time_;
   bool collided_;
   Observer * obs_;
-  bool dead_;
 };
 
 NAMESPACE_END(csci3081);
 
-#endif  // SRC_BRAITENBERG_VEHICLE_H_
+#endif  // SRC_PREDATOR_H_

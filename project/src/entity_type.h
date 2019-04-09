@@ -22,7 +22,7 @@ NAMESPACE_BEGIN(csci3081);
 enum EntityType {
   kLight = 0, kFood, kEntity, kBraitenberg,
   kRightWall, kLeftWall, kTopWall, kBottomWall,
-  kUndefined
+  kUndefined, kPredator   // Potentially move kPredator after kBraitenberg
 };
 
 inline EntityType get_entity_type(const std::string& type) {
@@ -34,6 +34,9 @@ inline EntityType get_entity_type(const std::string& type) {
   }
   if (type == "Braitenberg") {
     return kBraitenberg;
+  }
+  if (type == "Predator") {
+    return kPredator;
   }
   return kUndefined;
 }
