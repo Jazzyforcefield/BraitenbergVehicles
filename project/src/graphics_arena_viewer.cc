@@ -342,7 +342,6 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
   vel6->setFixedWidth(65);
   robotWidgets.push_back(vel5);
   robotWidgets.push_back(vel6);
-  printf("%lu\n\n", robotWidgets.size());
 
 
   for (unsigned int f = 0; f < robotWidgets.size(); f++) {
@@ -375,7 +374,15 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
       }
 
       if (entity->get_type() == kBraitenberg) {
-        static_cast<BraitenbergVehicle*>(entity)->Subscribe(this);
+        for (unsigned int i = 0; i < this->arena_->get_entities().size(); i++) {
+          ArenaEntity * ent = this->arena_->get_entities()[i];
+          if (ent->get_type() == kBraitenberg) {
+            dynamic_cast<BraitenbergVehicle*>(ent)->Unsubscribe();
+          }
+        }
+
+        dynamic_cast<BraitenbergVehicle*>(entity)->Unsubscribe();
+        dynamic_cast<BraitenbergVehicle*>(entity)->Subscribe(this);
         lightBehaviorSelect->setSelectedIndex(
           static_cast<BraitenbergVehicle*>(entity)->get_light_behavior());
         foodBehaviorSelect->setSelectedIndex(

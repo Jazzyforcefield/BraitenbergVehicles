@@ -109,7 +109,9 @@ void BraitenbergVehicle::Update() {
   }
 
   CalculateWheelVelocity();
-  Notify();
+  if (obs_) {
+    Notify();
+  }
 }
 
 void BraitenbergVehicle::CalculateWheelVelocity() {
