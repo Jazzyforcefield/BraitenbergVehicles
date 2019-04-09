@@ -55,6 +55,9 @@
 #define BRAITENBERG_VEHICLE_COUNT 1
 #define BRAITENBERG_RATIO .5
 
+// predator
+#define PREDATOR_COLOR {125, 0, 125}
+
 // light_sensor
 #define SENSOR_LIGHT_RAD 4
 

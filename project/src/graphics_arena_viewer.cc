@@ -387,7 +387,6 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
           }
         }
 
-        dynamic_cast<BraitenbergVehicle*>(entity)->Unsubscribe();
         dynamic_cast<BraitenbergVehicle*>(entity)->Subscribe(this);
         lightBehaviorSelect->setSelectedIndex(
           static_cast<BraitenbergVehicle*>(entity)->get_light_behavior());

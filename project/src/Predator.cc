@@ -8,8 +8,9 @@
  ******************************************************************************/
 #include <iostream>
 #include <ctime>
-#include "src/braitenberg_vehicle.h"
+#include "src/Predator.h"
 #include "src/params.h"
+#include "src/braitenberg_vehicle.h"
 
 class SensorLightLove;
 
@@ -18,18 +19,18 @@ class SensorLightLove;
  ******************************************************************************/
 NAMESPACE_BEGIN(csci3081);
 
-int BraitenbergVehicle::count = 0;
+int Predator::count = 0;
 
 /*******************************************************************************
  * Constructors/Destructor
  ******************************************************************************/
 
-BraitenbergVehicle::BraitenbergVehicle() :
-  light_sensors_(), wheel_velocity_(), wv_(), light_behavior_(kNone),
-  food_behavior_(kNone), bv_behavior_(kNone), wheel_light_(NULL),
+Predator::Predator() :
+  light_sensors_(), wheel_velocity_(), wv_(), light_behavior_(kCoward),
+  food_behavior_(kNone), bv_behavior_(kAggressive), wheel_light_(NULL),
   wheel_food_(NULL), wheel_bv_(NULL), closest_light_entity_(NULL),
   closest_food_entity_(NULL), closest_bv_entity_(NULL),
-  defaultSpeed_(5.0), time_(0), collided_(false), obs_(), dead_(false) {
+  defaultSpeed_(5.0), time_(0), collided_(false), obs_() {
   set_type(kBraitenberg);
   motion_behavior_ = new MotionBehaviorDifferential(this);
   light_sensors_.push_back(Pose());
@@ -37,7 +38,7 @@ BraitenbergVehicle::BraitenbergVehicle() :
   wv_.push_back(WheelVelocity());
   wv_.push_back(WheelVelocity());
   wv_.push_back(WheelVelocity());
-  set_color(BRAITENBERG_COLOR);
+  set_color(PREDATOR_COLOR);
   set_pose(ROBOT_INIT_POS);
 
   wheel_velocity_ = WheelVelocity(0, 0);
@@ -47,22 +48,24 @@ BraitenbergVehicle::BraitenbergVehicle() :
   set_id(count);
 }
 
-void BraitenbergVehicle::TimestepUpdate(__unused unsigned int dt) {
+void Predator::TimestepUpdate(__unused unsigned int dt) {
   if (is_moving()) {
     motion_behavior_->UpdatePose(dt, wheel_velocity_);
   }
   UpdateLightSensors();
 }
 
-void BraitenbergVehicle::HandleCollision(__unused EntityType ent_type,
+void Predator::HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) {
-  if (!dead_) {
+  if (object->get_type() == kBraitenberg) {
+    dynamic_cast<BraitenbergVehicle *>(object)->Die();
+  } else {
     set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
     collided_ = true;
   }
 }
 
-void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
+void Predator::SenseEntity(const ArenaEntity& entity) {
   const ArenaEntity** closest_entity_ = NULL;
   if (entity.get_type() == kLight) {
     closest_entity_ = &closest_light_entity_;
@@ -92,13 +95,8 @@ void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
   }
 }
 
-void BraitenbergVehicle::Update() {
-  if (dead_) {
-    set_color({150, 150, 150});
-    wheel_velocity_ = WheelVelocity(0, 0);
-    Notify();
-    return;
-  } else if (light_behavior_ != kNone && food_behavior_ == kNone) {
+void Predator::Update() {
+  if (light_behavior_ != kNone && food_behavior_ == kNone) {
     set_color({255, 204, 51});
   } else if (light_behavior_ == kNone && food_behavior_ != kNone) {
     set_color({0, 0, 255});
@@ -122,7 +120,7 @@ void BraitenbergVehicle::Update() {
   }
 }
 
-void BraitenbergVehicle::CalculateWheelVelocity() {
+void Predator::CalculateWheelVelocity() {
   int numBehaviors = 3;
 
   WheelVelocity light_wheel_velocity = WheelVelocity(0, 0);
@@ -188,19 +186,19 @@ void BraitenbergVehicle::CalculateWheelVelocity() {
   }
 }
 
-std::string BraitenbergVehicle::get_name() const {
+std::string Predator::get_name() const {
   return "Braitenberg " + std::to_string(get_id());
 }
 
-std::vector<Pose> BraitenbergVehicle::get_light_sensors_const() const {
+std::vector<Pose> Predator::get_light_sensors_const() const {
   return light_sensors_;
 }
 
-std::vector<Pose> BraitenbergVehicle::get_light_sensors() {
+std::vector<Pose> Predator::get_light_sensors() {
   return light_sensors_;
 }
 
-double BraitenbergVehicle::get_sensor_reading_left(const ArenaEntity* entity) {
+double Predator::get_sensor_reading_left(const ArenaEntity* entity) {
   if (entity) {
     return 1800.0/std::pow(
       1.08, (entity->get_pose()-light_sensors_[0]).Length());
@@ -209,7 +207,7 @@ double BraitenbergVehicle::get_sensor_reading_left(const ArenaEntity* entity) {
   return 0.0001;
 }
 
-double BraitenbergVehicle::get_sensor_reading_right(const ArenaEntity* entity) {
+double Predator::get_sensor_reading_right(const ArenaEntity* entity) {
   if (entity) {
     return 1800.0/std::pow(
       1.08, (entity->get_pose()-light_sensors_[1]).Length());
@@ -218,7 +216,7 @@ double BraitenbergVehicle::get_sensor_reading_right(const ArenaEntity* entity) {
   return 0.0001;
 }
 
-void BraitenbergVehicle::UpdateLightSensors() {
+void Predator::UpdateLightSensors() {
   for (unsigned int f = 0; f < light_sensors_.size(); f++) {
     Pose& pos = light_sensors_[f];
     if (f == 0) {
@@ -231,25 +229,21 @@ void BraitenbergVehicle::UpdateLightSensors() {
   }
 }
 
-void BraitenbergVehicle::Subscribe(Observer * observer) {
+void Predator::Subscribe(Observer * observer) {
   obs_ = observer;
 }
 
-void BraitenbergVehicle::Unsubscribe() {
+void Predator::Unsubscribe() {
   obs_ = NULL;
 }
 
-void BraitenbergVehicle::Notify() {
+void Predator::Notify() {
   if (obs_) {
     obs_->Update(wv_);
   }
 }
 
-void BraitenbergVehicle::Die() {
-  dead_ = true;
-}
-
-void BraitenbergVehicle::LoadFromObject(json_object* entity_config) {
+void Predator::LoadFromObject(json_object* entity_config) {
   ArenaEntity::LoadFromObject(entity_config);
 
   if ((*entity_config).find("light_behavior") != (*entity_config).end()) {
