@@ -430,11 +430,6 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
 
 void GraphicsArenaViewer::Update(std::vector<WheelVelocity> state) {
   std::vector<nanogui::Widget *> children = (*window).children();
-
-  for (int i = 0; i < 16; i++) {
-    std::vector<nanogui::Widget *> grandchildren = children[i]->children();
-    printf("index %d: %lu\n\n", i, grandchildren.size());
-  }
   std::vector<nanogui::Widget *> grandchildren = children[11]->children();
 
   dynamic_cast<nanogui::FloatBox<float>*>(grandchildren[0])->setValue(state[0].left);
