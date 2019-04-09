@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 21:03:29 PM.
+Run on April 09, 00:34:27 AM.
 
 + Pass: Checkout devel branch.
 
@@ -67,9 +67,11 @@ Commits found=70
 
 35e357056b06b04b2b97994c66fa98012425f924	refs/heads/dev/observer-pattern
 
+2ee31626ba625f39d10b30886499289c82658a35	refs/heads/dev/predators
+
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-35e357056b06b04b2b97994c66fa98012425f924	refs/heads/devel
+75a6eeac6213fa1d1ad5bfa364dc253ef1898c4e	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -77,7 +79,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-16ea61a8a8e46e6039b4c83b088d98ec4651e884	refs/heads/master
+e312c9986e47a6bbbee9f294ce4b25b88d4911fa	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -94,19 +96,19 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
++ Pass: Run ghi for total number of open issues in Github repo (Found: 1)
 
 [OPEN issue #17] :  BV Behavior is reversed [bug] 2
 
-[OPEN issue #16] :  Implement Predator Class
-
-[OPEN issue #15] :  Implement Observer Pattern
 
 
 
 
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 16)
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 14)
+[CLOSED issue #16] :  Implement Predator Class 1
+
+[CLOSED issue #15] :  Implement Observer Pattern
 
 [CLOSED issue #14] :  Implement Strategy Pattern for BV [bug] 2
 
@@ -143,100 +145,7 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 #### Style Tests
 
-+ Fail: Ensuring code follows style guide.
-
-<pre>cd src; make check-style
-make[1]: Entering directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src'
-==== Checking style is correct ====
-/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-AggressiveBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-AggressiveBehavior.cc:0:  grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/AggressiveBehavior.cc should include its header file grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/AggressiveBehavior.h  [build/include] [5]
-braitenberg_vehicle.cc:29:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:31:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:112:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.cc:112:  Redundant blank line at the start of a code block should be deleted.  [whitespace/blank_line] [2]
-braitenberg_vehicle.cc:165:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-braitenberg_vehicle.cc:166:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-CowardBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-CowardBehavior.cc:0:  grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/CowardBehavior.cc should include its header file grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/CowardBehavior.h  [build/include] [5]
-ExploreBehavior.cc:7:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-ExploreBehavior.cc:0:  grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/ExploreBehavior.cc should include its header file grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/ExploreBehavior.h  [build/include] [5]
-LoveBehavior.cc:0:  grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/LoveBehavior.cc should include its header file grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src/LoveBehavior.h  [build/include] [5]
-AggressiveBehavior.h:13:  You don't need a ; after a }  [readability/braces] [4]
-AggressiveBehavior.h:19:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-braitenberg_vehicle.h:138:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:138:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:150:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:151:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:151:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:152:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:169:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:183:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:184:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:184:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-braitenberg_vehicle.h:185:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-braitenberg_vehicle.h:202:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
-CowardBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
-ExploreBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
-ExploreBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-LoveBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
-LoveBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-WheelBehavior.h:12:  You don't need a ; after a }  [readability/braces] [4]
-WheelBehavior.h:18:  At least two spaces is best between code and comments  [whitespace/comments] [2]
-Done processing AggressiveBehavior.cc
-Done processing arena.cc
-Done processing braitenberg_vehicle.cc
-Done processing BraitenbergVehicleFactory.cc
-Done processing controller.cc
-Done processing CowardBehavior.cc
-Done processing ExploreBehavior.cc
-Done processing Factory.cc
-Done processing food.cc
-Done processing FoodFactory.cc
-Done processing graphics_arena_viewer.cc
-Done processing light.cc
-Done processing LightFactory.cc
-Done processing LoveBehavior.cc
-Done processing main.cc
-Done processing motion_behavior.cc
-Done processing motion_behavior_differential.cc
-Done processing rgb_color.cc
-Done processing AggressiveBehavior.h
-Done processing arena_entity.h
-Done processing arena.h
-Done processing arena_immobile_entity.h
-Done processing arena_mobile_entity.h
-Done processing arena_viewer.h
-Done processing behavior_enum.h
-Done processing BraitenbergVehicleFactory.h
-Done processing braitenberg_vehicle.h
-Done processing common.h
-Done processing controller.h
-Done processing CowardBehavior.h
-Done processing entity_type.h
-Done processing ExploreBehavior.h
-Done processing Factory.h
-Done processing FoodFactory.h
-Done processing food.h
-Done processing graphics_arena_viewer.h
-Done processing LightFactory.h
-Done processing light.h
-Done processing LoveBehavior.h
-Done processing mainpage.h
-Done processing motion_behavior_differential.h
-Done processing motion_behavior.h
-Done processing params.h
-Done processing pose.h
-Done processing rgb_color.h
-Done processing WheelBehavior.h
-Done processing wheel_velocity.h
-Total errors found: 34
-Makefile:162: recipe for target 'check-style' failed
-make[1]: *** [check-style] Error 1
-make[1]: Leaving directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src'
-Makefile:8: recipe for target 'check-style' failed
-make: *** [check-style] Error 2
-</pre>
++ Pass: Ensuring code follows style guide.
 
 
 
