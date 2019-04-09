@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 21:52:07 PM.
+Run on April 08, 21:57:16 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -53,7 +53,7 @@ Commits found=70
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-8cf47cdb74eaed87049f4554af21d48b4289734e	refs/heads/devel
+9b56528be1de71a6db46f4e51a7d35a5994d21b2	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -61,7 +61,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-8fbd32abf212d9cb4ba38f399bbf0614829ee003	refs/heads/master
+ff0c19be5446b45cc63c262880b783d37449d775	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -164,13 +164,13 @@ graphics_arena_viewer.cc:418:  Line ends in whitespace.  Consider deleting these
 graphics_arena_viewer.cc:418:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
 graphics_arena_viewer.cc:428:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
 graphics_arena_viewer.cc:428:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+graphics_arena_viewer.cc:435:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:436:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:437:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:438:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+graphics_arena_viewer.cc:439:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 graphics_arena_viewer.cc:440:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:441:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:442:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:443:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:444:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:445:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-graphics_arena_viewer.cc:446:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+graphics_arena_viewer.cc:441:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
 LoveBehavior.cc:0:  project/src/LoveBehavior.cc should include its header file project/src/LoveBehavior.h  [build/include] [5]
 AggressiveBehavior.h:13:  You don't need a ; after a }  [readability/braces] [4]
 AggressiveBehavior.h:19:  At least two spaces is best between code and comments  [whitespace/comments] [2]
