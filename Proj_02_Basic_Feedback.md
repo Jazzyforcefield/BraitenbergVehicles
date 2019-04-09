@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 22:32:48 PM.
+Run on April 08, 23:28:21 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -51,9 +51,11 @@ Commits found=70
 
 35e357056b06b04b2b97994c66fa98012425f924	refs/heads/dev/observer-pattern
 
+2ee31626ba625f39d10b30886499289c82658a35	refs/heads/dev/predators
+
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-2ee31626ba625f39d10b30886499289c82658a35	refs/heads/devel
+75a6eeac6213fa1d1ad5bfa364dc253ef1898c4e	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -61,7 +63,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-5f0ea30668438cc8109dd0be547900d46db11d41	refs/heads/master
+7e20e3b946b254c0e1facaa0c2087d8daf94e412	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -78,19 +80,19 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
++ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
 
 [OPEN issue #17] :  BV Behavior is reversed [bug] 2
 
 [OPEN issue #16] :  Implement Predator Class
 
-[OPEN issue #15] :  Implement Observer Pattern
 
 
 
 
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 15)
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 14)
+[CLOSED issue #15] :  Implement Observer Pattern
 
 [CLOSED issue #14] :  Implement Strategy Pattern for BV [bug] 2
 
