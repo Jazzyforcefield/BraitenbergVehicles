@@ -251,10 +251,10 @@ Final Iteration 2 Submission (67.5%)
 - 10% Doxygen landing page
 - 5% Doxy documentation of classes
 - 5% Google Style Compliance
-- 2.5% BraitenbergVehicle sensor implementation
+- 2.5% BraitenbergVehicle sensor implementation including GUI option to choose behavior
 - 11% Predator implementation with "ghosting" BVs
 - 5% Starving BVs
-- 5% Dynamic Wheel Velocity calculation
+- 5% Dynamic Wheel Velocity calculation including GUI display of values
 - 10% Git usage including issues, branching, and commit messages
 
 ## <a name="resources">Resources</a>
