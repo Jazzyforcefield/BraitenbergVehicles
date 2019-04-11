@@ -198,6 +198,8 @@ Create a Predator class that is another type of ArenaEntity. It is very similar 
 
 Add to the simulation the ability for Predators to consume BVs. This means that if the Predator collides with a BV, that BV dies. Leave a "ghost" of the BV in the Arena -- make it very light in color. It should no longer move and everything can pass through it. CLARIFICATION: The BV should no longer influence any other entity.
 
+CLARIFICATION as announced on Canvas: Add "Predator" to your JSON -- otherwise, how would you test it?
+
 <hr>
 
 ##### <a name="reqs3">Priority Level 3 : Starving BVs, Weighted Behaviors, and <del>non-JSON Factory</del>
