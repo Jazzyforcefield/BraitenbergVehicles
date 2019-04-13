@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 09, 07:35:48 AM.
+Run on April 13, 11:17:58 AM.
 
 + Pass: Checkout devel branch.
 
@@ -79,7 +79,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-7248925575912925d03493747a9ab4035496c2ee	refs/heads/master
+a67b114d998b0d7fc198e2c38f50b2304bb5bdc5	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -98,7 +98,9 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 1)
++ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
+
+[OPEN issue #18] :  Complete Predator-BV consumption interaction
 
 [OPEN issue #17] :  BV Behavior is reversed [bug] 2
 
