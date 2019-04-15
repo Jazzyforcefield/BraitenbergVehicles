@@ -10,6 +10,7 @@
 #include <ctime>
 #include "src/braitenberg_vehicle.h"
 #include "src/params.h"
+#include "src/food.h"
 
 class SensorLightLove;
 
@@ -58,8 +59,10 @@ void BraitenbergVehicle::TimestepUpdate(__unused unsigned int dt) {
 void BraitenbergVehicle::HandleCollision(EntityType ent_type,
                                          __unused ArenaEntity * object) {
   if (ent_type == kFood) {
-    stime_ = 0;
-    // Add food inactivity
+    if (static_cast<Food *>(object)->active()) {
+      stime_ = 0;
+      static_cast<Food *>(object)->set_inactive();
+    }
     return;
   } else if (ent_type == kBraitenberg) {
     BraitenbergVehicle * bvref = dynamic_cast<BraitenbergVehicle *>(object);
