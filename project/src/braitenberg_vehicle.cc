@@ -196,8 +196,18 @@ void BraitenbergVehicle::CalculateWheelVelocity() {
         wv_[2] = bv_wheel_velocity;
       break;
   }
-
-  if (numBehaviors) {
+  if (stime_ > 350) {
+    wv_[0] = WheelVelocity(0, 0);
+    wv_[1] = WheelVelocity(
+      food_wheel_velocity.left + defaultSpeed_/2,
+      food_wheel_velocity.right + defaultSpeed_/2,
+      defaultSpeed_);
+    wv_[2] = WheelVelocity(0, 0);
+    wheel_velocity_ = WheelVelocity(
+      food_wheel_velocity.left + defaultSpeed_/2,
+      food_wheel_velocity.right + defaultSpeed_/2,
+      defaultSpeed_);
+  } else if (numBehaviors) {
     wheel_velocity_ = WheelVelocity(
       (light_wheel_velocity.left +
     food_wheel_velocity.left + bv_wheel_velocity.left)/numBehaviors,
