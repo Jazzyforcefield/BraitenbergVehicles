@@ -2,6 +2,12 @@
 
 ### UPDATES
 
+- April 11, 2019 at 8:40 am. Several clarifications across the document. All are prefaced with the word _CLARIFICATION_ in all caps. 
+
+- April 7, 2019 at 3:45 pm. Factory Requirement pushed back to Iteration 3
+
+- April 6, 2019 at 5:30 pm. Added assessment weights at bottom of document
+
 - March 27, 2019 at 2:15 pm. 1) You may use behavior base class as kNone behavior, 2) you may use a single variable as the Observer "list", and 3) add an option in the GUI to set the Braitenberg Vehicle Sensor behavior.
 
 - March 26, 2019 at 9:15 am. Instructions for Preliminary submissions via Canvas
@@ -34,7 +40,7 @@ _Your software is a reflection of your understanding of the requirements as spec
 
 ### Project Overview
 
-In this iteration, you will continue to develop your Braitenberg Vehicle simulation to provide more functionality, to apply design patterns, and to expand documentation. Feature enhancements include the additions of a Predator class that can consume Braitenberg Vehicles, Braitenberg Vehicle sensors with a corresponding behavior so that robots react to robots, output of wheel velocity information to better understand behavior, factories for entity creation that do not use JSON, robots that can starve, and a weighted function for determining wheel velocity. As you develop and refactor your code, you will employ the Factory Pattern to initialize entities, the Strategy Pattern to implement the 4 behaviors (and write unit tests), and the Observer pattern to view wheel velocities. For documentation, you will include a landing page for the Doxygen generated html pages and add Doxygen documentation to the classes and elements added to your code.
+In this iteration, you will continue to develop your Braitenberg Vehicle simulation to provide more functionality, to apply design patterns, and to expand documentation. Feature enhancements include the additions of a Predator class that can consume Braitenberg Vehicles, Braitenberg Vehicle sensors with a corresponding behavior so that robots react to robots, output of wheel velocity information to better understand behavior, <del>factories for entity creation that do not use JSON</del>, robots that can starve, and a weighted function for determining wheel velocity. As you develop and refactor your code, you will employ the Factory Pattern to initialize entities, the Strategy Pattern to implement the 4 behaviors (and write unit tests), and the Observer pattern to view wheel velocities. For documentation, you will include a landing page for the Doxygen generated html pages and add Doxygen documentation to the classes and elements added to your code.
 
 <hr>
 
@@ -58,7 +64,7 @@ In this iteration, you will continue to develop your Braitenberg Vehicle simulat
     <ol type="i">
     <li><a href="#reqs1">Priority Level 1: Strategy Pattern, Unit Tests, and BV sensors</a>
     <li><a href="#reqs2">Priority Level 2: Observer Pattern, Predator class, and BV consumption</a>
-    <li><a href="#reqs3">Priority Level 3: Starving BVs, Weighted wheel velocity equation, non-JSON factory.</a>
+    <li><a href="#reqs3">Priority Level 3: Starving BVs, Weighted wheel velocity equation, <del>non-JSON factory</del>.</a>
        </ol>
   </ol>
 <li> <a href="#deliver">Deliverables and Submission</a>
@@ -73,7 +79,7 @@ In this iteration, you will continue to develop your Braitenberg Vehicle simulat
 
 Employ the Strategy Pattern to implement the Braitenberg Vehicle (BV) behaviors of Explore, Aggression, Coward, and Love. This pattern makes use of an abstract base class of a behavior from which other behaviors are derived OR, as a student suggested, the base class may be used as the kNone default behavior. The BV entities contain (i.e. are composed of) a behavior for each of its sensors. In this iteration, the BV entities will have food, light, and BV sensors.
 
-The Predator class is essentially a BV with a few exceptions. It always ignores Food entities, Cowers from the Light, and is Aggressive towards BVs.
+The Predator class is essentially a BV with a few exceptions. It always ignores Food entities, Cowers from the Light, and is Aggressive towards BVs. CLARIFICATION as discussed in class: It can be a subclass of BV or of ArenaMobileEntity, or it can be a specialized BV -- your choice.
 
 #### Observer Design Pattern
 
@@ -81,13 +87,13 @@ Employ the Observer pattern to view the left and right wheel velocities calculat
 
 Refer to _Head First Design Patterns_ to see the typical UML diagram for the Observer Pattern. You will note that as an Observer, the class contains an Update function that the Subject calls to convey its _state_ information. As a Subject, the class contains a Register/Subscribe function and a Remove/Unsubscribe function that an Observer calls to get added or removed from the observer list. A Subject also has a NotifyObservers function that, at the appropriate time(s), updates all its Observers on its list.
 
-There are many ways to implement the required functionality of displaying the wheel velocities attributed to each sensor. However, for this assignment, you must implement it with this pattern in that there is an observer "list" to which subjects subscribe and unsubscribe (since there can only be 1 observer in this version, you may use a single variable that is set to the observer or to nothing). It is up to you in how you implement the pattern. In other words, your assignment is to think about the design and figure out what is the best solution to implement that design.
+There are many ways to implement the required functionality of displaying the wheel velocities attributed to each sensor. However, for this assignment, you must implement it with this pattern in that there is an observer "list" to which subjects subscribe and unsubscribe (since there can only be 1 observer in this version, you may use a single variable that is set to the observer or to nothing). It is up to you in how you implement the pattern. In other words, your assignment is to think about the design and figure out what is the best solution to implement that design. CLARIFICATION as posted on announcements: the BV should be _pushing_ wheel velocity information. 
 
 #### Factory Design Pattern
 
-Continue your use of the Factory pattern to instantiate and initialize Arena Entities. When complete, you should have 2 versions of factories -- one that uses a JSON for configuration and one that uses a text file. We will provide the format and some parsing functionality for this configuration file.
+> **This requirement has been pushed to Iteration 3**
 
-> We are in the process of refining this requirement and we will repost soon.
+<del>Continue your use of the Factory pattern to instantiate and initialize Arena Entities. When complete, you should have 2 versions of factories -- one that uses a JSON for configuration and one that uses a text file. We will provide the format and some parsing functionality for this configuration file.</del>
 
 <hr>
 
@@ -103,11 +109,13 @@ Code documentation comes in many forms for many audiences. For this project, **y
 
 ### <a name="design_doc">Design Document
 
-Put the design document through another draft to refine your Factory Pattern design description. Extend the document by describing two alternative implementations of the viewing of the wheel velocities. One alternative is that the viewer uses getters instead of the Observer Pattern. The other is your implementation of the Observer Pattern.
+Put the design document through another draft to refine your Factory Pattern design description. Extend the document by describing two alternative implementations of the viewing of the wheel velocities. One alternative is that the viewer uses getters instead of the Observer Pattern. The other is your implementation of the Observer Pattern. CLARIFICATION as announced in Larson's class: we discussed 3 alternative implementation of the Observer pattern in class. You may compare and contrast any of these with your version rather than comparing with using getters.
 
-In your comparisons, provide an overall description highlighting key points of the implementation and using UML and/or code snippets to clarify your ideas. Also provide one advantage and one disadvantage of each implementation.
+In your comparisons, provide an overall description highlighting key points of the implementation and using UML and/or code snippets to clarify your ideas. Also provide at least one advantage and one disadvantage of each implementation.
 
 Name the design document *iteration2_design.pdf*.
+
+**CLARIFICATION of SUBMISSION as published in announcements: Please submit via Canvas.**
 
 
 ### <a name="style">Google Style Guide Compliance</a>
@@ -146,7 +154,7 @@ The minimum requirement for text is 3 paragraphs. If you were to print it out wi
 
 ### <a name="git_usage">Git Branches and Issues</a>
 
-Again for this iteration, create Git issues to document bugs, feature enhancements, refactoring, documentation, clean-up, etc. As you address significant issues, create a branch off of _devel_.
+Again for this iteration, create Git issues to document bugs, feature enhancements, refactoring, documentation, clean-up, etc. As you address significant issues, create a branch off of _devel_. CLARIFICATION: several issues can be handled within a single branch.
 
 As in the previous iteration, code should be developed in a branch off of the _devel_ branch. There are a lot more coding requirements for this iteration, so we should see at least double the branches that were created in the last iteration. Please do not delete these branches after they are merged so that we can grade that aspect of development.
 
@@ -169,11 +177,11 @@ The iterative method identifies and prioritizes feature enhancements and code re
 
 Implement unit tests for the Strategy Pattern. The general requirements for this are described in the next paragraph. As for the unit tests, place these in separate files in the _test_ directory. Test all behaviors under a few different scenarios (i.e. different sensor readings). Design the strategy pattern in a way that testing is easy and doesn't require a complex SetUp for testing.
 
-Implement the Braitenberg behaviors of Love, Explore, Coward, and Aggression using the Strategy Pattern (as described here and above in the Design Requirements section). Refer to _Head First Design Patterns_ (Chapter 1) to see how this pattern is used to create different flying and quacking behaviors for ducks. Similarly, the BVs move their wheels with different behavior depending on its type with respect to its sensors. There should be an abstract class from with all behaviors derive. BVs should _contain_ behaviors. Implement this pattern in such a way to make **testing easy**, as you will have to write the unit tests for this.
+Implement the Braitenberg behaviors of Love, Explore, Coward, and Aggression using the Strategy Pattern (as described here and above in the Design Requirements section). Refer to _Head First Design Patterns_ (Chapter 1) to see how this pattern is used to create different flying and quacking behaviors for ducks. Similarly, the BVs move their wheels with different behavior depending on its type with respect to its sensors. There should be an abstract class from which all behaviors derive. BVs should _contain_ behaviors. Implement this pattern in such a way to make **testing easy**, as you will have to write the unit tests for this.
 
-Add a new sensor to all Braitenberg Vehicles -- the _Braitenberg Vehicle Sensor_. This behaves exactly like the Food and Light sensor, except it senses other BVs. Any of the 4 behaviors can be associated with this sensor.
+Add a new sensor to all Braitenberg Vehicles -- the _Braitenberg Vehicle Sensor_. This behaves exactly like the Food and Light sensor, except it senses other BVs. Any of the 4 behaviors can be associated with this sensor. Add the option in the GUI to set the behavior of the Braitenberg Vehicle Sensor.
 
-Add the option in the GUI to set the behavior of the Braitenberg Vehicle Sensor.
+CLARIFICATION as announced: There should be an option in the GUI to select the robot behavior AND you should add "robot_behavior" to your JSON configuration so that you can test your code. 
 
 <hr>
 
@@ -184,38 +192,70 @@ Add the option in the GUI to set the behavior of the Braitenberg Vehicle Sensor.
 - A Predator class implemented with Aggressive behavior towards BVs, Cowaring behavior towards Lights, and no behavior towards Food or other Predator's.
 - Add the functionality for BVs to be consumed by the a predator.
 
-Use the Observer Pattern (as described above in the Design Requirements section) to implement the display of wheel velocities for a user-specified Braitenberg Vehicle. This is a real-time display of the contributing elements of the various sensors -- in other words, the light_wheel_velocity and food_wheel_velocity calculated in the BV::Update() function. The user should have a menu to select a BV to display -- only those BVs that are currently in existence should be displayed.
+Use the Observer Pattern (as described above in the Design Requirements section) to implement the display of wheel velocities for a user-specified Braitenberg Vehicle. This is a real-time display of the contributing elements of the various sensors -- in other words, the light_wheel_velocity and food_wheel_velocity AND bv_wheel_velocity calculated in the BV::Update() function. The user should have a menu to select a BV to display -- only those BVs that are currently in existence should be displayed (CLARIFICATION: which is how the code functioned when it was distributed, so you shouldn't have to change anything).
 
 Create a Predator class that is another type of ArenaEntity. It is very similar to a BV, except that it has fixed behaviors with respect to the various stimuli. It is Aggressive toward BVs, Cowering towards Lights, but no behavior towards Food or other Predators. It can pass through Food, Light, and BVs (because it consumes them), but should go into avoidance upon collision with a wall or another predator.
 
-Add to the simulation the ability for Predators to consume BVs. This means that if the Predator collides with a BV, that BV dies. Leave a "ghost" of the BV in the Arena -- make it very light in color. It should no longer move and everything can pass through it.
+Add to the simulation the ability for Predators to consume BVs. This means that if the Predator collides with a BV, that BV dies. Leave a "ghost" of the BV in the Arena -- make it very light in color. It should no longer move and everything can pass through it. CLARIFICATION: The BV should no longer influence any other entity.
+
+CLARIFICATION as announced on Canvas: Add "Predator" to your JSON -- otherwise, how would you test it?
 
 <hr>
 
-##### <a name="reqs3">Priority Level 3 : Starving BVs, Weighted Behaviors, and non-JSON Factory
+##### <a name="reqs3">Priority Level 3 : Starving BVs, Weighted Behaviors, and <del>non-JSON Factory</del>
 ### Due: April 15th at 11:55pm
 
 - Add the functionality for BVs to starve if they do not consume after 600 iterations.
 - Calculate the wheel velocity of a BV based on a dynamically weighted combination of all wheel velocity behaviors. Vary the weight depending on the current situation and sensor readings. For example, if both light and food sensors are active, rather than the equation (light\_wheel\_velocity + food\_wheel\_velocity)/2, if the robot is starving then use the food\_wheel\_velocity exclusively.
-- Another factory that instead of JSON for configuration, uses a text file.
+- <del>Another factory that instead of JSON for configuration, uses a text file.</del>
 
 Add to the simulation the feature that BVs will starve after not eating for 600 iterations. Once the BV eats something, its "timer" is reset for another 600 iterations. If the BV dies of starvation, as with it being consumed by a Predator, it should become a ghost.
 
+> CLARIFICATION: You can choose what to do with the food once it has been consumed. Note that if you delete it, eventually all the robots will starve. Alternatives include depleting each food item as it is consumed, deleting it, deleting it but regenerating food elsewhere, "ghosting" it, etc. REALLY -- it's your choice and we won't assess your choice. What we do suggest is that right after the robot eats, it ignores the food so it can be free to explore other areas of the Arena -- this would be a good application of the dynamic wheel velocities.
+
 The second feature enhancement in this grouping is your opportunity to experiment with the wheel velocity equation. Instead of always using the average of all wheel velocities generated by the stimuli, use a formula that changes dynamically depending on the current circumstance. It should depend on something that the BV can sense (e.g. it is close to death because it hasn't eaten in a long time). There is no right answer for the equation to calculate wheel velocities -- the idea is that you create an implementation that can be experimented with so that you (or some user) can derive an equation to achieve some goal (e.g. keep the BV alive for as long as possible).
+
+CLARIFICATION: You may both weight wheel velocities and dynamically change the behavior (e.g. be aggressive towards food when it is starving and use user-specified behavior when not). Presumably, you will create an equation that results in _rational_ behavior, like seeking food when it is starving, but this is not a requirement.
+
+ANOTHER CLARIFICATION: If you are unsatisfied with how your BV is behaving, you may modify the sensor reading equation or the default speed or the maximum speed or make other tweaks, provided the wheel velocity equation changes dynamically with respect to the current situation and the user-specified behaviors are used to "control" the robot in certain situations.
 
 <hr>
 
 ## <a name="deliver">Deliverables and Submission Process</a>
 
-For the final iteration submission, everything will be submitted via Github in the master branch of the project directory in your class repo. We will pull your repository at the specified due dates and grade according to the contents at that time. You should be developing in your_ devel_ branch, but at the time of final submission, merge _devel_ with _master_.
+For the final iteration submission, everything will be submitted via Github in the master branch of the project directory in your class repo **AND the design document will be submitted via Canvas**. We will pull your repository at the specified due dates and grade according to the contents at that time. You should be developing in your_ devel_ branch, but at the time of final submission, merge _devel_ with _master_.
 
 For the preliminary submissions, submit via Github on the _devel_ branch AND follow the directions at the top regarding a Canvas submission. We will look at both.
 
 **Late assignments will not be accepted**, but you will receive partial credit for partial completion of the requirements.
 
-Your software will be assessed through automatic testing and by the TA. The process for testing will be to start by typing  `make clean` then `make`. We **highly encourage** you to make a new clone of  your repo on a **cselabs machine** and also `make clean` and `make` to confirm all is working well be fore submitting your iteration 1 code.
+Your software will be assessed through automatic testing and by the TA. The process for testing will be to start by typing  `make clean` then `make`. We **highly encourage** you to make a new clone of your repo on a **cselabs machine** and also `make clean` and `make` to confirm all is working well before submitting your iteration 2 code.
 
 <hr>
+
+## <a name="assessment">Assessment Weighting</a>
+
+Preliminary 1 (18.5%)
+- 5% Strategy Pattern for implementing behaviors for wheel velocity calculations. Final Submission.
+- 10% Unit tests for strategy pattern. Final Submission.
+- 2.5% Draft of BraitenbergVehicle sensor implementation
+- 1% Style Compliance
+
+Preliminary 2 (15%)
+- 10% Observer Pattern for implementing the display of wheel velocities. Final Submission.
+- 4% Draft of Predator implementation. 
+- 1% Style Compliance
+
+Final Iteration 2 Submission (67.5%)
+- 13% Design Document (more heavily weighted on Observer Pattern description)
+- 10% Doxygen landing page
+- 5% Doxy documentation of classes
+- 5% Google Style Compliance
+- 2.5% BraitenbergVehicle sensor implementation including GUI option to choose behavior
+- 11% Predator implementation with "ghosting" BVs
+- 5% Starving BVs
+- 5% Dynamic Wheel Velocity calculation including GUI display of values
+- 10% Git usage including issues, branching, and commit messages
 
 ## <a name="resources">Resources</a>
 
