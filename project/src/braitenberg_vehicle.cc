@@ -29,7 +29,8 @@ BraitenbergVehicle::BraitenbergVehicle() :
   food_behavior_(kNone), bv_behavior_(kNone), wheel_light_(NULL),
   wheel_food_(NULL), wheel_bv_(NULL), closest_light_entity_(NULL),
   closest_food_entity_(NULL), closest_bv_entity_(NULL),
-  defaultSpeed_(5.0), time_(0), collided_(false), obs_(), dead_(false) {
+  defaultSpeed_(5.0), time_(0), stime_(0), collided_(false), obs_(),
+  dead_(false) {
   set_type(kBraitenberg);
   motion_behavior_ = new MotionBehaviorDifferential(this);
   light_sensors_.push_back(Pose());
@@ -54,8 +55,18 @@ void BraitenbergVehicle::TimestepUpdate(__unused unsigned int dt) {
   UpdateLightSensors();
 }
 
-void BraitenbergVehicle::HandleCollision(__unused EntityType ent_type,
+void BraitenbergVehicle::HandleCollision(EntityType ent_type,
                                          __unused ArenaEntity * object) {
+  if (ent_type == kFood) {
+    stime_ = 0;
+    // Add food inactivity
+    return;
+  } else if (ent_type == kBraitenberg) {
+    BraitenbergVehicle * bvref = dynamic_cast<BraitenbergVehicle *>(object);
+    if (bvref->isDead()) {
+      return;
+    }
+  }
   if (!dead_) {
     set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
     collided_ = true;
@@ -110,10 +121,17 @@ void BraitenbergVehicle::Update() {
     time_++;
   }
 
+  stime_++;
+
   if (time_ == 20) {
     set_heading(static_cast<int>((get_pose().theta + 225)) % 360);
     time_ = 0;
     collided_ = false;
+  }
+
+  if (stime_ == 600) {
+    dead_ = true;
+    Notify();
   }
 
   CalculateWheelVelocity();
@@ -247,6 +265,10 @@ void BraitenbergVehicle::Notify() {
 
 void BraitenbergVehicle::Die() {
   dead_ = true;
+}
+
+bool BraitenbergVehicle::isDead() {
+  return dead_;
 }
 
 void BraitenbergVehicle::LoadFromObject(json_object* entity_config) {

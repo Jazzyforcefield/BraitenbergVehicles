@@ -143,10 +143,10 @@ void Arena::UpdateEntitiesTimestep() {
         // this is pretty ugly, I should move it into HandleCollision
         if (ent1->get_type() == kBraitenberg &&
             ent2->get_type() == kFood) {
-          // static_cast<BraitenbergVehicle*>(ent1)->ConsumeFood();
+          static_cast<BraitenbergVehicle*>(ent1)->HandleCollision(ent2->get_type(), ent2);
         } else if (ent1->get_type() == kFood &&
                    ent2->get_type() == kBraitenberg) {
-          // static_cast<BraitenbergVehicle*>(ent2)->ConsumeFood();
+          static_cast<BraitenbergVehicle*>(ent2)->HandleCollision(ent1->get_type(), ent1);
         }
         // lights and braitenberg vehicles do not collide
         // nothing collides with food, but bv's call consume() if they do
@@ -155,8 +155,16 @@ void Arena::UpdateEntitiesTimestep() {
             (ent2->get_type() == kFood) || (ent1->get_type() == kFood)     ) {
           continue;
         }
-        AdjustEntityOverlap(ent1, ent2);
-        ent1->HandleCollision(ent2->get_type(), ent2);
+        if (ent2->get_type() == kBraitenberg && ent1->get_type() == kBraitenberg) {
+          BraitenbergVehicle * b1 = static_cast<BraitenbergVehicle*>(ent1);
+          BraitenbergVehicle * b2 = static_cast<BraitenbergVehicle*>(ent2);
+          if (b1->isDead() || b2->isDead()) {
+            ent1->HandleCollision(ent2->get_type(), ent2);
+          } else {
+          AdjustEntityOverlap(ent1, ent2);
+          ent1->HandleCollision(ent2->get_type(), ent2);
+          }
+        } 
       }
     }
 

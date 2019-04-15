@@ -232,6 +232,8 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
 
   void Die();
 
+  bool isDead();
+
   /**
    * @brief Number of BraitenbergVehicle objects exist
    */
@@ -253,6 +255,7 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
   const ArenaEntity* closest_bv_entity_;
   double defaultSpeed_;
   int time_;
+  int stime_;
   bool collided_;
   Observer * obs_;
   bool dead_;
