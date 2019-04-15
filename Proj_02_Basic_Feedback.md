@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 15, 18:25:44 PM.
+Run on April 15, 18:46:54 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -43,6 +43,8 @@ Commits found=70
 
 5eaf039e96955d29acfa3431a7c67bd20bf46780	refs/heads/dev/collision-avoidance
 
+7dee1001b657db7074d856955b9ac5793ca80464	refs/heads/dev/dynamic-behavior
+
 76e45f201d1dcecab99e4cd5a7e9b53cf9d3484c	refs/heads/dev/factory-implementation
 
 e2ddf3e7fdac5b010aba965a1cc6545ca91b4016	refs/heads/dev/food-timer
@@ -57,7 +59,7 @@ e2ddf3e7fdac5b010aba965a1cc6545ca91b4016	refs/heads/dev/food-timer
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-7dee1001b657db7074d856955b9ac5793ca80464	refs/heads/devel
+eaa3675f8addf9004982ea93f160edd02a4bfd20	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -65,7 +67,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-3b1c5cbaba5e29e79a2dba52c9c2f7fb632a4bee	refs/heads/master
+a7d1df0b4cec940aac2ded450eea431889712f25	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -84,13 +86,11 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 4)
++ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
 
 [OPEN issue #21] :  Introduce dynamic bv wheel behavior
 
-[OPEN issue #20] :  Implement a Food timer
-
-[OPEN issue #18] :  Complete Predator-BV consumption interaction
+[OPEN issue #18] :  Complete Predator-BV consumption interaction 1
 
 [OPEN issue #17] :  BV Behavior is reversed [bug] 2
 
@@ -98,7 +98,9 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 17)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 18)
+
+[CLOSED issue #20] :  Implement a Food timer
 
 [CLOSED issue #19] :  Starvation of bv
 
