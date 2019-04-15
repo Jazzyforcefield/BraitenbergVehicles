@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 08, 23:28:21 PM.
+Run on April 15, 17:52:27 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -55,7 +55,7 @@ Commits found=70
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-75a6eeac6213fa1d1ad5bfa364dc253ef1898c4e	refs/heads/devel
+e2ddf3e7fdac5b010aba965a1cc6545ca91b4016	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -63,13 +63,15 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-7e20e3b946b254c0e1facaa0c2087d8daf94e412	refs/heads/master
+04b91138858e73c5ba703b0a61f76028eff8c085	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
 a6f4f90ca13c9ed2c24846136b6d4a93bfca61d9	refs/heads/release/iteration1
 
 d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
+
+75a6eeac6213fa1d1ad5bfa364dc253ef1898c4e	refs/heads/release/iteration2-prelim2
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -82,15 +84,17 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Run ghi for total number of open issues in Github repo (Found: 2)
 
+[OPEN issue #18] :  Complete Predator-BV consumption interaction
+
 [OPEN issue #17] :  BV Behavior is reversed [bug] 2
 
-[OPEN issue #16] :  Implement Predator Class
 
 
 
 
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 16)
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 15)
+[CLOSED issue #16] :  Implement Predator Class 1
 
 [CLOSED issue #15] :  Implement Observer Pattern
 
@@ -135,7 +139,74 @@ Link to full feedback: [Proj_02_Full_Feedback.md](Proj_02_Full_Feedback.md)
 
 #### Style Tests
 
-+ Pass: Ensuring code follows style guide.
++ Fail: Ensuring code follows style guide.
+
+<pre>cd src; make check-style
+make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
+==== Checking style is correct ====
+/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
+arena.cc:146:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+arena.cc:149:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+arena.cc:158:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+arena.cc:167:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+Done processing AggressiveBehavior.cc
+Done processing arena.cc
+Done processing braitenberg_vehicle.cc
+Done processing BraitenbergVehicleFactory.cc
+Done processing controller.cc
+Done processing CowardBehavior.cc
+Done processing ExploreBehavior.cc
+Done processing Factory.cc
+Done processing food.cc
+Done processing FoodFactory.cc
+Done processing graphics_arena_viewer.cc
+Done processing light.cc
+Done processing LightFactory.cc
+Done processing LoveBehavior.cc
+Done processing main.cc
+Done processing motion_behavior.cc
+Done processing motion_behavior_differential.cc
+Done processing Predator.cc
+Done processing rgb_color.cc
+Done processing AggressiveBehavior.h
+Done processing arena_entity.h
+Done processing arena.h
+Done processing arena_immobile_entity.h
+Done processing arena_mobile_entity.h
+Done processing arena_viewer.h
+Done processing behavior_enum.h
+Done processing BraitenbergVehicleFactory.h
+Done processing braitenberg_vehicle.h
+Done processing common.h
+Done processing controller.h
+Done processing CowardBehavior.h
+Done processing entity_type.h
+Done processing ExploreBehavior.h
+Done processing Factory.h
+Done processing FoodFactory.h
+Done processing food.h
+Done processing graphics_arena_viewer.h
+Done processing LightFactory.h
+Done processing light.h
+Done processing LoveBehavior.h
+Done processing mainpage.h
+Done processing motion_behavior_differential.h
+Done processing motion_behavior.h
+Done processing Observer.h
+Done processing params.h
+Done processing pose.h
+Done processing Predator.h
+Done processing rgb_color.h
+Done processing Subject.h
+Done processing WheelBehavior.h
+Done processing wheel_velocity.h
+Total errors found: 4
+Makefile:162: recipe for target 'check-style' failed
+make[1]: *** [check-style] Error 1
+make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
+Makefile:8: recipe for target 'check-style' failed
+make: *** [check-style] Error 2
+</pre>
 
 
 
