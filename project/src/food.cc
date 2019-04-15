@@ -20,7 +20,7 @@ int Food::count = 0;
 /*******************************************************************************
  * Constructors/Destructor
  ******************************************************************************/
-Food::Food() : ArenaImmobileEntity() {
+Food::Food() : ArenaImmobileEntity(), time_(0), inactive_(false) {
   set_type(kFood);
   set_color(FOOD_COLOR);
   set_pose(FOOD_INIT_POS);
