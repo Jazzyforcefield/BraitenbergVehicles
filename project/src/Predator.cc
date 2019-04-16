@@ -26,12 +26,12 @@ int Predator::count = 0;
  ******************************************************************************/
 
 Predator::Predator() :
-  light_sensors_(), wheel_velocity_(), wv_(), light_behavior_(kCoward),
-  food_behavior_(kNone), bv_behavior_(kAggressive), wheel_light_(NULL),
+  light_sensors_(), wheel_velocity_(), wv_(), light_behavior_(kNone),
+  food_behavior_(kNone), bv_behavior_(kNone), wheel_light_(NULL),
   wheel_food_(NULL), wheel_bv_(NULL), closest_light_entity_(NULL),
   closest_food_entity_(NULL), closest_bv_entity_(NULL),
   defaultSpeed_(5.0), time_(0), collided_(false), obs_() {
-  set_type(kBraitenberg);
+  set_type(kPredator);
   motion_behavior_ = new MotionBehaviorDifferential(this);
   light_sensors_.push_back(Pose());
   light_sensors_.push_back(Pose());
@@ -55,10 +55,10 @@ void Predator::TimestepUpdate(__unused unsigned int dt) {
   UpdateLightSensors();
 }
 
-void Predator::HandleCollision(__unused EntityType ent_type,
-                                         __unused ArenaEntity * object) {
-  if (object->get_type() == kBraitenberg) {
-    dynamic_cast<BraitenbergVehicle *>(object)->Die();
+void Predator::HandleCollision(EntityType ent_type,
+                                         ArenaEntity * object) {
+  if (ent_type == kBraitenberg) {
+    static_cast<BraitenbergVehicle *>(object)->Die();
   } else {
     set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
     collided_ = true;
@@ -98,10 +98,6 @@ void Predator::SenseEntity(const ArenaEntity& entity) {
 void Predator::Update() {
   if (light_behavior_ != kNone && food_behavior_ == kNone) {
     set_color({255, 204, 51});
-  } else if (light_behavior_ == kNone && food_behavior_ != kNone) {
-    set_color({0, 0, 255});
-  } else {
-    set_color({122, 0, 25});
   }
 
   if (collided_) {
@@ -187,7 +183,7 @@ void Predator::CalculateWheelVelocity() {
 }
 
 std::string Predator::get_name() const {
-  return "Braitenberg " + std::to_string(get_id());
+  return "Predator " + std::to_string(get_id());
 }
 
 std::vector<Pose> Predator::get_light_sensors_const() const {
@@ -256,9 +252,9 @@ void Predator::LoadFromObject(json_object* entity_config) {
         (*entity_config)["food_behavior"].get<std::string>());
       set_food_behavior(food_behavior_);
   }
-  if ((*entity_config).find("braitenberg_behavior") != (*entity_config).end()) {
+  if ((*entity_config).find("robot_behavior") != (*entity_config).end()) {
       bv_behavior_ = get_behavior_type(
-        (*entity_config)["braitenberg_behavior"].get<std::string>());
+        (*entity_config)["robot_behavior"].get<std::string>());
       set_bv_behavior(bv_behavior_);
   }
 

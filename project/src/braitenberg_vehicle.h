@@ -222,16 +222,36 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
    */
   WheelVelocity get_wheel_velocity() { return wheel_velocity_; }
 
+  /**
+   * @brief Calculates the constituent wheel velocities for the BV
+   */
   void CalculateWheelVelocity();
 
+  /**
+   * @brief Subscribes to observer
+   * @param[in] Passes in an observer to subscribe to
+   */
   void Subscribe(Observer * observer) override;
 
+  /**
+   * @brief Unsubscribes to observer
+   */
   void Unsubscribe() override;
 
+  /**
+   * @brief Notifies observer of changes
+   */
   void Notify() override;
 
+  /**
+   * @brief Kills the BV (turns into ghost)
+   */
   void Die();
 
+  /**
+   * @brief Checks if BV is a ghost
+   * @param[out] Returns a boolean
+   */
   bool isDead();
 
   /**

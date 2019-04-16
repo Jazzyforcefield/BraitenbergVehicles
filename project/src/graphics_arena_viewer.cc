@@ -378,23 +378,22 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
       for (unsigned int f = 0; f < robotWidgets.size(); f++) {
         robotWidgets[f]->setVisible(entity->get_type() == kBraitenberg);
       }
-
-      if (entity->get_type() == kBraitenberg) {
-        for (unsigned int i = 0; i < this->arena_->get_entities().size(); i++) {
-          ArenaEntity * ent = this->arena_->get_entities()[i];
-          if (ent->get_type() == kBraitenberg) {
-            dynamic_cast<BraitenbergVehicle*>(ent)->Unsubscribe();
+        if (entity->get_type() == kBraitenberg) {
+          for (unsigned int i = 0; i < this->arena_->get_entities().size(); i++) {
+            ArenaEntity * ent = this->arena_->get_entities()[i];
+            if (ent->get_type() == kBraitenberg) {
+              dynamic_cast<BraitenbergVehicle*>(ent)->Unsubscribe();
+            }
           }
-        }
 
-        dynamic_cast<BraitenbergVehicle*>(entity)->Subscribe(this);
-        lightBehaviorSelect->setSelectedIndex(
-          static_cast<BraitenbergVehicle*>(entity)->get_light_behavior());
-        foodBehaviorSelect->setSelectedIndex(
-          static_cast<BraitenbergVehicle*>(entity)->get_food_behavior());
-        bvBehaviorSelect->setSelectedIndex(
-          static_cast<BraitenbergVehicle*>(entity)->get_bv_behavior());
-      }
+          dynamic_cast<BraitenbergVehicle*>(entity)->Subscribe(this);
+          lightBehaviorSelect->setSelectedIndex(
+            static_cast<BraitenbergVehicle*>(entity)->get_light_behavior());
+          foodBehaviorSelect->setSelectedIndex(
+            static_cast<BraitenbergVehicle*>(entity)->get_food_behavior());
+          bvBehaviorSelect->setSelectedIndex(
+            static_cast<BraitenbergVehicle*>(entity)->get_bv_behavior());
+    }
 
       screen()->performLayout();
     });

@@ -11,6 +11,13 @@ NAMESPACE_BEGIN(csci3081);
 class AggressiveBehavior : public WheelBehavior {
  public:
   ~AggressiveBehavior() {}
+
+  /**
+   *  @brief Calcualtes wheel velocity for given parameters
+   *  @param[in] Sensor reading right
+   *  @param[in] Sensor reading left
+   *  @param[in] maxSpeed
+   */
   WheelVelocity WheelUpdate(double lSens, double rSens, double sp) override;
 };
 

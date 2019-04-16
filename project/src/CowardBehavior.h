@@ -10,6 +10,13 @@ NAMESPACE_BEGIN(csci3081);
 class CowardBehavior : public WheelBehavior {
  public:
   ~CowardBehavior() {}
+
+  /**
+   *  @brief Calcualtes wheel velocity for given parameters
+   *  @param[in] Sensor reading right
+   *  @param[in] Sensor reading left
+   *  @param[in] maxSpeed
+   */
   WheelVelocity WheelUpdate(double lSens, double rSens, double sp) override;
 };
 

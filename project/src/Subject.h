@@ -11,17 +11,18 @@ class Subject {
  public:
   virtual ~Subject() {}
   /**
-   *  @brief Updates the current information in the observer class
+   *  @brief Subscribes to an observer
+   *  @param[in] Takes in the observer to subscribe to
    */
   virtual void Subscribe(__unused Observer * observer) {}
 
   /**
-   *  @brief Updates the current information in the observer class
+   *  @brief Unsubscribes to an observer
    */
   virtual void Unsubscribe() {}
 
   /**
-   *  @brief Updates the current information in the observer class
+   *  @brief Notifies observer of information update
    */
   virtual void Notify() {}
 };

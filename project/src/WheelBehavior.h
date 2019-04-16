@@ -10,6 +10,13 @@ NAMESPACE_BEGIN(csci3081);
 class WheelBehavior {
  public:
   virtual ~WheelBehavior() {}
+
+  /**
+   *  @brief Calcualtes wheel velocity for given parameters
+   *  @param[in] Sensor reading right
+   *  @param[in] Sensor reading left
+   *  @param[in] maxSpeed
+   */
   virtual WheelVelocity WheelUpdate(double h, double s, double sp) = 0;
 };
 

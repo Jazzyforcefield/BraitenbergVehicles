@@ -79,12 +79,12 @@ class Food : public ArenaImmobileEntity {
   /**
    * @brief Checks if active
    */
-  bool active() { return !inactive_; };
+  bool active() { return !inactive_; }
 
   /**
    * @brief Sets activity of food
    */
-  void set_inactive() { inactive_ = true; };
+  void set_inactive() { inactive_ = true; }
 
   static int count;
 
