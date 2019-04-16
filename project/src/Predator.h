@@ -37,12 +37,10 @@ NAMESPACE_BEGIN(csci3081);
  * Class Definitions
  ******************************************************************************/
 /** 
- * @brief Entity class to represent a Braitenberg Vehicle
+ * @brief Entity class to represent a Predator
  *
- * A braitenberg vehicle is a simple machine that is used to show how simple
- * concepts (in this case wiring) can give way to complex looking behavior. In
- * this simulation, Braitenberg vehicles contain sensors, which can be hooked
- * up in four different ways, and thus they can exhibit four different behaviors
+ * A predator is similar to a BV, except it hunts them down and
+ * turns them into ghosts.
  */
 
 class Predator : public ArenaMobileEntity, public Subject {

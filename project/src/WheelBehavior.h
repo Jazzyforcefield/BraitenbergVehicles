@@ -7,6 +7,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+  /**
+   *  @brief Abstract base class for wheel behaviors
+   */
 class WheelBehavior {
  public:
   virtual ~WheelBehavior() {}

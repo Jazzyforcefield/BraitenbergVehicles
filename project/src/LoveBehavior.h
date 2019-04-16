@@ -7,6 +7,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+  /**
+   *  @brief Love behavior used to calculate wheel velocity in vehicles
+   */
 class LoveBehavior : public WheelBehavior {
  public:
   ~LoveBehavior() {}

@@ -7,6 +7,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+  /**
+   *  @brief Coward behavior used to calculate wheel velocity in vehicles
+   */
 class CowardBehavior : public WheelBehavior {
  public:
   ~CowardBehavior() {}

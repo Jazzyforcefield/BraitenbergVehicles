@@ -8,6 +8,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+  /**
+   *  @brief Aggressive behavior used to calculate wheel velocity in vehicles
+   */
 class AggressiveBehavior : public WheelBehavior {
  public:
   ~AggressiveBehavior() {}

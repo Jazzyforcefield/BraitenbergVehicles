@@ -7,6 +7,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+  /**
+   *  @brief Abstract base subject class
+   */
 class Subject {
  public:
   virtual ~Subject() {}

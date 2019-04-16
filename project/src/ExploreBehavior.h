@@ -7,6 +7,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+  /**
+   *  @brief Explore behavior used to calculate wheel velocity in vehicles
+   */
 class ExploreBehavior : public WheelBehavior {
  public:
   ~ExploreBehavior() {}

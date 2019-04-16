@@ -8,6 +8,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+  /**
+   *  @brief Abstract base observer class
+   */
 class Observer {
  public:
   virtual ~Observer() {}
