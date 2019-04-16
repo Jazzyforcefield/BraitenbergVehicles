@@ -93,6 +93,12 @@ void Predator::SenseEntity(const ArenaEntity& entity) {
   if (closest_distance > 100.0) {
     *closest_entity_ = NULL;
   }
+  if (entity.get_type() == kBraitenberg) {
+    if (const_cast<BraitenbergVehicle *>(
+      static_cast<const BraitenbergVehicle *>(&entity))->isDead()) {
+      *closest_entity_ = NULL;
+    }
+  }
 }
 
 void Predator::Update() {
