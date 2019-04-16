@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 15, 20:58:03 PM.
+Run on April 15, 21:01:29 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -59,7 +59,7 @@ e2ddf3e7fdac5b010aba965a1cc6545ca91b4016	refs/heads/dev/food-timer
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-59b32c46090c6e2b88b2d00051fc83d5318273e4	refs/heads/devel
+b5e763dba6d39bfabfeee338b6a7d0da5ce81f5d	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -67,7 +67,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-31a8c69ebd345cd576b3b2a7cb69ab6973d7f1a1	refs/heads/master
+556ade1738acc134b160110b8c8ca87a659a7b85	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -149,74 +149,7 @@ Link to full feedback: [Proj_02_Full_Feedback.md](Proj_02_Full_Feedback.md)
 
 #### Style Tests
 
-+ Fail: Ensuring code follows style guide.
-
-<pre>cd src; make check-style
-make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
-==== Checking style is correct ====
-/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-arena.cc:179:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-arena.cc:184:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-arena.cc:186:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
-graphics_arena_viewer.cc:382:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-Done processing AggressiveBehavior.cc
-Done processing arena.cc
-Done processing braitenberg_vehicle.cc
-Done processing BraitenbergVehicleFactory.cc
-Done processing controller.cc
-Done processing CowardBehavior.cc
-Done processing ExploreBehavior.cc
-Done processing Factory.cc
-Done processing food.cc
-Done processing FoodFactory.cc
-Done processing graphics_arena_viewer.cc
-Done processing light.cc
-Done processing LightFactory.cc
-Done processing LoveBehavior.cc
-Done processing main.cc
-Done processing motion_behavior.cc
-Done processing motion_behavior_differential.cc
-Done processing Predator.cc
-Done processing rgb_color.cc
-Done processing AggressiveBehavior.h
-Done processing arena_entity.h
-Done processing arena.h
-Done processing arena_immobile_entity.h
-Done processing arena_mobile_entity.h
-Done processing arena_viewer.h
-Done processing behavior_enum.h
-Done processing BraitenbergVehicleFactory.h
-Done processing braitenberg_vehicle.h
-Done processing common.h
-Done processing controller.h
-Done processing CowardBehavior.h
-Done processing entity_type.h
-Done processing ExploreBehavior.h
-Done processing Factory.h
-Done processing FoodFactory.h
-Done processing food.h
-Done processing graphics_arena_viewer.h
-Done processing LightFactory.h
-Done processing light.h
-Done processing LoveBehavior.h
-Done processing mainpage.h
-Done processing motion_behavior_differential.h
-Done processing motion_behavior.h
-Done processing Observer.h
-Done processing params.h
-Done processing pose.h
-Done processing Predator.h
-Done processing rgb_color.h
-Done processing Subject.h
-Done processing WheelBehavior.h
-Done processing wheel_velocity.h
-Total errors found: 4
-Makefile:162: recipe for target 'check-style' failed
-make[1]: *** [check-style] Error 1
-make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
-Makefile:8: recipe for target 'check-style' failed
-make: *** [check-style] Error 2
-</pre>
++ Pass: Ensuring code follows style guide.
 
 
 
