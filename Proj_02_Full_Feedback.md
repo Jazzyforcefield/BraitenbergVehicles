@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 15, 20:51:35 PM.
+Run on April 16, 00:38:36 AM.
 
 + Pass: Checkout devel branch.
 
@@ -75,7 +75,7 @@ e2ddf3e7fdac5b010aba965a1cc6545ca91b4016	refs/heads/dev/food-timer
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-9afcf623bc286f4b32068067097fba477d72c240	refs/heads/devel
+4d382d61788a3b8f737c064cbe283eb603e69eb9	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -83,7 +83,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-f8776fdd022dec4eb0aebf7019b17f6343e5d5dd	refs/heads/master
+69401ecbe5f507df7d0678a11e4ee304ff35ee12	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -104,19 +104,21 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Run ghi for total number of open issues in Github repo (Found: 1)
 
-[OPEN issue #18] :  Complete Predator-BV consumption interaction 1
+[OPEN issue #22] :  Notes on Simulation [enhancement] [question]
 
 
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 20)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 21)
 
 [CLOSED issue #21] :  Introduce dynamic bv wheel behavior
 
 [CLOSED issue #20] :  Implement a Food timer 1
 
 [CLOSED issue #19] :  Starvation of bv
+
+[CLOSED issue #18] :  Complete Predator-BV consumption interaction 1
 
 [CLOSED issue #17] :  BV Behavior is reversed [bug] 3
 
@@ -159,76 +161,7 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 #### Style Tests
 
-+ Fail: Ensuring code follows style guide.
-
-<pre>cd src; make check-style
-make[1]: Entering directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src'
-==== Checking style is correct ====
-/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-arena.cc:146:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-arena.cc:149:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-arena.cc:158:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-arena.cc:167:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-food.h:82:  You don't need a ; after a }  [readability/braces] [4]
-food.h:87:  You don't need a ; after a }  [readability/braces] [4]
-Done processing AggressiveBehavior.cc
-Done processing arena.cc
-Done processing braitenberg_vehicle.cc
-Done processing BraitenbergVehicleFactory.cc
-Done processing controller.cc
-Done processing CowardBehavior.cc
-Done processing ExploreBehavior.cc
-Done processing Factory.cc
-Done processing food.cc
-Done processing FoodFactory.cc
-Done processing graphics_arena_viewer.cc
-Done processing light.cc
-Done processing LightFactory.cc
-Done processing LoveBehavior.cc
-Done processing main.cc
-Done processing motion_behavior.cc
-Done processing motion_behavior_differential.cc
-Done processing Predator.cc
-Done processing rgb_color.cc
-Done processing AggressiveBehavior.h
-Done processing arena_entity.h
-Done processing arena.h
-Done processing arena_immobile_entity.h
-Done processing arena_mobile_entity.h
-Done processing arena_viewer.h
-Done processing behavior_enum.h
-Done processing BraitenbergVehicleFactory.h
-Done processing braitenberg_vehicle.h
-Done processing common.h
-Done processing controller.h
-Done processing CowardBehavior.h
-Done processing entity_type.h
-Done processing ExploreBehavior.h
-Done processing Factory.h
-Done processing FoodFactory.h
-Done processing food.h
-Done processing graphics_arena_viewer.h
-Done processing LightFactory.h
-Done processing light.h
-Done processing LoveBehavior.h
-Done processing mainpage.h
-Done processing motion_behavior_differential.h
-Done processing motion_behavior.h
-Done processing Observer.h
-Done processing params.h
-Done processing pose.h
-Done processing Predator.h
-Done processing rgb_color.h
-Done processing Subject.h
-Done processing WheelBehavior.h
-Done processing wheel_velocity.h
-Total errors found: 6
-Makefile:162: recipe for target 'check-style' failed
-make[1]: *** [check-style] Error 1
-make[1]: Leaving directory '/classes/grades/Spring-2019/csci3081/dtorban/csci3081-grading-env/grading-scripts/grading/Proj_02_Full_Feedback/repo-ungxx028/project/src'
-Makefile:8: recipe for target 'check-style' failed
-make: *** [check-style] Error 2
-</pre>
++ Pass: Ensuring code follows style guide.
 
 
 
