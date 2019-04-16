@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 15, 18:46:54 PM.
+Run on April 15, 19:49:45 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -59,7 +59,7 @@ e2ddf3e7fdac5b010aba965a1cc6545ca91b4016	refs/heads/dev/food-timer
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-eaa3675f8addf9004982ea93f160edd02a4bfd20	refs/heads/devel
+9afcf623bc286f4b32068067097fba477d72c240	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -67,7 +67,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-a7d1df0b4cec940aac2ded450eea431889712f25	refs/heads/master
+c972d26f757c1292dee95eb90ef75102e7508bf7	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -86,9 +86,7 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 3)
-
-[OPEN issue #21] :  Introduce dynamic bv wheel behavior
++ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
 
 [OPEN issue #18] :  Complete Predator-BV consumption interaction 1
 
@@ -98,9 +96,11 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 18)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 19)
 
-[CLOSED issue #20] :  Implement a Food timer
+[CLOSED issue #21] :  Introduce dynamic bv wheel behavior
+
+[CLOSED issue #20] :  Implement a Food timer 1
 
 [CLOSED issue #19] :  Starvation of bv
 
