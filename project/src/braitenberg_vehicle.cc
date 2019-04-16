@@ -104,6 +104,11 @@ void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
   if (closest_distance > 100.0) {
     *closest_entity_ = NULL;
   }
+  if (entity.get_type() == kBraitenberg) {
+    if (closest_distance < 1) {
+      *closest_entity_ = NULL;
+    }
+  }
 }
 
 void BraitenbergVehicle::Update() {
