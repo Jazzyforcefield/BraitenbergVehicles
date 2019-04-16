@@ -1,6 +1,6 @@
 ### Feedback for Proj 02
 
-Run on April 15, 19:49:45 PM.
+Run on April 15, 20:58:03 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -59,7 +59,7 @@ e2ddf3e7fdac5b010aba965a1cc6545ca91b4016	refs/heads/dev/food-timer
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-9afcf623bc286f4b32068067097fba477d72c240	refs/heads/devel
+59b32c46090c6e2b88b2d00051fc83d5318273e4	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -67,7 +67,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-c972d26f757c1292dee95eb90ef75102e7508bf7	refs/heads/master
+31a8c69ebd345cd576b3b2a7cb69ab6973d7f1a1	refs/heads/master
 
 b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/pre-release/iteration1
 
@@ -86,23 +86,23 @@ d9b98d1b0d837037d7fc3e5afcc78c656b2be0ca	refs/heads/release/iteration2-prelim1
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
++ Pass: Run ghi for total number of open issues in Github repo (Found: 1)
 
 [OPEN issue #18] :  Complete Predator-BV consumption interaction 1
 
-[OPEN issue #17] :  BV Behavior is reversed [bug] 2
 
 
 
 
-
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 19)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 20)
 
 [CLOSED issue #21] :  Introduce dynamic bv wheel behavior
 
 [CLOSED issue #20] :  Implement a Food timer 1
 
 [CLOSED issue #19] :  Starvation of bv
+
+[CLOSED issue #17] :  BV Behavior is reversed [bug] 3
 
 [CLOSED issue #16] :  Implement Predator Class 1
 
@@ -155,12 +155,10 @@ Link to full feedback: [Proj_02_Full_Feedback.md](Proj_02_Full_Feedback.md)
 make[1]: Entering directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
 ==== Checking style is correct ====
 /class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/cpplint/cpplint.py --root=.. *.cc *.h
-arena.cc:146:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-arena.cc:149:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-arena.cc:158:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
-arena.cc:167:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
-food.h:82:  You don't need a ; after a }  [readability/braces] [4]
-food.h:87:  You don't need a ; after a }  [readability/braces] [4]
+arena.cc:179:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+arena.cc:184:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+arena.cc:186:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+graphics_arena_viewer.cc:382:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
 Done processing AggressiveBehavior.cc
 Done processing arena.cc
 Done processing braitenberg_vehicle.cc
@@ -212,7 +210,7 @@ Done processing rgb_color.h
 Done processing Subject.h
 Done processing WheelBehavior.h
 Done processing wheel_velocity.h
-Total errors found: 6
+Total errors found: 4
 Makefile:162: recipe for target 'check-style' failed
 make[1]: *** [check-style] Error 1
 make[1]: Leaving directory '/class/grades/Spring-2019/csci3081/student-repos/Proj_02_Basic_Feedback/repo-ungxx028/project/src'
