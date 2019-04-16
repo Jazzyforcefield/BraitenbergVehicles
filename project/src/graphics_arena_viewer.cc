@@ -62,9 +62,9 @@ void GraphicsArenaViewer::InitNanoGUI() {
     panel->setLayout(new nanogui::BoxLayout(
       nanogui::Orientation::Vertical, nanogui::Alignment::Middle, 0, 0));
     // *************** Add GUI ************************//
-
+    // 1 element
     AddEntityPanel(window);
-
+    // 12 elements
     panel = new nanogui::Widget(window);
     panel->setLayout(new nanogui::BoxLayout(
       nanogui::Orientation::Vertical, nanogui::Alignment::Middle, 0, 0));
@@ -208,9 +208,9 @@ void GraphicsArenaViewer::DrawUsingNanoVG(NVGcontext *ctx) {
   nvgFontFace(ctx, "sans-bold");
   nvgTextAlign(ctx, NVG_ALIGN_CENTER | NVG_ALIGN_MIDDLE);
   /*if (game_won_) {
-    nvgTextBox(ctx, xOffset_ + 300, 300, 500, "WINNER", NULL);
+    nvgFloatBox(ctx, xOffset_ + 300, 300, 500, "WINNER", NULL);
   } else if (game_lost_) {
-    nvgTextBox(ctx, xOffset_ + 300, 300, 500, "GAME OVER", NULL);
+    nvgFloatBox(ctx, xOffset_ + 300, 300, 500, "GAME OVER", NULL);
   }*/
   DrawArena(ctx);
   std::vector<ArenaEntity *> entities = arena_->get_entities();
@@ -295,6 +295,61 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
   space->setVisible(false);
   sliderPanel->setVisible(false);
 
+  robotWidgets.push_back(new nanogui::Label(
+    panel, "BV Behavior", "sans-bold"));
+  robotPanel = new nanogui::Widget(panel);
+  robotWidgets.push_back(robotPanel);
+  robotPanel->setLayout(new nanogui::BoxLayout(
+    nanogui::Orientation::Vertical, nanogui::Alignment::Minimum, 0, 0));
+  nanogui::ComboBox* bvBehaviorSelect = new nanogui::ComboBox(
+    robotPanel, behaviorNames);
+  bvBehaviorSelect->setFixedWidth(COMBO_BOX_WIDTH -10);
+  space = new nanogui::Widget(robotPanel);
+  sliderPanel = new nanogui::Widget(robotPanel);
+  space->setFixedHeight(10);
+  sliderPanel->setLayout(
+    new nanogui::BoxLayout(
+      nanogui::Orientation::Horizontal, nanogui::Alignment::Middle, 0, 0));
+  lbl = new nanogui::Label(sliderPanel, "Intensity", "sans-bold");
+  lbl->setFixedWidth(50);
+  slider = new nanogui::Slider(sliderPanel);
+  slider->setFixedWidth(90);
+  space->setVisible(false);
+  sliderPanel->setVisible(false);
+
+
+
+  robotWidgets.push_back(new nanogui::Label(
+    panel, "Wheel Velocities", "sans-bold"));
+  robotPanel = new nanogui::Widget(panel);
+  robotWidgets.push_back(robotPanel);
+  robotPanel->setLayout(new nanogui::GridLayout());
+  nanogui::FloatBox<float>* vel =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
+  vel->setFixedWidth(65);
+  nanogui::FloatBox<float>* vel2 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
+  vel2->setFixedWidth(65);
+  robotWidgets.push_back(vel);
+  robotWidgets.push_back(vel2);
+  nanogui::FloatBox<float>* vel3 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
+  vel3->setFixedWidth(65);
+  nanogui::FloatBox<float>* vel4 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
+  vel4->setFixedWidth(65);
+  robotWidgets.push_back(vel3);
+  robotWidgets.push_back(vel4);
+  nanogui::FloatBox<float>* vel5 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
+  vel5->setFixedWidth(65);
+  nanogui::FloatBox<float>* vel6 =
+    new nanogui::FloatBox<float>(robotPanel, 1.337);
+  vel6->setFixedWidth(65);
+  robotWidgets.push_back(vel5);
+  robotWidgets.push_back(vel6);
+
+
   for (unsigned int f = 0; f < robotWidgets.size(); f++) {
     robotWidgets[f]->setVisible(defaultEntity->get_type() == kBraitenberg);
   }
@@ -304,11 +359,13 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
       static_cast<BraitenbergVehicle*>(defaultEntity)->get_light_behavior());
     foodBehaviorSelect->setSelectedIndex(
       static_cast<BraitenbergVehicle*>(defaultEntity)->get_food_behavior());
+    bvBehaviorSelect->setSelectedIndex(
+      static_cast<BraitenbergVehicle*>(defaultEntity)->get_bv_behavior());
   }
 
   entitySelect->setCallback(
     [this, isMobile, robotWidgets, lightBehaviorSelect,
-    foodBehaviorSelect](int index) {
+    foodBehaviorSelect, bvBehaviorSelect](int index) {
       ArenaEntity* entity = this->arena_->get_entities()[index];
       if (entity->is_mobile()) {
         ArenaMobileEntity* mobileEntity =
@@ -321,13 +378,23 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
       for (unsigned int f = 0; f < robotWidgets.size(); f++) {
         robotWidgets[f]->setVisible(entity->get_type() == kBraitenberg);
       }
+        if (entity->get_type() == kBraitenberg) {
+          for (unsigned int i = 0;
+                 i < this->arena_->get_entities().size(); i++) {
+            ArenaEntity * ent = this->arena_->get_entities()[i];
+            if (ent->get_type() == kBraitenberg) {
+              dynamic_cast<BraitenbergVehicle*>(ent)->Unsubscribe();
+            }
+          }
 
-      if (entity->get_type() == kBraitenberg) {
-        lightBehaviorSelect->setSelectedIndex(
-          static_cast<BraitenbergVehicle*>(entity)->get_light_behavior());
-        foodBehaviorSelect->setSelectedIndex(
-          static_cast<BraitenbergVehicle*>(entity)->get_food_behavior());
-      }
+          dynamic_cast<BraitenbergVehicle*>(entity)->Subscribe(this);
+          lightBehaviorSelect->setSelectedIndex(
+            static_cast<BraitenbergVehicle*>(entity)->get_light_behavior());
+          foodBehaviorSelect->setSelectedIndex(
+            static_cast<BraitenbergVehicle*>(entity)->get_food_behavior());
+          bvBehaviorSelect->setSelectedIndex(
+            static_cast<BraitenbergVehicle*>(entity)->get_bv_behavior());
+    }
 
       screen()->performLayout();
     });
@@ -352,6 +419,16 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
       }
     });
 
+  bvBehaviorSelect->setCallback(
+    [this, entitySelect](int index) {
+      ArenaEntity* entity =
+      this->arena_->get_entities()[entitySelect->selectedIndex()];
+      if (entity->get_type() == kBraitenberg) {
+        static_cast<BraitenbergVehicle*>(entity)->set_bv_behavior(
+          static_cast<Behavior>(index));
+      }
+    });
+
   isMobile->setCallback(
     [this, entitySelect](bool moving) {
       ArenaEntity* entity =
@@ -359,6 +436,24 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
       ArenaMobileEntity* mobileEntity = static_cast<ArenaMobileEntity*>(entity);
       mobileEntity->set_is_moving(moving);
     });
+}
+
+void GraphicsArenaViewer::Update(std::vector<WheelVelocity> state) {
+  std::vector<nanogui::Widget *> children = (*window).children();
+  std::vector<nanogui::Widget *> grandchildren = children[11]->children();
+
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[0])->setValue(state[0].left);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[1])->setValue(state[0].right);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[2])->setValue(state[1].left);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[3])->setValue(state[1].right);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[4])->setValue(state[2].left);
+  dynamic_cast<nanogui::FloatBox<float>*>
+    (grandchildren[5])->setValue(state[2].right);
 }
 
 bool GraphicsArenaViewer::RunViewer() {

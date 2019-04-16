@@ -4,8 +4,8 @@
  * @copyright 2017 3081 Staff, All rights reserved.
  */
 
-#ifndef SRC_BRAITENBERG_VEHICLE_H_
-#define SRC_BRAITENBERG_VEHICLE_H_
+#ifndef SRC_PREDATOR_H_
+#define SRC_PREDATOR_H_
 
 /*******************************************************************************
  * Includes
@@ -37,33 +37,31 @@ NAMESPACE_BEGIN(csci3081);
  * Class Definitions
  ******************************************************************************/
 /** 
- * @brief Entity class to represent a Braitenberg Vehicle
+ * @brief Entity class to represent a Predator
  *
- * A braitenberg vehicle is a simple machine that is used to show how simple
- * concepts (in this case wiring) can give way to complex looking behavior. In
- * this simulation, Braitenberg vehicles contain sensors, which can be hooked
- * up in four different ways, and thus they can exhibit four different behaviors
+ * A predator is similar to a BV, except it hunts them down and
+ * turns them into ghosts.
  */
 
-class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
+class Predator : public ArenaMobileEntity, public Subject {
  public:
   /**
    * @brief Default constructor.
    */
-  BraitenbergVehicle();
+  Predator();
 
   /**
    * @brief Deleting the copy assignment and copy constructor. required now with
    *  inclusion of references to sensors and motion_handler/behavior
    */
-  BraitenbergVehicle(const BraitenbergVehicle & rhs) = delete;
+  Predator(const Predator & rhs) = delete;
   /**
    * @brief Copy constructor of BV
    */
-  BraitenbergVehicle operator=(const BraitenbergVehicle & rhs) = delete;
+  Predator operator=(const Predator & rhs) = delete;
 
   /**
-   * @brief Update the BraitenbergVehicle's position and velocity after the
+   * @brief Update the Predator's position and velocity after the
    * specified duration has passed.
    *
    * @param dt The # of timesteps that have elapsed since the last update.
@@ -73,7 +71,7 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
   void Update() override;
 
   /**
-   * @brief Change the movement state of the BraitenbergVehicle.
+   * @brief Change the movement state of the Predator.
    * @param ent_type EntityType of collision entity
    * @param object ArenaEntity * is the collision object
    */
@@ -174,7 +172,6 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
   /**
    * @brief Gets the behavior towards bv
    * @return Returns the behavior towards bv
-
    */
   Behavior get_bv_behavior() { return bv_behavior_; }
 
@@ -223,39 +220,28 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
   WheelVelocity get_wheel_velocity() { return wheel_velocity_; }
 
   /**
-   * @brief Calculates the constituent wheel velocities for the BV
+   * @brief Calculates constituent wheel velocities
    */
   void CalculateWheelVelocity();
 
   /**
-   * @brief Subscribes to observer
-   * @param[in] Passes in an observer to subscribe to
+   * @brief Subscribes to an observer
+   * @param[in] Observer to subscribe to
    */
   void Subscribe(Observer * observer) override;
 
   /**
-   * @brief Unsubscribes to observer
+   * @brief Unsubscribes observer
    */
   void Unsubscribe() override;
 
   /**
-   * @brief Notifies observer of changes
+   * @brief Notify of change
    */
   void Notify() override;
 
   /**
-   * @brief Kills the BV (turns into ghost)
-   */
-  void Die();
-
-  /**
-   * @brief Checks if BV is a ghost
-   * @param[out] Returns a boolean
-   */
-  bool isDead();
-
-  /**
-   * @brief Number of BraitenbergVehicle objects exist
+   * @brief Number of Predator objects exist
    */
   static int count;
 
@@ -275,12 +261,10 @@ class BraitenbergVehicle : public ArenaMobileEntity, public Subject {
   const ArenaEntity* closest_bv_entity_;
   double defaultSpeed_;
   int time_;
-  int stime_;
   bool collided_;
   Observer * obs_;
-  bool dead_;
 };
 
 NAMESPACE_END(csci3081);
 
-#endif  // SRC_BRAITENBERG_VEHICLE_H_
+#endif  // SRC_PREDATOR_H_

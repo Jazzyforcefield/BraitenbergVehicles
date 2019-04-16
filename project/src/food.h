@@ -56,6 +56,15 @@ class Food : public ArenaImmobileEntity {
    * @brief Only thing necessary is to update any subscribered sensors
    */
   void TimestepUpdate(__unused unsigned int dt) override {
+    if (time_ == 100) {
+      time_ = 0;
+      inactive_ = false;
+      set_color(FOOD_COLOR);
+    }
+    if (inactive_) {
+      time_++;
+      set_color({200, 0, 200});
+    }
     Update();
   }
 
@@ -67,9 +76,21 @@ class Food : public ArenaImmobileEntity {
    */
   std::string get_name() const override { return "Food"; }
 
+  /**
+   * @brief Checks if active
+   */
+  bool active() { return !inactive_; }
+
+  /**
+   * @brief Sets activity of food
+   */
+  void set_inactive() { inactive_ = true; }
+
   static int count;
 
  private:
+  int time_;
+  bool inactive_;
 };
 
 NAMESPACE_END(csci3081);

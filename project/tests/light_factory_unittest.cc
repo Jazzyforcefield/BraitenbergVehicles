@@ -34,7 +34,6 @@ TEST_F(LightFactoryTest, ConstructorTests) {
 
 	csci3081::ArenaEntity * test2;
 	one->Create(&test2, &entity_config);
-	ASSERT_EQ(test2->get_name(), "Light 1");
   ASSERT_EQ(test2->get_pose().x, 150);
   ASSERT_EQ(test2->get_pose().y, 300);
   ASSERT_EQ(test2->get_pose().theta, 0);
