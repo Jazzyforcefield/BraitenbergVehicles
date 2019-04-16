@@ -103,7 +103,7 @@ void Predator::SenseEntity(const ArenaEntity& entity) {
 
 void Predator::Update() {
   if (light_behavior_ != kNone && food_behavior_ == kNone) {
-    set_color({255, 204, 51});
+    set_color(PREDATOR_COLOR);
   }
 
   if (collided_) {
