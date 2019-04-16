@@ -1,6 +1,6 @@
 ### Feedback for Proj 01
 
-Run on March 15, 21:47:15 PM.
+Run on March 15, 22:00:43 PM.
 
 
 ***Note: This is just the basic feedback.  The full feedback is run daily as a batch process (click link below)***
@@ -37,7 +37,7 @@ Link to full feedback: [Proj_01_Full_Feedback.md](Proj_01_Full_Feedback.md)
 #### Git Usage
 
 + Pass: Check git commit history
-Commits found=69
+Commits found=70
 
 + Pass: Run git ls-remote gather all branches in repo
 
@@ -49,7 +49,7 @@ Commits found=69
 
 3f2cc1dfe1069dbad0650fd1eaf6a1e5492ee86f	refs/heads/dev/vehicle-behaviors
 
-cec2b91db8af47f204a36e7bd2eaede0ce725fce	refs/heads/devel
+b179867dfb0be8097bdb6187c49581a494c9d72b	refs/heads/devel
 
 ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
@@ -57,7 +57,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 182468b97829c240822faca09865caecdc99ad60	refs/heads/fix/cpplint-const
 
-0cd873f79f1af3e495c9b3b1214c441bb13944e8	refs/heads/master
+fad77351c1a6a888a85101bacbd75732f5dfcf91	refs/heads/master
 
 726e6a78bc90651955db2c59a9588b2ce741df0b	refs/heads/support-code
 
@@ -68,9 +68,7 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 + Pass: Configuring GHI
 
-+ Pass: Run ghi for total number of open issues in Github repo (Found: 2)
-
-[OPEN issue #12] :  Change json references to pointers
++ Pass: Run ghi for total number of open issues in Github repo (Found: 1)
 
 [OPEN issue #6] :  Refactor BraitenbergVehicle class 
 
@@ -78,7 +76,9 @@ ac0e383e5b5007aca00575417ee7ee75b4164926	refs/heads/fix/01-compilation-errors
 
 
 
-+ Pass: Run ghi for total number of closed issues in Github repo (Found: 10)
++ Pass: Run ghi for total number of closed issues in Github repo (Found: 11)
+
+[CLOSED issue #12] :  Change json references to pointers
 
 [CLOSED issue #11] :  Implement json configuration for factory classes
 
