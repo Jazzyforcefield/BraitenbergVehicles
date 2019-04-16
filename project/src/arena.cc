@@ -174,16 +174,17 @@ void Arena::UpdateEntitiesTimestep() {
           }
         }
 
-          if (ent2->get_type() == kPredator &&
-              ent1->get_type() == kBraitenberg) {
-            static_cast<Predator*>(ent2)->HandleCollision(ent1->get_type(), ent1);
-          }
+        if (ent2->get_type() == kPredator &&
+            ent1->get_type() == kBraitenberg) {
+          static_cast<Predator*>(ent2)->HandleCollision(
+            ent1->get_type(), ent1);
+        }
 
-          if (ent1->get_type() == kPredator &&
-              ent2->get_type() == kBraitenberg) {
-            static_cast<Predator*>(ent1)->HandleCollision(ent2->get_type(), ent2);
-          }
-
+        if (ent1->get_type() == kPredator &&
+            ent2->get_type() == kBraitenberg) {
+          static_cast<Predator*>(ent1)->HandleCollision(
+            ent2->get_type(), ent2);
+        }
       }
     }
 

@@ -379,7 +379,8 @@ void GraphicsArenaViewer::AddEntityPanel(nanogui::Widget * panel) {
         robotWidgets[f]->setVisible(entity->get_type() == kBraitenberg);
       }
         if (entity->get_type() == kBraitenberg) {
-          for (unsigned int i = 0; i < this->arena_->get_entities().size(); i++) {
+          for (unsigned int i = 0;
+                 i < this->arena_->get_entities().size(); i++) {
             ArenaEntity * ent = this->arena_->get_entities()[i];
             if (ent->get_type() == kBraitenberg) {
               dynamic_cast<BraitenbergVehicle*>(ent)->Unsubscribe();

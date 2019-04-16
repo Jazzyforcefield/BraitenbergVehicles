@@ -174,7 +174,6 @@ class Predator : public ArenaMobileEntity, public Subject {
   /**
    * @brief Gets the behavior towards bv
    * @return Returns the behavior towards bv
-
    */
   Behavior get_bv_behavior() { return bv_behavior_; }
 
@@ -222,12 +221,25 @@ class Predator : public ArenaMobileEntity, public Subject {
    */
   WheelVelocity get_wheel_velocity() { return wheel_velocity_; }
 
+  /**
+   * @brief Calculates constituent wheel velocities
+   */
   void CalculateWheelVelocity();
 
+  /**
+   * @brief Subscribes to an observer
+   * @param[in] Observer to subscribe to
+   */
   void Subscribe(Observer * observer) override;
 
+  /**
+   * @brief Unsubscribes observer
+   */
   void Unsubscribe() override;
 
+  /**
+   * @brief Notify of change
+   */
   void Notify() override;
 
   /**
