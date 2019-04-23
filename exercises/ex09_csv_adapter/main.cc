@@ -1,3 +1,5 @@
+// @copyright 2019: Amy Larson, Vaybhav Shaw, and Hrushikesh Nimkar
+
 #include <iostream>
 #include <cstring>
 #include <fstream>
