@@ -128,6 +128,9 @@ class ArenaEntity {
   int get_id() const { return id_; }
   void set_id(int id) { id_ = id; }
 
+  EntityType get_core() const { return core_; }
+  void set_core(EntityType et) { core_ = et; }
+
   /**
    * @brief Getter method for determining if entity can move or not.
    */
@@ -154,6 +157,7 @@ class ArenaEntity {
   Pose pose_;
   RgbColor color_;
   EntityType type_{kEntity};
+  EntityType core_{kEntity};
   int id_{-1};
   bool is_mobile_{false};
 };

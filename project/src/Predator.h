@@ -26,6 +26,7 @@
 #include "src/CowardBehavior.h"
 #include "src/Subject.h"
 #include "src/Observer.h"
+#include "src/entity_type.h"
 
 
 /*******************************************************************************
@@ -241,6 +242,27 @@ class Predator : public ArenaMobileEntity, public Subject {
   void Notify() override;
 
   /**
+   * @brief Kills the Predator (turns into ghost)
+   */
+  void Die();
+
+  /**
+   * @brief Checks if Predator is a ghost
+   * @param[out] Returns a boolean
+   */
+  bool isDead();
+
+  /**
+   * @brief Disguses as a random arena entity
+   */
+  EntityType Disguise();
+
+  /**
+   * @brief Disguses as a random arena entity
+   */
+  int get_stime() { return stime_; };
+
+  /**
    * @brief Number of Predator objects exist
    */
   static int count;
@@ -261,8 +283,13 @@ class Predator : public ArenaMobileEntity, public Subject {
   const ArenaEntity* closest_bv_entity_;
   double defaultSpeed_;
   int time_;
+  int stime_;
   bool collided_;
   Observer * obs_;
+  bool dead_;
+  bool dlight_;
+  bool dfood_;
+  bool dbv_;
 };
 
 NAMESPACE_END(csci3081);

@@ -27,6 +27,7 @@ Light::Light() :
   set_pose(LIGHT_POSITION);
   set_radius(LIGHT_RADIUS);
   set_type(kLight);
+  set_core(kLight);
   set_speed(3);
 
   // Set ID

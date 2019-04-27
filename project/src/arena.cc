@@ -16,6 +16,9 @@
 #include "src/light.h"
 #include "src/braitenberg_vehicle.h"
 #include "src/Predator.h"
+#include "src/light_decoration.h"
+#include "src/braitenberg_decoration.h"
+#include "src/food_decoration.h"
 
 /*******************************************************************************
  * Namespaces
@@ -127,6 +130,20 @@ void Arena::UpdateEntitiesTimestep() {
    */
   for (auto ent : entities_) {
     ent->TimestepUpdate(1);
+    if (ent->get_core() == kPredator) {
+      Predator * pd = static_cast<Predator *>(ent);
+      if (pd->get_stime() == 150 || pd->get_stime() == 300 ||
+          pd->get_stime() == 450) {
+        EntityType ret = pd->Disguise();
+        if (ret == kBraitenberg) {
+          ent = new BraitenbergDecoration(ent);
+        } else if (ret == kLight) {
+          ent = new LightDecoration(ent);
+        } else if (ret == kFood) {
+          ent = new FoodDecoration(ent);
+        }
+      }
+    }
   }
 
    /* Determine if any mobile entity is colliding with wall.
@@ -162,8 +179,8 @@ void Arena::UpdateEntitiesTimestep() {
             (ent2->get_type() == kFood) || (ent1->get_type() == kFood)     ) {
           continue;
         }
-        if (ent2->get_type() == kBraitenberg &&
-            ent1->get_type() == kBraitenberg) {
+        if (ent2->get_core() == kBraitenberg &&
+            ent1->get_core() == kBraitenberg) {
           BraitenbergVehicle * b1 = static_cast<BraitenbergVehicle*>(ent1);
           BraitenbergVehicle * b2 = static_cast<BraitenbergVehicle*>(ent2);
           if (b1->isDead() || b2->isDead()) {
