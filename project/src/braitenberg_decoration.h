@@ -3,6 +3,7 @@
 #ifndef SRC_BRAITENBERG_DECORATION_H_
 #define SRC_BRAITENBERG_DECORATION_H_
 
+#include <string>
 #include "src/arena_entity.h"
 #include "src/entity_decorator.h"
 #include "src/Predator.h"
@@ -12,7 +13,7 @@ NAMESPACE_BEGIN(csci3081);
 
 class BraitenbergDecoration : public EntityDecorator {
  public:
-  BraitenbergDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
+  explicit BraitenbergDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
     entity_ = ent;
     static_cast<Predator *>(entity_)->set_type(kBraitenberg);
     static_cast<Predator *>(entity_)->set_color({122, 0, 25});
@@ -27,7 +28,7 @@ class BraitenbergDecoration : public EntityDecorator {
   void TimestepUpdate(__unused unsigned int dt) override;
   void Update() override;
   void HandleCollision(__unused EntityType ent_type,
-                                         __unused ArenaEntity * object) override;
+                               __unused ArenaEntity * object) override;
   std::string get_name() const override { return "a"; }
   Behavior RandomBehavior() {
     int rand = (std::rand() % 4) + 1;

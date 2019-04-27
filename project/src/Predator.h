@@ -260,7 +260,7 @@ class Predator : public ArenaMobileEntity, public Subject {
   /**
    * @brief Disguses as a random arena entity
    */
-  int get_stime() { return stime_; };
+  int get_stime() { return stime_; }
 
   /**
    * @brief Number of Predator objects exist

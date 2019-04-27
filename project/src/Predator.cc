@@ -65,7 +65,6 @@ void Predator::TimestepUpdate(__unused unsigned int dt) {
 
 void Predator::HandleCollision(EntityType ent_type,
                                          ArenaEntity * object) {
-
   if (ent_type == kBraitenberg) {
     if (!static_cast<BraitenbergVehicle *>(object)->isDead()) {
       stime_ = 0;
@@ -123,9 +122,9 @@ void Predator::Update() {
     return;
   }
 
-  //if (light_behavior_ != kNone && food_behavior_ == kNone) {
-   // set_color(PREDATOR_COLOR);
-  //}
+  // if (light_behavior_ != kNone && food_behavior_ == kNone) {
+    // set_color(PREDATOR_COLOR);
+  // }
 
 
   if (time_ == 20) {
@@ -137,13 +136,13 @@ void Predator::Update() {
   if (stime_ == 600) {
     Die();
   }
-  
+
   CalculateWheelVelocity();
   if (obs_) {
     Notify();
   }
-
-  if (this->get_type() == kFood) {  // For some reason only changes to kBraitenberg
+  // For some reason only changes to kBraitenberg
+  if (this->get_type() == kFood) {
     std::cout << "kFood" << std::endl;
     wheel_velocity_ = WheelVelocity(0, 0);
   }

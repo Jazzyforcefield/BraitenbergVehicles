@@ -3,6 +3,7 @@
 #ifndef SRC_LIGHT_DECORATION_H_
 #define SRC_LIGHT_DECORATION_H_
 
+#include <string>
 #include "src/arena_entity.h"
 #include "src/entity_decorator.h"
 #include "src/light.h"
@@ -12,7 +13,7 @@ NAMESPACE_BEGIN(csci3081);
 
 class LightDecoration : public EntityDecorator {
  public:
-  LightDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
+  explicit LightDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
     entity_ = ent;
     static_cast<Predator *>(entity_)->set_type(kLight);
     static_cast<Predator *>(entity_)->set_color({255, 255, 255});
@@ -25,7 +26,7 @@ class LightDecoration : public EntityDecorator {
   void TimestepUpdate(__unused unsigned int dt) override;
   void Update() override;
   void HandleCollision(__unused EntityType ent_type,
-                                         __unused ArenaEntity * object) override;
+                               __unused ArenaEntity * object) override;
   std::string get_name() const override { return "a"; }
 
  protected:

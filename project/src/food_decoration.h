@@ -3,6 +3,7 @@
 #ifndef SRC_FOOD_DECORATION_H_
 #define SRC_FOOD_DECORATION_H_
 
+#include <string>
 #include "src/arena_entity.h"
 #include "src/entity_decorator.h"
 #include "src/Predator.h"
@@ -12,7 +13,7 @@ NAMESPACE_BEGIN(csci3081);
 
 class FoodDecoration : public EntityDecorator {
  public:
-  FoodDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
+  explicit FoodDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
     entity_ = ent;
     static_cast<EntityDecorator *>(entity_)->set_type(kFood);
     static_cast<Predator *>(entity_)->set_color({0, 255, 0});
@@ -25,7 +26,7 @@ class FoodDecoration : public EntityDecorator {
   void TimestepUpdate(__unused unsigned int dt) override;
   void Update() override;
   void HandleCollision(__unused EntityType ent_type,
-                                         __unused ArenaEntity * object) override;
+                               __unused ArenaEntity * object) override;
   std::string get_name() const override { return "a"; }
 
  protected:

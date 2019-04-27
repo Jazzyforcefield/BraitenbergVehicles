@@ -8,7 +8,7 @@ NAMESPACE_BEGIN(csci3081);
   void FoodDecoration::TimestepUpdate(unsigned int dt) {
     static_cast<Food *>(entity_)->TimestepUpdate(dt);
     entity_->TimestepUpdate(dt);
-  };
+  }
   void FoodDecoration::Update() {
     entity_->Update();
   }

@@ -10,13 +10,13 @@ NAMESPACE_BEGIN(csci3081);
 class EntityDecorator : public ArenaEntity {
  public:
   EntityDecorator() : entity_(nullptr) {}
-  EntityDecorator(ArenaEntity * ent) : entity_(ent) {}
+  explicit EntityDecorator(ArenaEntity * ent) : entity_(ent) {}
 
   EntityDecorator(const EntityDecorator&) = delete;
   EntityDecorator& operator=(const EntityDecorator&) = delete;
 
-  virtual void TimestepUpdate(__unused unsigned int dt) override = 0;
-  virtual void Update() override = 0;
+  void TimestepUpdate(__unused unsigned int dt) override = 0;
+  void Update() override = 0;
   virtual void HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) = 0;
 

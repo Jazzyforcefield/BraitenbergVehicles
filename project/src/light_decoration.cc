@@ -7,8 +7,8 @@ NAMESPACE_BEGIN(csci3081);
 
   void LightDecoration::TimestepUpdate(unsigned int dt) {
     static_cast<Light *>(entity_)->TimestepUpdate(dt);
-    entity_->TimestepUpdate(dt); 
-  };
+    entity_->TimestepUpdate(dt);
+  }
   void LightDecoration::Update() {
     static_cast<Light *>(entity_)->Update();
     entity_->Update();
