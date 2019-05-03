@@ -37,7 +37,7 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 - Time = No to Little Progress
 ##
 
-####**_NOTE:  The final delivery for  Priority 1 functionality and documentation was due Friday April 26th at 11:55pm.  We will use those deliverables (documentation and code) to evaluate Predator disguise functionality using the Decorator Pattern and Predator starvation behavior.   However, your final deliverable has to successfully demonstrate the configuration (and some execution of) predator functionality, and thus we ask for status on Priority 1 items._** 
+#### **_NOTE:  The final delivery for  Priority 1 functionality and documentation was due Friday April 26th at 11:55pm.  We will use those deliverables (documentation and code) to evaluate Predator disguise functionality using the Decorator Pattern and Predator starvation behavior.   However, your final deliverable has to successfully demonstrate the configuration (and some execution of) predator functionality, and thus we ask for status on Priority 1 items._** 
 
 ##
 | Functionality | Good | Okay | Help | Time |
