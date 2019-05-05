@@ -43,8 +43,7 @@ class ArenaMobileEntity : public ArenaEntity {
 
   ArenaMobileEntity()
     : ArenaEntity(),
-      speed_(0),
-      is_moving_(true) {
+      speed_(0) {
         set_mobility(true);
   }
   ArenaMobileEntity(const ArenaMobileEntity& other) = delete;
@@ -55,14 +54,55 @@ class ArenaMobileEntity : public ArenaEntity {
 
   virtual double get_speed() { return speed_; }
   virtual void set_speed(double sp) { speed_ = sp; }
+bool get_dlight() { return dlight_; }
+void set_dlight(bool b) { dlight_ = b; }
+
+bool get_dfood() { return dfood_; }
+void set_dfood(bool b) { dfood_ = b; }
+
+bool get_dbv() { return dbv_; }
+void set_dbv(bool b) { dbv_ = b; }
+
+
+  int get_stime() const { return stime_; }
+  void set_stime(int v) { stime_ = v; }
+
+EntityType Disguise() {
+  std::cout << "Disguising as ";
+  bool changed = false;
+  while ((dlight_ != true || dfood_ != true || dbv_ != true) && !changed) {
+    int random = (std::rand() % 3) + 1;
+    if (random == 3 && dlight_ == false) {
+      dlight_ = true;
+      changed = true;
+      std::cout << "kLight" << std::endl;
+      return kLight;
+    } else if (random == 2 && dfood_ == false) {
+      dfood_ = true;
+      changed = true;
+      std::cout << "kFood" << std::endl;
+      return kFood;
+    } else if (random == 1 && dbv_ == false) {
+      dbv_ = true;
+      changed = true;
+      std::cout << "kBraitenberg" << std::endl;
+      return kBraitenberg;
+    }
+  }
+  return kUndefined;
+}
+
 
   bool is_moving() { return is_moving_; }
   void set_is_moving(bool moving) { is_moving_ = moving; }
 
-
  private:
-  double speed_;
-  bool is_moving_;
+  double speed_{0};
+  int stime_{0};
+  bool is_moving_{true};
+  bool dlight_{false};
+  bool dfood_{false};
+  bool dbv_{false};
 };
 
 NAMESPACE_END(csci3081);

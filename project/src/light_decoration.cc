@@ -7,10 +7,9 @@ NAMESPACE_BEGIN(csci3081);
 
   void LightDecoration::TimestepUpdate(unsigned int dt) {
     entity_->TimestepUpdate(dt);
-    printf("inside ldec time\n");
     set_stime(get_stime() + 1);
 
-    if (is_mobile()) {
+    if (is_moving()) {
         Pose pose = get_pose();
 
         // Movement is always along the heading_angle (i.e. the hypotenuse)
@@ -28,18 +27,14 @@ NAMESPACE_BEGIN(csci3081);
     Update();
   }
   void LightDecoration::Update() {
-    printf("inside ldec update\n");
       entity_->Update();
-    if (entity_->get_type() == kLight) {
-      set_pose(entity_->get_pose());
-    }
   }
   void LightDecoration::HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) {
-    printf("inside ldec handle\n");
     entity_->HandleCollision(ent_type, object);
-    if (entity_->get_type() == kLight) {
-    entity_->set_heading(static_cast<int>(entity_->get_pose().theta + 180) % 360); }
+    if (ent_type == kLeftWall || ent_type == kRightWall || ent_type == kTopWall || ent_type == kBottomWall) {
+      set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
+    }
   }
 
 

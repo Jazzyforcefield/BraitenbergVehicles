@@ -253,21 +253,6 @@ class Predator : public ArenaMobileEntity, public Subject {
   bool isDead();
 
   /**
-   * @brief Disguses as a random arena entity
-   */
-  EntityType Disguise();
-
-
-bool get_dlight() { return dlight_; }
-void set_dlight() { dlight_ = true; }
-
-bool get_dfood() { return dfood_; }
-void set_dfood() { dfood_ = true; }
-
-bool get_dbv() { return dbv_; }
-void set_dbv() { dbv_ = true; }
-
-  /**
    * @brief Number of Predator objects exist
    */
   static int count;
@@ -291,9 +276,7 @@ void set_dbv() { dbv_ = true; }
   bool collided_;
   Observer * obs_;
   bool dead_;
-  bool dlight_;
-  bool dfood_;
-  bool dbv_;
+
 };
 
 NAMESPACE_END(csci3081);

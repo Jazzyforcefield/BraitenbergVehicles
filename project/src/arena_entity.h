@@ -125,14 +125,12 @@ class ArenaEntity {
   EntityType get_type() const { return type_; }
   void set_type(EntityType et) { type_ = et; }
 
-  int get_stime() const { return stime_; }
-  void set_stime(int v) { stime_ = v; }
-
   int get_id() const { return id_; }
   void set_id(int id) { id_ = id; }
 
   EntityType get_core() const { return core_; }
   void set_core(EntityType et) { core_ = et; }
+
 virtual void HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) {}
   /**
@@ -164,7 +162,7 @@ virtual void HandleCollision(__unused EntityType ent_type,
   EntityType core_{kEntity};
   int id_{-1};
   bool is_mobile_{false};
-  int stime_{0};
+
 };
 
 NAMESPACE_END(csci3081);

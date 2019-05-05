@@ -4,23 +4,23 @@
 #define SRC_LIGHT_DECORATION_H_
 
 #include <string>
-#include "src/arena_entity.h"
 #include "src/entity_decorator.h"
 #include "src/light.h"
-#include "src/Predator.h"
 
 NAMESPACE_BEGIN(csci3081);
 
 class LightDecoration : public EntityDecorator {
  public:
-  explicit LightDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
-    entity_ = ent;
+  explicit LightDecoration(ArenaMobileEntity * ent) : EntityDecorator(ent) {
     set_type(kLight);
     set_core(kPredator);
     set_color({255, 255, 255});
     set_radius(LIGHT_RADIUS);
     set_pose(entity_->get_pose());
     set_stime(entity_->get_stime() + 1);
+    set_dbv(entity_->get_dbv());
+    set_dlight(entity_->get_dlight());
+    set_dfood(entity_->get_dfood());
   }
 
   LightDecoration(const LightDecoration&) = delete;
@@ -31,9 +31,6 @@ class LightDecoration : public EntityDecorator {
   void HandleCollision(__unused EntityType ent_type,
                                __unused ArenaEntity * object) override;
   std::string get_name() const override { return "Light Predator"; }
-
- protected:
-  ArenaEntity * entity_{nullptr};
 };
 
 NAMESPACE_END(csci3081);

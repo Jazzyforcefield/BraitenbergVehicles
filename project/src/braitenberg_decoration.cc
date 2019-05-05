@@ -1,7 +1,6 @@
 // Copyright 2019, Michael Ung
 
 #include "src/braitenberg_decoration.h"
-#include "src/braitenberg_vehicle.h"
 #include "src/food.h"
 
 NAMESPACE_BEGIN(csci3081);
@@ -10,15 +9,12 @@ NAMESPACE_BEGIN(csci3081);
     entity_->TimestepUpdate(dt);
     set_stime(get_stime() + 1);
     Update();
-    printf("inside bvdec time\n");
   }
   void BraitenbergDecoration::Update() {
     entity_->Update();
-    printf("inside bvdec update\n");
   }
   void BraitenbergDecoration::HandleCollision(EntityType ent_type,
                                          ArenaEntity * object) {
-    printf("inside bvdec handle\n");
     entity_->HandleCollision(ent_type, object);
   }
 

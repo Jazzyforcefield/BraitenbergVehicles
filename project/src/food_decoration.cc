@@ -6,18 +6,15 @@
 NAMESPACE_BEGIN(csci3081);
 
   void FoodDecoration::TimestepUpdate(unsigned int dt) {
-    printf("inside fdec time\n");
     entity_->TimestepUpdate(dt);
     set_stime(get_stime() + 1);
     Update();
   }
   void FoodDecoration::Update() {
-    printf("inside fdec update\n");
     entity_->Update();
   }
   void FoodDecoration::HandleCollision(EntityType ent_type,
                                          ArenaEntity * object) {
-    printf("inside fdec handle\n");
     entity_->HandleCollision(ent_type, object);
   }
 

@@ -85,6 +85,9 @@ void BraitenbergVehicle::HandleCollision(EntityType ent_type,
 }
 
 void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
+  if (isDead()) {
+    return;
+  }
   const ArenaEntity** closest_entity_ = NULL;
   if (entity.get_type() == kLight) {
     closest_entity_ = &closest_light_entity_;

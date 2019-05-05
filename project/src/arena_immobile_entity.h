@@ -36,7 +36,7 @@ class ArenaImmobileEntity : public ArenaEntity {
   * @param pos The initial position of the entity.
   * @param color The color of the entity as shown on the screen.
   */
-  ArenaImmobileEntity() : ArenaEntity() {}
+  ArenaImmobileEntity() : ArenaEntity() { set_mobility(false); }
 };
 
 NAMESPACE_END(csci3081);

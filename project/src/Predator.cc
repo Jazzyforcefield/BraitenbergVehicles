@@ -31,7 +31,7 @@ Predator::Predator() :
   wheel_food_(NULL), wheel_bv_(NULL), closest_light_entity_(NULL),
   closest_food_entity_(NULL), closest_bv_entity_(NULL),
   defaultSpeed_(5.0), time_(0), collided_(false),
-  obs_(), dead_(false), dlight_(false), dfood_(false), dbv_(false) {
+  obs_(), dead_(false) {
   set_type(kPredator);
   set_core(kPredator);
   motion_behavior_ = new MotionBehaviorDifferential(this);
@@ -278,31 +278,6 @@ void Predator::Die() {
 
 bool Predator::isDead() {
   return dead_;
-}
-
-EntityType Predator::Disguise() {
-  std::cout << "Disguising as ";
-  bool changed = false;
-  while ((dlight_ != true && dfood_ != true && dbv_ != true) || !changed) {
-    int random = (std::rand() % 3) + 1;
-    if (random == 1 && dlight_ == false) {
-      dlight_ = true;
-      changed = true;
-      std::cout << "kLight" << std::endl;
-      return kLight;
-    } else if (random == 2 && dfood_ == false) {
-      dfood_ = true;
-      changed = true;
-      std::cout << "kFood" << std::endl;
-      return kFood;
-    } else if (random == 3 && dbv_ == false) {
-      dbv_ = true;
-      changed = true;
-      std::cout << "kBraitenberg" << std::endl;
-      return kBraitenberg;
-    }
-  }
-  return kUndefined;
 }
 
 void Predator::LoadFromObject(json_object* entity_config) {
