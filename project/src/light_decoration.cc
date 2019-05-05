@@ -8,20 +8,25 @@ NAMESPACE_BEGIN(csci3081);
   void LightDecoration::TimestepUpdate(unsigned int dt) {
     entity_->TimestepUpdate(dt);
     set_stime(get_stime() + 1);
-
+    if (get_stime() == 600) {
+      fed_ = true;
+      Update();
+      return;
+    }
     if (is_moving()) {
-        Pose pose = get_pose();
+      Pose pose = get_pose();
 
-        // Movement is always along the heading_angle (i.e. the hypotenuse)
-        double new_x =
-          pose.x + std::cos(pose.theta * M_PI / 180.0) * 5 * dt;
-        double new_y =
-          pose.y + std::sin(pose.theta * M_PI / 180.0) * 5 * dt;
+      // Movement is always along the heading_angle (i.e. the hypotenuse)
+      double new_x =
+        pose.x + std::cos(pose.theta * M_PI / 180.0) * 5 * dt;
+      double new_y =
+        pose.y + std::sin(pose.theta * M_PI / 180.0) * 5 * dt;
 
-        /* Heading angle remaings the same */
-        pose.x = new_x;
-        pose.y = new_y;
-        set_pose(pose);
+      /* Heading angle remaings the same */
+      pose.x = new_x;
+      pose.y = new_y;
+      set_pose(pose);
+      entity_->set_pose(pose);
     }
 
     Update();
@@ -31,6 +36,9 @@ NAMESPACE_BEGIN(csci3081);
   }
   void LightDecoration::HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) {
+    if (ent_type == kBraitenberg && !static_cast<BraitenbergVehicle *>(object)->isDead()) {
+      fed_ = true;
+    }
     entity_->HandleCollision(ent_type, object);
     if (ent_type == kLeftWall || ent_type == kRightWall || ent_type == kTopWall || ent_type == kBottomWall) {
       set_heading(static_cast<int>((get_pose().theta + 180)) % 360);

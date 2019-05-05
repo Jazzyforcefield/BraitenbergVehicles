@@ -54,14 +54,14 @@ class ArenaMobileEntity : public ArenaEntity {
 
   virtual double get_speed() { return speed_; }
   virtual void set_speed(double sp) { speed_ = sp; }
-bool get_dlight() { return dlight_; }
-void set_dlight(bool b) { dlight_ = b; }
+  bool get_dlight() { return dlight_; }
+  void set_dlight(bool b) { dlight_ = b; }
 
-bool get_dfood() { return dfood_; }
-void set_dfood(bool b) { dfood_ = b; }
+  bool get_dfood() { return dfood_; }
+  void set_dfood(bool b) { dfood_ = b; }
 
-bool get_dbv() { return dbv_; }
-void set_dbv(bool b) { dbv_ = b; }
+  bool get_dbv() { return dbv_; }
+  void set_dbv(bool b) { dbv_ = b; }
 
 
   int get_stime() const { return stime_; }
@@ -103,6 +103,9 @@ EntityType Disguise() {
   bool dlight_{false};
   bool dfood_{false};
   bool dbv_{false};
+ protected:
+  bool collided_{false};
+  int time_{0};
 };
 
 NAMESPACE_END(csci3081);

@@ -8,13 +8,22 @@ NAMESPACE_BEGIN(csci3081);
   void FoodDecoration::TimestepUpdate(unsigned int dt) {
     entity_->TimestepUpdate(dt);
     set_stime(get_stime() + 1);
+    if (get_stime() == 600) {
+      fed_ = true;
+      Update();
+      return;
+    }
     Update();
+    entity_->set_pose(get_pose());
   }
   void FoodDecoration::Update() {
     entity_->Update();
   }
   void FoodDecoration::HandleCollision(EntityType ent_type,
                                          ArenaEntity * object) {
+    if (ent_type == kBraitenberg && !static_cast<BraitenbergVehicle *>(object)->isDead()) {
+      fed_ = true;
+    }
     entity_->HandleCollision(ent_type, object);
   }
 

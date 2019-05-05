@@ -5,6 +5,7 @@
 
 #include "src/arena_entity.h"
 #include "src/Predator.h"
+#include "src/braitenberg_vehicle.h"
 
 NAMESPACE_BEGIN(csci3081);
 
@@ -32,12 +33,15 @@ class EntityDecorator : public ArenaMobileEntity {
       static_cast<Predator *>(entity_)->set_light_behavior(behavior);
     }
   }
+  bool fed() { return fed_; }
+  ArenaMobileEntity * get_ent() { return entity_; }
   void TimestepUpdate(__unused unsigned int dt) override = 0;
   void Update() override = 0;
   virtual void HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) override = 0;
  protected:
   ArenaMobileEntity * entity_{nullptr};
+  bool fed_{false};
 };
 
 NAMESPACE_END(csci3081);

@@ -11,7 +11,7 @@ NAMESPACE_BEGIN(csci3081);
 class BraitenbergDecoration : public EntityDecorator {
  public:
   explicit BraitenbergDecoration(ArenaMobileEntity * ent) : EntityDecorator(ent) {
-try {set_type(kBraitenberg);
+    //set_type(kBraitenberg);
     set_pose(entity_->get_pose());
     set_color({122, 0, 25});
     set_radius(14);
@@ -19,8 +19,7 @@ try {set_type(kBraitenberg);
     set_core(kPredator);
     set_dbv(entity_->get_dbv());
     set_dlight(entity_->get_dlight());
-    set_dfood(entity_->get_dfood());} catch(std::bad_alloc& err) {
-    }
+    set_dfood(entity_->get_dfood());
     
     if (entity_->get_type() == kPredator) {
       static_cast<EntityDecorator *>(entity_)->set_food_behavior(RandomBehavior());

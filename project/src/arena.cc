@@ -159,6 +159,20 @@ void Arena::UpdateEntitiesTimestep() {
    */
   for (auto ent : entities_) {
     ent->TimestepUpdate(1);
+    ArenaEntity * entity;
+
+    if (ent->get_core() == kPredator && ent->get_type() != kPredator) {
+      if (static_cast<EntityDecorator *>(ent)->fed()) {
+      entity = static_cast<EntityDecorator *>(ent)->get_ent();
+      RemoveEntity(ent);
+      while (entity->get_type() != kPredator) {
+        entity = static_cast<EntityDecorator *>(entity)->get_ent();
+      }
+      AddEntity(entity);
+}
+    }
+    
+
     if (ent->get_core() == kPredator) {
       if (static_cast<ArenaMobileEntity*>(ent)->get_stime() == 150 ||
           static_cast<ArenaMobileEntity*>(ent)->get_stime() == 300 ||

@@ -60,7 +60,6 @@ void Predator::TimestepUpdate(__unused unsigned int dt) {
   }
   if (!isDead()) {
     set_stime(get_stime() + 1);
-    printf("pdcc: %d\n", get_stime());
   }
 }
 
@@ -69,6 +68,9 @@ void Predator::HandleCollision(EntityType ent_type,
   if (ent_type == kBraitenberg) {
     if (!static_cast<BraitenbergVehicle *>(object)->isDead()) {
       set_stime(0);
+      set_dlight(false);
+      set_dfood(false);
+      set_dbv(false);
     }
     static_cast<BraitenbergVehicle *>(object)->Die();
   } else if (ent_type == kFood || ent_type == kLight) {
