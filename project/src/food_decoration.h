@@ -9,6 +9,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+ /**
+  * @brief Food disguise for the Predator
+  */
 class FoodDecoration : public EntityDecorator {
  public:
   explicit FoodDecoration(ArenaMobileEntity * ent) : EntityDecorator(ent) {

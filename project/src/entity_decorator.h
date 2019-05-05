@@ -9,6 +9,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+ /**
+  * @brief Decorator class for Predator disguises
+  */
 class EntityDecorator : public ArenaMobileEntity {
  public:
   EntityDecorator() : entity_(nullptr) {}
@@ -19,6 +22,9 @@ class EntityDecorator : public ArenaMobileEntity {
   EntityType get_type() const { return entity_->get_type(); }
   int get_stime() { return entity_->get_stime(); }
 
+ /**
+  * @brief Sets food behavior for entity_
+  */
   void set_food_behavior(Behavior behavior) {
     if (entity_->get_type() != kPredator) {
       static_cast<EntityDecorator *>(entity_)->set_food_behavior(behavior);
@@ -26,6 +32,10 @@ class EntityDecorator : public ArenaMobileEntity {
       static_cast<Predator *>(entity_)->set_food_behavior(behavior);
     }
   }
+
+ /**
+  * @brief Sets light behavior for entity_
+  */
   void set_light_behavior(Behavior behavior) {
     if (entity_->get_type() != kPredator) {
       static_cast<EntityDecorator *>(entity_)->set_light_behavior(behavior);
@@ -33,8 +43,19 @@ class EntityDecorator : public ArenaMobileEntity {
       static_cast<Predator *>(entity_)->set_light_behavior(behavior);
     }
   }
+
+ /**
+  * @brief Flag that signals if Predator has just eaten
+  * @param[out] Returns boolean fed_
+  */
   bool fed() { return fed_; }
+
+ /**
+  * @brief Gets entity_
+  * @param[out] Returns entity_
+  */
   ArenaMobileEntity * get_ent() { return entity_; }
+
   void TimestepUpdate(__unused unsigned int dt) override = 0;
   void Update() override = 0;
   void HandleCollision(__unused EntityType ent_type,

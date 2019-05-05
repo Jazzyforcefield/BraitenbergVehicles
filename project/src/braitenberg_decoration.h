@@ -8,6 +8,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+ /**
+  * @brief Braitenberg Vehicle disguise for the Predator
+  */
 class BraitenbergDecoration : public EntityDecorator {
  public:
   explicit BraitenbergDecoration(ArenaMobileEntity * ent) :
@@ -38,6 +41,11 @@ class BraitenbergDecoration : public EntityDecorator {
   void HandleCollision(__unused EntityType ent_type,
                                __unused ArenaEntity * object) override;
   std::string get_name() const override { return "Braitenberg Predator"; }
+
+ /**
+  * @brief Function to obtain a random behavior
+  * @param[out] Returns a random behavior
+  */
   Behavior RandomBehavior() {
     int rand = (std::rand() % 4) + 1;
     if (rand == 1) {

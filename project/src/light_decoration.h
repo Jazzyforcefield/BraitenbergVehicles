@@ -9,6 +9,9 @@
 
 NAMESPACE_BEGIN(csci3081);
 
+ /**
+  * @brief Light disguise for the Predator
+  */
 class LightDecoration : public EntityDecorator {
  public:
   explicit LightDecoration(ArenaMobileEntity * ent) : EntityDecorator(ent) {

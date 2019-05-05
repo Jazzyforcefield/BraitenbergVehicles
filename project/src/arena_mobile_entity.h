@@ -54,44 +54,78 @@ class ArenaMobileEntity : public ArenaEntity {
 
   virtual double get_speed() { return speed_; }
   virtual void set_speed(double sp) { speed_ = sp; }
+
+ /**
+  * @brief Flag for light disguise
+  * @param[out] Returns boolean dlight_
+  */
   bool get_dlight() { return dlight_; }
+
+ /**
+  * @brief Sets flag for light disguise
+  * @param[in] Returns boolean dlight_
+  */
   void set_dlight(bool b) { dlight_ = b; }
 
+ /**
+  * @brief Flag for food disguise
+  * @param[out] Returns boolean dfood_
+  */
   bool get_dfood() { return dfood_; }
+
+ /**
+  * @brief Sets flag for food disguise
+  * @param[in] Returns boolean dfood_
+  */
   void set_dfood(bool b) { dfood_ = b; }
 
+ /**
+  * @brief Flag for bv disguise
+  * @param[out] Returns boolean dbv_
+  */
   bool get_dbv() { return dbv_; }
+
+ /**
+  * @brief Sets flag for bv disguise
+  * @param[in] Returns boolean dbv_
+  */
   void set_dbv(bool b) { dbv_ = b; }
 
-
+ /**
+  * @brief Gets starving time for entity
+  * @param[out] Returns int stime_
+  */
   int get_stime() const { return stime_; }
   void set_stime(int v) { stime_ = v; }
 
-EntityType Disguise() {
-  std::cout << "Disguising as ";
-  bool changed = false;
-  while ((dlight_ != true || dfood_ != true || dbv_ != true) && !changed) {
-    int random = (std::rand() % 3) + 1;
-    if (random == 3 && dlight_ == false) {
-      dlight_ = true;
-      changed = true;
-      std::cout << "kLight" << std::endl;
-      return kLight;
-    } else if (random == 2 && dfood_ == false) {
-      dfood_ = true;
-      changed = true;
-      std::cout << "kFood" << std::endl;
-      return kFood;
-    } else if (random == 1 && dbv_ == false) {
-      dbv_ = true;
-      changed = true;
-      std::cout << "kBraitenberg" << std::endl;
-      return kBraitenberg;
+ /**
+  * @brief Randomizes EntityType based on flags
+  * @param[out] Returns random EntityType
+  */
+  EntityType Disguise() {
+    std::cout << "Disguising as ";
+    bool changed = false;
+    while ((dlight_ != true || dfood_ != true || dbv_ != true) && !changed) {
+      int random = (std::rand() % 3) + 1;
+      if (random == 3 && dlight_ == false) {
+        dlight_ = true;
+        changed = true;
+        std::cout << "kLight" << std::endl;
+        return kLight;
+      } else if (random == 2 && dfood_ == false) {
+        dfood_ = true;
+        changed = true;
+        std::cout << "kFood" << std::endl;
+        return kFood;
+      } else if (random == 1 && dbv_ == false) {
+        dbv_ = true;
+        changed = true;
+        std::cout << "kBraitenberg" << std::endl;
+        return kBraitenberg;
+      }
     }
+    return kUndefined;
   }
-  return kUndefined;
-}
-
 
   bool is_moving() { return is_moving_; }
   void set_is_moving(bool moving) { is_moving_ = moving; }
