@@ -38,7 +38,8 @@ Light::Light() :
 void Light::HandleCollision(__unused EntityType ent_type,
                                __unused ArenaEntity * object) {
   // set_heading(random_num<float>(0, 360));
-  if (ent_type == kLeftWall || ent_type == kRightWall || ent_type == kTopWall || ent_type == kBottomWall) {
+  if (ent_type == kLeftWall || ent_type == kRightWall ||
+      ent_type == kTopWall || ent_type == kBottomWall) {
     set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
   }
 }

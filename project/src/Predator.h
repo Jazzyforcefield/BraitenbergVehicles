@@ -276,7 +276,6 @@ class Predator : public ArenaMobileEntity, public Subject {
   bool collided_;
   Observer * obs_;
   bool dead_;
-
 };
 
 NAMESPACE_END(csci3081);

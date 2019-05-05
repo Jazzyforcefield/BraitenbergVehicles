@@ -37,8 +37,9 @@ class EntityDecorator : public ArenaMobileEntity {
   ArenaMobileEntity * get_ent() { return entity_; }
   void TimestepUpdate(__unused unsigned int dt) override = 0;
   void Update() override = 0;
-  virtual void HandleCollision(__unused EntityType ent_type,
-                                         __unused ArenaEntity * object) override = 0;
+  void HandleCollision(__unused EntityType ent_type,
+                       __unused ArenaEntity * object) override = 0;
+
  protected:
   ArenaMobileEntity * entity_{nullptr};
   bool fed_{false};

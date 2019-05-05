@@ -42,7 +42,8 @@ NAMESPACE_BEGIN(csci3081);
   }
   void BraitenbergDecoration::HandleCollision(EntityType ent_type,
                                          ArenaEntity * object) {
-    if (ent_type == kBraitenberg && !static_cast<BraitenbergVehicle *>(object)->isDead()) {
+    if (ent_type == kBraitenberg && !static_cast<BraitenbergVehicle *>(
+      object)->isDead()) {
       fed_ = true;
     }
 

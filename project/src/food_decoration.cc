@@ -21,7 +21,8 @@ NAMESPACE_BEGIN(csci3081);
   }
   void FoodDecoration::HandleCollision(EntityType ent_type,
                                          ArenaEntity * object) {
-    if (ent_type == kBraitenberg && !static_cast<BraitenbergVehicle *>(object)->isDead()) {
+    if (ent_type == kBraitenberg && !static_cast<BraitenbergVehicle *>(
+      object)->isDead()) {
       fed_ = true;
     }
     entity_->HandleCollision(ent_type, object);

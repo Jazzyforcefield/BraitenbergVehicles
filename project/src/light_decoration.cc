@@ -36,11 +36,13 @@ NAMESPACE_BEGIN(csci3081);
   }
   void LightDecoration::HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) {
-    if (ent_type == kBraitenberg && !static_cast<BraitenbergVehicle *>(object)->isDead()) {
+    if (ent_type == kBraitenberg && !static_cast<BraitenbergVehicle *>(
+      object)->isDead()) {
       fed_ = true;
     }
     entity_->HandleCollision(ent_type, object);
-    if (ent_type == kLeftWall || ent_type == kRightWall || ent_type == kTopWall || ent_type == kBottomWall) {
+    if (ent_type == kLeftWall || ent_type == kRightWall ||
+        ent_type == kTopWall || ent_type == kBottomWall) {
       set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
     }
   }

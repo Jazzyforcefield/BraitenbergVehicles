@@ -162,7 +162,6 @@ virtual void HandleCollision(__unused EntityType ent_type,
   EntityType core_{kEntity};
   int id_{-1};
   bool is_mobile_{false};
-
 };
 
 NAMESPACE_END(csci3081);

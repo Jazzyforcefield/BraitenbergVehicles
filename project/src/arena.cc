@@ -165,13 +165,12 @@ void Arena::UpdateEntitiesTimestep() {
       if (static_cast<EntityDecorator *>(ent)->fed()) {
       entity = static_cast<EntityDecorator *>(ent)->get_ent();
       RemoveEntity(ent);
-      while (entity->get_type() != kPredator) {
-        entity = static_cast<EntityDecorator *>(entity)->get_ent();
-      }
+        while (entity->get_type() != kPredator) {
+          entity = static_cast<EntityDecorator *>(entity)->get_ent();
+        }
       AddEntity(entity);
-}
+      }
     }
-    
 
     if (ent->get_core() == kPredator) {
       if (static_cast<ArenaMobileEntity*>(ent)->get_stime() == 150 ||
@@ -209,9 +208,10 @@ void Arena::UpdateEntitiesTimestep() {
     * Adjust the position accordingly so they don't overlap.
     */
     for (auto &ent2 : entities_) {
-      if (ent2 == ent1) { continue; } 
+      if (ent2 == ent1) { continue; }
       if (IsColliding(ent1, ent2)) {
-        if (ent1->get_type() == kBraitenberg && ent2->get_type() == kBraitenberg) {
+        if (ent1->get_type() == kBraitenberg &&
+          ent2->get_type() == kBraitenberg) {
           AdjustEntityOverlap(ent1, ent2);
         }
         if (ent1->get_type() == kPredator && ent2->get_type() == kPredator) {
