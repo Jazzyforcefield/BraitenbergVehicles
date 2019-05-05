@@ -15,11 +15,16 @@ class BraitenbergDecoration : public EntityDecorator {
  public:
   explicit BraitenbergDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
     entity_ = ent;
-    static_cast<Predator *>(entity_)->set_type(kBraitenberg);
-    static_cast<Predator *>(entity_)->set_color({122, 0, 25});
-    static_cast<Predator *>(entity_)->set_radius(14);
-    static_cast<Predator *>(entity_)->set_food_behavior(RandomBehavior());
-    static_cast<Predator *>(entity_)->set_light_behavior(RandomBehavior());
+    set_type(kBraitenberg);
+    set_pose(entity_->get_pose());
+    set_color({122, 0, 25});
+    set_radius(14);
+    set_stime(get_stime() + 1);
+    set_core(kPredator);
+    if (entity_->get_type() == kPredator) {
+      static_cast<Predator *>(entity_)->set_food_behavior(RandomBehavior());
+      static_cast<Predator *>(entity_)->set_light_behavior(RandomBehavior());
+    }
   }
 
   BraitenbergDecoration(const BraitenbergDecoration&) = delete;
@@ -29,7 +34,7 @@ class BraitenbergDecoration : public EntityDecorator {
   void Update() override;
   void HandleCollision(__unused EntityType ent_type,
                                __unused ArenaEntity * object) override;
-  std::string get_name() const override { return "a"; }
+  std::string get_name() const override { return "Braitenberg Predator"; }
   Behavior RandomBehavior() {
     int rand = (std::rand() % 4) + 1;
     if (rand == 1) {

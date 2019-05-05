@@ -257,10 +257,15 @@ class Predator : public ArenaMobileEntity, public Subject {
    */
   EntityType Disguise();
 
-  /**
-   * @brief Disguses as a random arena entity
-   */
-  int get_stime() { return stime_; }
+
+bool get_dlight() { return dlight_; }
+void set_dlight() { dlight_ = true; }
+
+bool get_dfood() { return dfood_; }
+void set_dfood() { dfood_ = true; }
+
+bool get_dbv() { return dbv_; }
+void set_dbv() { dbv_ = true; }
 
   /**
    * @brief Number of Predator objects exist
@@ -283,7 +288,6 @@ class Predator : public ArenaMobileEntity, public Subject {
   const ArenaEntity* closest_bv_entity_;
   double defaultSpeed_;
   int time_;
-  int stime_;
   bool collided_;
   Observer * obs_;
   bool dead_;

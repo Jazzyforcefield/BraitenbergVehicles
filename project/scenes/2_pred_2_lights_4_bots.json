@@ -7,7 +7,6 @@
       {"type": "Braitenberg", "x":320, "y":300, "r":15, "theta": 270.0, "light_behavior": "Explore", "food_behavior": "Aggressive" },
       {"type": "Braitenberg", "x":420, "y":300, "r":15, "theta": 270.0, "light_behavior": "Coward", "food_behavior": "Aggressive" },
       {"type": "Predator", "x":270, "y":270, "r":15, "theta": 215.0, "light_behavior": "Coward", "food_behavior": "None", "robot_behavior": "Aggressive" },
-      {"type": "Predator", "x":200, "y":400, "r":15, "theta": 0.0, "light_behavior": "Coward", "food_behavior": "None", "robot_behavior": "Aggressive" },
       {"type": "Food", "x":100, "y":100, "r":20, "theta": 0.0 },
       {"type": "Food", "x":300, "y":500, "r":20, "theta": 0.0 },
       {"type": "Food", "x":500, "y":100, "r":20, "theta": 0.0 },

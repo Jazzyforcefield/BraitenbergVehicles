@@ -15,9 +15,12 @@ class LightDecoration : public EntityDecorator {
  public:
   explicit LightDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
     entity_ = ent;
-    static_cast<Predator *>(entity_)->set_type(kLight);
-    static_cast<Predator *>(entity_)->set_color({255, 255, 255});
-    static_cast<Predator *>(entity_)->set_radius(LIGHT_RADIUS);
+    set_type(kLight);
+    set_core(kPredator);
+    set_color({255, 255, 255});
+    set_radius(LIGHT_RADIUS);
+    set_pose(entity_->get_pose());
+    set_stime(entity_->get_stime() + 1);
   }
 
   LightDecoration(const LightDecoration&) = delete;
@@ -27,7 +30,7 @@ class LightDecoration : public EntityDecorator {
   void Update() override;
   void HandleCollision(__unused EntityType ent_type,
                                __unused ArenaEntity * object) override;
-  std::string get_name() const override { return "a"; }
+  std::string get_name() const override { return "Light Predator"; }
 
  protected:
   ArenaEntity * entity_{nullptr};

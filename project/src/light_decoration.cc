@@ -6,15 +6,40 @@
 NAMESPACE_BEGIN(csci3081);
 
   void LightDecoration::TimestepUpdate(unsigned int dt) {
-    static_cast<Light *>(entity_)->TimestepUpdate(dt);
     entity_->TimestepUpdate(dt);
+    printf("inside ldec time\n");
+    set_stime(get_stime() + 1);
+
+    if (is_mobile()) {
+        Pose pose = get_pose();
+
+        // Movement is always along the heading_angle (i.e. the hypotenuse)
+        double new_x =
+          pose.x + std::cos(pose.theta * M_PI / 180.0) * 5 * dt;
+        double new_y =
+          pose.y + std::sin(pose.theta * M_PI / 180.0) * 5 * dt;
+
+        /* Heading angle remaings the same */
+        pose.x = new_x;
+        pose.y = new_y;
+        set_pose(pose);
+    }
+
+    Update();
   }
   void LightDecoration::Update() {
-    static_cast<Light *>(entity_)->Update();
-    entity_->Update();
+    printf("inside ldec update\n");
+      entity_->Update();
+    if (entity_->get_type() == kLight) {
+      set_pose(entity_->get_pose());
+    }
   }
   void LightDecoration::HandleCollision(__unused EntityType ent_type,
                                          __unused ArenaEntity * object) {
+    printf("inside ldec handle\n");
+    entity_->HandleCollision(ent_type, object);
+    if (entity_->get_type() == kLight) {
+    entity_->set_heading(static_cast<int>(entity_->get_pose().theta + 180) % 360); }
   }
 
 

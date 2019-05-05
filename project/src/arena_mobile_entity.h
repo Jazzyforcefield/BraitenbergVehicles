@@ -51,7 +51,7 @@ class ArenaMobileEntity : public ArenaEntity {
   ArenaMobileEntity& operator=(const ArenaMobileEntity& other) = delete;
 
   virtual void HandleCollision(__unused EntityType ent_type,
-                               __unused ArenaEntity * object = NULL) { }
+                               __unused ArenaEntity * object = NULL) override { }
 
   virtual double get_speed() { return speed_; }
   virtual void set_speed(double sp) { speed_ = sp; }

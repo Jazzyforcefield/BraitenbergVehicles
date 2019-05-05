@@ -15,9 +15,12 @@ class FoodDecoration : public EntityDecorator {
  public:
   explicit FoodDecoration(ArenaEntity * ent) : EntityDecorator(ent) {
     entity_ = ent;
-    static_cast<EntityDecorator *>(entity_)->set_type(kFood);
-    static_cast<Predator *>(entity_)->set_color({0, 255, 0});
-    static_cast<Predator *>(entity_)->set_radius(FOOD_RADIUS);
+    set_type(kFood);
+    set_color({0, 255, 0});
+    set_radius(FOOD_RADIUS);
+    set_core(kPredator);
+    set_pose(entity_->get_pose());
+    set_stime(entity_->get_stime() + 1);
   }
 
   FoodDecoration(const FoodDecoration&) = delete;
@@ -27,7 +30,7 @@ class FoodDecoration : public EntityDecorator {
   void Update() override;
   void HandleCollision(__unused EntityType ent_type,
                                __unused ArenaEntity * object) override;
-  std::string get_name() const override { return "a"; }
+  std::string get_name() const override { return "Food Predator"; }
 
  protected:
   ArenaEntity * entity_{nullptr};

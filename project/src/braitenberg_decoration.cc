@@ -2,21 +2,24 @@
 
 #include "src/braitenberg_decoration.h"
 #include "src/braitenberg_vehicle.h"
+#include "src/food.h"
 
 NAMESPACE_BEGIN(csci3081);
 
   void BraitenbergDecoration::TimestepUpdate(unsigned int dt) {
-    static_cast<BraitenbergVehicle *>(entity_)->TimestepUpdate(dt);
     entity_->TimestepUpdate(dt);
+    set_stime(get_stime() + 1);
+    Update();
+    printf("inside bvdec time\n");
   }
   void BraitenbergDecoration::Update() {
-    static_cast<BraitenbergVehicle *>(entity_)->Update();
     entity_->Update();
+    printf("inside bvdec update\n");
   }
   void BraitenbergDecoration::HandleCollision(EntityType ent_type,
                                          ArenaEntity * object) {
-    static_cast<BraitenbergVehicle *>(entity_)->HandleCollision(
-      ent_type, object);
+    printf("inside bvdec handle\n");
+    entity_->HandleCollision(ent_type, object);
   }
 
 NAMESPACE_END(csci3081);

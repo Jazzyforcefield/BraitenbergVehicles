@@ -30,7 +30,7 @@ Predator::Predator() :
   food_behavior_(kNone), bv_behavior_(kNone), wheel_light_(NULL),
   wheel_food_(NULL), wheel_bv_(NULL), closest_light_entity_(NULL),
   closest_food_entity_(NULL), closest_bv_entity_(NULL),
-  defaultSpeed_(5.0), time_(0), stime_(0), collided_(false),
+  defaultSpeed_(5.0), time_(0), collided_(false),
   obs_(), dead_(false), dlight_(false), dfood_(false), dbv_(false) {
   set_type(kPredator);
   set_core(kPredator);
@@ -51,7 +51,7 @@ Predator::Predator() :
 }
 
 void Predator::TimestepUpdate(__unused unsigned int dt) {
-  if (is_moving()) {
+  if (is_moving() && this->get_type() != kFood) {
     motion_behavior_->UpdatePose(dt, wheel_velocity_);
   }
   UpdateLightSensors();
@@ -59,7 +59,8 @@ void Predator::TimestepUpdate(__unused unsigned int dt) {
     time_++;
   }
   if (!isDead()) {
-    stime_++;
+    set_stime(get_stime() + 1);
+    printf("pdcc: %d\n", get_stime());
   }
 }
 
@@ -67,7 +68,7 @@ void Predator::HandleCollision(EntityType ent_type,
                                          ArenaEntity * object) {
   if (ent_type == kBraitenberg) {
     if (!static_cast<BraitenbergVehicle *>(object)->isDead()) {
-      stime_ = 0;
+      set_stime(0);
     }
     static_cast<BraitenbergVehicle *>(object)->Die();
   } else if (ent_type == kFood || ent_type == kLight) {
@@ -133,7 +134,7 @@ void Predator::Update() {
     collided_ = false;
   }
 
-  if (stime_ == 600) {
+  if (get_stime() == 600) {
     Die();
   }
 
