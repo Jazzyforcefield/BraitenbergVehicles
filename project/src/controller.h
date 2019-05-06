@@ -13,6 +13,10 @@
 #include <nanogui/nanogui.h>
 #include <string>
 #include <vector>
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <cstring>
 
 #include "src/arena.h"
 #include "src/common.h"
@@ -71,6 +75,67 @@ class Controller {
 
   Controller(const Controller &other) = delete;
 
+  // Add quotes around the string
+  std::string add_quotes(std::string word) {
+    std::string quoted_string("\"");
+    quoted_string += (word + "\"");
+    return quoted_string;
+  }
+
+  // To determine if quotes should be put around the parsed word
+  inline bool in_number_set(std::string word) {
+    // compare returns 0 when it matches the word
+    return !(
+      word.compare("x") && word.compare("y")
+      && word.compare("r") && word.compare("theta") );
+  }
+
+  std::string convertCSV(std::string str) {
+    std::string token;
+    std::vector<std::string> keys;
+
+    std::ifstream fin(str);
+    std::string labels;
+    fin >> labels;
+
+    std::istringstream sss(labels);
+    while (std::getline(sss, token, ',')) {
+      keys.push_back(token);
+    }
+
+    std::string entities = "{ \"entities\": [\n";
+
+    std::string entity_json;  // populate below by converting csv row to json
+    std::string row;          // temp holder of csv row
+    std::vector<std::string> words;   // all words parsed from csv row
+
+    while (fin >> row) {
+      std::istringstream ss(row);
+      words.clear();
+      while (std::getline(ss, token, ',')) {
+        words.push_back(token);
+      }
+      int keys_index = 0;
+      entity_json = "     {";
+      for (auto word : words) {
+        if (keys_index != 0) { entity_json += ","; }
+        entity_json += add_quotes(keys[keys_index]) + ":";
+        if (in_number_set(keys[keys_index])) {
+          entity_json += word;
+        } else {
+          entity_json += add_quotes(word);
+        }
+        ++keys_index;
+      }
+      entity_json += "}";
+      entities += entity_json + ",\n";
+    }
+
+    entities = entities.substr(0, entities.length() - 2);
+    entities += "\n  ]\n}";
+    return entities;
+  }
+
  private:
   double last_dt{0};
   Arena* arena_{nullptr};
@@ -81,4 +146,4 @@ class Controller {
 
 NAMESPACE_END(csci3081);
 
-#endif /* SRC_CONTROLLER_H_ */
+#endif  // SRC_CONTROLLER_H_
