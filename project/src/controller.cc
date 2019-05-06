@@ -26,20 +26,40 @@ NAMESPACE_BEGIN(csci3081);
 
 Controller::Controller(int argc, char **argv) :
   last_dt(0), viewers_(), config_(NULL) {
-  if (argc > 1) {
+  if (argc == 2) {
     std::ifstream t(std::string(argv[1]).c_str());
     std::string str((std::istreambuf_iterator<char>(t)),
                    std::istreambuf_iterator<char>());
     std::string json = str;
     config_ = new json_value();
-    std::string err = parse_json(*config_, json);
-    if (! err.empty()) {
+    std::string err = parse_json(config_, json);
+    if (!err.empty()) {
       std::cerr << "Parse error: " << err << std::endl;
       delete config_;
       config_ = NULL;
+    } else {
+      arena_ = new Arena(&config_->get<json_object>());
     }
-    else {
-      arena_ = new Arena(config_->get<json_object>());
+  } else if (argc == 4) {
+    std::string temp = std::string(argv[3]);
+    if (temp.substr(temp.length() - 4) == ".csv") {
+      convertCSV(temp);
+    }
+    std::string preljson = "{\n  \"width\": " + std::string(argv[1]) +
+      ",\n  \"height\": " + std::string(argv[2]) + ",";
+    std::ifstream t(std::string(argv[3]).c_str());
+    std::string str((std::istreambuf_iterator<char>(t)),
+                   std::istreambuf_iterator<char>());
+    str = preljson + str.substr(1);
+    std::string json = str;
+    config_ = new json_value();
+    std::string err = parse_json(config_, json);
+    if (!err.empty()) {
+      std::cerr << "Parse error: " << err << std::endl;
+      delete config_;
+      config_ = NULL;
+    } else {
+      arena_ = new Arena(&config_->get<json_object>());
     }
   }
   if (!config_) {
@@ -93,7 +113,7 @@ void Controller::Reset() {
     delete (arena_);
   }
   if (config_) {
-    arena_ = new Arena(config_->get<json_object>());
+    arena_ = new Arena(&config_->get<json_object>());
   } else {
     arena_ = new Arena();
   }
