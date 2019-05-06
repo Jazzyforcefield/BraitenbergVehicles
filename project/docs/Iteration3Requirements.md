@@ -2,6 +2,7 @@
 
 ### UPDATES
 
+- 04/26/19: Fixed omission. <a href="#reqs1">Predator</a> decoration: choose between the 3 entities.
 - 04/25/19: <a href="#assessment">Assessment Weighting</a> added.
 - 04/25/19: <a href="#doxy">Doxygen</a> landing page requirements clarified.
 - 04/25/19: <a href="#design_doc">Design Document</a> correction that replaced _strategy_ with _observer_ and clarified what could be compared for the decorator pattern.
@@ -143,17 +144,17 @@ The iterative method identifies and prioritizes feature enhancements and code re
 ### <a name="reqs1">Priority Level 1 : Add functionality for Predator to disguise itself as food, light or Braitenberg vehicle using the Decorator Pattern, and implement Predator starvation behavior</a>
 ### Due: Friday, April 26th at 11:55pm
 
-- Implement Predator capability to disguise itself as food or a braitenberg vehicle using the decorator pattern. This can be accomplished via inheritance or via aggregation. 
+- Implement Predator capability to disguise itself as food, light or a braitenberg vehicle using the decorator pattern. This can be accomplished via inheritance or via aggregation. 
 
-One a new identity is assumed, the Predator should behave as the entity whose behavior it assumes. If a predator assumes the identity of food, it should remain at the location at which it assumed that identity. 
+When a new identity is assumed, the Predator should behave as the entity whose behavior it assumes. If a predator assumes the identity of food, it should remain at the location at which it assumed that identity. 
 
 If the predator assumes the identity of a light, it should be a stationary light, and remain at the location at which it assumed that identity. **CLARIFICATION**: You may implement the light either as stationary or moving -- we will accept both.
 
 If the Predator assumes the identity of another Braitenberg vehicle, it should randomly set its behaviors towards food and light to explore, love, coward, aggression or none. However, its behaviors towards other robots should remain aggressive. 
 
 Implement Starvation Behavior for Predators. Starvation will be the trigger which causes predators to disguise themselves. 
-- If a predator has not eaten after 150 iterations, it should randomly switch identities to either food or a Braitenberg vehicle (so it has a 1 in 3 chance of assuming the identity of either food,light or a Braitenberg vehicle (bv)). 
-- If a predator has still not eaten after 300 iterations, it should switch its identity to one of the remaining identities it has not assumed (if assumed the identity of food after 150 iterations, it should randomly assume the identity of either a bv or a light after 300 iterations (so it has a 50/50 chance of assumming the identity of either a light or bv). 
+- If a predator has not eaten after 150 iterations, it should randomly switch identities to either food, light or a Braitenberg vehicle (so it has a 1 in 3 chance of assuming the identity of either food, light or a Braitenberg vehicle (bv)). 
+- If a predator has still not eaten after 300 iterations, it should switch its identity to one of the remaining identities it has not assumed (for example, if assumed the identity of food after 150 iterations, it should randomly assume the identity of either a bv or a light after 300 iterations (so it has a 50/50 chance of assumming the identity of either a light or bv)). 
 - If the predator has not eaten after 450 iterations, it should assume the identity of the entity it has not yet assumed. So if the predator assumed the identity of food after 150 iterations, and a bv after 300 iterations, it should assume the identity of a light after 450 iterations.  
 - Finally, if a predator has not eaten after 600 iterations, it should starve and become a "ghost".
 
