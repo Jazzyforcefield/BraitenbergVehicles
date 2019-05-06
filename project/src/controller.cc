@@ -41,6 +41,13 @@ Controller::Controller(int argc, char **argv) :
       arena_ = new Arena(&config_->get<json_object>());
     }
   } else if (argc == 4) {
+<<<<<<< HEAD
+=======
+    std::string temp = std::string(argv[3]);
+    if (temp.substr(temp.length() - 4) == ".csv") {
+      convertCSV(temp);
+    }
+>>>>>>> support-code
     std::string preljson = "{\n  \"width\": " + std::string(argv[1]) +
       ",\n  \"height\": " + std::string(argv[2]) + ",";
     std::ifstream t(std::string(argv[3]).c_str());
