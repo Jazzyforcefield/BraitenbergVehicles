@@ -8,15 +8,15 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 - [ ]  cloned **fresh** from github onto a cselabs machine to test compilation, style compliance, and execution
 - [ ] Submission is on the **master** branch in the project folder of your repo
-- [ ] _/project_ folder exists   <<<< I think we can remove this one.
-- [ ] _/build_ is not in the repo
-- [ ] _/html_  and _/latex_ is not in _docs_
-- [ ] **__`make` from within _project_ completes without error.__**
-- [ ] `./../build/bin/arenaviewer  xdim dim configfile.json` executes without assert or a seg fault
-- [ ] `./../build/bin/arenaviewer  xdim dim configfile.csv` executes without assert or a seg fault
-- [ ] `./../build/bin/unittest` executes without a seg fault
-- [ ] **_"make check-style" reports no errors when run in the master branch._**
-- [ ] `doxygen docs/Doxyfile` compiles and creates the html pages for you main page and  all classes without errors.
+- [x] _/project_ folder exists   <<<< I think we can remove this one.
+- [x] _/build_ is not in the repo
+- [x] _/html_  and _/latex_ is not in _docs_
+- [x] **__`make` from within _project_ completes without error.__**
+- [x] `./../build/bin/arenaviewer  xdim dim configfile.json` executes without assert or a seg fault
+- [x] `./../build/bin/arenaviewer  xdim dim configfile.csv` executes without assert or a seg fault
+- [x] `./../build/bin/unittest` executes without a seg fault
+- [x] **_"make check-style" reports no errors when run in the master branch._**
+- [x] `doxygen docs/Doxyfile` compiles and creates the html pages for you main page and  all classes without errors.
 
 
 
@@ -27,7 +27,7 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 >If your source code  **does not compile** or if there is an obvious **seg fault** in either the arenaviewer or the unit tests, **__YOU MUST MODIFY THE COMMENT NEXT TO THE CHECKBOX BELOW__** to let us know what the problem is or you will lose all points for that item.
 
-- [ ] I have compiled and executed both the source code and unit tests using a fresh clone of my repo. They compile and execute without segmentation faults.
+- [x] I have compiled and executed both the source code and unit tests using a fresh clone of my repo. They compile and execute without segmentation faults.
 
 **__Next, please place an 'X' in the appropriate box for each requirement.__**
 
@@ -43,21 +43,21 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 | Functionality | Good | Okay | Help | Time |
 | ------------- | ---- |----- | ---- | ---- |
 | **__Priority Level 1__** |
-| Predator Behavior implemented and operational. |  |  |  |  |
-| Predator Disguise functionality (ability to behave as Food, Light, or BV) implemented and operational |  |  |  |  |
-| Predator starvation behavior implemented (triggers switches between disguises |  |  |  |  |
+| Predator Behavior implemented and operational. |X|  |  |  |
+| Predator Disguise functionality (ability to behave as Food, Light, or BV) implemented and operational |  |X|  |  |
+| Predator starvation behavior implemented (triggers switches between disguises |X|  |  |  |
 
 | Functionality | Good | Okay | Help | Time |
 | ------------- | ---- |----- | ---- | ---- |
 | **__Priority Level 2__** |
-| Functionality to enable Factories to configure the entities used in the Arena using Json configuration files or csv configuration files is implemented and operational.   |  |  |  |  |
+| Functionality to enable Factories to configure the entities used in the Arena using Json configuration files or csv configuration files is implemented and operational.   |X|  |  |  |
 
 ### Documentation
 
 
 #### Design Document 
 
-- [ ] Your final iteration of the design document should be updated (that is,  add the following to the previous version of your design document) to include a discussion of  your final design and implementation of the observer pattern, your design of the Decorator pattern, and a description of your final Factory Pattern design and implementation.
+- [X] Your final iteration of the design document should be updated (that is,  add the following to the previous version of your design document) to include a discussion of  your final design and implementation of the observer pattern, your design of the Decorator pattern, and a description of your final Factory Pattern design and implementation.
 
 For the observer pattern, discuss any differences between your design and your final implementation and the primary reason they were different (if they were different).
 
@@ -67,32 +67,32 @@ For the factory pattern, describe how your simulation incorporates the functiona
 
 In your comparisons, provide an overall description highlighting key points of the implementation and using UML and/or code snippets to clarify your ideas. Also provide at least one advantage and one disadvantage of each implementation.
 
-- [ ] The final version of your design document for iteration 2 (named **__iteration3\_design.pdf__**) has been submitted via Canvas (See the **_Iteration 3  Design Doc Complete_** Item on Canvas for the submission link).
+- [X] The final version of your design document for iteration 2 (named **__iteration3\_design.pdf__**) has been submitted via Canvas (See the **_Iteration 3  Design Doc Complete_** Item on Canvas for the submission link).
 
 
 #### UML 
 
-- [ ] UML for project can be generated without errors using Doxygen,  and can be viewed in the docs directory.
+- [X] UML for project can be generated without errors using Doxygen,  and can be viewed in the docs directory.
 - [ ]  Deliver a UML diagram  that represents your final implementation. This will include Classes and relationships between the Arena, Braitenberg Vehicle, Predator, Food, Light, all factories, Classes that implement the observer pattern, classes that implement the strategy pattern, the classes that implement the Decorator Patten and any other classes used to implement the functionality for this iteration.
 - [ ] The final version of your UML design document for iteration 3 (named **__UML\_finaldesign.pdf__**) has been submitted via Canvas (See the **_Iteration 3  UML Complete_** Item on Canvas for the submission link).
 
 
 #### Doxygen
 
-- [ ] All classes have a _brief_ description that appears in the Doxygen web page class list.
-- [ ] The Arena, Braitenberg vehicle and Factories using JSON  are fully documented with respect to methods and member variables. In other words, in the html generated pages of Doxygen, the user can click on a class method and see more information about its purpose and parameters.
-- [ ] A landing page that updates the landing page you submitted for iteration 2 and  meets the requirements specified in the Iteration 3 Requirements (in the file Iteration3Requiements.md located here: https://github.umn.edu/umn-csci-3081-S19/csci3081-shared-upstream/blob/support-code/project/docs/Iteration3Requirements.md ) exists in the file named **__mainpage.h__** and is in the src directory.
-- [ ] Doxygen successfully generates the main page (verify by running Doxygen and then opening the resulting **_index.html__** page). 
+- [X] All classes have a _brief_ description that appears in the Doxygen web page class list.
+- [X] The Arena, Braitenberg vehicle and Factories using JSON  are fully documented with respect to methods and member variables. In other words, in the html generated pages of Doxygen, the user can click on a class method and see more information about its purpose and parameters.
+- [X] A landing page that updates the landing page you submitted for iteration 2 and  meets the requirements specified in the Iteration 3 Requirements (in the file Iteration3Requiements.md located here: https://github.umn.edu/umn-csci-3081-S19/csci3081-shared-upstream/blob/support-code/project/docs/Iteration3Requirements.md ) exists in the file named **__mainpage.h__** and is in the src directory.
+- [X] Doxygen successfully generates the main page (verify by running Doxygen and then opening the resulting **_index.html__** page). 
  
 
 ### Linter and Git
 
-- [ ] All *.h and *.c files pass cpplint.
-- [ ] The code complies with naming conventions for Classes, ClassMethods, and class\_members\_.
-- [ ] There exists a history of git commit messages to show effort.
-- [ ] There exists a history of issues and branches to show effort.
-- [ ] Github issues include current unresolved bugs.
-- [ ] Github issues include unresolved feature enhancements and refactoring that is due for this iteration.
+- [X] All *.h and *.c files pass cpplint.
+- [X] The code complies with naming conventions for Classes, ClassMethods, and class\_members\_.
+- [X] There exists a history of git commit messages to show effort.
+- [X] There exists a history of issues and branches to show effort.
+- [X] Github issues include current unresolved bugs.
+- [X] Github issues include unresolved feature enhancements and refactoring that is due for this iteration.
 
 
 ## Ready For Submission

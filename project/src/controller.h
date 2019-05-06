@@ -75,14 +75,18 @@ class Controller {
 
   Controller(const Controller &other) = delete;
 
-  // Add quotes around the string
+ /**
+  * @brief Add quotes around the string
+  */ 
   std::string add_quotes(std::string word) {
     std::string quoted_string("\"");
     quoted_string += (word + "\"");
     return quoted_string;
   }
 
-  // To determine if quotes should be put around the parsed word
+ /**
+  * @brief Determines if quotes should be put around the parsed word
+  */ 
   inline bool in_number_set(std::string word) {
     // compare returns 0 when it matches the word
     return !(
@@ -90,6 +94,11 @@ class Controller {
       && word.compare("r") && word.compare("theta") );
   }
 
+ /**
+  * @brief Converts CSV file to JSON text
+  * @param[in] Takes in name of .csv file
+  * @param[out] Returns formatted text
+  */ 
   std::string convertCSV(std::string str) {
     std::string token;
     std::vector<std::string> keys;
