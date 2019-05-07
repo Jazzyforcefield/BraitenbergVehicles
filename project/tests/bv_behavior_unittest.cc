@@ -15,56 +15,77 @@ class bv_test : public ::testing::Test {
 
  protected:
   virtual void SetUp() {
-    arena = new csci3081::Arena(); // l f bv
-    fgh = dynamic_cast<csci3081::Food * >(arena->get_entities()[1]);
-    fgh->set_pose(csci3081::Pose(510, 500, 0));
-    zxc = dynamic_cast<csci3081::Light * >(arena->get_entities()[0]);
-    zxc->set_pose(csci3081::Pose(510, 500, 0));
-    asd = dynamic_cast<csci3081::BraitenbergVehicle * >(arena->get_entities()[2]);
+    agg = new csci3081::AggressiveBehavior();
+    cow = new csci3081::CowardBehavior();
+    exp = new csci3081::ExploreBehavior();
+    lov = new csci3081::LoveBehavior();
   }
   virtual void TearDown() {
-    delete arena;
   }
-  csci3081::Food * fgh;
-  csci3081::Light * zxc;
-  csci3081::BraitenbergVehicle * asd;
-  csci3081::Arena * arena;
+
+  csci3081::WheelBehavior * agg;
+  csci3081::WheelBehavior * cow;
+  csci3081::WheelBehavior * exp;
+  csci3081::WheelBehavior * lov;
 
 };
 
-TEST_F(bv_test, DefaultWV) {
-  asd->CalculateWheelVelocity();
-  EXPECT_EQ(csci3081::WheelVelocity(0, 0).left, asd->get_wheel_velocity().left);
-  EXPECT_EQ(csci3081::WheelVelocity(0, 0).right, asd->get_wheel_velocity().right);
+TEST_F(bv_test, AggressiveTests) {
+  EXPECT_EQ(agg->WheelUpdate(0, 0, 5).left, 0) << "Incorrect left velocity";
+  EXPECT_EQ(agg->WheelUpdate(0, 0, 5).right, 0) << "Incorrect right velocity";
+
+  EXPECT_EQ(agg->WheelUpdate(800, 800, 5).left, 5) << "Incorrect left velocity";
+  EXPECT_EQ(agg->WheelUpdate(800, 800, 5).right, 5)
+    << "Incorrect right velocity";
+
+  EXPECT_EQ(agg->WheelUpdate(0.640, 0.813, 5).left, 0.813)
+    << "Incorrect left velocity";
+  EXPECT_EQ(agg->WheelUpdate(0.640, 0.813, 5).right, 0.640)
+    << "Incorrect right velocity";
 };
 
-TEST_F(bv_test, Behaviors) {
-  asd->set_light_behavior(csci3081::kExplore);
-  asd->set_food_behavior(csci3081::kAggressive);
-  asd->Update();
-  EXPECT_EQ(2.50005, asd->get_wheel_velocity().left);
-  EXPECT_EQ(2.50005, asd->get_wheel_velocity().right);
+TEST_F(bv_test, CowardTests) {
+  EXPECT_EQ(cow->WheelUpdate(0, 0, 5).left, 0) << "Incorrect left velocity";
+  EXPECT_EQ(cow->WheelUpdate(0, 0, 5).right, 0) << "Incorrect right velocity";
 
-  asd->set_light_behavior(csci3081::kLove);
-  asd->set_food_behavior(csci3081::kLove);
-  asd->set_bv_behavior(csci3081::kLove);
-  asd->Update();
-  EXPECT_EQ(5, asd->get_wheel_velocity().left);
-  EXPECT_EQ(5, asd->get_wheel_velocity().right);
+  EXPECT_EQ(cow->WheelUpdate(800, 800, 5).left, 5) << "Incorrect left velocity";
+  EXPECT_EQ(cow->WheelUpdate(800, 800, 5).right, 5)
+    << "Incorrect right velocity";
 
-  
-  asd->set_light_behavior(csci3081::kAggressive);
-  asd->set_food_behavior(csci3081::kAggressive);
-  asd->set_bv_behavior(csci3081::kAggressive);
-  asd->Update();
-  EXPECT_EQ(0.0001, asd->get_wheel_velocity().left);
-  EXPECT_EQ(0.0001, asd->get_wheel_velocity().right);
+  EXPECT_EQ(cow->WheelUpdate(0.640, 0.813, 5).left, 0.640)
+    << "Incorrect left velocity";
+  EXPECT_EQ(cow->WheelUpdate(0.640, 0.813, 5).right, 0.813)
+    << "Incorrect right velocity";
+};
 
-  asd->set_light_behavior(csci3081::kExplore);
-  asd->set_food_behavior(csci3081::kCoward);
-  asd->set_bv_behavior(csci3081::kAggressive);
-  asd->Update();
-  EXPECT_NEAR(1.66673, asd->get_wheel_velocity().left, 0.0001);
-  EXPECT_NEAR(1.66673, asd->get_wheel_velocity().right, 0.0001);
+TEST_F(bv_test, ExploreTests) {
+  EXPECT_EQ(exp->WheelUpdate(0.001, 0.001, 5).left, 5)
+    << "Incorrect left velocity";
+  EXPECT_EQ(exp->WheelUpdate(0.001, 0.001, 5).right, 5)
+    << "Incorrect right velocity";
 
+  EXPECT_EQ(exp->WheelUpdate(800, 800, 5).left, 0.00125)
+    << "Incorrect left velocity";
+  EXPECT_EQ(exp->WheelUpdate(800, 800, 5).right, 0.00125);
+
+  EXPECT_NEAR(exp->WheelUpdate(0.640, 0.813, 5).left, 1.230, 0.001)
+    << "Incorrect right velocity";
+  EXPECT_EQ(exp->WheelUpdate(0.640, 0.813, 5).right, 1.5625)
+    << "Incorrect left velocity";
+};
+
+TEST_F(bv_test, LoveTests) {
+  EXPECT_EQ(lov->WheelUpdate(0.001, 0.001, 5).left, 5)
+    << "Incorrect left velocity";
+  EXPECT_EQ(lov->WheelUpdate(0.001, 0.001, 5).right, 5)
+    << "Incorrect right velocity";
+
+  EXPECT_EQ(lov->WheelUpdate(800, 800, 5).left, 0.00125)
+    << "Incorrect left velocity";
+  EXPECT_EQ(lov->WheelUpdate(800, 800, 5).right, 0.00125)
+    << "Incorrect right velocity";
+
+  EXPECT_EQ(lov->WheelUpdate(0.640, 0.813, 5).left, 1.5625);
+  EXPECT_NEAR(lov->WheelUpdate(0.640, 0.813, 5).right, 1.230, 0.001)
+    << "Incorrect right velocity";
 };

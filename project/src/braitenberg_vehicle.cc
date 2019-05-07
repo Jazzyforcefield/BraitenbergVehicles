@@ -11,6 +11,7 @@
 #include "src/braitenberg_vehicle.h"
 #include "src/params.h"
 #include "src/food.h"
+#include "src/Predator.h"
 
 class SensorLightLove;
 
@@ -33,6 +34,7 @@ BraitenbergVehicle::BraitenbergVehicle() :
   defaultSpeed_(5.0), time_(0), stime_(0), collided_(false), obs_(),
   dead_(false) {
   set_type(kBraitenberg);
+  set_core(kBraitenberg);
   motion_behavior_ = new MotionBehaviorDifferential(this);
   light_sensors_.push_back(Pose());
   light_sensors_.push_back(Pose());
@@ -57,26 +59,35 @@ void BraitenbergVehicle::TimestepUpdate(__unused unsigned int dt) {
 }
 
 void BraitenbergVehicle::HandleCollision(EntityType ent_type,
-                                         __unused ArenaEntity * object) {
-  if (ent_type == kFood) {
-    if (static_cast<Food *>(object)->active()) {
-      stime_ = 0;
-      static_cast<Food *>(object)->set_inactive();
-    }
-    return;
-  } else if (ent_type == kBraitenberg) {
-    BraitenbergVehicle * bvref = dynamic_cast<BraitenbergVehicle *>(object);
-    if (bvref->isDead()) {
+                                         ArenaEntity * object) {
+  if (!dead_) {
+    if (ent_type == kPredator) {
+      Die();
+      static_cast<Predator *>(object)->HandleCollision(kBraitenberg, this);
+      return;
+    } else if (ent_type == kFood) {
+      if (static_cast<Food *>(object)->active()) {
+        stime_ = 0;
+        static_cast<Food *>(object)->set_inactive();
+      }
+      return;
+    } else if (ent_type == kBraitenberg) {
+      BraitenbergVehicle * bvref = dynamic_cast<BraitenbergVehicle *>(object);
+      if (bvref->isDead()) {
+        return;
+      }
+    }  else if (ent_type == kLight) {
       return;
     }
-  }
-  if (!dead_) {
     set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
     collided_ = true;
   }
 }
 
 void BraitenbergVehicle::SenseEntity(const ArenaEntity& entity) {
+  if (isDead()) {
+    return;
+  }
   const ArenaEntity** closest_entity_ = NULL;
   if (entity.get_type() == kLight) {
     closest_entity_ = &closest_light_entity_;

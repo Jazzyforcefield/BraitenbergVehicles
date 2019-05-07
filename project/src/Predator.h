@@ -26,6 +26,7 @@
 #include "src/CowardBehavior.h"
 #include "src/Subject.h"
 #include "src/Observer.h"
+#include "src/entity_type.h"
 
 
 /*******************************************************************************
@@ -241,6 +242,17 @@ class Predator : public ArenaMobileEntity, public Subject {
   void Notify() override;
 
   /**
+   * @brief Kills the Predator (turns into ghost)
+   */
+  void Die();
+
+  /**
+   * @brief Checks if Predator is a ghost
+   * @param[out] Returns a boolean
+   */
+  bool isDead();
+
+  /**
    * @brief Number of Predator objects exist
    */
   static int count;
@@ -263,6 +275,7 @@ class Predator : public ArenaMobileEntity, public Subject {
   int time_;
   bool collided_;
   Observer * obs_;
+  bool dead_;
 };
 
 NAMESPACE_END(csci3081);

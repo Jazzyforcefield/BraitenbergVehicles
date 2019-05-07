@@ -16,6 +16,9 @@
 #include "src/light.h"
 #include "src/braitenberg_vehicle.h"
 #include "src/Predator.h"
+#include "src/light_decoration.h"
+#include "src/braitenberg_decoration.h"
+#include "src/food_decoration.h"
 
 /*******************************************************************************
  * Namespaces
@@ -101,6 +104,35 @@ void Arena::AddEntity(ArenaEntity* ent) {
   }
 }
 
+void Arena::RemoveEntity(ArenaEntity* ent) {
+  int index = 0;
+  for (auto &ent1 : entities_) {
+    index++;
+    if (ent1->get_type() == kPredator && ent1->get_core() == kPredator) {
+      if (ent == ent1) {
+        entities_.erase(entities_.begin() + index - 1);
+      }
+    } else if (ent1->get_type() != kPredator && ent1->get_core() == kPredator) {
+      if (ent == ent1) {
+        entities_.erase(entities_.begin() + index - 1);
+      }
+    }
+  }
+  index = 0;
+  for (auto &ent1 : mobile_entities_) {
+    index++;
+    if (ent1->get_type() == kPredator && ent1->get_core() == kPredator) {
+      if (ent == ent1) {
+        mobile_entities_.erase(mobile_entities_.begin() + index - 1);
+      }
+    } else if (ent1->get_type() != kPredator && ent1->get_core() == kPredator) {
+      if (ent == ent1) {
+        mobile_entities_.erase(mobile_entities_.begin() + index - 1);
+      }
+    }
+  }
+}
+
 void Arena::Reset() {
   for (auto ent : entities_) {
     ent->Reset();
@@ -127,6 +159,40 @@ void Arena::UpdateEntitiesTimestep() {
    */
   for (auto ent : entities_) {
     ent->TimestepUpdate(1);
+    ArenaEntity * entity;
+
+    if (ent->get_core() == kPredator && ent->get_type() != kPredator) {
+      if (static_cast<EntityDecorator *>(ent)->fed()) {
+      entity = static_cast<EntityDecorator *>(ent)->get_ent();
+      RemoveEntity(ent);
+        while (entity->get_type() != kPredator) {
+          entity = static_cast<EntityDecorator *>(entity)->get_ent();
+        }
+      AddEntity(entity);
+      }
+    }
+
+    if (ent->get_core() == kPredator) {
+      if (static_cast<ArenaMobileEntity*>(ent)->get_stime() == 150 ||
+          static_cast<ArenaMobileEntity*>(ent)->get_stime() == 300 ||
+          static_cast<ArenaMobileEntity*>(ent)->get_stime() == 450) {
+        EntityType ret = static_cast<ArenaMobileEntity*>(ent)->Disguise();
+        if (ret == kBraitenberg) {
+          RemoveEntity(ent);
+          ent = new BraitenbergDecoration(static_cast<ArenaMobileEntity*>(ent));
+          AddEntity(ent);
+        } else if (ret == kLight) {
+          RemoveEntity(ent);
+          ent = new LightDecoration(static_cast<ArenaMobileEntity*>(ent));
+          AddEntity(ent);
+        } else if (ret == kFood) {
+          entities_.erase(std::remove(entities_.begin(),
+            entities_.end(), ent), entities_.end());
+          ent = new FoodDecoration(static_cast<ArenaMobileEntity*>(ent));
+          AddEntity(ent);
+        }
+      }
+    }
   }
 
    /* Determine if any mobile entity is colliding with wall.
@@ -144,46 +210,19 @@ void Arena::UpdateEntitiesTimestep() {
     for (auto &ent2 : entities_) {
       if (ent2 == ent1) { continue; }
       if (IsColliding(ent1, ent2)) {
-        // if a braitenberg vehicle collides with food, call consume on bv
-        // this is pretty ugly, I should move it into HandleCollision
         if (ent1->get_type() == kBraitenberg &&
-            ent2->get_type() == kFood) {
-          static_cast<BraitenbergVehicle*>(ent1)->HandleCollision(
-            ent2->get_type(), ent2);
-        } else if (ent1->get_type() == kFood &&
-                   ent2->get_type() == kBraitenberg) {
-          static_cast<BraitenbergVehicle*>(ent2)->HandleCollision(
-            ent1->get_type(), ent1);
-        }
-        // lights and braitenberg vehicles do not collide
-        // nothing collides with food, but bv's call consume() if they do
-        if ((ent2->get_type() == kBraitenberg && ent1->get_type() == kLight) ||
-            (ent2->get_type() == kLight && ent1->get_type() == kBraitenberg) ||
-            (ent2->get_type() == kFood) || (ent1->get_type() == kFood)     ) {
-          continue;
-        }
-        if (ent2->get_type() == kBraitenberg &&
-            ent1->get_type() == kBraitenberg) {
-          BraitenbergVehicle * b1 = static_cast<BraitenbergVehicle*>(ent1);
-          BraitenbergVehicle * b2 = static_cast<BraitenbergVehicle*>(ent2);
-          if (b1->isDead() || b2->isDead()) {
-            ent1->HandleCollision(ent2->get_type(), ent2);
-          } else {
+          ent2->get_type() == kBraitenberg) {
           AdjustEntityOverlap(ent1, ent2);
+        }
+        if (ent1->get_type() == kPredator && ent2->get_type() == kPredator) {
+          AdjustEntityOverlap(ent1, ent2);
+        }
+        if (ent1->get_core() == kPredator) {
           ent1->HandleCollision(ent2->get_type(), ent2);
-          }
-        }
-
-        if (ent2->get_type() == kPredator &&
-            ent1->get_type() == kBraitenberg) {
-          static_cast<Predator*>(ent2)->HandleCollision(
-            ent1->get_type(), ent1);
-        }
-
-        if (ent1->get_type() == kPredator &&
-            ent2->get_type() == kBraitenberg) {
-          static_cast<Predator*>(ent1)->HandleCollision(
-            ent2->get_type(), ent2);
+        } else if (ent2->get_core() == kPredator) {
+          ent2->HandleCollision(ent1->get_type(), ent1);
+        } else {
+          ent1->HandleCollision(ent2->get_type(), ent2);
         }
       }
     }

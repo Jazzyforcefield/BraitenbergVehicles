@@ -85,7 +85,7 @@ class Arena {
    * Used whenver a new entity is created.
    */
   void AddEntity(ArenaEntity* entity);
-
+  void RemoveEntity(ArenaEntity* entity);
   /**
    * @brief Reset all entities in Arena.
    */

@@ -27,6 +27,7 @@ Light::Light() :
   set_pose(LIGHT_POSITION);
   set_radius(LIGHT_RADIUS);
   set_type(kLight);
+  set_core(kLight);
   set_speed(3);
 
   // Set ID
@@ -37,7 +38,10 @@ Light::Light() :
 void Light::HandleCollision(__unused EntityType ent_type,
                                __unused ArenaEntity * object) {
   // set_heading(random_num<float>(0, 360));
-  set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
+  if (ent_type == kLeftWall || ent_type == kRightWall ||
+      ent_type == kTopWall || ent_type == kBottomWall) {
+    set_heading(static_cast<int>((get_pose().theta + 180)) % 360);
+  }
 }
 
 void Light::TimestepUpdate(__unused unsigned int dt) {

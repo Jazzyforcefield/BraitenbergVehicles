@@ -129,6 +129,19 @@ class ArenaEntity {
   void set_id(int id) { id_ = id; }
 
   /**
+   * @brief Getter method for determining base entity
+   */
+  EntityType get_core() const { return core_; }
+  void set_core(EntityType et) { core_ = et; }
+
+ /**
+  * @brief Handles the collision between two entities
+  * @param[in] EntityType ent_type
+  * @param[in] ArenaEntity * object
+  */
+  virtual void HandleCollision(__unused EntityType ent_type,
+                                         __unused ArenaEntity * object) {}
+  /**
    * @brief Getter method for determining if entity can move or not.
    */
   bool is_mobile(void) { return is_mobile_; }
@@ -154,6 +167,7 @@ class ArenaEntity {
   Pose pose_;
   RgbColor color_;
   EntityType type_{kEntity};
+  EntityType core_{kEntity};
   int id_{-1};
   bool is_mobile_{false};
 };

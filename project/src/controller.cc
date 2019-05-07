@@ -26,10 +26,38 @@ NAMESPACE_BEGIN(csci3081);
 
 Controller::Controller(int argc, char **argv) :
   last_dt(0), viewers_(), config_(NULL) {
-  if (argc > 1) {
+  if (argc != 2 && argc != 4) {
+    printf("Incorrect number of command line arguments\n");
+    return;
+  }
+  if (argc == 2) {
     std::ifstream t(std::string(argv[1]).c_str());
     std::string str((std::istreambuf_iterator<char>(t)),
                    std::istreambuf_iterator<char>());
+    std::string json = str;
+    config_ = new json_value();
+    std::string err = parse_json(config_, json);
+    if (!err.empty()) {
+      std::cerr << "Parse error: " << err << std::endl;
+      delete config_;
+      config_ = NULL;
+    } else {
+      arena_ = new Arena(&config_->get<json_object>());
+    }
+  } else if (argc == 4) {
+    std::string temp = std::string(argv[3]);
+    std::string str;
+    if (temp.substr(temp.length() - 4) == ".csv") {
+      str = convertCSV(temp);
+    } else {
+      std::ifstream t(std::string(argv[3]).c_str());
+      std::string jstr((std::istreambuf_iterator<char>(t)),
+                     std::istreambuf_iterator<char>());
+      str = jstr;
+    }
+    std::string preljson = "{\n  \"width\": " + std::string(argv[1]) +
+      ",\n  \"height\": " + std::string(argv[2]) + ",";
+    str = preljson + str.substr(1);
     std::string json = str;
     config_ = new json_value();
     std::string err = parse_json(config_, json);
