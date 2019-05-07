@@ -6,8 +6,8 @@ Please ensure that this file is in your /docs folder. Place an 'x' in each of th
 
 ### Compilation and Execution
 
-- [ ]  cloned **fresh** from github onto a cselabs machine to test compilation, style compliance, and execution
-- [ ] Submission is on the **master** branch in the project folder of your repo
+- [X]  cloned **fresh** from github onto a cselabs machine to test compilation, style compliance, and execution
+- [X] Submission is on the **master** branch in the project folder of your repo
 - [x] _/project_ folder exists   <<<< I think we can remove this one.
 - [x] _/build_ is not in the repo
 - [x] _/html_  and _/latex_ is not in _docs_
@@ -73,8 +73,8 @@ In your comparisons, provide an overall description highlighting key points of t
 #### UML 
 
 - [X] UML for project can be generated without errors using Doxygen,  and can be viewed in the docs directory.
-- [ ]  Deliver a UML diagram  that represents your final implementation. This will include Classes and relationships between the Arena, Braitenberg Vehicle, Predator, Food, Light, all factories, Classes that implement the observer pattern, classes that implement the strategy pattern, the classes that implement the Decorator Patten and any other classes used to implement the functionality for this iteration.
-- [ ] The final version of your UML design document for iteration 3 (named **__UML\_finaldesign.pdf__**) has been submitted via Canvas (See the **_Iteration 3  UML Complete_** Item on Canvas for the submission link).
+- [X]  Deliver a UML diagram  that represents your final implementation. This will include Classes and relationships between the Arena, Braitenberg Vehicle, Predator, Food, Light, all factories, Classes that implement the observer pattern, classes that implement the strategy pattern, the classes that implement the Decorator Patten and any other classes used to implement the functionality for this iteration.
+- [X] The final version of your UML design document for iteration 3 (named **__UML\_finaldesign.pdf__**) has been submitted via Canvas (See the **_Iteration 3  UML Complete_** Item on Canvas for the submission link).
 
 
 #### Doxygen
@@ -100,8 +100,8 @@ In your comparisons, provide an overall description highlighting key points of t
 
 When everything above is as you want it or the deadline is upon you, it is time to submit!
 
-- [ ] I pushed this file and any changes resulting from this checklist.
-- [ ] Everything is in the **__master__** branch.
+- [X] I pushed this file and any changes resulting from this checklist.
+- [X] Everything is in the **__master__** branch.
 
 _One more thing_ -- check that what you think you pushed was really pushed to github. If you can see it, we can see it. If you can't, we can't.
 
