@@ -1,8 +1,8 @@
 ### Partial Assessment for Project Iteration 02 - Combined (Graded By: Dan Orban)
 
-#### Total score: _40.56_ / _44.5_
+#### Total score: _41.48_ / _44.5_
 
-Run on May 07, 15:58:58 PM.
+Run on May 09, 10:47:38 AM.
 
 
 #### Partial Combined Scores (44.5% of Iteration 2 Grade)
@@ -51,7 +51,7 @@ For full grade breakdown please refer to [Assessment Weighting](https://github.u
 
 #### Iteration 2 - Git usage (10%)
 
-+  _1.38_ / _2.3_ : Pass: [Git Commits](Proj_02_Final-Automated_Assessment.md#git-tests) (2.3%)
++  _2.3_ / _2.3_ : Pass: [Git Commits](Proj_02_Final-Automated_Assessment.md#git-tests) (2.3%)
 
 
 
@@ -63,5 +63,5 @@ For full grade breakdown please refer to [Assessment Weighting](https://github.u
 
 
 
-#### Total score: _40.56_ / _44.5_
+#### Total score: _41.48_ / _44.5_
 
